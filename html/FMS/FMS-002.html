@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목표 상세(추적 연동)</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal type_bg_purple">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev ver02"><span class="hidden">이전</span></button>
+      <h1>목표상세</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+    <!-- //20210719 -->
+  </header>
+  <div class="health_container">
+    <div class="content_tit thline"><!--제목(h2)이 3줄일 경우 'thline' class 추가-->
+      <h2 class="tit_cont_01 ver02">하루에<br>조금씩 걷기를<br>해보세요!</h2>
+      <p class="content_desc">하루에 5,000보 걷기를 목표로 삼아 보세요!<br> 체중도 관리하고 하루종일 활기찬 기분으로<br> 지낼 수 있는 간편한 방법입니다.</p> <!--20210713 br추가-->
+    </div>
+    <div class="content_box">
+      <h3 class="box_tit"><strong>하루 5,000보</strong><span class="goal_point">7000</span></h3> <!--20210713 마크업 변경-->
+      <div class="step_wrap"><span class="step"><em>9</em> / 14</span></div><!--20210713 goal_point 이동-->
+      <div class="progress_wrap"><progress max="100" value="65"></progress></div>
+      <hr>
+      <div class="content_list">
+        <dl class="">
+          <dt>목표</dt>
+          <dd>하루에 500보 걷기<span class="goal_count complete">10/10</span></dd><!--완료시 'complete' 클래스 부여-->         
+          <dd>하루에 1000보 걷기<span class="goal_count">0/1</span></dd>
+          <dd>하루에 1500보 걷기<span class="goal_count">0/1</span></dd>
+        </dl>
+        <div class="btn_wrap"><button type="button" class="btn_delete">목표삭제</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="btn_btm_fixed">
+    <button type="button" onclick="location.href='FMS-003.html'" class="btn">추적하기</button>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>loading</title>
+  <link rel="stylesheet" href="../resources/css/guide.css">
+  <link rel="stylesheet" href="../resources/css/jquery-ui.css">
+  <script src="../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../resources/js/ui.common.js"></script>
+</head>
+<body>
+
+  <div class="type_loading type_page">
+    <div class="load-container">
+      <div class="counter">
+        <span class="num">5</span>
+        <p class="text">처리 중입니다.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    var myLoader, myLoaderNum = 5;
+    var loadCountDown = function() {
+      $('.num').text(myLoaderNum);
+      (myLoaderNum > 0)
+        ? myLoaderNum = myLoaderNum - 1
+        : clearInterval(myLoader);
+    }
+
+    $(document).ready(function() {
+      myLoader = setInterval(function() {
+        loadCountDown();
+      }, 1000);
+    });
+
+  </script>
+
+</body>
+</html>

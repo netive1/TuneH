@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>등록된 휴대폰 번호</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_mypage type_setting footer_no"> <!--20210804 'type_mypage' class 추가-->
+  <!-- 20210804 div.health_wrap type_setting appsetting footer_no 삭제  -->
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>등록된 휴대폰 번호</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container">
+    <div class="between_wrap bluetooth">
+      <p class="tit_cont_03">+82 010-23**-45**</p>
+      <span class="btn_form_line register">등록됨</span>
+    </div>
+    <hr class="hr_line_02">
+    <div class="btn_wrap mt40"><button type="button" class="btn_delete">번호가 변경되셨나요?</button></div> <!--20210719 'btn_delete' class 변경-->
+  </div>
+  <!-- 20210719 마크업 위치 변경 -->
+  <div class="st_infobox">
+    <!-- 20210719 워딩 수정 'vh' class 삭제 -->
+    <p>
+      Tune H 서비스의 계정 정보를 확인하는 용도로만<br> 사용합니다.<br>
+      휴대폰 번호는 사용자 중복 방지 확인을 위한 목적으로만 활용되며, 타인의 정보로 도용하여 사용할 시 법적 처벌 대상이 될 수 있습니다.
+    </p>
+  </div>
+  <!-- //20210719 마크업 위치 변경 --> 
+</body>
+</html>

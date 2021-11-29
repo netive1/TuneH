@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 정보</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_mypage footer_no">
+<header class="health_header">
+	<div class="inbtn">
+		<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+		<h1>내 정보</h1>
+	</div>
+	<div class="user"><button type="button">홍길동</button></div>
+	<!-- user class 가이드
+		패키지 구매회원의 경우 : .package 추가
+		신규 알림 있을 시 : .on 추가
+	-->
+</header>
+  <div class="health_container">
+		<div class="my_top_wrap">
+			<div class="my_info_item">
+				<p class="name">홍길동</p>
+				<p class="info"><em>1988.04.21</em>남자</p>
+			</div>
+			<div class="img_wrap">
+				<img src="../../resources/img/img_myprofile.png" alt=""/>
+				<a class="btn_camera" role="button" onclick="netiveUI.plugins.popToast('#toast001');"><span class="hidden">프로필사진변경</span></a>
+			</div>
+		</div>
+
+   <hr class="hr_line">
+		
+	 <ul class="my_cont_wrap">
+		<li>
+			<a href="javascript:void(0);">
+				<!-- 20210901 span 태그 tit 클래스 추가 -->
+				<span class="tit">닉네임</span>
+				<span>길동</span>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:void(0);">
+				<!-- 20210901 span 태그 tit 클래스 추가 -->
+				<span class="tit">국가</span>
+				<span>선택 없음</span>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:void(0);">
+				<!-- 20210901 span 태그 tit 클래스 추가 -->
+				<span class="tit">거주지</span>
+				<span>선택 없음</span>
+			</a>
+		</li>
+	 </ul>
+
+	 <!-- 20210616 수정 -->
+	 <div class="bg_wrap">
+		<div class="box_wrap">
+			<a href="javascript:void(0);" onclick="netiveUI.plugins.popAlert('#alertCscenter');">고객센터<span>02-6330-3410</span></a> <!--20210720 onclick 추가-->
+		</div>
+		<p class="s_txt">등록한 정보는 서비스 이용에 활용됩니다.<br>이름, 생년월일, 성별이 변경되었을 시 고객센터로<br> 문의를 주시기 바랍니다.</p>
+		<div class="btn_wrap full"><button type="button" onclick="netiveUI.plugins.popAlert('#alertWithdrawal');" class="btn_delete">회원 탈퇴</button></div><!--20210616 클래스명 수정-->
+	 </div>
+	<!-- // 20210616 수정 -->
+
+	</div>
+</div>
+ 
+<!-- 팝업 -->
+<!-- case 01 : 고객센터 전화번호 또는 아이콘 선택 시 alert 메시지 -->
+<!-- 20210719 고객센터 연결 alert -->
+<div id="alertCscenter" class="health_alert" style="display: none;">
+	<div class="inner">
+		<p class="msg">고객센터로 전화연결을<br> 진행하시겠습니까?</p>
+
+		<div class="btn_wrap">
+			<button type="button" class="btn_pop_line_dark ui-close">취소</button>
+			<button type="button" onclick="document.location.href='tel:02-6330-3410'" class="btn_pop_dark">고객센터 연결</button>
+		</div>
+	</div>
+</div>
+<!-- //20210719 고객센터 연결 alert -->
+
+<!-- case 02 : 회원탈퇴 선택 시 alert 메시지 -->
+<div id="alertWithdrawal" class="health_alert" style="display: none;">
+	<div class="inner">
+		<p class="msg">
+			정말로 회원탈퇴를 하시겠습니까?<br>
+			회원 탈퇴 시 Tune H 서비스를<br>
+			이용하실 수 없습니다.
+		</p>
+
+		<div class="btn_wrap">
+			<button type="button" class="btn_pop_line_dark">회원탈퇴</button>
+			<button type="button" class="btn_pop_dark ui-close">취소</button>
+		</div>
+	</div>
+</div>
+
+
+<div class="health_full actived" id="full001" style="display: none;">
+	<div class="inner">
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<div class="header_wrap">
+				<!-- <h1>건강 정보 상세</h1> -->
+				<button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+				</div>
+			</div>
+			<div class="pop_container">
+				<div class="con_inner">
+					<div class="con_box">
+						<div class="pop_con">
+							<p class="health_full_tit">프로필 사진<br>변경하기</p>
+							<ul class="change_wrap">
+								<li>
+									<a href="javascript:void(0)"><span class="ico default">기본 이미지 사용</span></a>
+								</li>
+								<li>
+									<a href="javascript:void(0)"><span class="ico album">앨범에서 사진 선택</span></a>
+								</li>
+								<li>
+									<a href="javascript:void(0)"><span class="ico pic">사진 촬영</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>

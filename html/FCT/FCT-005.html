@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전체 콘텐츠</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap type_content">
+    <!-- 20210805 'type_content' class 위치 변경 -->
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>콘텐츠 상세</h1>
+      </div>
+      <div class="user"><button type="button">홍길동</button></div>
+    </header>
+    <!-- 20210906 pt0 클래스 추가 -->
+    <div class="health_container pt0">
+      <div class="full_img_wrap thumbnail thumbnail--1by1"> 
+        <!--20210817         
+        이미지 crop 가이드 (add class)
+        1:1 -- thumbnail--
+        4:3 -- thumbnail--4by3
+        16:9 -- thumbnail--16by9
+        4:5 -- thumbnail--4by5
+        -->
+        <img src="../../resources/img/bg_splah.png" alt=""> <!--20210817 테스트 이미지 등록-->
+        <a href="#" role="button" class="btn_ico_audio"></a>
+      </div>
+      <!-- 20210817 tag_wrap 클래스 추가 -->
+      <div class="tag_wrap">
+        <span class="tag_info">홈트레이닝</span>
+        <span class="tag_info">코어운동</span>
+      </div>
+      <h1 class="tit_cont_01">몸을 깨우고 단련시키는 쉬운 스트레칭</h1>
+      <ul class="body_info_box">
+        <li><span class="ico time">60<em>분</em></span></li>
+        <li><span class="ico strong">약</span></li>
+        <li><span class="ico kcal">500<em>kcal</em></span></li>
+      </ul>
+
+      <span class="tit_cont_03">콘텐츠 요약</span>
+      <p class="txt_cont">
+        짧게 치고 짧게 빠지는 인터벌 실내자전거 지루할 틈 없이 함께 달려봅시다. 짧게 치고 짧게 빠지는 인터벌 실내자전거 지루할 틈 없이 함께 달려봅시다.
+      </p>
+
+      <hr class="hr_line">
+      <!-- 20210825 ex_box_wrap 클래스 추가 -->
+      <div class="ex_box_wrap">
+        <span class="tit_cont_03">운동 설명</span>
+        <span class="tit_cont_03 ver2 mt20">운동 구성</span>
+        <p class="txt_cont">저항은 4나 5로 고정</p>
+
+        <div class="txt_cont mt20">
+          <span>인터벌</span>
+          <ul class="list_dot">
+            <li><span>15초 스프린트 15초 휴식</span></li>
+            <li><span>15초 스프린트 15초 휴식</span></li>
+            <li><span>15초 스프린트 15초 휴식</span></li>
+            <li><span>15초 스프린트 15초 휴식</span></li>
+          </ul>
+          <p class="txt_cont">순차적으로 다시 내려옵니다.</p>
+        </div>
+
+        <span class="tit_cont_03 ver2 mt60">RPE 가이드(자전거 종류에 따른 저항수치)</span>
+        <ul>
+          <li class="txt_cont">0~3 : 가벼운 페달 무게</li>
+          <li class="txt_cont">4~6 : 자전거 타고 평지 가는 정도 페달 무게</li>
+          <li class="txt_cont">7~10 : 힘 줘서 굴려야 하는 무거운 페달 무게</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="btn_btm_fixed fct">
+      <div class="ico_wrap">
+        <a href="#" role="button" class="btn_ico bookmark on"></a>
+      </div>
+      <button type="button" class="btn_pop_black2">운동 시작하기</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>마이페이지 메인</title>
+	<link rel="stylesheet" href="../../resources/css/guide.css">
+	<link rel="stylesheet" href="../../resources/css/swiper.min.css">
+	<script src="../../resources/js/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>
+	<script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body>
+	<div class="health_wrap footer_no type_mypage"> 
+		<header class="health_header">
+			<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+			<h1 class="hidden">마이페이지 메인</h1>
+			<div class="option_box">				
+				<button type="button" onClick="" id="mytoggle" class="btn_more_menu"><span>메뉴 보기</span></button> <!--20210818 id값 변경-->
+			</div>
+			<!-- 20210713 수정 -->
+			<div class="fullscreen open" id="fullscreen">   
+				<button type="button" class="btn_close"><span class="hidden">닫기</span></button> <!--20210720 버튼 위치 변경-->
+				<div class="fullscreen_cont">
+					<!-- 20210906 마크업 변경 -->
+					<div class="my_top">
+						<div class="fullscreen_h">MY</div>
+						<div class="fullscreen_btn">
+							<button type="button" class="btn_home"><span class="hidden">홈</span></button> <!--20210924 홈 아이콘 추가-->
+							<button type="button" class="btn_alarm new"><span class="hidden">알림확인</span></button>
+							<button type="button" class="btn_set"><span class="hidden">설정</span></button>
+						</div>
+					</div>
+					<div class="profile_wrap">
+						<div class="name_wrap">
+							<span class="info">Lina</span>
+							<a href="#" class="btn_arr"><span class="name">날아라현지</span></a>
+						</div>
+						<div class="img_profile_wrap">
+							<img class="img_profile" src="../../resources/img/img_myprofile.png" alt="프로필 이미지">	
+						</div>
+					</div>
+					<!-- //20210906 마크업 변경 -->
+					<div class="level_wrap">
+						<span class="level my_green" onclick="location.href='FMY-017.html'">GREEN</span>
+						<!-- 20211021 레벨별 class guide 변경
+						[AS IS - my_basic, my_jupiter, my_mercury, my_mars, my_pluto ]
+						[TO BE - my_white, my_green, my_red, my_purple, my_black ]
+						-->
+						<span class="my_point" onclick="location.href='FMY-018.html'">230,000</span>  <!--20210810 'my_point 로 class 변경'-->
+					</div>
+					<div class="bg_gray_02">
+						<p class="fullscreen_tit">마이 패키지</p> 
+						<div class="acco_list_wrap">
+							<!-- 제휴, 진단/상담 case -->
+							<div class="acco_list_item">
+								<div class="acco_item_head">
+									<div class="flex_between_wrap">
+										<div class="item_head_cont">											
+											<p class="item_package_tit"><em class="">제휴</em>Sleep Care 잘자고</p>
+											<!-- 20210729 제휴가 없을 경우 em 태그 내 class 'nodata' 추가 -->
+										</div>
+										<!-- 20210809 아코디언 열기 버튼 삭제 -->
+									</div>
+								</div>
+								<!-- 20210806 진단/상담 case추가 -->
+								<div class="acco_item_cont block" style="display: block;"> <!--20210809 inline style 추가 (아코디언 기능 삭제)-->
+									<ul class="rev_list">
+										<li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#FMY046');">그림진단 심화상담<br>상담예약 하기</a></li> <!--20210909 popFull 로 수정-->
+										<li><a onclick="netiveUI.plugins.popAlert('#alertAdvice');">그림진단 심화상담<br>상담시작 하기 (7월/15 18:00)</a></li>
+										<!-- 20210809 아직 상담시간이 아닌 경우 알림 팝업 노출 -->
+									</ul>
+								</div>
+								<!-- //20210806 진단/상담 case추가 -->
+							</div>
+							<!-- //제휴, 진단/상담 case -->
+
+							<!-- 20210812 개발 화면 ui깨지는거 체크용 마크업 guide 추가 -->
+							<div class="acco_list_item">
+								<div class="acco_item_head">
+									<div class="flex_between_wrap">
+										<div class="item_head_cont">											
+											<p class="item_package_tit"><em class="nodata">제휴</em>영양</p>
+										</div>
+									</div>
+								</div>
+								<div class="acco_item_head">
+									<div class="flex_between_wrap">
+										<div class="item_head_cont">											
+											<p class="item_package_tit"><em class="nodata">제휴</em>심리상담</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //20210812 개발 화면 ui깨지는거 체크용 마크업 guide 추가 -->
+						</div>
+
+						<p class="fullscreen_tit">마이목표</p>
+						<div class="goal_wrap">
+							<span><strong>12</strong>진행중</span>
+							<span><strong>08</strong>완료</span>
+							<span><strong>26</strong>참여가능</span>
+						</div>
+					</div>
+
+					<div class="link_wrap">
+						<a href="#" class="reward new">리워드</a>
+						<a href="#" class="achieve">리포트</a> <!--20210924 문구 수정-->
+						<a href="#" class="bio">생체측정</a>
+						<a href="#" class="bookmark">북마크</a>
+					</div>
+					<ul class="btn_arr_wrap">
+						<!-- 20210924 문구 수정 및 메뉴 순서 변경 -->
+						<li><a href="#">코치관리</a></li>
+						<li><a href="#">생체 측정 관리</a></li>
+						<li><a href="#">제휴코드</a></li>
+						<li><a href="#">쿠폰내역</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--// 20210713 수정 -->
+		</header>
+		<div class="health_container">
+			<div class="scroll-inner" style="height: 700px; background-color: #ddd;">scroll test</div>
+		</div>
+	</div>
+
+	<!-- 20210809 진단/상담 팝업 -->
+	<div id="FMY046" class="health_full footer_no scroll" style="display: none;">
+		<div class="inner">
+			<div class="pop_wrap">
+				<div class="pop_header">
+					<div class="header_wrap">
+						<h1>진단/상담</h1>
+						<button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+					</div>
+				</div>
+				<div class="pop_container">
+					<div class="con_inner">
+						<div class="con_box">
+							<div class="pop_con type_mypage">
+								<div class="reservation_cont">
+									<div class="tab_wrap reservation_tab">
+										<div class="tabs">
+											<ul class="tab_menulist pt0 pb0">
+												<li><a class="tab_control" href="#tab-1">예약 현황</a></li>
+												<li class="active"><a class="tab_control" href="#tab-2">예약하기</a></li>
+											</ul>
+											<!-- 예약현황 -->
+											<div id="tab-1" class="tab_panel">
+												<div class="acco_list_wrap">
+													<div class="acco_list_item">
+														<!-- 20210906 마크업 추가 -->
+														<div class="rev_totalcount">
+															<P>총 이용/가능 횟수 : &nbsp;</P>
+															<span class="count">4/4</span>
+															<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+														</div>
+														<!-- //20210906 마크업 추가 -->
+														<div class="acco_item_head">
+															<P class="rv_state"><span class="time">10:00 ~ 10:30</span></P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<!-- 20210906 라벨 삭제 -->
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<!-- 20210906 count 삭제, 버튼 추가 -->
+																	<button class="btn_form_base rev_btn p">예약완료</button>
+																	<!-- 버튼 class 가이드
+																	예약완료, 상담완료 : 'p'
+																	상담대기, 상담거부 : 'g'
+																	-->
+																	<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>1회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																		예약취소 : 'b'
+																		상담하기 : 'p'
+																		상담완료, 상담거부 : 'g'
+																		-->
+																	<button type="button" class="btn_form_base rev_btn b"
+																		onclick="netiveUI.plugins.popAlert('#alertCancel');">예약취소</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																	<!-- 선택시 현재 팝업창 닫고 패키지 상세 화면 내 상세정보 및 유의사항 중 해당 진단/상담 혜택정보 팝업창 호출(Front 패키지 화면ID: FMB-002) -->
+							
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="acco_list_item">
+														<div class="acco_item_head">
+															<P class="rv_state">
+																<!-- 20210906 라벨 삭제 -->
+																<!-- <em class="wate">상담대기</em> -->
+																<span class="time">11:00 ~ 11:30</span>
+															</P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<!-- 20210906 count 삭제, 버튼 추가 -->
+																	<!-- <span class="count">4/4</span> -->
+																	<button class="btn_form_base rev_btn p">상담완료</button>
+																	<!-- 버튼 class 가이드
+																	예약완료, 상담완료 : 'p'
+																	상담대기, 상담거부 : 'g'
+																	-->
+																	<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>2회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																	예약취소 : 'b'
+																	상담하기 : 'p'
+																	상담완료, 상담거부 : 'g'
+																	-->
+																	<button type="button" class="btn_form_base rev_btn p"
+																		onclick="netiveUI.plugins.popAlert('#alertAdvice');">상담하기</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="acco_list_item">
+														<div class="acco_item_head">
+															<P class="rv_state">
+																<!-- 20210906 라벨 삭제 -->
+																<!-- <em class="complete">예약완료</em> -->
+																<span class="time">10:00 ~ 10:30</span></P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<!-- 20210906 count 삭제, 버튼 추가 -->
+																	<button class="btn_form_base rev_btn g">상담대기</button>
+																	<!-- 버튼 class 가이드
+																	예약완료, 상담완료 : 'p'
+																	상담대기, 상담거부 : 'g'
+																	-->																	
+																	<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>3회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																		예약취소 : 'b'
+																		상담하기 : 'p'
+																		상담완료, 상담거부 : 'g'
+																		-->
+																	<button type="button" class="btn_form_base rev_btn g">상담종료</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="acco_list_item">
+														<div class="acco_item_head">
+															<P class="rv_state">
+																<!-- 20210906 라벨 삭제 -->
+																<!-- <em class="wate">상담대기</em> -->
+																<span class="time">11:00 ~ 11:30</span>
+															</P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<!-- 20210906 count 삭제, 버튼 추가 -->
+																	<button class="btn_form_base rev_btn g">상담거부</button>
+																	<!-- 버튼 class 가이드
+																	예약완료, 상담완료 : 'p'
+																	상담대기, 상담거부 : 'g'
+																	-->
+																	<!-- <span class="count">4/4</span> -->
+																	<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>4회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																		예약취소 : 'b'
+																		상담하기 : 'p'
+																		상담완료, 상담거부 : 'g'
+																		-->
+																	<button type="button" class="btn_form_base rev_btn g">상담거부</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- //예약현황 -->
+							
+											<!-- 예약하기 -->
+											<div id="tab-2" class="tab_panel active">
+												<div class="tab_bg_wrap">
+													<div class="calendar_wrap">													
+														<div class="date_tabwrap">
+															<div class="date_header">
+																<h2 class="month_year">
+																	<button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+																	<em>2021.5</em>
+																	<button type="button" class="btn_next"><span class="hidden">다음</span></button>
+																</h2>
+																<!-- 20210812 아코디언 삭제 및 셀렉트박스로 변경 -->
+																<div class="date_selectwrap">
+																	<select name="" id="" class="date_select">
+																		<option value="주간">주간</option>
+																		<option value="월간">월간</option>
+																	</select>
+																</div>
+																<!-- //20210812 아코디언 삭제 및 셀렉트박스로 변경 -->
+															</div>
+															<!-- date_tabcont -->
+															<div class="date_tabcont">
+																<!-- 주간 캘린더 -->
+																<div id="dateWeek" class="date_box" style="display: block;">
+																	<table class="calendar">
+																		<thead>
+																			<tr>
+																				<th class="day_title" scope="col">일</th>
+																				<th class="day_title" scope="col">월</th>
+																				<th class="day_title" scope="col">화</th>
+																				<th class="day_title" scope="col">수</th>
+																				<th class="day_title" scope="col">목</th>
+																				<th class="day_title" scope="col">금</th>
+																				<th class="day_title" scope="col">토</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">16</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">17</button></td>
+																				<td class="day today" tabindex="0"><button type="button" class="day_number">18</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">19</button></td>
+																				<td class="day off" tabindex="0"><button type="button" class="day_number" disabled>20</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+																				<td class="day off" tabindex="0"><button type="button" class="day_number" >21</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+																				<td class="day" tabindex="0"><button type="button" class="day_number">22</button></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																	<!-- 진단/상담 상세정보 아코디언 -->
+																	<div class="acco_list_wrap">
+																		<div class="acco_list_item">
+																			<div class="acco_item_head">
+																				<div class="flex_between_wrap">
+																					<div class="item_head_cont">
+																						<p>진단/상담 상세정보</p>
+																					</div>
+																					<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																				</div>
+																			</div>
+																			<div class="acco_item_cont">																		
+																				<div class="reservation_box">
+																					<div class="rev_info">
+																						<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																						<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																						<p class="tooltip"><a href="javascript:void(0);"
+																								onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a></p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- 진단/상담 상세정보 아코디언 -->
+																</div>
+																<!-- 주간 캘린더 -->
+																<!-- 월간 캘린더 -->
+																<div id="dateMonth" class="date_box">
+																	<table class="calendar">
+																		<thead>
+																			<tr>
+																				<th class="day_title" scope="col">일</th>
+																				<th class="day_title" scope="col">월</th>
+																				<th class="day_title" scope="col">화</th>
+																				<th class="day_title" scope="col">수</th>
+																				<th class="day_title" scope="col">목</th>
+																				<th class="day_title" scope="col">금</th>
+																				<th class="day_title" scope="col">토</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr class="week">
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">25</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">26</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">27</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">28</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">29</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">30</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">1</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">2</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">3</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">4</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">5</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">6</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">7</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">8</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">9</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">10</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">11</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">12</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">13</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">14</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">15</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">16</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">17</button></td>
+																				<td class="day today" tabindex="0"><button type="button" class="day_number">18</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">19</button></td>
+																				<td class="day off" tabindex="0"><button type="button" class="day_number">20</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+																				<td class="day off" tabindex="0"><button type="button" class="day_number">21</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+																				<td class="day" tabindex="0"><button type="button" class="day_number">22</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">23</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">24</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">25</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">26</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">27</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">28</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">29</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">30</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">31</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">1</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">2</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">3</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">4</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">5</button></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																	<!-- 진단/상담 상세정보 아코디언 -->
+																	<div class="acco_list_wrap">
+																		<div class="acco_list_item">
+																			<div class="acco_item_head">
+																				<div class="flex_between_wrap">
+																					<div class="item_head_cont">
+																						<p>진단/상담 상세정보</p>
+																					</div>
+																					<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																				</div>
+																			</div>
+																			<div class="acco_item_cont">
+																				<div class="reservation_box">
+																					<div class="rev_info">
+																						<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																						<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																						<p class="tooltip"><a href="javascript:void(0);"
+																								onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a></p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- 진단/상담 상세정보 아코디언 -->
+																</div>
+																<!-- //월간 캘린더 -->
+															</div>
+															<!-- //date_tabcont -->
+														</div>
+														
+													
+													</div>
+												</div>
+												<div class="cont">
+													<h2>그림진단 심화상담</h2>
+													<div class="time_selectlist">
+														<!-- 20210812 데이터가 없는 경우, 'nodata' class 추가 -->
+														<div class="item nodata">
+															<p>진단/상담 예약 내역이 없습니다.</p>
+														</div>
+														<!-- //20210812 데이터가 없는 경우, 'nodata' class 추가 -->
+														<div class="item">
+															<input type="radio" id="time01" name="timeoption" class="time">
+															<label for="time01">10:00 ~ 10:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time02" name="timeoption" class="time">
+															<label for="time02">10:30 ~ 11:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time03" name="timeoption" class="time" checked>
+															<label for="time03">11:00 ~ 11:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time04" name="timeoption" class="time">
+															<label for="time04">11:30 ~ 12:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time05" name="timeoption" class="time">
+															<label for="time05">13:00 ~ 13:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time06" name="timeoption" class="time">
+															<label for="time06">13:30 ~ 14:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time07" name="timeoption" class="time" disabled> <!--예약불가능시 disabled 추가-->
+															<label for="time07">14:00 ~ 14:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time08" name="timeoption" class="time"> 
+															<label for="time08">14:30 ~ 15:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time09" name="timeoption" class="time" disabled> <!--예약불가능시 disabled 추가-->
+															<label for="time09">15:00 ~ 15:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time10" name="timeoption" class="time">
+															<label for="time10">15:30 ~ 16:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time11" name="timeoption" class="time">
+															<label for="time11">16:00 ~ 16:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time12" name="timeoption" class="time">
+															<label for="time12">16:30 ~ 17:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time13" name="timeoption" class="time">
+															<label for="time13">17:00 ~ 17:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time14" name="timeoption" class="time">
+															<label for="time14">17:30 ~ 18:00</label>
+														</div>
+													</div>
+												</div><div class="btn_wrap half">
+													<button type="button" class="btn bg-gray6 ui-close">취소</button>
+													<button type="button" class="btn" onclick="netiveUI.plugins.popAlert('#alertComplete');">예약</button>
+												</div>
+											</div>
+											<!-- 예약하기 -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //20210809 진단/상담 팝업 -->
+
+	<!-- 20210809 alert 팝업 추가 -->
+	<!-- 진단/상담 유의사항 -->
+    <div id="alertNotice" class="health_alert mypage_popup" style="display: none;"> <!--class 'mypage_popup' 추가-->
+        <div class="inner alert_notice">
+            <h1 class="tit_cont_03">진단/상담 유의사항</h1>
+            <ul class="rev_noticelist">
+                <li><p><span>1</span> 1대 1 상담이며, 상담자는 1인을 초과할 수 없습니다.</p></li>
+                <li><p><span>2</span> 예약확정 후에는 확정된 예약시간으로 부터 2일 전 이후부터는 취소할 수 없습니다.
+                (예. 2021년 12월 31일 오후 2시 예약확정 시, 2021년 12월 29일 오후 2시 이후 취소 불가, 서비스 이용 완료로 간주 됩니다.)</p></li>
+                <li><p><span>3</span> 예약 상담시간을 꼭 지켜주시기 바랍니다. 예약 후 상담을 받지 않아서 상담 회수에서 차감 됩니다.</p></li>
+                <li><p><span>4</span> 상담 10분전까지 입장을 해주시기 바랍니다.</p></li>
+                <li><p><span>5</span> 그외 궁금한 사항은 콜센터<br> <em>1600-3444</em> 문의 가능합니다.</p></li>
+            </ul>
+            <div class="btn_wrap">
+                <button type="button" class="btn_pop_dark ui-close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //진단/상담 유의사항 -->
+	<!-- 상담 시간 알림 -->
+	<div id="alertAdvice" class="health_alert mypage_popup" style="display: none;">
+		<div class="inner">
+			<h1 class="tit_cont_03">아직 상담 시간이 아니에요</h1>
+			<p class="msg">
+				7월 15일 18:00에 예약되어 있습니다.<br>
+				상담 5분전에 입장하세요.
+			</p>
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- //상담 시간 알림 -->
+
+	<!-- case01 : 예약완료 -->
+	<div id="alertComplete" class="health_alert mypage_popup" style="display: none;">
+		<div class="inner">
+			<h1 class="tit_cont_03">예약을 완료 했습니다.</h1>
+			<p class="msg">
+				부득이한 사정으로 예약을 취소하시려<br>
+				면 진단/상담 예약일 하루 전 오후 6시<br>
+				까지 취소가 가능합니다.
+			</p>
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- //case01 : 예약완료 -->
+
+	<!-- case02 : 예약불가능 -->
+	<div id="alertNcomplete" class="health_alert mypage_popup" style="display: none;">
+			<div class="inner">
+				<h1 class="tit_cont_03">예약 할 수 없습니다.</h1>
+				<p class="msg">
+					이용가능한 횟수를 모두 소진하여 예약<br>
+					이 불가 합니다.
+				</p>
+				<div class="btn_wrap">
+					<button type="button" class="btn_pop_dark ui-close">확인</button>
+				</div>
+			</div>
+		</div>
+	<!-- //case02 : 예약불가능 -->
+
+	<!-- case03 : 예약취소 불가 -->
+	<div id="alertNcancel" class="health_alert" style="display: none;">
+	        <div class="inner">
+	            <p class="msg">
+	                예약취소는 2일전까지 가능하며,<br>
+	                그 이후는 예약취소 불가합니다.
+	            </p>
+	            <div class="btn_wrap">
+	                <button type="button" class="btn_pop_dark ui-close">확인</button>
+	            </div>
+	        </div>
+	    </div>
+	<!-- //case03 : 예약취소 불가 -->
+
+	<!-- case04 : 예약취소 완료 -->
+	<div id="alertCancel" class="health_alert mypage_popup" style="display: none;">
+		<div class="inner">
+			<p class="msg">
+				예약취소를 완료 하였습니다.
+			</p>
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- //case04 : 예약취소 완료 -->
+
+	<!-- 20210818 마이페이지 nav 스크립트 삭제 (공통으로 변경) -->
+	<script>
+		//20210812 이전 아코디언 js 삭제
+		// 20210812 주간/월간 셀렉트박스
+		$('.date_select').change(function() {
+			var dateTypeSelect = $('.date_select option:selected').val();
+			if (dateTypeSelect == '주간') {
+				$('#dateWeek').show();
+				} else {
+				$('#dateWeek').hide();
+			}
+			if (dateTypeSelect == '월간') {
+				$('#dateMonth').show();
+				} else {
+				$('#dateMonth').hide();
+			}
+		}); 
+		//달력 버튼 이벤트
+		$('.calendar .day_number').click( function() {
+			$(this).addClass('selected');
+
+			if($(".day_number").hasClass("selected")) {
+				$('.day_number').removeClass('selected');
+			  	$(this).addClass('selected');
+			} 
+        });
+	</script>	
+</body>
+</html>

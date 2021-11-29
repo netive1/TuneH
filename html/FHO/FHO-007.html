@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건강 스코어</title>
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+    <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../../resources/js/chart.min.js"></script>
+    <!--20210825 chart.js (3.3.2 ver) cdn으로 테스트 진행-->
+    <script src="../../resources/js/ui.common.js"></script>
+    <script src="../../resources/js/swiper.min.js"></script>
+</head>
+
+<body class="ov_hidden">
+    <div class="health_wrap">
+        <div class="health_container">
+
+        </div>
+        <!--// health_container -->
+    </div>
+
+    <!-- popup -->
+    <div class="health_full actived" id="full001" style="display: block;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1 class="hidden">건강 스코어</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <!-- //pop header -->
+
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con pb0">
+                                <!-- 팝업 내용 -->
+                                <div class="coach_result_wrap">
+                                    <div class="seven_coach_cover">
+                                        <div class="seven_coach_head">
+                                            <div class="seven_play_wrap">
+                                                <div class="img_wrap">
+                                                    <img src="../../resources/img/sevent/seven_m_01.png" alt="">
+                                                </div>
+                                                <div class="move_play">
+                                                    <button><img src="../../resources/img/ico_video.png" alt=""></button>
+                                                </div>
+                                            </div>
+                                            <p class="members">에스쿱스</p>
+                                        </div>
+                                        <h1 class="tit_cont_02">line님의<br>건강스코어</h1>
+                                        <p class="text_mark">343<em>점</em></p>
+                                        <!-- 20210803 -->
+                                        <div class="coach_result_head">
+                                            <div class="progress_wrap">
+                                                <div class="step_wrap">
+                                                    <span class="total">0</span>
+                                                    <span class="total">1000</span>
+                                                </div>
+                                                <div class="progress">
+                                                    <i class="avg_progress">
+                                                        <span class="avg">이용자 평균 <em>870</em></span>
+                                                        <!--평균값-->
+                                                    </i>
+                                                    <i class="result_progress">
+                                                        <span class="value now">644</span>
+                                                        <!--사용자값-->
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //20210803 -->
+                                        <div class="new_score_wrap">
+                                            <div class="new_score_height good"><!-- good, better best  class 추가시 높게, 보통, 낮게 변경 good:낮게 better:보통 best:높게 -->
+                                                <div class="score_height_tit">
+                                                    <h2>전체 이용자 대비</h2>
+                                                </div>
+                                                <div class="score_height_txt">
+                                                    <p>활동, 마음, 수면 항목에서 <strong>30점</strong>이 <span class="cover"><span class="inner"><strong>낮게</strong> 나왔어요.</span></span></p>
+                                                </div>
+                                                <div class="score_height_result">
+                                                    <div class="advice_wrap">
+                                                        <p class="advice">적극적 관리가 필요합니다.</p><!-- 전체 이용자 대비 점수 낮게 나왔을때 -->
+                                                        <p class="advice" style="display: none;">좀더 노력이 필요합니다.</p><!-- 전체 이용자 대비 점수 보통 나왔을때 -->
+                                                        <p class="advice" style="display: none;">관리를 잘하고 계시네요.</p><!-- 전체 이용자 대비 점수 높게 나왔을때 -->
+                                                    </div>
+                                                    <p class="choice">관심주제를 선택해서 시작해 보세요.</p>
+                                                    <div class="activity">
+                                                        <h3 class="better">잘하고 있어요!</h3>
+                                                        <p class="none_advice" style="display: none;">주제 항목이 없습니다.</p><!-- 주제 항목이 없을 경우 -->
+                                                        <div class="advice_list">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>활동</span>
+                                                                        <img src="../../resources/img/ico_mind_05.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>마음</span>
+                                                                        <img src="../../resources/img/ico_mind_06.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>수면</span>
+                                                                        <img src="../../resources/img/ico_mind_04.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>정신</span>
+                                                                        <img src="../../resources/img/ico_mind_01.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>신체</span>
+                                                                        <img src="../../resources/img/ico_mind_02.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>영양</span>
+                                                                        <img src="../../resources/img/ico_mind_03.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>조절</span>
+                                                                        <img src="../../resources/img/ico_mind_07.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="activity">
+                                                        <h3 class="low">조금 더 노력해볼까요?</h3>
+                                                        <p class="none_advice">주제 항목이 없습니다.</p><!-- 주제 항목이 없을 경우 -->
+                                                        <div class="advice_list" style="display: none;">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>활동</span>
+                                                                        <img src="../../resources/img/ico_mind_05.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>마음</span>
+                                                                        <img src="../../resources/img/ico_mind_06.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>수면</span>
+                                                                        <img src="../../resources/img/ico_mind_04.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>정신</span>
+                                                                        <img src="../../resources/img/ico_mind_01.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>신체</span>
+                                                                        <img src="../../resources/img/ico_mind_02.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>영양</span>
+                                                                        <img src="../../resources/img/ico_mind_03.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://">
+                                                                        <span>조절</span>
+                                                                        <img src="../../resources/img/ico_mind_07.png" alt="">
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr_line">
+                                <div class="pb100">
+                                    <div class="tit_imgwrap mb60">
+                                        <img src="../../resources/img/img_title_seventeen.png" alt="">
+                                        <p>딱 맞는 관리방법을 <br>준비했어요.</p>
+                                    </div>
+                                    <div class="pop_service_cont">
+                                        <div class="pop_service_small">
+                                            <p>분석을 통해 체계적으로 관리할 수 있는 패키지를 추천해드려요.</p>
+                                        </div>
+                                        <div class="pop_service_btn">
+                                            <button type="button" class="btn_base_03 service_btn_w">추천받기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="coach_graph">
+                                    <span class="date">2021. 10. 11</span>
+                                    <!-- Swiper -->
+                                    <div class="swiper-container coach_graph_Swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <figure id="chartALegend">
+                                                    <!-- 20210909 -->
+                                                    <canvas id="myChartA" style="width:100%;height: 100%;"></canvas>
+                                                    <!--20210825-->
+                                                </figure>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <figure id="chartBLegend">
+                                                    <!-- 20210909 -->
+                                                    <canvas id="myChartB" style="width:100%;height: 100%;"></canvas>
+                                                    <!--20210825-->
+                                                </figure>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <figure id="chartCLegend">
+                                                    <!-- 20210909 -->
+                                                    <canvas id="myChartC" style="width:100%;height: 100%;"></canvas>
+                                                    <!--20210825-->
+                                                </figure>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <figure id="chartDLegend">
+                                                    <!-- 20210909 -->
+                                                    <canvas id="myChartD" style="width:100%;height: 100%;"></canvas>
+                                                    <!--20210825-->
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <p class="goal_tooltip"><a href="#"onclick="netiveUI.plugins.popFully('#popPointInfo');">건강스코어란?</a></p>
+                                </div>
+                                <!-- //팝업내용 -->
+
+                            </div>
+                            <button type="button" class="btn">확인</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //pop container -->
+
+                <!-- <div class="btn_wrap">
+          <button type="button" class="btn_pop_black2">맞춤형 코칭메세지 확인하기</button>
+        </div> -->
+                <!-- // pop btn -->
+            </div>
+
+        </div>
+    </div>
+    <!-- // -->
+    <!-- 건강스코어란 팝업 -->
+    <div class="health_full" id="popPointInfo" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>건강 스코어란?</h1>
+                        <button type="button" class="btn_close aui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <p>
+                                        건강 스코어는 현재 회원님의 건강 상태를 나타냅니다.
+                                    </p>
+                                    <p>
+                                        회원님의 건강관련 정보가 모이면 모일수록 더욱 더 정교한 건강 스코어 및 다양한 정보 제공이 가능합니다.
+                                    </p>
+                                    <p>
+                                        신체 건강 및 정신 건강은 5가지 라이프 스타일 영역에서 선택된 항목에 영향을 받습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //건강스코어란 팝업 -->
+
+
+
+    <!-- 20210803 프로그래스바 인터랙션 -->
+    <script>
+        $(function () {
+            progressAnimation();
+        });
+
+        //숫자만
+        var onlyNumber = function (num) {
+            return num.toString().replace(/[^0-9]/g, '');
+        };
+        //콤마넣기
+        var addComma = function (num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        };
+        //프로그레스 animation
+        var progressAnimation = function () {
+            var $now = parseInt(onlyNumber($('.now').text()), 10);
+            var $avg = parseInt(onlyNumber($('.avg').text()), 10);
+            var $total = parseInt(onlyNumber($('.total').text()), 10);
+            var $per = ($now / $total) * 100;
+            var $avgPer = ($avg / $total) * 100;
+            $('progress').val($per);
+            $('.progress i').animate({
+                width: $per + '%',
+            }, {
+                duration: Math.max(500, 1000), //속도
+                step: function (now, fx) {
+                    var $nowval = Math.round(($now / fx.end) * now);
+                    if (isNaN($nowval)) $nowval = 0;
+                    $('.now span').text(addComma($nowval));
+                    var $nowWidth = $('.now').width();
+                    var $avgWidth = $('.avg').width();
+                    var $nowMargin = $nowWidth / 2;
+                    var $nowLeft = $('.progress i').width() - $nowMargin;
+                    var $nowRight = $('.progress i').width() + $nowMargin
+                    var $wrapWidth = $('.progress').width();
+                    if ($nowLeft > 0 && $nowRight < $wrapWidth) {
+                        // 20210830 삭제
+                        // $('.now').css({
+                        //   'left': now + '%',
+                        //   'margin-left': -($nowMargin)
+                        // });
+                    }
+                    //이용자 평균 data가 0일 경우
+                    if ($avgPer <= 20) {
+                        $(this).find('.avg').addClass('minimum');
+                    } else {
+                        $(this).find('.avg').removeClass('minimum');
+                    }
+                    //이용자 평균      
+                    $('.avg_progress').css({ 'width': $avgPer + '%' });
+                }
+            });
+        }
+    </script>
+
+    <!-- 20210825 chart.js lib -->
+    <script>
+        $(document).ready(function () {
+            //swiper 실행
+            var swiper = new Swiper(".coach_graph_Swiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+            //chart 생성
+            var ctxA = document.getElementById("myChartA").getContext("2d"); //chart a 호출
+            var ctxB = document.getElementById("myChartB").getContext("2d"); //chart b 호출
+            var ctxC = document.getElementById("myChartC").getContext("2d"); //chart c 호출
+            var ctxD = document.getElementById("myChartD").getContext("2d"); //chart d 호출
+
+            //bar 그라디언트 효과 생성
+            var bgGradient = ctxA.createLinearGradient(0, 0, 0, 170);
+            bgGradient.addColorStop(0, 'rgb(25,211,197)');
+            bgGradient.addColorStop(1, 'rgb(203,139,218)');
+
+            //20210909
+            const getOrCreateLegendList = (chart, id) => {
+                const legendContainer = document.getElementById(id);
+                let listContainer = legendContainer.querySelector('ul');
+
+                if (!listContainer) {
+                    listContainer = document.createElement('ul');
+                    listContainer.style.display = 'flex';
+                    listContainer.style.flexDirection = 'row';
+                    listContainer.style.margin = 0;
+                    listContainer.style.padding = 0;
+
+                    legendContainer.appendChild(listContainer);
+                }
+
+                return listContainer;
+            };
+            const htmlLegendPlugin = {
+                id: 'htmlLegend',
+                afterUpdate(chart, args, options) {
+                    const ul = getOrCreateLegendList(chart, options.containerID);
+
+                    // Remove old legend items
+                    while (ul.firstChild) {
+                        ul.firstChild.remove();
+                    }
+
+                    // Reuse the built-in legendItems generator
+                    const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+                    ul.style.position = 'absolute';
+                    ul.style.top = '30px';
+                    ul.style.right = '24px';
+
+                    items.forEach(item => {
+                        const li = document.createElement('li');
+                        li.style.alignItems = 'center';
+                        li.style.cursor = 'pointer';
+                        li.style.display = 'flex';
+                        li.style.flexDirection = 'row';
+                        li.style.marginLeft = '15px';
+
+                        li.onclick = () => {
+                            const { type } = chart.config;
+                            if (type === 'pie' || type === 'doughnut') {
+                                // Pie and doughnut charts only have a single dataset and visibility is per item
+                                chart.toggleDataVisibility(item.index);
+                            } else {
+                                chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                            }
+                            chart.update();
+                        };
+
+                        // Color box
+                        const boxSpan = document.createElement('span');
+                        // boxSpan.style.background = item.fillStyle;
+                        boxSpan.style.background = typeof item.fillStyle === 'object' ? 'linear-gradient(rgb(25,211,197), rgb(203,139,218))' : item.fillStyle;
+                        boxSpan.style.borderColor = item.strokeStyle;
+                        boxSpan.style.borderWidth = item.lineWidth + 'px';
+                        boxSpan.style.display = 'inline-block';
+                        boxSpan.style.height = '13px';
+                        boxSpan.style.marginRight = '10px';
+                        boxSpan.style.width = '20px';
+                        boxSpan.style.borderRadius = '10px';
+
+                        // Text
+                        const textContainer = document.createElement('p');
+                        textContainer.style.color = item.fontColor;
+                        textContainer.style.margin = 0;
+                        textContainer.style.padding = 0;
+                        textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+                        textContainer.style.fontFamily = 'Noto Sans';
+                        textContainer.style.fontSize = '13px';
+                        textContainer.style.fontWeight = '600';
+
+                        const text = document.createTextNode(item.text);
+                        textContainer.appendChild(text);
+
+                        li.appendChild(boxSpan);
+                        li.appendChild(textContainer);
+                        ul.appendChild(li);
+                    });
+                }
+            };
+
+
+            //chart A
+            var myChartA = new Chart(ctxA, {
+                type: 'bar',
+                data: {
+                    labels: ['활동', '마음', '수면', '정신', '신채', '영양', '조절'],
+                    datasets: [
+                        {
+                            label: '전일', //작은 분류
+                            backgroundColor: ['rgba(0,38,74,0.2)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [20, 10, 59, 10, 25, 50, 20]
+                        },
+                        {
+                            label: '내 점수', //작은 분류
+                            backgroundColor: [bgGradient], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [52, 20, 50, 40, 30, 20, 78]
+                        },
+                        {
+                            label: '이용자 평균', //작은 분류
+                            backgroundColor: ['rgb(235,235,235)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [29, 10, 59, 70, 20, 35, 20]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: false,//20210909
+                    //20210909
+                    layout: {
+                        padding: {
+                            top: 80
+                        }
+                    },
+                    plugins: {
+                        //20210909
+                        htmlLegend: {
+                            containerID: 'chartALegend',
+                        },
+                        legend: {//20210909
+                            display: false,
+                        },
+                        tooltip: { //막대 상태값
+                            displayColors: false,
+                            xAlign: 'center',
+                            yAlign: 'bottom',
+                            boxWidth: 0,
+                            backgroundColor: '#222',
+                            titleAlign: 'top',
+                            titleColor: '#222',
+                            titleFont: {
+                                size: 0, //20210908
+                            },
+                            bodyColor: '#fff', //20210908
+                            bodyFont: {
+                                size: 11, //20210908
+                            },
+                        }
+                    },
+                    scales: {
+                        x: { //x축
+                            offset: true,
+                            ticks: {
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: false,
+                                offset: false
+                            }
+                        },
+                        y: {  //y축
+                            min: 0, //최소값
+                            max: 80, //최대값
+                            position: 'right',
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 20, //data 숫자 간격
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: true,
+                                offset: false
+                            }
+                        }
+                    },
+                },
+                plugins: [htmlLegendPlugin],//20210909
+            });
+
+            //chart B
+            var myChartB = new Chart(ctxB, {
+                type: 'bar',
+                data: {
+                    labels: ['활동', '마음', '수면', '정신', '신채', '영양', '조절'],
+                    datasets: [
+                        {
+                            label: '전일', //작은 분류
+                            backgroundColor: ['rgba(0,38,74,0.2)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [20, 10, 59, 10, 25, 50, 20]
+                        },
+                        {
+                            label: '내 점수', //작은 분류
+                            backgroundColor: [bgGradient], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [52, 20, 50, 40, 30, 20, 78]
+                        },
+                        {
+                            label: '이용자 평균', //작은 분류
+                            backgroundColor: ['rgb(235,235,235)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [29, 10, 59, 70, 20, 35, 20]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: false,//20210909
+                    layout: {//20210909
+                        padding: {
+                            top: 80
+                        }
+                    },
+                    plugins: {
+                        //20210909
+                        htmlLegend: {
+                            containerID: 'chartBLegend',
+                        },
+                        legend: {//20210909
+                            display: false,
+                        },
+                        tooltip: { //막대 상태값
+                            displayColors: false,
+                            xAlign: 'center',
+                            yAlign: 'bottom',
+                            boxWidth: 0,
+                            backgroundColor: '#222',
+                            titleAlign: 'top',
+                            titleColor: '#222',
+                            titleFont: {
+                                size: 0, //20210908
+                            },
+                            bodyColor: '#fff', //20210908
+                            bodyFont: {
+                                size: 11, //20210908
+                            },
+                        }
+                    },
+                    scales: {
+                        x: { //x축
+                            offset: true,
+                            ticks: {
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: false,
+                                offset: false
+                            }
+                        },
+                        y: {  //y축
+                            min: 0, //최소값
+                            max: 80, //최대값
+                            position: 'right',
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 20, //data 숫자 간격
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: true,
+                                offset: false
+                            }
+                        }
+                    },
+                },
+                plugins: [htmlLegendPlugin],//20210909
+            });
+
+            //chart C
+            var myChartC = new Chart(ctxC, {
+                type: 'bar',
+                data: {
+                    labels: ['활동', '마음', '수면', '정신', '신채', '영양', '조절'],
+                    datasets: [
+                        {
+                            label: '전일', //작은 분류
+                            backgroundColor: ['rgba(0,38,74,0.2)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [20, 10, 59, 10, 25, 50, 20]
+                        },
+                        {
+                            label: '내 점수', //작은 분류
+                            backgroundColor: [bgGradient], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [52, 20, 50, 40, 30, 20, 78]
+                        },
+                        {
+                            label: '이용자 평균', //작은 분류
+                            backgroundColor: ['rgb(235,235,235)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [29, 10, 59, 70, 20, 35, 20]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: false,//20210909
+                    layout: {//20210909
+                        padding: {
+                            top: 80
+                        }
+                    },
+                    plugins: {
+                        //20210909
+                        htmlLegend: {
+                            containerID: 'chartCLegend',
+                        },
+                        legend: {//20210909
+                            display: false,
+                        },
+                        tooltip: { //막대 상태값
+                            displayColors: false,
+                            xAlign: 'center',
+                            yAlign: 'bottom',
+                            boxWidth: 0,
+                            backgroundColor: '#222',
+                            titleAlign: 'top',
+                            titleColor: '#222',
+                            titleFont: {
+                                size: 0, //20210908
+                            },
+                            bodyColor: '#fff', //20210908
+                            bodyFont: {
+                                size: 11, //20210908
+                            },
+                        }
+                    },
+                    scales: {
+                        x: { //x축
+                            offset: true,
+                            ticks: {
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: false,
+                                offset: false
+                            }
+                        },
+                        y: {  //y축
+                            min: 0, //최소값
+                            max: 80, //최대값
+                            position: 'right',
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 20, //data 숫자 간격
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: true,
+                                offset: false
+                            }
+                        }
+                    },
+                },
+                plugins: [htmlLegendPlugin],//20210909
+            });
+
+            //chart D
+            var myChartD = new Chart(ctxD, {
+                type: 'bar',
+                data: {
+                    labels: ['활동', '마음', '수면', '정신', '신채', '영양', '조절'],
+                    datasets: [
+                        {
+                            label: '전일', //작은 분류
+                            backgroundColor: ['rgba(0,38,74,0.2)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [20, 10, 59, 10, 25, 50, 20]
+                        },
+                        {
+                            label: '내 점수', //작은 분류
+                            backgroundColor: [bgGradient], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [52, 20, 50, 40, 30, 20, 78]
+                        },
+                        {
+                            label: '이용자 평균', //작은 분류
+                            backgroundColor: ['rgb(235,235,235)'], barPercentage: 0.7, borderRadius: 14, //막대 둥글기 
+                            data: [29, 10, 59, 70, 20, 35, 20]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: false,//20210909
+                    layout: {//20210909
+                        padding: {
+                            top: 80
+                        }
+                    },
+                    plugins: {
+                        //20210909
+                        htmlLegend: {
+                            containerID: 'chartDLegend',
+                        },
+                        legend: {
+                            display: false,//20210909
+                        },
+                        tooltip: { //막대 상태값
+                            displayColors: false,
+                            xAlign: 'center',
+                            yAlign: 'bottom',
+                            boxWidth: 0,
+                            backgroundColor: '#222',
+                            titleAlign: 'top',
+                            titleColor: '#222',
+                            titleFont: {
+                                size: 0, //20210908
+                            },
+                            bodyColor: '#fff', //20210908
+                            bodyFont: {
+                                size: 11, //20210908
+                            },
+                        }
+                    },
+                    scales: {
+                        x: { //x축
+                            offset: true,
+                            ticks: {
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: false,
+                                offset: false
+                            }
+                        },
+                        y: {  //y축
+                            min: 0, //최소값
+                            max: 80, //최대값
+                            position: 'right',
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 20, //data 숫자 간격
+                                font: {
+                                    size: 13
+                                },
+                                color: '#b5b5b5',
+                            },
+                            grid: {
+                                display: true,
+                                offset: false
+                            }
+                        }
+                    },
+                },
+                plugins: [htmlLegendPlugin],//20210909
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목표 추적 - 추적</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+
+<body>
+  <div class="health_wrap type_goal type_bg_purple footer_no">
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" onClick="history.back();" class="btn_prev ver02"><span class="hidden">이전</span></button>
+        <h1>추적</h1>
+      </div>
+      <div class="user package on"><button type="button">홍길동</button></div>
+      <!-- user class 가이드
+        패키지 구매회원의 경우 : .package 추가
+        신규 알림 있을 시 : .on 추가
+      -->
+      <!-- //20210719 -->
+    </header>
+    <div class="health_container pt0">
+      <!--20210601 'pt0' 클래스 추가-->
+      <div class="tabs tracking_wrap">
+        <ul class="tab_menulist">
+          <li class="active"><a class="tab_control" href="#tab-1">추적하기</a></li>
+          <li><a class="tab_control" href="#tab-2">최근활동</a></li>
+        </ul>
+        <div class="tab_panel tracking_cont active" id="tab-1">
+          <div class="item_cont acco_list_wrap">
+            <div class="item">
+              <label for="termCheck01" class="tit_cont_01 ver02">걷기</label>
+              <button type="button" onclick="location.href='FMS-006.html'" class="btn_activity_view"><span
+                  class="hidden">활동 선택 화면으로 이동</span></button>
+              <!--20210601 'btn_activity_view' 로 클래스 변경, 아코디언 기능 삭제 -->
+            </div>
+            <ul class="item_detail">
+              <div class="content_form">
+                <p><span>거리<strong>400<em>m</em></strong></span><span>심박수<strong>50<em>bpm</em></strong></span></p>
+                <p><span>오르막<strong>10<em>m</em></strong></span><span>평균속도<strong>2<em>km/H</em></strong></span></p>
+                <p><span>내리막<strong>482<em>m</em></strong></span><span>활동칼로리<strong>10<em>kcal</em></strong></span></p>
+              </div>
+            </ul>
+          </div>
+          <div class="column_wrap">
+            <ul class="column_list">
+              <li><a href="FMS-007.html"><strong>활동<br>직접입력</strong></a></li>
+              <li><a href="FMS-009.html"><strong>신체<br>정보추가</strong></a></li>
+              <li><a href="FMS-008.html"><strong>수면<br>직접입력</strong></a></li>
+              <li><a href="../FST/FST-024.html"><strong>디바이스<br>앱 연결</strong></a></li>
+              <!--20210607 파일 경로 변경-->
+            </ul>
+            <!-- 20210903 버튼 터치 영역 변경 -->
+            <div class="timer_wrap">
+              <div class="timer_face">
+                <button type="button" class="timer_btn play">
+                  <p id="timer">START</p>
+                </button>
+              </div>
+            </div>
+            <div class="timer_wrap">
+              <div class="timer_face">
+                <button type="button" class="timer_btn pause">
+                  <p id="timer">00:01:10</p>
+                </button>
+              </div>
+            </div>
+            <!-- //20210903 버튼 터치 영역 변경 -->
+          </div>
+        </div>
+        <div class="tab_panel tracking_cont" id="tab-2">
+          <!-- 07/30 content_sub 삭제 -->
+          <div class="content_sub pd_type">
+            <div class="content_form content_form_box">
+              <p><span>거리<strong>400<em>m</em></strong></span><span>심박수<strong>50<em>bpm</em></strong></span></p>
+              <p><span>오르막<strong>10<em>m</em></strong></span><span>평균속도<strong>2<em>km/H</em></strong></span></p>
+              <p><span>내리막<strong>482<em>m</em></strong></span><span>활동칼로리<strong>10<em>kcal</em></strong></span></p>
+            </div>
+            <div class="content_form_box">
+              <div class="select_wrap">
+                <select name="#" id="" class="selectbox">
+                  <option value="">걸음 수</option>
+                  <option value="">거리</option>
+                  <option value="">활동시간</option>
+                  <option value="">활동 칼로리</option>
+                  <option value="">오르막</option>
+                </select>
+              </div>
+              <div class="select_wrap">
+                <select name="#" id="" class="selectbox">
+                  <option value="">오늘</option>
+                  <option value="" selected>최근7일</option>
+                  <!---임시 selected 처리-->
+                  <option value="">최근30일</option>
+                </select>
+              </div>
+              <figure>
+                <div>
+                  <img src="../../resources/img/@graph_goal.png" alt=""><!-- 임시 그래프 이미지 -->
+                </div>
+              </figure>
+            </div>
+            <div class="card_wrap_default">
+              <!-- 20210601 'card_wrap_default' 클래스 변경 -->
+              <h2 class="tit_cont_01">활동기록을<br>확인해보세요</h2>
+              <div class="card_default_list">
+                <!-- 20210601 'card_default_list' div 추가 -->
+                <div class="card">
+                  <!-- 20210601 card_info div 삭제 , card_default_date p태그 추가 -->
+                  <p class="card_default_date"><span>2021.05.19. 05:30</span></p>
+                  <div class="card_cont">
+                    <!-- 20210601 a태그로 변경 및 링크 연결 -->
+                    <a href="FMS-015.html" class="card_desc">
+                      걷기 활동을 하고 있습니다.<br>
+                      2시간 동안 활동 상태였습니다.
+                    </a>
+                    <!-- //20210601 a태그로 변경 및 링크 연결 -->
+                    <p class="card_data activity">296kcal(81.2 MET h)</p>
+                    <div class="card_util">
+                      <div>
+                        <a href="#" class="data_like"><span>266</span></a>
+                        <a href="#" class="data_comment"><span>1,466</span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <p class="card_default_date"><span>2021.05.19. 05:30</span></p>
+                  <div class="card_cont">
+                    <!-- 20210601 a태그로 변경 및 링크 연결 -->
+                    <a href="FMS-015.html" class="card_desc">
+                      걷기 활동을 하고 있습니다.<br>
+                      2시간 동안 활동 상태였습니다.
+                    </a>
+                    <!-- //20210601 a태그로 변경 및 링크 연결 -->
+                    <p class="card_data state">기분 최고!</p>
+                    <p class="card_data activity">296kcal(81.2 MET h)</p>
+                    <p class="card_data location">Seoul, Korea</p>
+                    <p class="card_data weather">부분적으로 흐린 낮, 6ºC</p>
+                    <ul class="card_util">
+                      <li><a href="#"><span class="hidden">좋아요</span></a></li>
+                      <li><a href="#"><span class="hidden">댓글</span></a></li>
+                    </ul>
+                    <figure class="card_attach">
+                      <img src="../../resources/img/img_cigna.png" alt="">
+                      <img src="../../resources/img/img_cigna.png" alt="">
+                      <img src="../../resources/img/img_cigna.png" alt="">
+                    </figure>
+                    <div class="card_util">
+                      <div>
+                        <a href="#" class="data_like"><span>266</span></a>
+                        <a href="#" class="data_comment"><span>1,466</span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  //20210923
+  $('.timer_btn').click(function() {
+    alert('버튼 영역 test');
+  })
+</script>
+</html>

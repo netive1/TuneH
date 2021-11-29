@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>마이 북마크</title>
+	<link rel="stylesheet" href="../../resources/css/guide.css">
+	<link rel="stylesheet" href="../../resources/css/swiper.min.css">
+	<script src="../../resources/js/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>
+	<script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body>
+	<div class="health_wrap footer_no type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>마이 북마크</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="health_container">
+			<div class="tab_wrap">
+				<div class="tabs">
+					<ul class="tab_menulist">
+						<li class="active"><a class="tab_control" href="#tab-1">전체</a></li>
+						<li><a class="tab_control" href="#tab-2">비디오</a></li>
+						<li><a class="tab_control" href="#tab-3">오디오</a></li>
+						<li><a class="tab_control" href="#tab-4">건강정보</a></li>
+					</ul>
+					<div class="tab_panel active" id="tab-1">
+						<div class="sum_wrap">
+							<span class="sum">총 30개</span>
+						</div>
+						<ul class="health_info_wrap">
+							<li>
+								<a href="#">
+									<div class="img_wrap">
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">오디오 피트니스</span>
+										<span class="tit">6분 플랭크</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on "></a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_wrap">
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">비디오 피트니스</span>
+										<span class="tit">올여름 건강하게 초고속 다이어트 진행하기</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on"></a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_wrap">
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">비디오 피트니스</span>
+										<span class="tit">눈으로 따라가는<br>플랭크</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on"></a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_wrap lock"> <!--20210719 유료 콘텐츠를 북마크한 경우 딤처리 클래스 →'lock'-->
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">건강정보</span>
+										<span class="tit">건강해지는 수면법</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on"></a>
+							</li>
+						</ul>
+						<button type="button" class="btn_more"><span>더보기</span></button>
+					</div>
+
+					<div class="tab_panel" id="tab-2">
+						<div class="sum_wrap">
+							<span class="sum">총 2개</span>
+						</div>
+						<ul class="health_info_wrap">
+							<li>
+								<a href="#">
+									<div class="img_wrap">
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">비디오 피트니스</span>
+										<span class="tit">올여름 건강하게 초고속 다이어트 진행하기</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on"></a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_wrap">
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">비디오 피트니스</span>
+										<span class="tit">눈으로 따라가는<br>플랭크</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on"></a>
+							</li>
+						</ul>
+						<!-- <button type="button" class="btn_more"><span>더보기</span></button> -->
+					</div>
+
+					<div class="tab_panel" id="tab-3">
+						<div class="sum_wrap">
+							<span class="sum">총 1개</span>
+						</div>
+						<ul class="health_info_wrap">
+							<li>
+								<a href="#">
+									<div class="img_wrap">
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">오디오 피트니스</span>
+										<span class="tit">6분 플랭크</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on "></a>
+							</li>
+						</ul>
+						<!-- <button type="button" class="btn_more"><span>더보기</span></button> -->
+					</div>
+
+					<div class="tab_panel" id="tab-4">
+						<div class="sum_wrap">
+							<span class="sum">총 1개</span>
+						</div>
+						<ul class="health_info_wrap">
+							<li>
+								<a href="#">
+									<div class="img_wrap">
+										<!--20210719 유료 콘텐츠를 북마크한 경우 딤처리 클래스 →'lock'-->
+										<img src="../../resources/img/@img_mybookmark.jpg" alt="">
+									</div>
+									<div class="txt_wrap">
+										<span class="sub">건강정보</span>
+										<span class="tit">건강해지는 수면법</span>
+									</div>
+								</a>
+								<a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on"></a>
+							</li>
+						</ul>
+						<!-- <button type="button" class="btn_more"><span>더보기</span></button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

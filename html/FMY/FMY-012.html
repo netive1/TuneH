@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자주 묻는 질문</title>
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+	<div class="health_wrap type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>자주 묻는 질문</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="health_container">
+			<div class="search_tag_wrap">
+				<!--input search-->
+				<div class="search_wrap">
+					<!--20210811 버튼추가-->
+					<button type="button" class="search_focus">검색</button>
+					<!--//20210811 버튼추가-->
+					<input type="search" class="search_box" placeholder="검색"/>
+					<button type="button" class="search_btn"><span class="hidden">검색</span></button>
+				</div>
+				<!--//input search-->
+
+				<a href="javascript:void(0)" class="tag">#회원</a>
+				<a href="javascript:void(0)" class="tag">#주문/결제</a>
+				<a href="javascript:void(0)" class="tag">#취소/환불</a>
+				<a href="javascript:void(0)" class="tag">#포인트</a>
+				<a href="javascript:void(0)" class="tag">#앱이용</a>
+				
+			</div>
+			<hr class="hr_line_03">
+			<div class="acco_list_wrap">
+				<div class="acco_list_item">
+					<div class="acco_item_head">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+								<span class="question">[회원] 닉네임을 변경하고 싶어요</span>
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<div class="acco_item_cont">
+						<p class="answer">서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다 서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다</p>
+					</div>
+				</div>
+				<div class="acco_list_item">
+					<div class="acco_item_head">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+								<span class="question">[회원] 닉네임을 변경하고 싶어요</span>
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<div class="acco_item_cont">
+						<p class="answer">서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다 서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다</p>
+					</div>
+				</div>
+			</div>
+			<div class="btn_wrap"><button type="button" class="btn_more"><span>더보기</span></button></div>
+		</div>
+	</div>
+</body>
+
+<!-- 20210811 공통 스크립트 html내 작성 -->
+<script>
+	//input serach
+	$('.search_focus').click(function () {
+		$(this).parent().toggleClass('open');
+		$(this).hide();
+	});
+</script>
+</html>

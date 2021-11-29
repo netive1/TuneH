@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>앱 설정</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_setting appsetting"> <!--20210715 'footer_no' class 삭제-->
+  <!-- 20210721 -->
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>앱 설정</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <!-- //20210721 -->
+  <div class="health_container pt10">
+    <ul class="appsetting_list ">
+      <li>
+        <em>화면 켜짐 유지</em>
+        <label class="toggle" for="appSet01"><input type="checkbox" id="appSet01" checked><div class="toggle_slider round"></div></label>
+      </li>
+      <li>
+        <em>걸음 수 자동 계산</em>
+        <label class="toggle" for="appSet02"><input type="checkbox" id="appSet02">
+          <div class="toggle_slider round"></div>
+        </label>
+      </li>
+      <li class="ios">
+        <a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo1');">
+          <em>알림</em>
+        </a>
+      </li>
+      <li class="aos">
+        <em>알림</em>
+        <label class="toggle" for="appSet03"><input type="checkbox" id="appSet03">
+          <div class="toggle_slider round"></div>
+        </label>
+      </li>
+      <li>
+        <em>야간 알림(22시~08시)</em>
+        <label class="toggle" for="appSet04"><input type="checkbox" id="appSet04">
+          <div class="toggle_slider round"></div>
+        </label>
+      </li>   
+    </ul>
+    <hr>
+    <!-- 20210810 광고성 정보 수신 동의 추가 -->
+    <ul class="appsetting_list ad_agreelist">
+      <li>
+        <em>광고성 정보 수신 동의</em>
+        <label class="toggle" for="appSet05"><input type="checkbox" id="appSet05" checked>
+          <div class="toggle_slider round"></div>
+        </label>
+      </li>
+      <li class="ad_chkwrap">
+        <div class="ad_chkinner">
+          <div class="check_box">
+            <input type="checkbox" id="adChk1" class="chkItem" name="" checked>
+            <label for="adChk1">SMS</label>
+          </div>
+          <div class="check_box">
+            <input type="checkbox" id="adChk2" class="chkItem" name="" checked>
+            <label for="adChk2">이메일</label>
+          </div>
+          <!-- 20210916 추가 -->
+          <div class="check_box iaos">
+            <input type="checkbox" id="adChk4" class="chkItem" name="" checked>
+            <label for="adChk4">PUSH 수신 동의</label>
+          </div>
+          <!-- Android Case -->
+          <div class="check_box aos"> 
+            <input type="checkbox" id="adChk3" class="chkItem" name="" checked>
+            <label for="adChk3">PUSH 야간 수신동의 (21시~08시)</label>
+          </div>
+          <!-- //Android Case -->
+        </div>
+        <div>
+        <p class="txt">광고 정보 수신 동의를 하시면 쿠폰, 이벤트 등 혜택<br> 정보를 받으실 수 있습니다.</p>
+        <p class="tooltip"><a href="FST-010.html">광고성 정보 수신 동의 약관</a></p>
+      </li>
+    </ul>
+    <hr>
+    <!-- //20210810 광고성 정보 수신 동의 추가 -->
+    <ul class="appsetting_list">
+      <li>
+        <em>단위</em>
+        <span class="unit">미터</span> <!--20210805 span태그로 변경-->
+      </li>
+      <li>
+        <em>혈액 수치</em>
+        <span class="unit">mg/dl</span> <!--20210805 span태그로 변경-->
+      </li>
+      <li>
+        <em>온도 단위</em>
+        <span class="unit">℃</span> <!--20210805 span태그로 변경-->
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

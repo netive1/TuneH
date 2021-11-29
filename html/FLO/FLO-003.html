@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입/로그인</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+
+</head>
+<body>
+  <div class="health_wrap type_login">
+    <div class="health_container">
+      <h1 class="tit_cont_02">우리 같이<br/>건강한 습관을<br/>만들어요</h1>
+
+      <div class="inp_wrap">
+        <input class="inp_base" type="text" placeholder="이메일">
+        <input class="inp_base" type="password" placeholder="비밀번호">
+      </div>
+
+      <div class="between_wrap">
+        <div class="check_box">
+          <div class="item">
+            <input type="checkbox" id="check01" class="chkItem">
+            <label for="check01">자동로그인</label>
+          </div>
+        </div>
+        <a href="#none;" role="button" class="btn_txt_02">비밀번호 찾기</a>
+      </div>
+
+      <button type="button" class="btn_base_01 full primary" onclick="netiveUI.plugins.popAlert('#alert001');">로그인</button>
+      <button type="button" class="btn_base_01 full primary_line">이메일로 회원가입</button>
+
+      <div class="sns_wrap">
+        <span>SNS 계정으로 시작</span>
+        <div class="sns_item">
+          <a class="sns kakao on" href="#">카카오톡</a>
+          <a class="sns naver" href="#">네이버</a>
+          <a class="sns facebook" href="#">페이스북</a>
+          <!-- 20210526-twitter 삭제 -->
+          <a class="sns apple" href="#">애플</a><!-- ios 일때만 보이게-->
+          <a class="sns google" href="#">구글</a>
+        </div>
+        <!-- 20210902 문구 추가 -->
+        <button class="notice layout_type" onclick="netiveUI.plugins.popAlert('#alert006');">
+          <span>SNS 로그인이 안되시나요?</span>
+				</button>
+        <a href="javascript:void(0);" onclick="netiveUI.plugins.popAlert('#alertCscenter');" class="mt40 cs">고객센터<span> 02-6330-3410</span></a> <!--20210817 고객센터 번호 변경-->
+      </div>
+      
+    </div>
+
+
+    <!-- 20210902 팝업 전체 마크업 내 위치 변경 -->
+    <!-- 팝업 -->
+    <!-- case 01 : 고객센터 전화번호 또는 아이콘 선택 시 alert 메시지 -->
+    <!-- 20210730 고객센터 연결 alert -->
+    <div id="alertCscenter" class="health_alert" style="display: none;">
+      <div class="inner">
+        <p class="msg">고객센터로 전화연결을<br> 진행하시겠습니까?</p>
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_line_dark ui-close">취소</button>
+          <button type="button" onclick="document.location.href='tel:02-6330-3410'" class="btn_pop_dark">고객센터 연결</button> <!--20210817 고객센터 번호 변경-->
+        </div>
+      </div>
+    </div>
+    
+    <!-- //20210730 고객센터 연결 alert -->
+
+    <!-- alert -->
+    <!-- case01 : 비밀번호 변경일이 6개월 경과 시 -->
+    <div class="health_alert" id="alert001" style="display: none;">
+      <div class="inner">
+        <p class="msg">
+          고객님의 소중한 개인정보보호를 위해<br>비밀번호 변경이 필요합니다.<br>(비밀번호 6개월 사용 초과) 
+        </p>
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_primary ui-close">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // -->
+    <!-- case02 : 강제탈퇴 계정으로 로그인 진행 시 -->
+    <div class="health_alert" id="alert002" style="display: none;">
+      <div class="inner">
+        <p class="msg">
+          고객님께서는 법령 또는 이용 정책 위반으로 인해<br>서비스 이용이 정지되었습니다.<br>자세한 내용은 고객센터에 문의해주세요.<br><br>고객센터 02-6330-3410
+        </p>
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_light ui-close">확인</button><!-- 20210526-클래스 수정-->
+          <button type="button" class="btn_pop_primary">고객센터 연결</button>
+        </div>
+      </div>
+    </div>
+    <!-- // -->
+    <!-- case03 : 이메일 또는 비밀번호가 불일치 시 -->
+    <div class="health_alert" id="alert003" style="display: none;">
+      <div class="inner">
+        <p class="msg">
+          이메일 또는 비밀번호가 일치하지 않습니다.<br>확인 후 다시 시도해주세요.<br>(현재 1회/5회 오류)
+        </p>
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_primary ui-close">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // -->
+    <!-- case04 : 로그잇 횟수 초과 시 -->
+    <div class="health_alert" id="alert004" style="display: none;">
+      <div class="inner">
+        <p class="msg">
+          로그인 시도가 일정 횟수를 초과하여<br>비밀번호가 잠금 되었습니다.<br>비밀번호 찾기를 통해 다시 설정해주세요.
+        </p>
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_primary ui-close">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- // -->
+    <!-- case05 : 휴면계정으로 로그인 진행 시 -->
+    <div class="health_alert" id="alert005" style="display: none;">
+      <div class="inner">
+        <p class="msg">
+          최종 접속 후 1년이 경과하여 휴면상태입니다.<br>휴면상태를 해제하기 위해서는<br>이메일 인증이 필요합니다.
+        </p>
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_light ui-close">취소</button>
+          <button type="button" class="btn_pop_primary">인증하기</button>
+        </div>
+      </div>
+    </div>
+    <!-- // -->
+
+  
+    <!-- 20210902 팝업 추가 -->
+    <div id="alert006" class="health_alert" style="display: none;">
+      <div class="inner">
+        <p class="msg">
+          SNS로 가입하신 고객은 해당 SNS를 탈퇴한 경우 로그인 서비스를 이용할 수 없습니다.<br>계정 안내를 원하시면 고객센터 <br>(02-6330-3410)로 연락 주시면 안내드리겠습니다.
+        </p>
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_dark ui-close">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- //20210902 팝업 추가 -->
+  </div>
+
+</body>
+</html>

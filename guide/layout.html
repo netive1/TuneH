@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <title>layout default</title>
+  <link rel="stylesheet" href="../resources/css/guide.css">
+  <script type="text/javascript" src="../resources/js/jquery-3.6.0.min.js"></script>
+  <style>
+    .layout_guide .health_container {min-height: 700px;}
+  </style>
+</head>
+<body class="layout_guide">
+  <div class="health_wrap">
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>fixed header</h1>
+      </div>
+      <div class="user package on"><button type="button">홍길동</button></div>   
+      <!-- user class 가이드
+        패키지 구매회원의 경우 : .package 추가
+        신규 알림 있을 시 : .on 추가
+      -->
+    </header>
+    <div class="health_container">
+      <h1 class="tit_head_01">매일이 건강한<br>습관의 시작</h1>
+      <h1 class="tit_head_02">건강한<br>라이프스타일을<br>즐겨봐요</h1>
+      <h1 class="tit_cont_01">본인확인을 위해<br>이메일 인증을<br>진행해주세요.</h1>
+      <h1 class="tit_cont_02">생년월일을<br>입력해주세요.</h1>
+      <h1 class="tit_cont_03">생년월일을<br>입력해주세요.</h1>
+      <p class="tit_sub_02">스트레스 지수와 건강 활동 체크를 위해<br>앱 접근권한이 필요합니다.</p>
+      <span class="inp_label">활동 사진 등록</span>
+    </div>
+    <div class="btn_btm_fixed">
+      <button type="button" onclick="location.href='#'" class="btn">fixed fooetr</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제휴코드 등록</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+</head>
+<body>
+<div class="health_wrap type_setting footer_no type_goal">
+  <!-- 20210721 -->
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>제휴코드 등록</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <!-- //20210721 -->
+  <div class="health_container">
+    <h1 class="tit_cont_01">제휴 코드 등록이<br>완료 되었어요!</h1><!--20210607 문구 수정-->
+    <p class="tit_sub_02">임직원분들의 건강을 책임지겠습니다.<br>
+      Tune H와 함께 다양한 서비스를 즐겨보세요!</p>
+    <!-- 20210810 마크업 추가 -->
+    <div class="btn_wrap mt90">
+      <button type="button" class="btn btn_base_02">등록</button>
+    </div>
+    <div class="health_info_tabs">
+        <div class="health_info_section type_slide_card">
+          <div class="coupon_wrap">
+            <span class="inp_label">나의 제휴코드</span>
+            <div class="swiper-container type_code">
+              <div class="swiper-wrapper">  
+                <!-- 20210810 제휴코드가 없을 경우 클래스 위치 변경 -->
+                <div class="swiper-slide">
+                  <ul class="coupon_list_wrap">
+                    <li class="nodata">
+                      <p>등록된 제휴코드가 없습니다.</p>
+                    </li>
+                  </ul>
+                </div>
+                <!-- //20210810 제휴코드가 없을 경우 클래스 위치 변경 -->
+                <div class="swiper-slide">
+                  <ul class="coupon_list_wrap">
+                    <li>
+                      <div class="chkwrap">
+                        <input type="checkbox" id="chk01" class="chkItem"><label for="chk01"><span>체크박스</span></label>
+                      </div>
+                      <div class="coupon_top">
+                        <!-- 20210802 -->
+                        <!-- date 클래스에 추가 (이용중/이용가능/이용대기/기간종료)
+                          p: 이용중 (보라)
+                          b : 이용가능 (검정)
+                          y : 이용대기 (컬러미지정)
+                          g: 기간만료 (회색)
+                        -->
+                        <span class="date p">이용중</span>   
+                        <p class="tit">시그나코리아</p>
+                        <p>임직원분들의 건강을 책임지겠습니다.<br>
+                          Tune H 와 함께 다양한 서비스를 즐겨보세요.
+                        </p>
+                      </div>
+                      <div class="coupon_cont">
+                        <span class="date_txt">이용기간</span>
+                        <span class="date_num">2021.07.02 - 2021.08.21</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul class="coupon_list_wrap">
+                    <li>
+                      <div class="chkwrap">
+                        <input type="checkbox" id="chk02" class="chkItem"><label for="chk02"><span>체크박스</span></label>
+                      </div>
+                      <div class="coupon_top">
+                        <!-- date 클래스에 추가 (이용중/이용가능/이용대기/기간종료)
+                          p: 이용중 (보라)
+                          b : 이용가능 (검정)
+                          y : 이용대기 (컬러미지정)
+                          g: 기간만료 (회색)
+                        -->
+                        <span class="date b">이용가능</span>
+                        <p class="tit">시그나코리아2</p>
+                        <p>임직원분들의 건강을 책임지겠습니다.<br>
+                          Tune H 와 함께 다양한 서비스를 즐겨보세요.
+                        </p>
+                      </div>
+                      <div class="coupon_cont">
+                        <span class="date_txt">이용기간</span>
+                        <span class="date_num">2021.07.02 - 2021.08.21</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul class="coupon_list_wrap">
+                    <li>
+                      <div class="chkwrap">
+                        <input type="checkbox" id="chk03" class="chkItem"><label for="chk03"><span>체크박스</span></label>
+                      </div>
+                      <div class="coupon_top">
+                        <!-- date 클래스에 추가 (이용중/이용가능/이용대기/기간종료)
+                          p: 이용중 (보라)
+                          b : 이용가능 (검정)
+                          y : 이용대기 (컬러미지정)
+                          g: 기간만료 (회색)
+                        -->
+                        <span class="date b">이용대기</span>
+                        <p class="tit">시그나코리아3</p>
+                        <p>임직원분들의 건강을 책임지겠습니다.<br>
+                          Tune H 와 함께 다양한 서비스를 즐겨보세요.
+                        </p>
+                      </div>
+                      <div class="coupon_cont">
+                        <span class="date_txt">이용기간</span>
+                        <span class="date_num">2021.07.02 - 2021.08.21</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide swiper-slide-next">
+                  <ul class="coupon_list_wrap end"> <!--기간종료 일 경우 'end' class 추가-->
+                    <li>
+                      <div class="coupon_top">
+                        <!-- date 클래스에 추가 (이용중/이용가능/이용대기/기간종료)
+                          p: 이용중 (보라)
+                          b : 이용가능 (검정)
+                          y : 이용대기 (컬러미지정)
+                          g: 기간만료 (회색)
+                        -->
+                        <span class="date g">기간종료</span>
+                        <p class="tit">시그나코리아4</p>
+                        <p>임직원분들의 건강을 책임지겠습니다.<br>
+                          Tune H 와 함께 다양한 서비스를 즐겨보세요.
+                        </p>
+                      </div>
+                      <div class="coupon_cont">
+                        <span class="date_txt">이용기간</span>
+                        <span class="date_num">2021.07.02 - 2021.08.21</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>     
+              </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+          </div>
+        </div>
+      </div>
+      <!-- //20210810 마크업 추가 -->
+  </div>
+</div>
+<script>
+  var swiper = new Swiper(".type_code", {
+    slidesPerView: "auto",
+    spaceBetween: 11
+  });
+  //20210811 chk event 수정
+  $('.type_code .coupon_list_wrap li').on('change', '.chkItem', function () {
+    if (this.checked) {
+      $(this).parents('li').addClass('on');
+    } else {
+      $(this).parents('li').removeClass('on');
+    }
+  });
+</script>
+</body>
+</html>

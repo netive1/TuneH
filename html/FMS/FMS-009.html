@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강정보 추가</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/chart.min.js"></script> <!--20210907 chart.js-->
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body>
+<div class="health_wrap type_goal footer_no">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>건강정보 추가</h1>
+      <!-- 20210716 새로고침 삭제 및 마크업 추가 -->
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container pt0 both24"> <!--20210909 both24 class 추가-->
+    <div class="tabs health_info_tabs">
+      <ul class="tab_menulist pt40 pb0">
+          <li class="active"><a class="tab_control" href="#tab-1">오늘</a></li>
+          <li><a class="tab_control" href="#tab-2">최근7일</a></li>
+          <li><a class="tab_control" href="#tab-3">최근1개월</a></li>
+      </ul> 
+      <!-- 20210907 -->
+      <div class="tab_panel active" id="tab-1">
+        <div class="item_wrap">
+          <span class="inp_label">기본정보</span>
+          <div class="item_length_box">
+            <p><span>성별</span><strong>남성</strong></p>
+            <p><span>나이</span><strong>30세</strong></p>
+            <p><span>키</span><strong>1.8m</strong></p>
+          </div>
+          <div class="health_info_section">
+            <!-- 신체정보 -->
+            <!--20210908 data가 없을 경우 'nodata' class 추가-->
+            <div class="nodata swiper-container goalSlider"> 
+              <div class="between_wrap"><span class="inp_label">신체정보</span><button type="button" onclick="location.href='FMS-011.html'" class="btn_form_line">정보입력</button></div> <!--20210716-->
+              <!-- 상위 swiper-container에서 'nodata' class 추가 시 swiper-wrapper hidden 처리 (css에 작성됨)-->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- 20210907 graph_hd 대신 차트 옵션 label 사용(공통) -->
+                  <!-- 20210907 차트 삽입(공통)-->
+                  <figure id="chartALegend"> <!--20210909-->
+                    <canvas id="myChartA" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                  <!-- //20210907차트 삽입(공통) -->
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartBLegend"> <!--20210909-->
+                    <canvas id="myChartB" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartCLegend"> <!--20210909-->
+                    <canvas id="myChartC" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartDLegend"> <!--20210909-->
+                    <canvas id="myChartD" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+              </div>
+              <!--//20210908 data가 없을 경우 'nodata' class 추가-->
+            </div>
+            <!-- //신체정보 -->
+            <!-- 심박수 -->
+            <div class="swiper-container goalSlider">
+              <div class="between_wrap"><span class="inp_label">심박수</span><button type="button" onclick="location.href='FMS-011.html'" class="btn_form_line">정보입력</button></div> <!--20210716-->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- 20210907 graph_hd 대신 차트 옵션 label 사용(공통) -->
+                  <!-- 20210907 차트 삽입 -->
+                  <figure id="chartELegend"> <!--20210909-->
+                    <canvas id="myChartE" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                  <!-- //20210907차트 삽입 -->
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartFLegend"> <!--20210909-->
+                    <canvas id="myChartF" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <!-- //심박수 -->
+            <!-- 혈액수치 -->
+            <div class="swiper-container goalSlider">
+              <div class="between_wrap"><span class="inp_label">혈액수치</span><button type="button"
+                  onclick="location.href='FMS-011.html'" class="btn_form_line">정보입력</button></div>
+              <!--20210716-->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- 20210907 graph_hd 대신 차트 옵션 label 사용(공통) -->
+                  <!-- 20210907 차트 삽입 -->
+                  <figure id="chartGLegend"> <!--20210909-->
+                    <canvas id="myChartG" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                  <!-- //20210907차트 삽입 -->
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartHLegend"> <!--20210909-->
+                    <canvas id="myChartH" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartILegend"> <!--20210909-->
+                    <canvas id="myChartI" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartJLegend"> <!--20210909-->
+                    <canvas id="myChartJ" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartKLegend"> <!--20210909-->
+                    <canvas id="myChartK" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure id="chartLLegend">
+                    <canvas id="myChartL" style="width:100%;height: 100%;"></canvas>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <!-- //혈액수치 -->
+          </div>
+        </div>
+      </div>
+      <!-- 20210602 마크업 변경 #tab-2 ~ #tab3 -->
+      <div class="tab_panel" id="tab-2">
+        <div class="item_wrap">
+          <span class="inp_label">기본정보</span>
+          <div class="item_length_box">
+            <p><span>성별</span><strong>남성</strong></p>
+            <p><span>나이</span><strong>30세</strong></p>
+            <p><span>키</span><strong>1.8m</strong></p>
+          </div>
+          <div class="health_info_section">
+            <div class="swiper-container goalSlider">
+              <div class="between_wrap"><span class="inp_label">심박수</span><button type="button" onclick="location.href='FMS-011.html'" class="btn_form_line">정보입력</button></div>
+              <!--20210716-->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure>
+                    <!-- 그래프 이미지는 영역 표시위한 임시 이미지 (여백, 스타일 고려x) -->
+                    <img src="../../resources/img/@graph_img.png" alt="">
+                    <!-- <canvas id="" style="width:100%;height: 100%;"></canvas>  -->
+                    <!--차트 삽입-->
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="../../resources/img/@graph_img.png" alt="">
+                    <!-- <canvas id="" style="width:100%;height: 100%;"></canvas> -->
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //20210907 -->
+      
+      <div class="tab_panel" id="tab-3">
+        <div class="item_wrap">
+          <span class="inp_label">기본정보</span>
+          <div class="item_length_box">
+            <p><span>성별</span><strong>남성</strong></p>
+            <p><span>나이</span><strong>30세</strong></p>
+            <p><span>키</span><strong>1.8m</strong></p>
+          </div>
+          <div class="health_info_section">
+            <!-- 20210909 swiper 삭제 scroll 구현-->
+            <!-- 신체정보 -->
+            <div class="col_grid "> <!-- 데이터가 없을 경우 'nodata' class 추가 -->
+              <div class="between_wrap"><span class="inp_label">신체정보</span><button type="button" onclick="location.href='FMS-010.html'" class="btn_form_line">정보입력</button></div> 
+              <div class="scroll_inner"> <!--20210909 scroll_inner 추가-->
+                <ul class="ui-set-width"> <!--20210909 ui-set-width 추가, script로 width 값 설정-->
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <!-- <canvas id="" style="width:100%;height: 100%;"></canvas> -->
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <!-- <canvas id="" style="width:100%;height: 100%;"></canvas> -->
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- //신체정보 -->
+
+            <!-- 심박수 -->
+            <div class="col_grid">
+              <div class="between_wrap"><span class="inp_label">심박수</span><button type="button" onclick="location.href='FMS-011.html'" class="btn_form_line">정보입력</button></div>
+              <div class="scroll_inner"> <!--20210909 scroll_inner 추가-->
+                <ul class="ui-set-width"> <!--20210909 ui-set-width 추가, script로 width 값 설정-->
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <!-- <canvas id="" style="width:100%;height: 100%;"></canvas> -->
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <!-- <canvas id="" style="width:100%;height: 100%;"></canvas> -->
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- //심박수 -->
+
+            <!-- 혈액수치 -->
+            <div class="col_grid">
+              <div class="between_wrap"><span class="inp_label">혈액수치</span><button type="button" onclick="location.href='FMS-012.html'" class="btn_form_line">정보입력</button></div>
+              <div class="scroll_inner"> <!--20210909 scroll_inner 추가-->
+                <ul class="ui-set-width"> <!--20210909 ui-set-width 추가, script로 width 값 설정-->
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <!-- <canvas id="" style="width:100%;height: 100%;"></canvas> -->
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                  <li>
+                    <figure id="" style="width: 800px;">
+                      <!-- <canvas id="" style="width:100%;height: 100%;"></canvas> -->
+                      <img src="../../resources/img/@graph_img.png">
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- //혈액수치 -->
+            <!-- //20210909 -->
+          </div>
+        </div>
+      </div>
+      <!-- //20210602 마크업 변경 #tab-2 ~ #tab3 -->
+  </div><!--//infoTabs-->
+  <!-- 20210716 의료기록 정보 입력 -->
+  <div class="health_info_section medical_info">
+    <div class="content_list">
+      <dl>
+        <dt>의료기록<button type="button" onclick="location.href='FMS-013.html'" class="btn_form_line">정보입력</button></dt>
+        <dd>심근 및 심실비대증 여부
+          <!--<span class="goal_count yes">예</span>--><span class="goal_count no">아니오</span>
+        </dd>
+        <dd>당뇨병 여부
+          <!--<span class="goal_count yes">예</span>--><span class="goal_count no">아니오</span>
+        </dd>
+        <dd>고혈압 여부
+          <!--<span class="goal_count yes">예</span>--><span class="goal_count no">아니오</span>
+        </dd>
+        <!-- 20210716 의료기록이 없는 경우 case -->
+        <dd class="dataNone">의료기록을 입력 해주세요.</dd>
+      </dl>
+    </div>
+  </div>
+  <!-- //20210716 의료기록 정보 입력 -->
+</div>
+
+<!-- 20210907 chart js 삽입 -->
+<script>
+
+  //20210909 추가
+  $.fn.setWidth = function() {
+    return this.each(function() {
+      var $t = $(this),
+          len = $t.length,
+          sumWidth = 0,
+          etcWidth = 204;
+
+      $t.find('figure').each(function(i) {
+        sumWidth += $t.find('figure').eq(i).width()
+      });
+      // console.log(sumWidth + etcWidth);
+      $t.width(sumWidth + etcWidth);
+    });
+  }
+
+  
+
+    // console.log($('.ui-set-width').length);
+    // console.log($('.ui-set-width').find('li').length);
+    // console.log($('.ui-set-width').find('figure').eq(0).width() + 100);
+
+  $(document).ready(function(){
+    $('.ui-set-width').setWidth(); //20210909 추가
+
+
+    //swiper 실행
+    var swiper = new Swiper(".goalSlider", {
+      slidesPerView: 'auto',
+      // spaceBetween: 12,
+      observer: true,
+      observeParents: true,
+    });
+
+    //chart 생성
+    var ctxA = document.getElementById("myChartA").getContext("2d"); //chart a 호출
+    var ctxB = document.getElementById("myChartB").getContext("2d"); //chart b 호출
+    var ctxC = document.getElementById("myChartC").getContext("2d"); //chart c 호출
+    var ctxD = document.getElementById("myChartD").getContext("2d"); //chart d 호출
+    var ctxE = document.getElementById("myChartE").getContext("2d"); //chart e 호출
+    var ctxF = document.getElementById("myChartF").getContext("2d"); //chart f 호출
+    var ctxG = document.getElementById("myChartG").getContext("2d"); //chart g 호출
+    var ctxH = document.getElementById("myChartH").getContext("2d"); //chart h 호출
+    var ctxI = document.getElementById("myChartI").getContext("2d"); //chart i 호출
+    var ctxJ = document.getElementById("myChartJ").getContext("2d"); //chart j 호출
+    var ctxK = document.getElementById("myChartK").getContext("2d"); //chart k 호출
+    var ctxL = document.getElementById("myChartL").getContext("2d"); //chart l 호출
+
+    //bg 그라디언트 효과 생성
+      var bgGradient = ctxA.createLinearGradient(0, 0, 0, 170); //20210909
+          bgGradient.addColorStop(0, 'rgb(25,211,197)');
+          bgGradient.addColorStop(1, 'rgb(203,139,218)');
+
+    //20210909 label custom
+    const getOrCreateLegendList = (chart, id) => {
+      const legendContainer = document.getElementById(id);
+      let listContainer = legendContainer.querySelector('ul');
+
+      if (!listContainer) {
+        listContainer = document.createElement('ul');
+        listContainer.style.display = 'flex';
+        listContainer.style.flexDirection = 'row';
+        listContainer.style.margin = 0;
+        listContainer.style.padding = 0;
+
+        legendContainer.appendChild(listContainer);
+      }
+
+      return listContainer;
+    };
+    //html label 생성
+    const htmlLegendPlugin = {
+      id: 'htmlLegend',
+      afterUpdate(chart, args, options) {
+        const ul = getOrCreateLegendList(chart, options.containerID);
+
+        // Remove old legend items
+        while (ul.firstChild) {
+          ul.firstChild.remove();
+        }
+
+        // Reuse the built-in legendItems generator
+        const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+        ul.style.position = 'absolute';
+        ul.style.top = '30px';
+        ul.style.right = '24px';
+
+        items.forEach(item => {
+          const li = document.createElement('li');
+          li.style.alignItems = 'center';
+          li.style.cursor = 'pointer';
+          li.style.display = 'flex';
+          li.style.flexDirection = 'row';
+          li.style.marginLeft = '15px';
+
+          li.onclick = () => {
+            const { type } = chart.config;
+            if (type === 'pie' || type === 'doughnut') {
+              // Pie and doughnut charts only have a single dataset and visibility is per item
+              chart.toggleDataVisibility(item.index);
+            } else {
+              chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+            }
+            chart.update();
+          };
+
+          // Color box
+          const boxSpan = document.createElement('span');
+          // boxSpan.style.background = item.fillStyle;
+          boxSpan.style.background = typeof item.fillStyle === 'object' ? 'linear-gradient(rgb(25,211,197), rgb(203,139,218))' : item.fillStyle;
+          boxSpan.style.borderColor = item.strokeStyle;
+          boxSpan.style.borderWidth = item.lineWidth + 'px';
+          boxSpan.style.display = 'inline-block';
+          boxSpan.style.height = '13px';
+          boxSpan.style.marginRight = '10px';
+          boxSpan.style.width = '20px';
+          boxSpan.style.borderRadius = '10px';
+
+          // Text
+          const textContainer = document.createElement('p');
+          textContainer.style.color = item.fontColor;
+          textContainer.style.margin = 0;
+          textContainer.style.padding = 0;
+          textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+          textContainer.style.fontFamily = 'Noto Sans';
+          textContainer.style.fontSize = '13px';
+          textContainer.style.fontWeight = '600';
+
+          const text = document.createTextNode(item.text);
+          textContainer.appendChild(text);
+
+          li.appendChild(boxSpan);
+          li.appendChild(textContainer);
+          ul.appendChild(li);
+        });
+      }
+    };
+    //Chart A
+    var myChartA = new Chart(ctxA, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: '체중 (kg)', //label
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9','#d9d9d9','#d9d9d9','#d9d9d9','#d9d9d9',bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+             htmlLegend: {
+              containerID: 'chartALegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,     
+              xAlign: 'center',
+              yAlign : 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign : 'top',
+              titleColor : '#222',
+              titleFont: {
+                size : 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+        scales: {
+          x: { //xc축
+            offset: true,
+            ticks: {
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: false,
+              offset: false
+            }
+          },
+          y: {  //y축
+            min: 0, //최소값
+            max: 100, //최대값
+            position: 'right',
+            beginAtZero: true,
+            ticks: {
+              stepSize: 20, //data 숫자 간격
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: true,
+              offset: false
+            }
+          }
+        },
+      },
+      plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart B
+    var myChartB = new Chart(ctxB, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: '허리둘레 (cm)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartBLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+      plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart C
+    var myChartC = new Chart(ctxC, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: '체지방율 (%)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartCLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+        plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart D
+    var myChartD = new Chart(ctxD, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: 'BMI',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartDLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+        plugins: [htmlLegendPlugin], //20210909
+      });
+    //Chart E
+    var myChartE = new Chart(ctxE, {
+      type: 'bar',
+      data: {
+        labels: ['5.1','5.2','5.3','5.4','5.5','5.6','5.7','5.8','5.9','5.10',
+        '5.11','5.12','5.13','5.14','5.15','5.16','5.17','5.18','5.19','5.20',
+        '5.21','5.22','5.23','5.24','5.25','5.26','5.27','5.28','오늘','5.30','5.31'
+      ],
+      datasets: [{
+        label: '안정 시 심박수 (bpm)',
+        data: [70, 75, 30, 35, 60, 65, 50, 85, 55, 65,
+          70, 75, 45, 80, 60, 65, 50, 40, 50, 65,
+          70, 75, 30, 80, 60, 65, 50, 40, 80, 0 ,0
+        ],
+        barPercentage: 0.5,
+        barThickness: 5, //20210910 막대 최소가로값
+        borderRadius: 5, //20210910 막대 둥글기        
+        backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9',
+        '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9',
+        '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient, '#d9d9d9', '#d9d9d9'
+        ], //bg color        
+      }]
+      },
+      options: {
+        responsive: false, //20210909
+        layout: { //20210909
+          padding: {
+            top: 80
+          }
+        },
+        plugins: {
+          //20210909 html label 생성
+          htmlLegend: {
+            containerID: 'chartELegend',
+          },
+          legend: {
+            display: false, //label 노출 여부
+            //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+          },
+          tooltip: { //막대 상태값
+            displayColors: false,
+            xAlign: 'center',
+            yAlign: 'bottom',
+            boxWidth: 0,
+            backgroundColor: '#222',
+            titleAlign: 'top',
+            titleColor: '#222',
+            titleFont: {
+              size: 0, //20210909
+            },
+            bodyColor: '#fff', //20210909
+            bodyFont: {
+              size: 11, //20210909
+            },
+          },
+        },
+        scales: {
+          x: { //x축
+            offset: true,
+            ticks: {
+              maxTicksLimit: 5, //20210910 노출 데이터 갯수
+              font: {
+                style: 'normal',
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: true,
+              offset: false,
+              borderDash: [2, 5], //20210910 dash line
+            }
+          },
+          y: {  //y축
+            min: 0, //최소값
+            max: 100, //최대값
+            position: 'right',
+            beginAtZero: true,
+            ticks: {
+              stepSize: 50, //data 숫자 간격
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: true,
+              offset: false,
+              tickBorderDashOffset: 3,
+            }
+          }
+        },
+      },
+      plugins: [htmlLegendPlugin], //20210909,
+    });
+    //Chart F
+    var myChartF = new Chart(ctxF, {
+    type: 'bar',
+    data: {
+      labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+      datasets: [{
+        label: '혈압 (mmhg)',
+        data: [30, 80, 60, 65, 50, 85],
+        barPercentage: 0.5,
+        barThickness: 14, //막대 최소가로값
+        borderRadius: 14, //막대 둥글기        
+        backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+      }]
+    },
+    options: {
+        responsive: false, //20210909
+        layout: { //20210909
+          padding: {
+            top: 80
+          }
+        },
+        plugins: {
+          //20210909 html label 생성
+          htmlLegend: {
+            containerID: 'chartFLegend',
+          },
+          legend: {
+            display: false, //label 노출 여부
+            //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+          },
+          tooltip: { //막대 상태값
+            displayColors: false,
+            xAlign: 'center',
+            yAlign: 'bottom',
+            boxWidth: 0,
+            backgroundColor: '#222',
+            titleAlign: 'top',
+            titleColor: '#222',
+            titleFont: {
+              size: 0, //20210909
+            },
+            bodyColor: '#fff', //20210909
+            bodyFont: {
+              size: 11, //20210909
+            },
+          },
+        },
+        scales: {
+          x: { //xc축
+            offset: true,
+            ticks: {
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: false,
+              offset: false
+            }
+          },
+          y: {  //y축
+            min: 0, //최소값
+            max: 100, //최대값
+            position: 'right',
+            beginAtZero: true,
+            ticks: {
+              stepSize: 20, //data 숫자 간격
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: true,
+              offset: false
+            }
+          }
+        },
+      },
+      plugins: [htmlLegendPlugin], //20210909
+  });
+    //Chart G
+    var myChartG = new Chart(ctxG, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: '총 콜레스테롤 (mg/dl)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartGLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+      plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart H
+    var myChartH = new Chart(ctxH, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: 'HDL 좋은 콜레스테롤 (mg/dl)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartHLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+      plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart I
+    var myChartI = new Chart(ctxI, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: 'LDL 나쁜 콜레스테롤 (mg/dl)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartILegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+        plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart J
+    var myChartJ = new Chart(ctxJ, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: '혈중지방성분 (mg/dl)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartJLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+        plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart K
+    var myChartK = new Chart(ctxK, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: '공복 혈당 (mg/dl)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartKLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+        plugins: [htmlLegendPlugin], //20210909
+    });
+    //Chart L
+    var myChartL = new Chart(ctxL, {
+        type: 'bar',
+        data: {
+          labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+          datasets: [{
+            label: '지속 혈당 (mg/dl)',
+            data: [30, 80, 60, 65, 50, 85],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: ['#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', '#d9d9d9', bgGradient,], //bg color
+          }]
+        },
+        options: {
+          responsive: false, //20210909
+          layout: { //20210909
+            padding: {
+              top: 80
+            }
+          },
+          plugins: {
+            //20210909 html label 생성
+            htmlLegend: {
+              containerID: 'chartLLegend',
+            },
+            legend: {
+              display: false, //label 노출 여부
+              //20210909 기존 label 스타일 삭제 (html 라벨에서 만들어줌)
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,
+              xAlign: 'center',
+              yAlign: 'bottom',
+              boxWidth: 0,
+              backgroundColor: '#222',
+              titleAlign: 'top',
+              titleColor: '#222',
+              titleFont: {
+                size: 0, //20210909
+              },
+              bodyColor: '#fff', //20210909
+              bodyFont: {
+                size: 11, //20210909
+              },
+            },
+          },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 100, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+        plugins: [htmlLegendPlugin], //20210909
+      });
+    });
+</script>
+</body>
+</html>

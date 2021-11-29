@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서비스 정보</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_setting appsetting footer_no">  
+  <!-- 20210721 -->
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>서비스 정보</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <!-- //20210721 -->
+  <div class="health_container pt10 pb30">
+    <ul class="connectlist service_infolsit">
+      <li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo1');"><em>서비스 이용 약관 동의</em></a></li>
+      <li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo2');"><em>개인정보 수집·이용 동의</em></a></li>
+      <li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo3');"><em>개인정보 제 3자 제공 동의<br>(국외이전 포함)</em></a></li>
+      <li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo4');"><em>만 14세 이상 가입동의</em></a></li>
+      <li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo5');"><em>위치정보 수집·이용·제공 동의<br>(GPS 사용)</em></a></li>
+      <li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo6');"><em>프로모션 및 마케팅 푸시 메세지<br>전체 동의</em></a></li>
+      <li><a href="javascript:void(0);" onclick="netiveUI.plugins.popFull('#popServiceInfo7');"><em>야간 푸시 메시지 전체 동의</em></a></li>
+    </ul>
+  </div>
+</div>
+<!--서비스 이용 약관 동의 팝업-->
+<div class="health_full setting_popup actived" id="popServiceInfo1" style="display: block;">
+  <div class="inner">
+    <div class="pop_wrap">
+      <div class="pop_header">
+        <div class="header_wrap">
+          <h1>서비스 이용약관</h1>
+          <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+        </div>
+      </div>
+      <div class="pop_container">
+        <div class="con_inner">
+          <div class="con_box">
+            <div class="pop_con">
+              <!-- 20210719 마크업 추가 -->
+              <!-- <div class="select_list">
+                <em>버전별 보기</em>
+                <select name="" id="">
+                  <option value="">V1.0</option>
+                  <option value="">V0.9</option>
+                  <option value="">V0.8</option>
+                </select>
+              </div> -->
+              <!-- //20210719 마크업 추가 -->
+              <!-- 20210810 버전별 보기 삭제 (Sprint 2 개발범위) -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--//서비스 이용 약관 동의 팝업-->
+</body>
+</html>

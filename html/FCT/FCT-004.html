@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콘텐츠 필터</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap type_content"> <!-- 20210805 'type_content' class 위치 변경 -->
+    <div class="health_container">
+      <button type="button" onclick="netiveUI.plugins.popToast('#full001');">콘텐츠 필터</button>
+    </div>
+    <!--// health_container -->
+  </div>
+  <!-- Full popup -->
+  <div class="health_full check_type actived" id="full001" style="display: block;">
+    <div class="inner">
+      <div class="pop_wrap">
+        <div class="pop_header">
+          <div class="header_wrap">
+            <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+          </div>
+        </div>
+        <!-- //pop header -->
+
+        <div class="pop_container">
+          <div class="con_inner">
+            <div class="con_box">
+              <div class="pop_con">
+                <!-- 팝업 내용 -->
+                <div class="check_box">
+                  <div class="item_cont ui-allCheck"><!--수정 20210716 ui-allCheck 추가-->
+                    <!-- 20210906 오타 수정 -->
+                    <p class="tit_item">콘텐츠 포맷</p>
+                    <div class="item ui-allBtn"><!--수정 20210716 ui-allBtn 추가-->
+                      <input type="checkbox" id="CheckAll_03" class="chkItem" name="CheckAll_03">
+                      <label for="CheckAll_03">전체</label>
+                    </div>
+                    <div class="ui-checkList"><!--수정 20210716 div 추가-->
+                      <div class="item type_inline"><!--수정 20210616 클래스명 추가-->
+                        <input type="checkbox" id="Check03_1" class="chkItem" name="checkBox03">
+                        <label for="Check03_1">오디오</label>
+                      </div>
+                      <div class="item type_inline"><!--수정 20210616 클래스명 추가-->
+                        <input type="checkbox" id="Check03_2" class="chkItem" name="checkBox03">
+                        <label for="Check03_2">비디오</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="check_box">
+                  <div class="item_cont ui-allCheck"><!--수정 20210716 ui-allCheck 추가-->
+                    <p class="tit_item">카테고리 선택</p>
+                    <div class="item ui-allBtn"><!--수정 20210716 ui-allBtn 추가-->
+                      <input type="checkbox" id="CheckAll_01" class="chkItem" name="CheckAll_01">
+                      <label for="CheckAll_01">전체</label>
+                    </div>
+                    <div class="ui-checkList"><!--수정 20210716 div 추가-->
+                      <div class="item">
+                        <input type="checkbox" id="Check01_1" class="chkItem" name="checkBox01">
+                        <label for="Check01_1">바디핏</label>
+                      </div>
+                      <div class="item">
+                        <input type="checkbox" id="Check01_2" class="chkItem" name="checkBox01">
+                        <label for="Check01_2">뷰티&웰빙</label>
+                      </div>
+                      <div class="item">
+                        <input type="checkbox" id="Check01_3" class="chkItem" name="checkBox01">
+                        <label for="Check01_3">영양</label>
+                      </div>
+                      <div class="item">
+                        <input type="checkbox" id="Check01_4" class="chkItem" name="checkBox01">
+                        <label for="Check01_4">정신</label>
+                      </div>
+                      <div class="item">
+                        <input type="checkbox" id="Check01_5" class="chkItem" name="checkBox01">
+                        <label for="Check01_5">수면</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="check_box">
+                  <div class="item_cont ui-allCheck"><!--수정 20210716 ui-allCheck 추가-->
+                    <p class="tit_item">운동 강도</p>
+                    <div class="item ui-allBtn"><!--수정 20210716 ui-allBtn 추가-->
+                      <input type="checkbox" id="CheckAll_04" class="chkItem" name="CheckAll_04">
+                      <label for="CheckAll_04">전체</label>
+                    </div>
+                    <div class="ui-checkList"><!--수정 20210716 div 추가-->
+                      <div class="item type_inline"><!--수정 20210616 클래스명 추가-->
+                        <input type="checkbox" id="Check04_1" class="chkItem" name="checkBox04">
+                        <label for="Check04_1">하</label>
+                      </div>
+                      <div class="item type_inline"><!--수정 20210616 클래스명 추가-->
+                        <input type="checkbox" id="Check04_2" class="chkItem" name="checkBox04">
+                        <label for="Check04_2">중</label>
+                      </div>
+                      <div class="item type_inline"><!--수정 20210616 클래스명 추가-->
+                        <input type="checkbox" id="Check04_3" class="chkItem" name="checkBox04">
+                        <label for="Check04_3">상</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //팝업내용 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //pop container -->
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_gray6">초기화</button><!--수정 20210616 클래스명 수정-->
+          <button type="button" class="btn_pop_black2">적용</button>
+        </div>
+        <!-- // pop btn -->
+      </div>
+     
+    </div>
+  </div>
+  <!-- // -->
+
+  <script>
+    //수정 20210716 전체 체크 기능 추가
+    $(document).ready(function() {
+      $('.ui-allCheck').uiCheckAll();
+    });
+  </script>
+
+</body>
+</html>

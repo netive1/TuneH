@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목표 상세(코칭 연동)</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+
+<body>
+  <div class="health_wrap type_goal type_bg_purple">
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" onClick="history.back();" class="btn_prev ver02"><span class="hidden">이전</span></button>
+        <h1>목표상세</h1>
+      </div>
+      <div class="user"><button type="button">홍길동</button></div>
+      <!-- user class 가이드
+        패키지 구매회원의 경우 : .package 추가
+        신규 알림 있을 시 : .on 추가
+      -->
+    </header>
+    <div class="health_container">
+      <div class="content_tit">
+        <h2 class="tit_cont_01 ver02">음식에 들어가는<br>소금양 줄이기</h2>
+        <p class="content_desc">평소에 습관처럼 소금간을 더해서 드시나요?<br> 음식에 들어가는 소금의 양을 줄이고,<br> 건강한 식습관을 만들 수 있도록 도와드릴게요!</p> <!--20210716 띄어쓰기 수정-->
+      </div>
+      <div class="content_box">
+        <h3 class="box_tit"><strong>소금 덜 먹기</strong><span class="goal_point">1000</span></h3><!--20210713 마크업 변경-->
+        <div class="step_wrap"><span class="step"><em>9</em> / 14</span></div><!--20210713 goal_point 이동-->
+        <div class="progress_wrap"><progress max="100" value="65"></progress></div>
+        <hr>
+        <div class="content_list">
+          <dl>
+            <dt>목표</dt>
+            <dd>10일 동안 음식에 소금<br>추가 안하기<span class="goal_count">0/10</span></dd>
+          </dl>
+          <div class="btn_wrap mb10"><button type="button" class="btn_delete">목표삭제</button></div>
+          <!--20210614 'mb10' 클래스 추가-->
+        </div>
+      </div>
+    </div>
+    <div class="btn_btm_fixed">
+      <button type="button" onclick="location.href='FMS-011.html'" class="btn">코칭하기</button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>패키지 상세 - 결제하기</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+    <!-- 20211005 신규 -->
+    <div class="health_wrap type_package pb0">
+        <header class="health_header">
+            <div class="inbtn">
+                <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+                <h1>결제 정보 입력</h1>
+            </div>
+        </header>
+        <div class="health_container"> 
+            <!-- 시작일 설정 -->
+            <div class="inp_form">
+                <h2 class="tit_cont_02">패키지 시작일 설정</h2>
+                <p class="tit_sub_02">결제일 이후 7일 중에서 원하시는<span> 패키지 시작일을<br> 설정할 수</span> 있습니다.</p>
+                <div class="inp_wrap inp_datepicker">
+                    <span class="inp_label">시작일</span>
+                    <input type="date" class="inp_bg" placeholder="2021.09.28" value="2021.09.28" required="required">
+                </div>
+                <div class="inp_wrap inp_datepicker">
+                    <span class="inp_label">종료일</span>
+                    <input type="date" class="inp_bg" placeholder="2022.02.26" value="2021.09.28" disabled required="required">
+                </div>
+            </div>
+            <!-- //시작일 설정 -->
+            <!-- 굿즈 배송지 정보 입력 -->
+            <div class="delivery_info inp_form">
+                <h2 class="tit_cont_02 mb0">굿즈 배송지 정보 입력</h2>
+                <p class="tit_sub_02">받으시는 분 정보를 정확히 입력하세요.</p>
+                <div class="delivery_list">
+                    <div class="inp_wrap search">
+                        <span class="inp_label">이름</span>
+                        <input type="text" class="inp_bg search_field" value="홍길동">
+                        <button type="button" class="search_clear"><span class="hidden">삭제</span></button>
+                    </div>
+                    <div class="inp_wrap search">
+                        <span class="inp_label">연락처</span>
+                        <input type="tel" class="inp_bg search_field" value="010-1111-9999">
+                        <button type="button" class="search_clear"><span class="hidden">삭제</span></button>
+                    </div>
+                    <div class="inp_wrap postcode">
+                        <span class="inp_label">주소</span>
+                        <a href="#none" class="post_search">
+                            <input type="search" class="inp_bg address" readonly disabled>
+                            <button type="button" class="btn_base_03" onclick="netiveUI.plugins.popFull('#addressApi');">우편번호 검색</button>
+                        </a>
+                        <input type="text" class="inp_bg" title="우편번호 입력" readonly  disabled>
+                        <input type="text" class="inp_bg" readonly  disabled placeholder="상세주소 입력">
+                    </div>
+                    <p class="notice err">결제 후 입력된 정보는 수정을 할 수 없으니<br> 유의하시기 바랍니다.</p>
+                </div>
+            </div>
+            <!-- //굿즈 배송지 정보 입력 -->
+            <!-- 주문상품 -->
+            <div class="product_info inp_form">
+                <h2 class="tit_cont_02">주문상품</h2>
+                <p class="tit_sub_02">프리미엄 바디핏 패키지 (90일)</p>
+                <dl class="order_list">
+                    <dt>- 진단/상담</dt>
+                    <dd>혜택정보1, 혜택정보2, 혜택정보3, 혜택정보4</dd>
+                    <dt>- 굿즈</dt>
+                    <dd>혜택정보1, 혜택정보2, 혜택정보3, 혜택정보4</dd>
+                    <dt>- 온라인콘텐츠</dt>
+                    <dd>99개</dd>
+                </dl>
+                <div class="payment_detail">
+                    <h2 class="tit_cont_02">결제상세</h2>
+                    <p><span>상품금액</span><em>999,999원</em></p>
+                    <p><span>배송비</span><em>무료배송</em></p>
+                    <p class="total_price"><span>최종 결제 금액(VAT포함)</span><em>999,999원</em></p>
+                </div>
+            </div>
+            <!-- //주문상품 -->
+            <!-- 결제약관 동의 -->
+            <div id="termCheckArea" role="group" aria-labelledby="약관" class="check_box term acco_list_wrap">
+                <div class="item_head">
+                    <input type="checkbox" id="termCheckAll" class="chkItem" name="termAgreeAll">
+                    <label for="termCheckAll">약관에 모두 동의</label>
+                </div>
+            
+                <div class="item_cont">
+                    <div class="item">
+                        <input type="checkbox" id="termCheck01" class="chkItem" name="termAgree">
+                        <label for="termCheck01"><span onclick="netiveUI.plugins.popFull('#popPaymentTerms1');" class="poplink">(필수) 개인정보 수집·이용 동의</span></label>
+                    </div>
+                    <div class="item">
+                        <input type="checkbox" id="termCheck02" class="chkItem" name="termAgree">
+                        <label for="termCheck02"><span onclick="netiveUI.plugins.popFull('#popPaymentTerms2');" class="poplink">(필수) 민감정보 수집·이용 동의</span></label>
+                    </div>
+                    <div class="item">
+                        <input type="checkbox" id="termCheck03" class="chkItem" name="termAgree">
+                        <label for="termCheck03"><span onclick="netiveUI.plugins.popFull('#popPaymentTerms3');" class="poplink">(필수) 유료서비스 이용약관 동의</span></label>
+                    </div>
+                    <div class="item">
+                        <input type="checkbox" id="termCheck04" class="chkItem" name="termAgree">
+                        <label for="termCheck04"><span onclick="netiveUI.plugins.popFull('#popPaymentTerms4');" class="poplink">(필수) 환불정책 동의</span></label>
+                    </div>
+                </div>
+            </div>
+            <!-- //결제약관 동의 -->
+            <p class="notice info">“미성년자와의 거래의 경우 법정대리인이 동의하지
+            않으면 미성년자 본인 또는 법정대리인이 그 계약을
+            취소할 수 있습니다.”</p>
+        </div>
+        <div class="btn_wrap half">
+            <button type="button" class="btn bg-gray6">취소하기</button>
+            <button type="button" class="btn">결제하기</button>
+        </div>
+    </div>
+    <!-- //20211005 신규 -->
+
+    <!-- 약관 리스트 -->
+    <!-- 개인정보 수집·이용 동의 -->
+    <div id="popPaymentTerms1" class="health_full type_terms scroll" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>개인정보 수집 및 이용 동의 (필수)</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con pd0"> <!--20211122 'pd0' class 추가-->
+                                <!-- 20211122 약관 현행화 -->
+                                <div class="point_item terms">
+                                    <p class="mt30">시그나코리아 주식회사(이하 “회사”라 합니다)는 ‘TuneH’ 유료 서비스를 제공하기 위하여 아래 명시된 내용에 따라 귀하의 정보를 수집 및 이용하고자 합니다.</p>
+                                    <h1 class="tit_cont_03">1. 수집·이용목적</h1>
+                                    <p>‘TuneH’ 유료 패키지 서비스 제공 및 물품배송, 유료 패키지 결제</p>
+                                    <h1 class="tit_cont_03">2. 수집·이용항목</h1>
+                                    <p>성명, 주소, 연락처(유선전화번호, 휴대전화번호), 결제정보(결제수단, 결제상태, 결제일)</p>
+                                    <h1 class="tit_cont_03">3. 보유 및 이용기간</h1>
+                                    <p><strong class="terms_boldtype">‘TuneH’ 서비스 이용 종료 후 1년까지</strong></p>
+                                    <ul class="dash_list">
+                                        <li>귀하는 동의를 거부할 수 있으나, 위 사항에 동의하지 않으실 경우에는 ‘TuneH’ 유료 서비스의 제공이 불가합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 개인정보 수집·이용 동의 -->
+
+    <!-- 민감정보 수집·이용 동의 -->
+    <div id="popPaymentTerms2" class="health_full type_terms scroll" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>민감정보 수집 및 이용 동의 (필수)</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con pd0"><!--20211122 'pd0' class 추가-->
+                                <!-- 20211122 약관 현행화 -->
+                                <div class="point_item terms">
+                                    <p class="mt30">
+                                        회사는 ‘TuneH’ 유료 서비스를 제공하기 위하여 아래 명시된 내용에 따라 귀하의 정보를 수집 및 이용하고자 합니다.
+                                    </p>
+                                    <h1 class="tit_cont_03">1. 수집·이용목적</h1>
+                                    <p>‘TuneH’ 유료 패키지 서비스 이용 고객을 대상으로 상담 서비스(건강/영양/심리) 제공</p>
+                                    <h1 class="tit_cont_03">2. 수집·이용항목</h1>
+                                    <ul class="dote_list"><!--20211122 'ver02' 삭제-->
+                                        <li><strong class="terms_boldtype">상담 서비스 이용 시 제공하는 건강 정보(건강 상태, 영양 정보, 병력 등), 상담 내용</strong></li>
+                                        <li class="dote_none">* 위 건강정보의 수집·이용 항목은 서비스의 목적과 종류에 따라 달라질 수 있습니다</li>
+                                    </ul>
+                                    <h1 class="tit_cont_03">3. 보유 및 이용기간</h1>
+                                    <p><strong class="terms_boldtype">‘TuneH’ 서비스 이용 종료 후 1년까지</strong></p>
+                                    <ul class="dash_list">
+                                        <li>귀하는 동의를 거부할 수 있으나, 위 사항에 동의하지 않으실 경우에는 ‘TuneH’ 유료 서비스의 제공이 불가합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 민감정보 수집·이용 동의 -->
+
+    <!-- Tune H 유료서비스 이용약관 -->
+    <div id="popPaymentTerms3" class="health_full type_terms scroll" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>Tune H 유료서비스 이용약관</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con pd0"> <!--20211122 'pd0' class 추가-->
+                                <!-- 20211122 약관 현행화 -->
+                                <div class="point_item terms">
+                                    <p class="mt0">2021.11.22. 제정</p>
+                                    <h1 class="tit_cont_03">제1조(목적)</h1>
+                                    <p>이 약관은 시그나코리아 주식회사(이하 “회사”라 합니다)가 운영하는 Tune H 앱(이하 “앱” 또는 “Tune H”라 합니다)의 유료서비스인 패키지(이하 “유료서비스”라 합니다)의 이용과 관련하여
+                                        회사와 회원의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+                                    <h1 class="tit_cont_03">제2조(약관의 효력 및 변경)</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            이 약관은 Tune H의 유료서비스를 구매하고자 하는 고객이 이 약관에 대해 동의하고 유료서비스 이용계약을 체결함으로써 효력이 발생합니다. 회사는 이 약관을 앱 화면에 게시하거나, 약관의 내용을
+                                            회원이 연결화면을 통하여 볼 수 있도록 할 수 있습니다.
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            회원이 이 약관의 동의하기 버튼을 클릭한 경우 이 약관의 내용을 모두 읽고 이를 충분히 이해하였으며, 그 적용에 동의한 것으로 봅니다.
+                                        </li>
+                                        <li>
+                                            <i>③</i>
+                                            회사는 콘텐츠산업진흥법, 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제에 관한 법률, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 소비자기본법 등 관련 법규를 위반하지 않는
+                                            범위에서 이 약관을 개정할 수 있습니다.
+                                        </li>
+                                        <li>
+                                            <i>④</i>
+                                            회사가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 앱 화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지하고, 개정 내용이 회원에게 불리한 경우에는 그 적용일자
+                                            30일 전부터 앱 화면에 게시하거나 회원에게 전자적 형태(전자우편, SMS 등)로 약관 개정 사실을 발송하여 고지합니다.
+                                        </li>
+                                        <li>
+                                            <i>⑤</i>
+                                            회사가 전항에 따라 회원에게 약관 개정 사실을 통지하면서 공지 또는 고지일로부터 개정약관 시행 7일 후까지 명시적으로 거부의사를 표시하지 아니하면 개정 약관에 승인한 것으로 봅니다. 회원이
+                                            개정약관에 동의하지 않을 경우 회원은 이용계약을 해지할 수 있습니다.
+                                        </li>
+                                        <li>
+                                            <i>⑥</i>
+                                            회원이 개정약관의 적용에 동의하지 않는 경우 회사는 개정약관을 적용할 수 없으며, 이 경우 회원은 이용계약을 해지할 수 있습니다. 다만, 기존 약관을 적용할 수 없는 특별한 사정이 있는 경우에는
+                                            회사는 이용계약을 해지할 수 있습니다.
+                                        </li>
+                                        <li>
+                                            <i>⑦</i>
+                                            이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 콘텐츠산업진흥법, 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제 등에 관한 법률, 문화체육관광부장관이 정한
+                                            콘텐츠이용자보호지침, 기타 관계법령, 회사가 정한 각 서비스 이용약관 및 지침 등의 규정 또는 상관례에 따릅니다.
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제3조(유료서비스 내용 등의 게시)</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            회사는 다음 사항을 Tune H 유료서비스의 이용 화면 등에 회원이 알기 쉽게 표시합니다.
+                                            <ol>
+                                                <li>
+                                                    <i>1.</i>
+                                                    Tune H 유료서비스의 명칭
+                                                </li>
+                                                <li>
+                                                    <i>2.</i>
+                                                    Tune H 유료서비스 제공자의 성명(법인인 경우 법인명), 주소, 전화번호
+                                                </li>
+                                                <li>
+                                                    <i>3.</i>
+                                                    Tune H 유료서비스의 내용, 이용방법, 이용료, 기타 이용조건
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            회사의 유료서비스의 이용 가능 기기 및 이용에 필요한 최소한의 기술사양은 권장사양정보에 따릅니다.
+                                        </li>
+                                        <li>
+                                            <i>③</i>
+                                            회사는 유료서비스를 제공함에 있어 유료 서비스의 교환, 반품, 보증과 그 대금 환불의 조건 및 절차에 관한 사항을 제공합니다.
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제4조(유료서비스 이용계약의 성립 등)</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            회원은 회사가 제공하는 다음 또는 이와 유사한 절차에 의하여 이용신청을 합니다. 회사는 이용계약 체결 전에 각 호의 사항에 관하여 회원이 정확하게 이해하고 실수 또는 착오 없이 거래할 수 있도록
+                                            정보를 제공합니다.
+                                            <ol>
+                                                <li>
+                                                    <i>1.</i>
+                                                    유료서비스의 확인 및 선택
+                                                </li>
+                                                <li>
+                                                    <i>2.</i>
+                                                    결제방법의 선택 및 결제정보의 입력
+                                                </li>
+                                                <li>
+                                                    <i>3.</i>
+                                                    유료서비스의 이용신청에 관한 확인 또는 회사의 확인에 대한 동의
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            회사는 다음의 경우 회원의 이용신청에 대한 승낙을 거절하거나 유보할 수 있습니다.
+                                            <ol>
+                                                <li>
+                                                    <i>1.</i>
+                                                    실명이 아닌 회원 또는 타인의 명의를 이용한 회원의 이용신청
+                                                </li>
+                                                <li>
+                                                    <i>2.</i>
+                                                    회사가 요구하는 정보를 허위로 기재하거나 필수 정보를 기재하지 않는 경우
+                                                </li>
+                                                <li>
+                                                    <i>3.</i>
+                                                    서비스 관련 기술상 또는 업무상 장애가 발생한 경우
+                                                </li>
+                                                <li>
+                                                    <i>4.</i>
+                                                    만 19세 미만의 미성년자가 법정대리인의 동의 없이 결제한 경우
+                                                </li>
+                                                <li>
+                                                    <i>5.</i>
+                                                    기타 회원의 이용신청을 승인하는 것이 관계 법령, 사회질서, 회사의 관련 약관 등에 위반되는 경우
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <i>③</i>
+                                            회원의 이용신청에 대한 회사의 승낙이 회원에게 도달된 시점에 이용계약이 성립된 것으로 봅니다.
+                                        </li>
+                                        <li>
+                                            <i>④</i>
+                                            유료서비스를 이용하기 위해서 회원은 이 약관에 동의하고 유료서비스의 각 이용조건에 따른 이용요금 등을 지급하여야 합니다.
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제5조(미성년자 등의 유료서비스 이용계약 체결에 대한 특칙)</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            만 19세 미만의 미성년자인 회원의 경우 회사의 유료서비스에 대한 이용요금을 결제하기 위해서는 법정대리인의 동의를 얻어야 합니다.
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            제1항에 따른 동의 없이 이루어진 결제에 대하여, 해당 회원의 법정대리인은 언제든지 회사에게 해당 결제에 대한 취소를 요청할 수 있습니다. 그러나 미성년자인 회원이 결제 과정에서 성인인 타인의
+                                            개인정보를 도용하는 등의 방법으로 본인이 성인인 것처럼 표시하거나, 성인인 타인의 결제정보를 이용하여 결제를 하는 등 회사로 하여금 회원이 성인이거나 법정대리인의 동의가 있었던 것으로 믿게 한
+                                            경우에는 회원의 유료서비스 이용에 대한 결제를 취소할 수 없습니다.
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제6조(유료서비스 이용계약의 중단 및 변경)</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            회사는 경영상 이유 등의 사유로 필요한 경우 서비스의 내용을 변경하거나 종료할 수 있으며, 서비스의 내용을 변경하거나 종료하는 경우 회사는 제3조에 따른 약관 변경 절차를 통해 서비스 내용의
+                                            변경 사항 또는 종료를 통지합니다.
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            상당한 이유가 있는 경우 회사는 운영상, 기술상 필요에 따라 제공하고 있는 유료서비스의 전부 또는 일부를 변경할 수 있고, 변경 시 관련 사항을 서비스 화면에 게시합니다. 다만, 변경된 내용이
+                                            회원에게 불리하거나 중대한 변경사항인 경우 이 약관에서 정한 바에 따라 회원에게 통지합니다.
+                                        </li>
+                                        <li>
+                                            <i>③</i>
+                                            회사는 아래 각 호의 1에 해당하는 사유가 발생한 경우에는 회원의 유료서비스 이용을 제한하거나 중지시킬 수 있습니다.
+                                            <ol>
+                                                <li>
+                                                    <i>1.</i>
+                                                    회원이 회사 유료서비스의 운영을 고의 또는 중과실로 방해하는 경우
+                                                </li>
+                                                <li>
+                                                    <i>2.</i>
+                                                    회원이 타인의 명의 등을 이용하여 유료서비스에 가입하거나 타인의 개인정보를 도용한 경우
+                                                </li>
+                                                <li>
+                                                    <i>3.</i>
+                                                    회원이 유료서비스를 이용하여 법령, 공공질서, 미풍양속 등에 반하는 행위를 한 경우
+                                                </li>
+                                                <li>
+                                                    <i>4.</i>
+                                                    유료서비스용 설비 점검, 보수 또는 공사로 인하여 부득이한 경우
+                                                </li>
+                                                <li>
+                                                    <i>5.</i>
+                                                    전기통신사업법에 규정된 기간통신사업자가 전기통신 서비스를 중지했을 경우
+                                                </li>
+                                                <li>
+                                                    <i>6.</i>
+                                                    국가비상사태, 유료서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 서비스 이용에 지장이 있는 때
+                                                </li>
+                                                <li>
+                                                    <i>7.</i>
+                                                    기타 중대한 사유로 인하여 회사가 유료서비스 제공을 지속하는 것이 부적당하다고 인정하는 경우
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <i>④</i>
+                                            회사가 전항의 규정에 의하여 서비스의 이용을 제한하거나 중지한 때에는 그 사유 및 제한기간 등을 회원에게 알립니다. 다만, 회사의 귀책사유 없는 시스템 장애, 정전, 천재지변 등 회사가 통제할
+                                            수 없는 사유로 서비스가 제한되어 사전통지가 불가능한 경우에는 사후에 통지합니다.
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제7조(회원의 청약철회 및 계약해지)</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            유료서비스 이용계약을 체결한 회원은 관련 법령 및 회사의 환불정책에 따라 일정 기간 내에 청약을 철회할 수 있습니다. 다만, 회사의 유료서비스 중 콘텐츠산업진흥법, 전자상거래 등에서의
+                                            소비자보호에 관한 법률 등에 따라 청약철회가 불가능한 서비스가 있으며, 회사는 이에 대해 관련 법령상 필요한 안내 등 조치를 취합니다.
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            회원은 회사의 환불정책에 따라 유료서비스 이용계약을 해지하거나 환불을 요구할 수 있으며, 회사는 관련 법령 또는 환불정책에서 정한 바에 따라 회원에게 환불합니다. 다만, 회사는 환불정책에 정한
+                                            바에 따라 환불금액에서 위약금을 공제한 나머지를 회원에게 환급하거나, 위약금이 회원에게 반환할 금액보다 더 큰 경우 그 차액에 해당하는 금액을 회원에게 청구할 수 있습니다.
+                                        </li>
+                                        <li>
+                                            <i>③</i>
+                                            유료서비스의 청약철회, 해지, 취소, 과오납금 환불 등에 관한 자세한 사항은 회사가 정한 환불정책 또는 콘텐츠산업진흥법, 전자상거래 등에서의 소비자보호에 관한 법률 등 관련 법령에 따라
+                                            처리합니다.
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제8조(유료서비스의 사용기간)</h1>
+                                    <p>유료서비스의 사용기간은 별도로 표시, 안내되지 않는 한 이용계약 체결일로부터 3개월이며, 해당기간이 경과한 경우 유료서비스를 사용할 수 없습니다.</p>
+                                    <h1 class="tit_cont_03">제9조(책임 제한)</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            회사가 관계법령의 변경, 천재지변, 전쟁 기타 이에 준하는 불가항력적 사유로 유료서비스를 제공할 수 없는 경우 그에 대한 책임은 면제됩니다.
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            회사는 회원의 귀책사유에 따른 유료서비스 이용 제한, 장애 등에 대하여 책임을 지지 않습니다.
+                                        </li>
+                                        <li>
+                                            <i>③</i>
+                                            회사는 회원 상호간 또는 회원과 제3자간 유료서비스를 매개로 하여 발생한 분쟁 등에 대해 회사의 귀책사유가 없는 한 책임을 지지 않습니다.
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제10조(양도금지)</h1>
+                                    <p>
+                                        회원은 회사의 유료서비스 이용계약에 따라 발생한 계약상 지위 또는 권리, 의무를 타인에게 양도하거나, 질권의 목적으로 삼는 등 일체의 처분행위를 할 수 없습니다.
+                                    </p>
+                                    <h1 class="tit_cont_03">부칙(2021.11.22.)</h1>
+                                    <p>제1조 이 약관은 2021.11.22.부터 적용됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tune H 유료서비스 이용약관 -->
+
+    <!-- 환불 규정(환불 정책) -->
+    <div id="popPaymentTerms4" class="health_full type_terms scroll" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>Tune H 환불정책</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con pd0"> <!--20211122 'pd0' class 추가-->
+                                <div class="point_item terms">
+                                    <p class="mt0">2021.11.22. 제정</p>
+                                    <p class="mt40">
+                                        본 환불정책은 시그나코리아 주식회사(이하 “회사”)가 Tune H 앱 및 건강관리서비스에 따른 유료 패키지 상품(이하 “패키지”라 합니다)을 제공함에 있어 회원의 패키지 구매에 대한 취소, 청약철회,
+                                        환불에 관한 사항을 정하는 것에 그 목적이 있습니다. 본 환불정책 이외의 사항에 대해서는 회사의 서비스이용약관 등 별도 약관 또는 관련 지침 등에 따릅니다.
+                                    </p>
+                                    <h1 class="tit_cont_03">제1조 환불 정책 개요</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            취소 및 환불 등의 요청 방법
+                                            <ul class="dash_list">
+                                                <li>
+                                                    회원은 회사에 대하여 구두(전화) 또는 서면(전자서면 포함)으로 패키지의 구매를 취소, 해지, 청약철회할 수 있습니다.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            공통사항
+                                            <ol>
+                                                <li>
+                                                    <i>1.</i>
+                                                    패키지 내용으로 받으신 제품 또는 식품에 하자가 있다고 판단한 경우 배송 완료 후 7일 이내에 회사에게 교환을 신청하실 수 있고, 이 경우 배송비는 회사가 부담합니다.
+                                                </li>
+                                                <li>
+                                                    <i>2.</i>
+                                                    회사가 마케팅, 이벤트, 프로모션 등 목적으로 무상으로 부여하는 추가 이용기간은 환불에 영향을 미치지 아니합니다.
+                                                </li>
+                                                <li>
+                                                    <i>3.</i>
+                                                    회사는 환불 시 금융거래 수수료, 제세공과금 등 소비자가 관련 법규에 따라 부담하여야 하는 비용을 공제할 수 있습니다.
+                                                </li>
+                                                <li>
+                                                    <i>4.</i>
+                                                    회사는 회원이 관계 법규 또는 이용약관 등을 위반한 경우 환불을 거부할 수 있습니다.
+                                                </li>
+                                                <li>
+                                                    <i>5.</i>
+                                                    패키지의 각 구성 상품의 환불 조건은 개별 상품 안내 페이지를 통해 고지한 바에 따릅니다.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">제2조 취소</h1>
+                                    <ol>
+                                        <li>
+                                            <i>①</i>
+                                            법정대리인 동의 없는 미성년자(만 19세 미만)의 구매 시 회사는 회원의 요청에 따라 결제를 모두 취소하고 전액 환불하여 드립니다. 단, 미성년자가 법정대리인이 범위를 정하여 처분을 허락한
+                                            재산으로 패키지를 구매한 경우 또는 미성년자가 속임수로써 자기를 성년자로 믿게 하거나 법정대리인의 동의가 있는 것으로 믿게 한 경우에는 구매를 취소할 수 없습니다.
+                                        </li>
+                                        <li>
+                                            <i>②</i>
+                                            회원의 동의 없이 결제가 이루어진 경우 회사는 해당 결제를 모두 취소하고 전액 환불하여 드립니다.
+                                        </li>
+                                        <li>
+                                            <i>③</i>
+                                            회사가 패키지 구매 전 기본사항을 고지하지 않았거나 유료정보를 표기하지 않은 경우 기본사항 미고지에 따라 결제를 모두 취소하고 전액 환불하여 드립니다.
+                                        </li>
+                                        </ul>
+                                        <h1 class="tit_cont_03">제3조 청약철회</h1>
+                                        <ol>
+                                            <li>
+                                                <i>①</i>
+                                                회원은 패키지 이용시작일로부터 7일 이내에는 청약을 철회할 수 있고, 청약철회 시 회사는 회원에게 3영업일 이내에 결제금액을 환불하여 드립니다. 단, 횟수 제한이 없는 패키지 내 서비스의
+                                                이용을
+                                                개시한 경우 청약을 철회할 수 없습니다. 청약철회 시 패키지 구성상품의 특성에 따른 환불 범위는 아래와 같습니다.
+                                                <table class="mb10">
+                                                    <caption>청약철회 테이블</caption>
+                                                    <colgroup>
+                                                        <col style="width: 50%;">
+                                                        <col style="width: 50%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">전액 환불</th>
+                                                            <th scope="col">일부 환불</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <ol>
+                                                                    <li>1) 서비스 등 패키지를 이용하지 않은 경우</li>
+                                                                    <li>
+                                                                        2) 물품
+                                                                        <ul class="dash_list">
+                                                                            <li>회사가 물품을 회원에게 발송하지 않은 경우</li>
+                                                                            <li>물품이 이미 배송된 경우에는 회원이 물품을 온전한 상태로 반환한 경우</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        3) 즉석/신선식품/냉장/냉동식품을 제외한 가공식품
+                                                                        <ul class="dash_list">
+                                                                            <li>보존기간이 긴 가공식품은 물품과 동일하게 회원이 개봉하지 않고 온전한 상태로 반환한 경우</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ol>
+                                                            </td>
+                                                            <td>
+                                                                <ol>
+                                                                    <li>
+                                                                        1) 횟수 제한이 있는 서비스 이용 시
+                                                                        <ul class="dash_list">
+                                                                            <li>이용한 서비스 횟수에 해당하는 비용은 제외하고 환불</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        2) 물품(가공식품 포함) 사용 또는 훼손* 시
+                                                                        <ul>
+                                                                            <li>- 물품대금 공제</li>
+                                                                            <li>
+                                                                                &lt;*물품훼손에 해당하는 경우&gt;
+                                                                                <ul class="dash_list">
+                                                                                    <li>소비자 잘못으로 물품이 멸실되거나 훼손된 경우</li>
+                                                                                    <li>사용 또는 일부 소비로 가치가 현저히 감소한 경우</li>
+                                                                                    <li>시간이 지나 다시 판매하기 곤란할 정도로 재화 등의 가치가 감소한 경우</li>
+                                                                                    <li>복제할 수 있는 재화 등의 포장을 훼손한 경우</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        3) 신선/즉석/냉장/냉동식품은 배송이 시작된 경우
+                                                                        <ul>
+                                                                            <li>- 해당 식품 비용 공제</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ol>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p class="star_list_txt">
+                                                    물품반품비용: 단순변심 – 회원 부담 / 제품하자 – 회사부담
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <i>②</i>
+                                                <p>
+                                                    <span class="bold">표시, 광고와 재화가 다른 경우 : </span>
+                                                    회원은 패키지의 표시, 광고와 제공받은 상품의 내용이 다른 경우 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내 또는 그 재화 등을 공급받은 날부터 3개월 이내에 청약을
+                                                    철회할
+                                                    수 있으며, 회사는 결제금액을 모두 돌려드립니다. 청약철회 시 물품반품비용은 회사가 부담합니다.
+                                                </p>
+                                            </li>
+                                        </ol>
+                                        <h1 class="tit_cont_03">제4조 계약해지(1달 이상 패키지 상품)</h1>
+                                        <ol>
+                                            <li>
+                                                <i>①</i>
+                                                <p>
+                                                    회원이 관련 법령 등에 따른 취소사유 또는 회사의 귀책사유 없이 패키지의 해지를 요구하는 경우 회사는 패키지 구매 계약을 해지하여 드립니다. 단, 이용기간 한 달 이상의 패키지
+                                                    상품에
+                                                    해당하더라도 이용기간 동안 계속적으로 제공되는 서비스 등이 없이 1회성 물품 또는 서비스만 제공되는 패키지는 계속적 계약이라고 볼 수 없어 계약해지 대상에서 제외됩니다.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <i>②</i>
+                                                <p>
+                                                    계약 해지 시 회사는 패키지 구성 상품별 또는 서비스별 특성에 따라 산정한 이용기간 또는 이용횟수에 해당하는 금액을 위약금(결제대금 10%)과 함께 총 결제금액에서 공제한 후 남은
+                                                    금액을
+                                                    환급하여 드립니다.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <i>③</i>
+                                                <p>
+                                                    회원에게 제공된 물품이 훼손되거나 반환되지 않은 경우 회사는 물품단가에 해당하는 금액을 제2항에 따라 환급할 금액에서 공제하거나 회원에게 청구할 수 있습니다.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <i>④</i>
+                                                <p>
+                                                    환불금액의 계산은 다음 각 호에 따릅니다.
+                                                </p>
+                                                <ol>
+                                                    <li>
+                                                        <i>1.</i>
+                                                        환불금액의 계산 (예시)<br>
+                                                        환불금액 = 결제금액 – 이용기간에 대한 금액 – 상담서비스 이용횟수에 대한 금액 – 위약금(총 결제금액의 10%)
+                                                    </li>
+                                                    <li>
+                                                        <i>2.</i>
+                                                        이용기간을 기준으로 한 환불금액의 계산은 패키지 구성상품 중 전체 이용기간 동안 횟수 제한 없이 이용할 수 있는 서비스(예: Health Tuner Center)에 대해
+                                                        적용됩니다. 회사가 정한 기준으로 해당 서비스에 대한 전체 이용기간에 해당하는 금액을 산정하고, 그 중 회원이 이용한 기간에 대한 금액을 일할 계산하여 결제금액에서
+                                                        공제합니다.
+                                                    </li>
+                                                    <li>
+                                                        <i>3.</i>
+                                                        이용횟수를 기준으로 한 환불금액의 계산은 상담서비스 등 횟수가 제한된 서비스에 대해 적용됩니다. 이 경우 패키지가 아닌 개별 서비스 제공 시 적용되는 회당 단가를 기준으로
+                                                        회원이
+                                                        이용한 횟수에 대한 금액을 계산하여 결제금액에서 공제합니다.
+                                                    </li>
+                                                    <li>
+                                                        <i>4.</i>
+                                                        회원에게 패키지 구성으로 제공된 물품(또는 보존기간이 긴 가공식품은 미개봉 상태로)이 온전하게 반환된 경우에는 그 대금을 환급금에 더하거나 위약금에서 차감한 후 회원에게
+                                                        지급합니다.
+                                                    </li>
+                                                    <li>
+                                                        <i>5.</i>
+                                                        물품(보존기간이 긴 가공식품 포함)이 훼손되거나 반환되지 않은 경우에는 회사는 위약금과 별도로 회원에게 물품대금에 해당하는 금액을 청구할 수 있습니다.
+                                                    </li>
+                                                    <li>
+                                                        <i>6.</i>
+                                                        만일 위약금이 회원에게 반환할 금액보다 더 큰 경우 회사는 그 차액에 해당하는 금액을 회원에게 청구할 수 있습니다.
+                                                    </li>
+                                                    <li>
+                                                        <i>7.</i>
+                                                        물품 가액 관련 고지사항
+                                                        <ol>
+                                                            <li>
+                                                                <i>가. </i>
+                                                                물품 등의 가액 및 그 산정기준: 일반 소비자가격을 기준으로 가액을 산정합니다.
+                                                            </li>
+                                                            <li>
+                                                                <i>나. </i>
+                                                                부가상품등의 반환 시 부가상품등의 가치에 상당하는 금액 및 그 산정기준: 일반 소비자가격을 기준으로 부가상품등의 가치를 산정합니다.
+                                                            </li>
+                                                            <li>
+                                                                <i>다. </i>
+                                                                기타 서비스의 가액 및 그 산정기준: 패키지가 아닌 개별 상품 또는 서비스로 제공될 경우 적용되는 가격을 기준으로 가액을 산정합니다.
+                                                            </li>
+                                                            </ul>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                        <h1 class="tit_cont_03">제5조 과오납금 환불</h1>
+                                        <ul class="dash_list">
+                                            <li>
+                                                회사는 과오납금 발생 시 회원에게 과오납금을 환급합니다. 단, 회사의 고의 또는 과실 없이 회원의 과실로 인한 과오납 발생 시 환급에 소요되는 실제 비용은 합리적 범위 내에서 회원에게
+                                                청구하거나
+                                                환급할 금액에서 공제할 수 있습니다.
+                                            </li>
+                                        </ul>
+                                        <h1 class="tit_cont_03">제6조 정책의 개정</h1>
+                                        <ol>
+                                            <li>
+                                                <i>①</i>
+                                                회사는 약관의 규제에 관한 법률, 전자상거래 및 소비자보호에 관한 법률 등 관계 법령에 반하지 않는 범위 내에서 이 정책을 개정할 수 있습니다.
+                                            </li>
+                                            <li>
+                                                <i>②</i>
+                                                회사가 이 정책을 개정하는 경우 회원에게 개정 정책 시행일 7일 전까지 앱 화면게시, 전자우편, SMS 등의 방법으로 알려드립니다. 다만, 회원에게 불리한 내용으로 개정되는 경우 시행일
+                                                30일
+                                                전까지 알려드립니다.
+                                            </li>
+                                        </ol>
+                                        <h1 class="tit_cont_03">제7조 고객상담센터</h1>
+                                        <ul class="dash_list">
+                                            <li>
+                                                회사의 환불정책이나 앱 또는 서비스, 패키지의 이용 등에 관하여 궁금하신 사항이 있으시면 고객상담센터(대표번호: 1833-4030/평일 09:00 ~18:00)로 문의하여 주시기
+                                                바랍니다.
+                                            </li>
+                                        </ul>
+                                        <h1 class="tit_cont_03">부칙(2021.11.22.)</h1>
+                                        <p>
+                                            본 환불정책은 2021.11.22. 제정, 시행됩니다.
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 환불 규정(환불 정책) -->
+    <!-- //약관 리스트 -->
+
+    <!-- 주소검색 api popup -->
+    <div id="addressApi" class="health_full scroll address_popup" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>우편번호 검색</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="search post_search">
+                                    <input type="search" class="inp_bg search_field" placeholder="도로명, 건물명, 지번">
+                                    <button type="button" class="search_clear"><span class="hidden">지우기</span></button>
+                                    <button type="button" id="searchAddr" class="btn_base_03">검색</button>
+                                </div>
+                                <p class="notice">예시 : 도로명(반포대로 58), 건물명(독립기념관), <br>지번(삼성동 25)</p>
+                                <!-- 검색결과 영역 -->
+                                <div class="search_list_wrap" style="display: none;">
+                                    <p class="search_total">총 <span>14</span>건</p>
+                                    <ul class="search_list">
+                                        <li class="search_item">
+                                            <em>(우)02211</em>
+                                            <a href="#none">[도로명] 서울특별시 구로구 신도림로 16 (신도림동, 신도림 대림아파트)</a>
+                                            <a href="#none">[지번] 서울특별시 구로구 구로동 1264</a>
+                                        </li>
+                                        <li class="search_item">
+                                            <em>(우)02211</em>
+                                            <a href="#none">[도로명] 서울특별시 구로구 신도림로 16 (신도림동, 신도림 대림아파트)</a>
+                                            <a href="#none">[지번] 서울특별시 구로구 구로동 1264</a>
+                                        </li>
+                                        <li class="search_item">
+                                            <em>(우)02211</em>
+                                            <a href="#none">[도로명] 서울특별시 구로구 신도림로 16 (신도림동, 신도림 대림아파트)</a>
+                                            <a href="#none">[지번] 서울특별시 구로구 구로동 1264</a>
+                                        </li>
+                                        <li class="search_item">
+                                            <em>(우)02211</em>
+                                            <a href="#none">[도로명] 서울특별시 구로구 신도림로 16 (신도림동, 신도림 대림아파트)</a>
+                                            <a href="#none">[지번] 서울특별시 구로구 구로동 1264</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 주소검색 api popup -->
+
+    <!-- 20211005 picker 알림-->
+    <!-- 과거일 설정 시 alert -->
+    <div id="alertAdvice1" class="health_alert" style="display: none;">
+        <div class="inner">
+            <p class="msg">
+                시작일은 <em class="point_color">2021-09-28</em> 보다 이후일이어야 합니다.
+            </p>
+            <div class="btn_wrap">
+                <button type="button" class="btn_pop_dark ui-close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- 7일 이후 설정 시 alert -->
+    <div id="alertAdvice2" class="health_alert" style="display: none;">
+        <div class="inner">
+            <p class="msg">
+                시작일은 <em class="point_color">2021-10-04</em> 보다 이전일이어야 합니다.
+            </p>
+            <div class="btn_wrap">
+                <button type="button" class="btn_pop_dark ui-close">확인</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //약관 모두 동의
+            $('#termCheckArea').uiCheckSubAll(); 
+
+            //20211005 필드 초기화
+            $('.search_clear').click(function () {
+                $(this).prev().val('');
+                $(this).parent().addClass('empty');
+            });
+
+            $('.search_field').keyup(function () {
+                if ($(this).val() == '') {
+                    $(this).parent().addClass('empty');
+                } else {
+                    $(this).parent().removeClass('empty');
+                }
+            });
+            //20211027
+            $('.address_popup').click(function () {
+                if ($('.address_popup').hasClass('actived')) {
+                    $('#searchAddr').click(function () {
+                        $('.search_list_wrap').fadeIn();
+                    })
+                } else {
+                    $('.search_list_wrap').fadeOut();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="netiveUI.plugins.popAlert('#alert001');">Alert 1</button>
+        <div>
+            <div>동작 view</div>
+            <h1>응원음성</h1>
+            <!-- 비디오 플레이어시 -->
+            <!-- <h1>응원동영상</h1> -->
+            <!-- <button type="button">전체화면</button> -->
+            <span>세븐틴 ~</span>
+        </div>
+        <div>
+            <div>
+                <span>00:10</span>
+                <span>00:10</span>
+                <span>00:10</span>
+            </div>
+        </div>
+        <div>
+            <button type="button">5초 뒤로</button>
+            <button type="button">플레이</button>
+            <!-- <button type="button">일시정지</button> -->
+            <button type="button">5초 앞으로</button>
+        </div>
+    </div>
+    <div class="health_alert" id="alert003" style="display: none;">
+        <div class="inner">
+            <p class="msg">
+                플레이 중인 콘텐츠가 종료됩니다.
+                진행 하시겠습니까?
+            </p>
+
+            <div class="btn_wrap">
+                <button type="button" class="btn_pop_light ui-close">취소</button>
+                <button type="button" class="btn_pop_primary">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 플레이어 접혔을 경우 -->
+    <div>
+        <span>유저 레벨</span>
+        <span>누적 포인트: 75,000</span>
+        <a href="#">CK 포인트란?</a>
+    </div>
+    <ul>
+        <li>
+            <span>응원음성 | 세븐틴 민규의 응원 음성 1</span>
+            <span>2021.0405</span>
+            <span>09:00:00</span>
+            <button type="button">호출</button>
+        </li>
+        <li>
+            <span>응원음성 | 세븐틴 민규의 응원 음성 1</span>
+            <span>2021.0405</span>
+            <span>09:00:00</span>
+            <button type="button">호출</button>
+        </li>
+    </ul>
+    <ul>
+        <li><span>레벨업이 필요합니다.</span><span>Lv.5보상</span></li>
+        <li><span>레벨업이 필요합니다.</span><span>Lv.5보상</span></li>
+        <li><span>레벨업이 필요합니다.</span><span>Lv.5보상</span></li>
+    </ul>
+    <div>
+        <div>비디오</div>
+        <span>세븐틴 ~</span>
+        <button type="button">일시정지</button>
+        <button type="button">딛기</button>
+        <button type="button">재생</button>
+    </div>
+</body>
+</html>

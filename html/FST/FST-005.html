@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디바이스 연결</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_setting footer_no">
+    <!-- 20210721 -->
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>디바이스 연결</h1>
+      </div>
+      <div class="user"><button type="button">홍길동</button></div>
+      <!-- user class 가이드
+        패키지 구매회원의 경우 : .package 추가
+        신규 알림 있을 시 : .on 추가
+      -->
+    </header>
+    <!-- //20210721 -->
+  <div class="health_container">
+    <h1 class="tit_cont_01">연결된 디바이스가<br>없습니다.</h1>
+    <p class="tit_sub_02">디바이스를 추가하여 심박수를<br>자동으로 체크해보세요.</p>
+    <div class="btn_wrap"><button type="button" onclick="netiveUI.plugins.popAlert('#deviceConnection');" class="btn_base_02">디바이스 추가</button></div>
+  </div>
+  <!-- 20210715 마크업 및 문구 수정 -->
+  <div class="st_infobox">
+    <p>동일한 유형의 데이터를 사용하는 디바이스를<br> 둘 이상 연결하는 것은 권장되지 않습니다.<br>
+      데이터가 이중으로 수집될 수 있으며, 데이터<br> 이중 수집은 Tune H에서 차단할 수 없습니다.</p>
+  </div>
+  <!-- //20210715 마크업 및 문구 수정 -->
+</div>
+  <div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        최종 접속 후 1년이 경과하여<br>휴면상태입니다.<br>휴면상태를 해제하기 위해서는<br>이메일 인증이 필요합니다.
+      </p>
+  
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 연결 가능한 디바이스 팝업 -->
+  <div class="health_alert setting_popup actived" id="deviceConnection" style="display: block;">
+    <div class="inner">
+      <h1>연결 가능한 디바이스</h1>
+      <div class="box">
+        <p>Galaxy Buds Live</p>
+        <p>iNiNePdos Pro</p>
+      </div>
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_light ui-close">취소</button>
+        <button type="button" class="btn_pop_primary">블루투스 설정</button>
+      </div>
+    </div>
+  </div>
+  <!-- //연결 가능한 디바이스 팝업 -->
+  <!-- 미지원 디바이스 연결 시도 시 팝업 -->
+  <div class="health_alert setting_popup" id="" style="display: none;">
+    <div class="inner">
+      <p class="msg">Galaxy Buds Live는<br>지원되지 않는 유형입니다.</p>
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- //미지원 디바이스 연결 시도 시 팝업 -->
+</body>
+</html>

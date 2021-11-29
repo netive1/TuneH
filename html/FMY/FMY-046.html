@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진단/상담</title>
+    <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../../resources/js/ui.common.js"></script>
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+
+<body>
+    <div class="health_wrap type_mypage footer_no">
+        <header class="health_header">
+            <div class="inbtn">
+                <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+                <h1>진단/상담</h1>
+            </div>
+            <div class="user"><button type="button">홍길동</button></div>
+            <!-- user class 가이드
+	      패키지 구매회원의 경우 : .package 추가
+	      신규 알림 있을 시 : .on 추가
+	    -->
+        </header>
+        <div class="health_container reservation_cont">
+            <div class="tab_wrap reservation_tab">
+                <div class="tabs">
+                    <ul class="tab_menulist pt0 pb0">
+                        <li><a class="tab_control" href="#tab-1">예약 현황</a></li>
+                        <li class="active"><a class="tab_control" href="#tab-2">예약하기</a></li>
+                    </ul>
+                    <!-- 예약현황 -->
+                    <div id="tab-1" class="tab_panel">
+                        <div class="acco_list_wrap">
+                            <div class="acco_list_item">
+                                <!-- 20210908 마크업 추가 -->
+                                <div class="rev_totalcount">
+                                    <P>총 이용/가능 횟수 : &nbsp;</P>
+                                    <span class="count">4/4</span>
+                                    <button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+                                </div>
+                                <!-- //20210908 마크업 추가 -->
+                                <div class="acco_item_head">
+                                    <P class="rv_state"><span class="time">10:00 ~ 10:30</span></P>
+                                    <div class="flex_between_wrap">
+                                        <div class="item_head_cont">
+                                            <!-- 20210908 라벨 삭제 -->
+                                            <p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+                                        </div>
+                                        <div class="rev_count">
+                                            <!-- 20210908 count 삭제, 버튼 추가 -->
+                                            <button class="btn_form_base rev_btn p">예약완료</button>
+                                            <!-- 버튼 class 가이드
+                                            예약완료, 상담완료 : 'p'
+                                            상담대기, 상담거부 : 'g'
+                                            -->
+                                            <button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acco_item_cont">
+                                    <div class="reservation_box">
+                                        <div class="rev_top">
+                                            <p class="date"><em>1회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+                                            <!-- 버튼 class 가이드
+                                                예약취소 : 'b'
+                                                상담하기 : 'p'
+                                                상담완료, 상담거부 : 'g'
+                                                -->
+                                            <button type="button" class="btn_form_base rev_btn b"
+                                                onclick="netiveUI.plugins.popAlert('#alertCancel');">예약취소</button>
+                                        </div>
+                                        <div class="rev_info">
+                                            <p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+                                            <p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+                                            <p class="tooltip"><a href="javascript:void(0);"
+                                                    onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+                                            </p>
+                                            <!-- 선택시 현재 팝업창 닫고 패키지 상세 화면 내 상세정보 및 유의사항 중 해당 진단/상담 혜택정보 팝업창 호출(Front 패키지 화면ID: FMB-002) -->
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acco_list_item">
+                                <div class="acco_item_head">
+                                    <P class="rv_state">
+                                        <!-- 20210908 라벨 삭제 -->
+                                        <!-- <em class="wate">상담대기</em> -->
+                                        <span class="time">11:00 ~ 11:30</span>
+                                    </P>
+                                    <div class="flex_between_wrap">
+                                        <div class="item_head_cont">
+                                            <p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+                                        </div>
+                                        <div class="rev_count">
+                                            <!-- 20210908 count 삭제, 버튼 추가 -->
+                                            <!-- <span class="count">4/4</span> -->
+                                            <button class="btn_form_base rev_btn p">상담완료</button>
+                                            <!-- 버튼 class 가이드
+                                            예약완료, 상담완료 : 'p'
+                                            상담대기, 상담거부 : 'g'
+                                            -->
+                                            <button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acco_item_cont">
+                                    <div class="reservation_box">
+                                        <div class="rev_top">
+                                            <p class="date"><em>2회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+                                            <!-- 버튼 class 가이드
+                                            예약취소 : 'b'
+                                            상담하기 : 'p'
+                                            상담완료, 상담거부 : 'g'
+                                            -->
+                                            <button type="button" class="btn_form_base rev_btn p"
+                                                onclick="netiveUI.plugins.popAlert('#alertAdvice');">상담하기</button>
+                                        </div>
+                                        <div class="rev_info">
+                                            <p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+                                            <p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+                                            <p class="tooltip"><a href="javascript:void(0);"
+                                                    onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acco_list_item">
+                                <div class="acco_item_head">
+                                    <P class="rv_state">
+                                        <!-- 20210908 라벨 삭제 -->
+                                        <!-- <em class="complete">예약완료</em> -->
+                                        <span class="time">10:00 ~ 10:30</span></P>
+                                    <div class="flex_between_wrap">
+                                        <div class="item_head_cont">
+                                            <p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+                                        </div>
+                                        <div class="rev_count">
+                                            <!-- 20210908 count 삭제, 버튼 추가 -->
+                                            <button class="btn_form_base rev_btn g">상담대기</button>
+                                            <!-- 버튼 class 가이드
+                                            예약완료, 상담완료 : 'p'
+                                            상담대기, 상담거부 : 'g'
+                                            -->																	
+                                            <button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acco_item_cont">
+                                    <div class="reservation_box">
+                                        <div class="rev_top">
+                                            <p class="date"><em>3회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+                                            <!-- 버튼 class 가이드
+                                                예약취소 : 'b'
+                                                상담하기 : 'p'
+                                                상담완료, 상담거부 : 'g'
+                                                -->
+                                            <button type="button" class="btn_form_base rev_btn g">상담종료</button>
+                                        </div>
+                                        <div class="rev_info">
+                                            <p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+                                            <p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+                                            <p class="tooltip"><a href="javascript:void(0);"
+                                                    onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acco_list_item">
+                                <div class="acco_item_head">
+                                    <P class="rv_state">
+                                        <!-- 20210908 라벨 삭제 -->
+                                        <!-- <em class="wate">상담대기</em> -->
+                                        <span class="time">11:00 ~ 11:30</span>
+                                    </P>
+                                    <div class="flex_between_wrap">
+                                        <div class="item_head_cont">
+                                            <p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+                                        </div>
+                                        <div class="rev_count">
+                                            <!-- 20210908 count 삭제, 버튼 추가 -->
+                                            <button class="btn_form_base rev_btn g">상담거부</button>
+                                            <!-- 버튼 class 가이드
+                                            예약완료, 상담완료 : 'p'
+                                            상담대기, 상담거부 : 'g'
+                                            -->
+                                            <!-- <span class="count">4/4</span> -->
+                                            <button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acco_item_cont">
+                                    <div class="reservation_box">
+                                        <div class="rev_top">
+                                            <p class="date"><em>4회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+                                            <!-- 버튼 class 가이드
+                                                예약취소 : 'b'
+                                                상담하기 : 'p'
+                                                상담완료, 상담거부 : 'g'
+                                                -->
+                                            <button type="button" class="btn_form_base rev_btn g">상담거부</button>
+                                        </div>
+                                        <div class="rev_info">
+                                            <p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+                                            <p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+                                            <p class="tooltip"><a href="javascript:void(0);"
+                                                    onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //예약현황 -->
+
+                    <!-- 예약하기 -->
+                    <div id="tab-2" class="tab_panel active">
+                        <div class="tab_bg_wrap">
+                            <div class="calendar_wrap">													
+                                <div class="date_tabwrap">
+                                    <div class="date_header">
+                                        <h2 class="month_year">
+                                            <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+                                            <em>2021.5</em>
+                                            <button type="button" class="btn_next"><span class="hidden">다음</span></button>
+                                        </h2>
+                                        <!-- 20210812 아코디언 삭제 및 셀렉트박스로 변경 -->
+                                        <div class="date_selectwrap">
+                                            <select name="" id="" class="date_select">
+                                                <option value="주간">주간</option>
+                                                <option value="월간">월간</option>
+                                            </select>
+                                        </div>
+                                        <!-- //20210812 아코디언 삭제 및 셀렉트박스로 변경 -->
+                                    </div>
+                                    <!-- date_tabcont -->
+                                    <div class="date_tabcont">
+                                        <!-- 주간 캘린더 -->
+                                        <div id="dateWeek" class="date_box" style="display: block;">
+                                            <table class="calendar">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="day_title" scope="col">일</th>
+                                                        <th class="day_title" scope="col">월</th>
+                                                        <th class="day_title" scope="col">화</th>
+                                                        <th class="day_title" scope="col">수</th>
+                                                        <th class="day_title" scope="col">목</th>
+                                                        <th class="day_title" scope="col">금</th>
+                                                        <th class="day_title" scope="col">토</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="week">
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">16</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">17</button></td>
+                                                        <td class="day today" tabindex="0"><button type="button" class="day_number">18</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">19</button></td>
+                                                        <td class="day off" tabindex="0"><button type="button" class="day_number" disabled>20</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+                                                        <td class="day off" tabindex="0"><button type="button" class="day_number" disabled>21</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">22</button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- 진단/상담 상세정보 아코디언 -->
+                                            <div class="acco_list_wrap">
+                                                <div class="acco_list_item">
+                                                    <div class="acco_item_head">
+                                                        <div class="flex_between_wrap">
+                                                            <div class="item_head_cont">
+                                                                <p>진단/상담 상세정보</p>
+                                                            </div>
+                                                            <button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="acco_item_cont">
+                                                        <div class="reservation_box">
+                                                            <div class="rev_info">
+                                                                <p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+                                                                <p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+                                                                <p class="tooltip"><a href="javascript:void(0);"
+                                                                        onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a></p>
+                                                            </div>
+                                                            <div class="mt20">
+                                                                <p>예약하기전 계열별 상담스케줄을 확인하세요.</p>
+                                                                <button type="button" class="btn_base_03 mt10" style="background-color: #00264a" onclick="netiveUI.plugins.popFull('#popBadgeAcq')">상담스케줄 확인하기</button>
+                                                                <p class="mt10">*아래 예약버튼이 비활성화 되어있으면 예약이 마감되어 예약이 불가합니다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 진단/상담 상세정보 아코디언 -->
+                                        </div>
+                                        <!-- 주간 캘린더 -->
+                                        <!-- 월간 캘린더 -->
+                                        <div id="dateMonth" class="date_box">
+                                            <table class="calendar">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="day_title" scope="col">일</th>
+                                                        <th class="day_title" scope="col">월</th>
+                                                        <th class="day_title" scope="col">화</th>
+                                                        <th class="day_title" scope="col">수</th>
+                                                        <th class="day_title" scope="col">목</th>
+                                                        <th class="day_title" scope="col">금</th>
+                                                        <th class="day_title" scope="col">토</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="week">
+                                                        <td class="day prev-mon" tabindex="0"><button type="button" class="day_number">25</button></td>
+                                                        <td class="day prev-mon" tabindex="0"><button type="button" class="day_number">26</button></td>
+                                                        <td class="day prev-mon" tabindex="0"><button type="button" class="day_number">27</button></td>
+                                                        <td class="day prev-mon" tabindex="0"><button type="button" class="day_number">28</button></td>
+                                                        <td class="day prev-mon" tabindex="0"><button type="button" class="day_number">29</button></td>
+                                                        <td class="day prev-mon" tabindex="0"><button type="button" class="day_number">30</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">1</button></td>
+                                                    </tr>
+                                                    <tr class="week">
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">2</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">3</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">4</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">5</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">6</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">7</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">8</button></td>
+                                                    </tr>
+                                                    <tr class="week">
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">9</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">10</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">11</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">12</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">13</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">14</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">15</button></td>
+                                                    </tr>
+                                                    <tr class="week">
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">16</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">17</button></td>
+                                                        <td class="day today" tabindex="0"><button type="button" class="day_number">18</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">19</button></td>
+                                                        <td class="day off" tabindex="0"><button type="button" class="day_number">20</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+                                                        <td class="day off" tabindex="0"><button type="button" class="day_number">21</button></td> <!--20210908 'off' class 추가시 예약불가 비활성화 css 처리됨-->
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">22</button></td>
+                                                    </tr>
+                                                    <tr class="week">
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">23</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">24</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">25</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">26</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">27</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">28</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">29</button></td>
+                                                    </tr>
+                                                    <tr class="week">
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">30</button></td>
+                                                        <td class="day" tabindex="0"><button type="button" class="day_number">31</button></td>
+                                                        <td class="day next-mon" tabindex="0"><button type="button" class="day_number">1</button></td>
+                                                        <td class="day next-mon" tabindex="0"><button type="button" class="day_number">2</button></td>
+                                                        <td class="day next-mon" tabindex="0"><button type="button" class="day_number">3</button></td>
+                                                        <td class="day next-mon" tabindex="0"><button type="button" class="day_number">4</button></td>
+                                                        <td class="day next-mon" tabindex="0"><button type="button" class="day_number">5</button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                                <!-- 진단/상담 상세정보 아코디언 -->
+                                                <div class="acco_list_wrap">
+                                                    <div class="acco_list_item">
+                                                        <div class="acco_item_head">
+                                                            <div class="flex_between_wrap">
+                                                                <div class="item_head_cont">
+                                                                    <p>진단/상담 상세정보</p>
+                                                                </div>
+                                                                <button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="acco_item_cont">
+                                                            <div class="reservation_box">
+                                                                <div class="rev_info">
+                                                                    <p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+                                                                    <p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+                                                                    <p class="tooltip"><a href="javascript:void(0);"
+                                                                            onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- 진단/상담 상세정보 아코디언 -->
+                                        </div>
+                                        <!-- //월간 캘린더 -->
+                                    </div>
+                                    <!-- //date_tabcont -->
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="cont">
+                            <h2>그림진단 심화상담</h2>
+                            <div class="time_selectlist">
+                                <div class="time_selectlist">
+                                <!-- 20210812 데이터가 없는 경우, 'nodata' class 추가 -->
+                                <div class="item nodata">
+                                    <p>진단/상담 예약 내역이 없습니다.</p>
+                                </div>
+                                <!-- //20210812 데이터가 없는 경우, 'nodata' class 추가 -->
+                                <div class="item">
+                                    <input type="radio" id="time01" name="timeoption" class="time">
+                                    <label for="time01">10:00 ~ 10:30</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time02" name="timeoption" class="time">
+                                    <label for="time02">10:30 ~ 11:00</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time03" name="timeoption" class="time" checked>
+                                    <label for="time03">11:00 ~ 11:30</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time04" name="timeoption" class="time">
+                                    <label for="time04">11:30 ~ 12:00</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time05" name="timeoption" class="time">
+                                    <label for="time05">13:00 ~ 13:30</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time06" name="timeoption" class="time">
+                                    <label for="time06">13:30 ~ 14:00</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time07" name="timeoption" class="time" disabled> <!--예약불가능시 disabled 추가-->
+                                    <label for="time07">14:00 ~ 14:30</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time08" name="timeoption" class="time"> 
+                                    <label for="time08">14:30 ~ 15:00</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time09" name="timeoption" class="time" disabled> <!--예약불가능시 disabled 추가-->
+                                    <label for="time09">15:00 ~ 15:30</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time10" name="timeoption" class="time">
+                                    <label for="time10">15:30 ~ 16:00</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time11" name="timeoption" class="time">
+                                    <label for="time11">16:00 ~ 16:30</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time12" name="timeoption" class="time">
+                                    <label for="time12">16:30 ~ 17:00</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time13" name="timeoption" class="time">
+                                    <label for="time13">17:00 ~ 17:30</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="time14" name="timeoption" class="time">
+                                    <label for="time14">17:30 ~ 18:00</label>
+                                </div>
+                            </div>
+                        </div><div class="btn_wrap half">
+                            <button type="button" class="btn bg-gray6 ui-close">취소</button>
+                            <button type="button" class="btn" onclick="netiveUI.plugins.popAlert('#alertComplete');">예약</button>
+                        </div>
+                    </div>
+                    <!-- 예약하기 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--- 상담스케줄 확인 팝업 내용 -->
+    <div class="health_full" id="popBadgeAcq" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1 class="">대학생 멘토링 상담 스케줄(2021년)</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <!-- //pop header -->
+    
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <!-- 팝업 내용 -->
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">인문계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">단국대, 국어국문, 최서영</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.29 11:00</td>
+                                            <td>11.29 11:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.29 12:00</td>
+                                            <td>11.29 12:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.29 16:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 11:00	</td>
+                                            <td>11.30 11:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 12:00	</td>
+                                            <td>11.30 12:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 11:00	</td>
+                                            <td>12.01 11:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 12:00	</td>
+                                            <td>12.01 12:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 13:00	</td>
+                                            <td>12.01 13:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 11:00	</td>
+                                            <td>12.04 11:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 12:00	</td>
+                                            <td>12.04 12:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 15:00	</td>
+                                            <td>12.04 15:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 16:00	</td>
+                                            <td>12.04 16:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 11:00	</td>
+                                            <td>12.05 11:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 12:00	</td>
+                                            <td>12.05 12:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 15:00	</td>
+                                            <td>12.05 15:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 16:00	</td>
+                                            <td>12.05 16:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 11:00	</td>
+                                            <td>12.06 11:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 12:00	</td>
+                                            <td>12.06 12:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 16:30</td>
+                                            <td>12.06 21:00 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 21:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 11:30</td>
+                                            <td>12.09 12:00 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 12:30</td>
+                                            <td>12.09 14:00 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 14:30</td>
+                                            <td>12.09 15:00 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 15:30</td>
+                                            <td>12.09 16:00 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 16:30</td>
+                                            <td>12.09 21:00 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 21:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.11 11:00	</td>
+                                            <td>12.11 11:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.11 12:00	</td>
+                                            <td>12.11 12:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 21:00	</td>
+                                            <td>12.12 21:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 22:30</td>
+                                            <td>12.12 23:00 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 23:30</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">인문계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">연세대, 간호, 이시온</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>12.04 23:00</td>
+                                            <td>12.04 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 00:00</td>
+                                            <td>12:05 00:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.11 23:00</td>
+                                            <td>12.11 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 00:00</td>
+                                            <td>12.12 00:30</td>
+                                        </tr>
+                                
+                                    </tbody>
+                                </table>
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">인문계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">성균관대, 인문과학계열, 조수현</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>12.07 21:00</td>
+                                            <td>12.07 21:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 10:00</td>
+                                            <td>12.12 10:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 11:00</td>
+                                            <td>12.12 11:30</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- //인문계역 -->
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">의약계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">숙명여대, 약학, 김민정</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.29 17:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 16:30</td>
+                                            <td>11.30 17:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 17:30</td>
+                                            <td>11.30 18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 20:30</td>
+                                            <td>11.30 21:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 21:30</td>
+                                            <td>11.30 22:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 16:00</td>
+                                            <td>12.01 16:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 17:00</td>
+                                            <td>12.01 17:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 20:30</td>
+                                            <td>12.01 21:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 21:30</td>
+                                            <td>12.01 22:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 17:00</td>
+                                            <td>12.02 17:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 20:30</td>
+                                            <td>12.02 21:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 21:30</td>
+                                            <td>12.02 22:00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- //의약계열 -->
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">교육계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">부산대, 체육교육, 조세훈</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.29 19:00</td>
+                                            <td>11.29 22:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.29 22:30</td>
+                                            <td>11.29 23:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.29 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 19:00</td>
+                                            <td>11.30 22:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 23:00</td>
+                                            <td>11.30 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 22:00</td>
+                                            <td>12.01 22:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 23:00</td>
+                                            <td>12.01 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 22:00</td>
+                                            <td>12.02 22:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 23:00</td>
+                                            <td>12.02 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 17:30</td>
+                                            <td>12.06 19:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 22:00</td>
+                                            <td>12.06 22:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 23:00</td>
+                                            <td>12.06 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.07 17:30</td>
+                                            <td>12.07 18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.07 19:00</td>
+                                            <td>12.07 22:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.07 22:30</td>
+                                            <td>12.07 23:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.07 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.08 22:00</td>
+                                            <td>12.08 22:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.08 23:00</td>
+                                            <td>12.08 23:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 22:00</td>
+                                            <td>12.09 22:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 23:00</td>
+                                            <td>12.09 23:30</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">교육계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">성균관대, 교육, 정세인</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.29 16:00</td>
+                                            <td>12.06 16:00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- //교육계열 -->
+                                
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">예체능계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">홍익대, 시각디자인, 임하연</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.30 20:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 20:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 21:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 21:00</td>
+                                            <td>12.04 21:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 22:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 21:30</td>
+                                            <td>12.05 22:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 22:00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <!-- //예체능계열 -->
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">자연계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">고려대, 간호, 장재희</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.29 14:00</td>
+                                            <td>11.29 14:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.29 15:00</td>
+                                            <td>11.29 15:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.29 20:30</td>
+                                            <td>11.29 21:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 15:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 14:30</td>
+                                            <td>12.02 15:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 14:00</td>
+                                            <td>12.06 14:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 15:00</td>
+                                            <td>12.06 15:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.07 15:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 11:00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- //자열계열 -->
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">사회계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">경희대, 사회, 윤나윤</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.30 15:00</td>  
+                                        </tr>
+                                        <tr>
+                                            <td>12.03 15:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 15:30</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <!-- //사회계열 -->
+
+                                <table class="schedule_table">
+                                    <caption>멘토링 스케줄</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 50%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="hbg">
+                                            <th class="hbg" scope="col" colspan="2">공학계열</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="2">영남대, 자동차기계공학, 이지훈</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>11.29 18:00</td>
+                                            <td>11.29 18:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.30 18:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.01 18:30</td>
+                                            <td>12.01 19:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.02 18:30</td>
+                                            <td>12.02 19:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.03 18:00</td>
+                                            <td>12.03 18:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 13:30</td>
+                                            <td>12.04 14:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.04 14:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 13:30</td>
+                                            <td>12.05 14:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.05 14:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.06 18:00</td>
+                                            <td>12.06 18:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.07 18:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.08 18:30</td>
+                                            <td>12.08 19:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.09 18:30</td>
+                                            <td>12.09 19:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.10 18:00</td>
+                                            <td>12.10 18:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.11 13:30</td>
+                                            <td>12.11 14:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.11 14:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 13:30</td>
+                                            <td>12.12 14:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.12 14:30</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <!-- //공학계열 -->
+    
+                                <!-- //팝업내용 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //pop container -->
+            </div>
+        </div>
+    </div>
+    <!--- //상담스케줄 확인 팝업 내용 -->
+    <div id="popDiagnosis" class="health_full scroll footer_no reservation_pop" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>진단/상담 유의사항 보기</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con type_package">
+                                <ul class="benefit_list">
+                                    <li>
+                                        <span>혜택 01</span>
+                                        <p>
+                                            그림진단 심화상담
+                                            <a href="#" class="btn_benefit" onclick="netiveUI.plugins.popFull('#full008');"><span class="hidden">이동</span></a>
+                                        </p>
+                                        <div class="img_wrap">
+                                            <img src="../../resources/img/pack_type01_img01.png" alt="">
+                                        </div>
+                                        <p class="sub_txt">미술치료 기법을 통한 심리 해석을 비대면 방식으로 구현한 서비스입니다.</p>
+                                    </li>
+                                    <li>
+                                        <span>혜택 02</span>
+                                        <p>
+                                            2039 그룹상담
+                                            <a href="#" onclick="netiveUI.plugins.popFull('#full009');"><span class="hidden">이동</span></a>
+                                        </p>
+                                        <div class="img_wrap">
+                                            <img src="../../resources/img/pack_type01_img02.png" alt="">
+                                        </div>
+                                        <p class="sub_txt">연령 및 각자의 처한 상황에 따라 다양한 그룹상담에 참여 가능합니다.</p>
+                                    </li>
+                                    <li>
+                                        <span>혜택 03</span>
+                                        <p>
+                                            Tune-H Contents
+                                            <a href="#" onclick="netiveUI.plugins.popFull('#full010');"><span class="hidden">이동</span></a>
+                                        </p>
+                                        <div class="img_wrap">
+                                            <img src="../../resources/img/pack_type01_img03.png" alt="">
+                                        </div>
+                                        <p class="sub_txt">신체 단련을 위한 다양한 운동 콘텐츠, 스트레스 관리와 수면 케어를 위한 마인드케어 콘텐츠를 영상과 오디오로 만나보세요.</p>
+                                    </li>
+                                    <li>
+                                        <span>혜택 04</span>
+                                        <p>
+                                            시그나 건강 콜센터
+                                            <a href="#" onclick="netiveUI.plugins.popFull('#full011');"><span class="hidden">이동</span></a>
+                                        </p>
+                                        <div class="img_wrap">
+                                            <img src="../../resources/img/pack_type01_img04.png" alt="">
+                                        </div>
+                                        <p class="sub_txt">간단한 건강상담부터 전국 명의 안내까지</p>
+                                    </li>
+                                    <li>
+                                        <span>혜택 05</span>
+                                        <p>
+                                            프리미엄 건강검진<br>할인 예약 안내
+                                            <a href="#" onclick="netiveUI.plugins.popFull('#full012');"><span class="hidden">이동</span></a>
+                                        </p>
+                                        <div class="img_wrap">
+                                            <img src="../../resources/img/pack_type01_img05.png" alt="">
+                                        </div>
+                                        <p class="sub_txt">심플한 혈액검사 부터 초음파, CT, DNA 검사까지 다양하게 제공받는 프리미엄 건강검진 할인가 예약</p>
+                                    </li>                                
+                                </ul>
+                                <div class="info_item_wrap">
+                                    <div class="tit">
+                                        <h2>상세정보 및 유의사항</h2>
+                                    </div>
+                                    <div class="item_wrap">
+                                        <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full003');">
+                                            <span>진단/상담</span>
+                                            <p>그림진단 심화상담</p>
+                                        </a>
+                                        <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full004');">
+                                            <span>진단/상담</span>
+                                            <p>2039 그룹상담</p>
+                                        </a>
+                                        <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full006');">
+                                            <span>진단/상담</span>
+                                            <p>시그나 건강 콜센터</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    	<!-- 20210809 진단/상담 팝업 -->
+	<div id="FMY046" class="health_full footer_no scroll" style="display: none;">
+		<div class="inner">
+			<div class="pop_wrap">
+				<div class="pop_header">
+					<div class="header_wrap">
+						<h1>진단/상담</h1>
+						<button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+					</div>
+				</div>
+				<div class="pop_container">
+					<div class="con_inner">
+						<div class="con_box">
+							<div class="pop_con type_mypage">
+								<div class="reservation_cont">
+									<div class="tab_wrap reservation_tab">
+										<div class="tabs">
+											<ul class="tab_menulist pt0 pb0">
+												<li><a class="tab_control" href="#tab-1">예약 현황</a></li>
+												<li class="active"><a class="tab_control" href="#tab-2">예약하기</a></li>
+											</ul>
+											<!-- 예약현황 -->
+											<div id="tab-1" class="tab_panel">
+												<div class="acco_list_wrap">
+													<div class="acco_list_item">
+														<div class="acco_item_head">
+															<!-- rv_state 라벨 class 가이드
+																예약완료 : '.complete'
+																상담대기 : 'wate'
+																-->
+															<P class="rv_state"><em class="complete">예약완료</em><span class="time">10:00 ~
+																	10:30</span></P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<span class="count">4/4</span>
+																	<button type="button" class="acco_btn"><span class="hidden">리스트
+																			펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>1회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																		예약취소 : 'b'
+																		상담하기 : 'p'
+																		상담완료, 상담거부 : 'g'
+																		-->
+																	<button type="button" class="btn_form_base rev_btn b"
+																		onclick="netiveUI.plugins.popAlert('#alertCancel');">예약취소</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																	<!-- 선택시 현재 팝업창 닫고 패키지 상세 화면 내 상세정보 및 유의사항 중 해당 진단/상담 혜택정보 팝업창 호출(Front 패키지 화면ID: FMB-002) -->
+							
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="acco_list_item">
+														<div class="acco_item_head">
+															<!-- rv_state 라벨 class 가이드
+																예약완료 : '.complete'
+																상담대기 : 'wate'
+																-->
+															<P class="rv_state"><em class="wate">상담대기</em><span class="time">11:00 ~ 11:30</span>
+															</P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<span class="count">3/4</span>
+																	<button type="button" class="acco_btn"><span class="hidden">리스트
+																			펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>2회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																		예약취소 : 'b'
+																		상담하기 : 'p'
+																		상담완료, 상담거부 : 'g'
+																		-->
+																	<button type="button" class="btn_form_base rev_btn p"
+																		onclick="netiveUI.plugins.popAlert('#alertAdvice');">상담하기</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="acco_list_item">
+														<div class="acco_item_head">
+															<!-- rv_state 라벨 class 가이드
+																예약완료 : '.complete'
+																상담대기 : 'wate'
+																-->
+															<P class="rv_state"><em class="complete">예약완료</em><span class="time">10:00 ~
+																	10:30</span></P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<span class="count">4/4</span>
+																	<button type="button" class="acco_btn"><span class="hidden">리스트
+																			펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>3회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																		예약취소 : 'b'
+																		상담하기 : 'p'
+																		상담완료, 상담거부 : 'g'
+																		-->
+																	<button type="button" class="btn_form_base rev_btn g">상담종료</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="acco_list_item">
+														<div class="acco_item_head">
+															<!-- rv_state 라벨 class 가이드
+																예약완료 : '.complete'
+																상담대기 : 'wate'
+																-->
+															<P class="rv_state"><em class="wate">상담대기</em><span class="time">11:00 ~ 11:30</span>
+															</P>
+															<div class="flex_between_wrap">
+																<div class="item_head_cont">
+																	<p>그림진단 심화상담<br> 나를 알아가는 Question</p>
+																</div>
+																<div class="rev_count">
+																	<span class="count">4/4</span>
+																	<button type="button" class="acco_btn"><span class="hidden">리스트
+																			펼침</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="acco_item_cont">
+															<div class="reservation_box">
+																<div class="rev_top">
+																	<p class="date"><em>4회차</em><span>YYYY.MM.DD HH:MM <br>~ YYYY.MM.DD HH:MM</span></p>
+																	<!-- 버튼 class 가이드
+																		예약취소 : 'b'
+																		상담하기 : 'p'
+																		상담완료, 상담거부 : 'g'
+																		-->
+																	<button type="button" class="btn_form_base rev_btn g">상담거부</button>
+																</div>
+																<div class="rev_info">
+																	<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																	<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																	<p class="tooltip"><a href="javascript:void(0);"
+																			onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- //예약현황 -->
+							
+											<!-- 예약하기 -->
+											<div id="tab-2" class="tab_panel active">
+												<div class="tab_bg_wrap">
+													<div class="calendar_wrap">													
+														<div class="date_tabwrap">
+															<div class="date_header">
+																<h2 class="month_year">
+																	<button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+																	<em>2021.5</em>
+																	<button type="button" class="btn_next"><span class="hidden">다음</span></button>
+																</h2>
+                                                                <!-- 20210812 아코디언 삭제 및 셀렉트박스로 변경 -->
+                                                                <div class="date_selectwrap">
+                                                                    <select name="" id="" class="date_select">
+                                                                        <option value="주간">주간</option>
+                                                                        <option value="월간">월간</option>
+                                                                    </select>
+                                                                </div>
+                                                                <!-- //20210812 아코디언 삭제 및 셀렉트박스로 변경 -->
+															</div>
+															<!-- date_tabcont -->
+															<div class="date_tabcont">
+																<!-- 주간 캘린더 -->
+																<div id="dateWeek" class="date_box" style="display: block;">
+																	<table class="calendar">
+																		<thead>
+																			<tr>
+																				<th class="day_title" scope="col">일</th>
+																				<th class="day_title" scope="col">월</th>
+																				<th class="day_title" scope="col">화</th>
+																				<th class="day_title" scope="col">수</th>
+																				<th class="day_title" scope="col">목</th>
+																				<th class="day_title" scope="col">금</th>
+																				<th class="day_title" scope="col">토</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">16</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">17</button></td>
+																				<td class="day today" tabindex="0"><button type="button" class="day_number">18</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">19</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">20</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">21</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">22</button></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																		<!-- 진단/상담 상세정보 아코디언 -->
+																		<div class="acco_list_wrap">
+																			<div class="acco_list_item">
+																				<div class="acco_item_head">
+																					<div class="flex_between_wrap">
+																						<div class="item_head_cont">
+																							<p>진단/상담 상세정보</p>
+																						</div>
+																						<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																					</div>
+																				</div>
+																				<div class="acco_item_cont">
+																					<div class="reservation_box">
+																						<div class="rev_info">
+																							<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																							<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																							<p class="tooltip"><a href="javascript:void(0);"
+																									onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a></p>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<!-- 진단/상담 상세정보 아코디언 -->
+																</div>
+																<!-- 주간 캘린더 -->
+																<!-- 월간 캘린더 -->
+																<div id="dateMonth" class="date_box">
+																	<table class="calendar">
+																		<thead>
+																			<tr>
+																				<th class="day_title" scope="col">일</th>
+																				<th class="day_title" scope="col">월</th>
+																				<th class="day_title" scope="col">화</th>
+																				<th class="day_title" scope="col">수</th>
+																				<th class="day_title" scope="col">목</th>
+																				<th class="day_title" scope="col">금</th>
+																				<th class="day_title" scope="col">토</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr class="week">
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">25</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">26</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">27</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">28</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">29</button></td>
+																				<td class="day prev-mon" tabindex="0"><button type="button" class="day_number">30</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">1</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">2</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">3</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">4</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">5</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">6</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">7</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">8</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">9</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">10</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">11</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">12</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">13</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">14</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">15</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">16</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">17</button></td>
+																				<td class="day today" tabindex="0"><button type="button" class="day_number">18</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">19</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">20</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">21</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">22</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">23</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">24</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">25</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">26</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">27</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">28</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">29</button></td>
+																			</tr>
+																			<tr class="week">
+																				<td class="day" tabindex="0"><button type="button" class="day_number">30</button></td>
+																				<td class="day" tabindex="0"><button type="button" class="day_number">31</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">1</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">2</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">3</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">4</button></td>
+																				<td class="day next-mon" tabindex="0"><button type="button" class="day_number">5</button></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																		<!-- 진단/상담 상세정보 아코디언 -->
+																		<div class="acco_list_wrap">
+																			<div class="acco_list_item">
+																				<div class="acco_item_head">
+																					<div class="flex_between_wrap">
+																						<div class="item_head_cont">
+																							<p>진단/상담 상세정보</p>
+																						</div>
+																						<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+																					</div>
+																				</div>
+																				<div class="acco_item_cont">
+																					<div class="reservation_box">
+																						<div class="rev_info">
+																							<p><em>혜택정보</em>그림진단 심화상담<br>나를 알아가는 Question</p>
+																							<p><em>상담시간</em>그림진단 심화상담<br>30분 단위로 상담 운영</p>
+																							<p class="tooltip"><a href="javascript:void(0);"
+																									onclick="netiveUI.plugins.popAlert('#alertNotice');">진단/상담 유의사항 보기</a></p>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<!-- 진단/상담 상세정보 아코디언 -->
+																</div>
+																<!-- //월간 캘린더 -->
+															</div>
+															<!-- //date_tabcont -->
+														</div>
+														
+													
+													</div>
+												</div>
+												<div class="cont">
+													<h2>그림진단 심화상담</h2>
+													<div class="time_selectlist">
+                                                        <!-- 20210812 데이터가 없는 경우, 'nodata' class 추가 -->
+														<div class="item nodata">
+															<p>진단/상담 예약 내역이 없습니다.</p>
+														</div>
+														<!-- //20210812 데이터가 없는 경우, 'nodata' class 추가 -->
+														<div class="item">
+															<input type="radio" id="time01" name="timeoption" class="time">
+															<label for="time01">10:00 ~ 10:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time02" name="timeoption" class="time">
+															<label for="time02">10:30 ~ 11:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time03" name="timeoption" class="time" checked>
+															<label for="time03">11:00 ~ 11:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time04" name="timeoption" class="time">
+															<label for="time04">11:30 ~ 12:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time05" name="timeoption" class="time">
+															<label for="time05">13:00 ~ 13:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time06" name="timeoption" class="time">
+															<label for="time06">13:30 ~ 14:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time07" name="timeoption" class="time" disabled> <!--예약불가능시 disabled 추가-->
+															<label for="time07">14:00 ~ 14:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time08" name="timeoption" class="time"> 
+															<label for="time08">14:30 ~ 15:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time09" name="timeoption" class="time" disabled> <!--예약불가능시 disabled 추가-->
+															<label for="time09">15:00 ~ 15:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time10" name="timeoption" class="time">
+															<label for="time10">15:30 ~ 16:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time11" name="timeoption" class="time">
+															<label for="time11">16:00 ~ 16:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time12" name="timeoption" class="time">
+															<label for="time12">16:30 ~ 17:00</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time13" name="timeoption" class="time">
+															<label for="time13">17:00 ~ 17:30</label>
+														</div>
+														<div class="item">
+															<input type="radio" id="time14" name="timeoption" class="time">
+															<label for="time14">17:30 ~ 18:00</label>
+														</div>
+													</div>
+												</div><div class="btn_wrap half">
+													<button type="button" class="btn bg-gray6 ui-close">취소</button>
+													<button type="button" class="btn" onclick="netiveUI.plugins.popAlert('#alertComplete');">예약</button>
+												</div>
+											</div>
+											<!-- 예약하기 -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //20210809 진단/상담 팝업 -->
+
+	<!-- 20210809 alert 팝업 추가 -->
+	<!-- 진단/상담 유의사항 -->
+    <div id="alertNotice" class="health_alert mypage_popup" style="display: none;"> <!--class 'mypage_popup' 추가-->
+        <div class="inner alert_notice">
+            <h1 class="tit_cont_03">진단/상담 유의사항</h1>
+            <ul class="rev_noticelist">
+                <li><p><span>1</span> 1대 1 상담이며, 상담자는 1인을 초과할 수 없습니다.</p></li>
+                <li><p><span>2</span> 예약확정 후에는 확정된 예약시간으로 부터 2일 전 이후부터는 취소할 수 없습니다.
+                (예. 2021년 12월 31일 오후 2시 예약확정 시, 2021년 12월 29일 오후 2시 이후 취소 불가, 서비스 이용 완료로 간주 됩니다.)</p></li>
+                <li><p><span>3</span> 예약 상담시간을 꼭 지켜주시기 바랍니다. 예약 후 상담을 받지 않아서 상담 회수에서 차감 됩니다.</p></li>
+                <li><p><span>4</span> 상담 10분전까지 입장을 해주시기 바랍니다.</p></li>
+                <li><p><span>5</span> 그외 궁금한 사항은 콜센터<br> <em>1600-3444</em> 문의 가능합니다.</p></li>
+            </ul>
+            <div class="btn_wrap">
+                <button type="button" class="btn_pop_dark ui-close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //진단/상담 유의사항 -->
+    
+	<!-- 상담 시간 알림 -->
+	<div id="alertAdvice" class="health_alert mypage_popup" style="display: none;">
+		<div class="inner">
+			<h1 class="tit_cont_03">아직 상담 시간이 아니에요</h1>
+			<p class="msg">
+				7월 15일 18:00에 예약되어 있습니다.<br>
+				상담 5분전에 입장하세요.
+			</p>
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- //상담 시간 알림 -->
+
+	<!-- case01 : 예약완료 -->
+	<div id="alertComplete" class="health_alert mypage_popup" style="display: none;">
+		<div class="inner">
+			<h1 class="tit_cont_03">예약을 완료 했습니다.</h1>
+			<p class="msg">
+				부득이한 사정으로 예약을 취소하시려<br>
+				면 진단/상담 예약일 하루 전 오후 6시<br>
+				까지 취소가 가능합니다.
+			</p>
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- //case01 : 예약완료 -->
+
+	<!-- case02 : 예약불가능 -->
+	<div id="alertNcomplete" class="health_alert mypage_popup" style="display: none;">
+			<div class="inner">
+				<h1 class="tit_cont_03">예약 할 수 없습니다.</h1>
+				<p class="msg">
+					이용가능한 횟수를 모두 소진하여 예약<br>
+					이 불가 합니다.
+				</p>
+				<div class="btn_wrap">
+					<button type="button" class="btn_pop_dark ui-close">확인</button>
+				</div>
+			</div>
+		</div>
+	<!-- //case02 : 예약불가능 -->
+
+	<!-- case03 : 예약취소 불가 -->
+	<div id="alertNcancel" class="health_alert" style="display: none;">
+	        <div class="inner">
+	            <p class="msg">
+	                예약취소는 2일전까지 가능하며,<br>
+	                그 이후는 예약취소 불가합니다.
+	            </p>
+	            <div class="btn_wrap">
+	                <button type="button" class="btn_pop_dark ui-close">확인</button>
+	            </div>
+	        </div>
+	    </div>
+	<!-- //case03 : 예약취소 불가 -->
+
+	<!-- case04 : 예약취소 완료 -->
+	<div id="alertCancel" class="health_alert mypage_popup" style="display: none;">
+		<div class="inner">
+			<p class="msg">
+				예약취소를 완료 하였습니다.
+			</p>
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- //case04 : 예약취소 완료 -->
+
+    <script>
+		//20210812 이전 아코디언 js 삭제
+		// 20210812 주간/월간 셀렉트박스
+		$('.date_select').change(function() {
+			var dateTypeSelect = $('.date_select option:selected').val();
+			if (dateTypeSelect == '주간') {
+				$('#dateWeek').show();
+				} else {
+				$('#dateWeek').hide();
+			}
+			if (dateTypeSelect == '월간') {
+				$('#dateMonth').show();
+				} else {
+				$('#dateMonth').hide();
+			}
+		}); 
+		//달력 버튼 이벤트
+		$('.calendar .day_number').click( function() {
+			$(this).addClass('selected');
+
+			if($(".day_number").hasClass("selected")) {
+				$('.day_number').removeClass('selected');
+			  	$(this).addClass('selected');
+			} 
+        });
+	</script>		
+</body>
+
+</html>

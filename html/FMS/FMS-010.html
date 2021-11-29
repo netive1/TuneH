@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신체정보 입력</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>추가하기</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container">
+    <div class="inp_form">
+      <h2 class="tit_cont_02">체중</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">체중</span><input type="text" class="inp_bg" value="56"><em class="attr">kg</em>
+      </div>
+    </div>
+    <div class="inp_form">
+      <h2 class="tit_cont_02">체지방량</h2>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">체중</span><input type="text" class="inp_bg" value="56"><em class="attr">kg</em>
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">체지방량</span><input type="text" class="inp_bg" value="56"><em class="attr">%</em>
+      </div>
+    </div>
+    <div class="inp_form">
+      <h2 class="tit_cont_02">허리둘레</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">둘레</span><input type="text" class="inp_bg" value="72"><em class="attr">cm</em>
+      </div>     
+    </div>
+  </div>
+  <div class="btn_btm_fixed">
+    <button type="button" onclick="location.href='FMS-011.html'" class="btn">저장하기</button>
+  </div>
+</div>
+</body>
+</html>

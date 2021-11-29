@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+//$font-path-noto : '/font/notosans/';
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url($font-path-noto + "NotoSansKR-Regular.woff2") format("woff2"),
+    url($font-path-noto + "NotoSansKR-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url($font-path-noto + "NotoSansKR-Bold.woff2") format("woff2"),
+    url($font-path-noto + "NotoSansKR-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 900;
+  src: url($font-path-noto + "NotoSansKR-Black.woff2") format("woff2"),
+    url($font-path-noto + "NotoSansKR-Black.woff") format("woff");
+}
+
+//$font-path-roboto : '/font/roboto/';
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Regular"), local("Roboto-Regular"),
+    url($font-path-roboto + "Roboto-Regular.woff2") format("woff2"),
+    url($font-path-roboto + "Roboto-Regular.woff") format("woff"),
+    url($font-path-roboto + "Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+    url($font-path-roboto + "Roboto-Bold.woff2") format("woff2"),
+    url($font-path-roboto + "Roboto-Bold.woff") format("woff"),
+    url($font-path-roboto + "Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Roboto Black"), local("Roboto-Black"),
+    url($font-path-roboto + "Roboto-Black.woff2") format("woff2"),
+    url($font-path-roboto + "Roboto-Black.woff") format("woff"),
+    url($font-path-roboto + "Roboto-Black.ttf") format("truetype");
+}

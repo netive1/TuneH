@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <title>휴면계정 해제</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap">
+    <header class="health_header">
+      <!-- 20210721 마크업 변경 -->
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>휴면계정 해제</h1>
+      </div>
+    </header>
+    <!--// health_header -->
+    <div class="health_container">
+      <h1 class="tit_cont_01">
+        본인확인을 위해<br/>
+        이메일 인증을<br/>
+        진행해주세요.
+      </h1>
+      <p class="tit_sub_02">
+        가입했던 이메일로<br/>
+        휴면계정 해제가 가능합니다.
+      </p>
+      <div class="inp_wrap type_large mt90">
+        <input class="inp_base" type="email" placeholder="이메일주소">
+      </div>
+    </div>
+    <!--// health_container -->
+  </div>
+
+  <div class="btn_btm_fixed">
+    <button type="button" class="btn ver01" onclick="netiveUI.plugins.popAlert('#alert001');" disabled="disabled">이메일 인증하기</button>
+  </div>
+
+  <!-- case01 : 이메일 유요한 경우 -->
+  <div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        가입하신 이메일로 비밀번호 재설정 메일을<br>발송하였습니다.<br><br>이메일을 확인해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+  <!-- case02 : 이메일 유요하지 않은 경우 -->
+  <div class="health_alert" id="alert002" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        가입하신 이메일 정보가 없습니다.<br>확인 후 다시 입력해주세요.<br><br>※SNS 계정으로 가입하신 경우, 해당 서비스에서<br>확인해주시기 바랍니다.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+</div>
+</body>
+</html>

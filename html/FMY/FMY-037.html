@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>거주지 선택</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+	<div class="health_wrap type_mypage">
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>거주지 선택</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="health_container">
+			<h2 class="tit_cont_01">거주 지역(도시)을<br>선택해주세요.</h2>
+			<!-- 20210719 마크업 수정 -->
+			<div class="inp_wrap type_box">
+				<div class="inp_item">
+					<label class="inp_label">지역 선택</label>
+					<input class="inp_base" type="text" placeholder="지역 선택 입력">
+				</div>
+			</div>
+			<!-- //20210719 마크업 수정 -->
+		</div>
+		<div class="btn_btm_fixed">
+			<button type="button" class="btn" disabled>확인</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강관리 코칭 메시지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script>
+    // 메시지 창 제일 하단으로 
+    $(document).ready(function(){
+      $('#ms_wrap').scrollTop($('#ms_wrap')[0].scrollHeight);
+      $plugins.pageReload.destroy(); // 20210903 페이지 리로드 해제, 잘 안될 경우 setTimeout 사용 필요
+    })
+  </script>
+</head>
+<body>
+  <!-- 20210901 마크업 수정 (풀 팝업 → 페이지 변경)-->
+  <div class="health_wrap type_coaching chatt"> <!-- 'type_coaching ,  chatt' class 필요-->
+    <div class="health_container ms_container"> <!--'ms_container' class 필요-->
+      <div class="con_inner">
+        <!-- 2021.07.05 아이디 추가 -->
+        <div class="con_box ms_con_box_header" id="ms_wrap">
+          <div class="pop_con">
+            <div class="cont_header">
+              <div class="ms_hd_fixed">
+                <img src="../../resources/img/img_cigna.png" class="ms_img">
+                <div class="ms_hd">
+                  <span>Tune H</span>
+                  <span>07.01</span>
+                </div>
+                <div class="option_box">
+                  <button type="button" class="btn_set ver02"><span class="hidden">설정</span></button>
+                </div>   
+              </div>    
+            </div>
+            <!-- 20210707 헤더 전체 수정 오른쪽 위치 버튼들 중 '닫기 버튼' 제외하고는 .option_box 로 감싸기 -->
+            
+            <!-- 팝업 내용 -->
+            <div class="ms_wrap">
+              <!-- <div class="date">05.12</div> -->
+              <div class="ms_item">
+                <div class="time">오후 10:08<span class="state">활동</span></div>
+                <div class="bubble_l">
+                  하루 3,000 보 목표를 추가했어요!
+                  일일 걸음 수를 잘 채우고 있는지 확인해 드릴게요. 하루에 최소 3,000보까지 걸음 수를 늘려 보세요.
+                  <br><br>
+                  모든 걸음이 측정될 수 있도록 dacadoo에 피트니스용 스마트 디바이스나 건강 앱을 연결하세요. 하루 목표량 채우기에 지금만큼 좋은 시간도 없습니다. 
+                  <br><br>
+                  시작해 볼까요?
+                </div>
+              </div>
+            
+              <div class="ms_item">
+                <div class="time">오후 10:08<span class="state">활동</span></div>
+                <div class="bubble_l">
+                  오늘의 걷기 목표에 도달했습니다!
+                  잘 하셨어요. <span>현지</span>님. 오늘 5,000보 넘게 걸으셨네요.<br>
+                  훌륭해요~ 계속 유지하세요.정해보시는 건 어때요?
+                </div>
+              </div>
+            </div>
+            <!-- //팝업내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--// health_container -->
+    <!--  footer -->
+    <footer class="health_footer">
+      <div class="health_footer_nav">
+        <ul>
+          <li><a href="#" class="nav_item"><span class="hidden">홈</span></a></li>
+          <li><a href="#" class="nav_item"><span class="hidden">목표</span></a></li>
+          <li><a href="#" class="nav_item"><span class="hidden">콘텐츠</span></a></li>
+          <li><a href="#" class="nav_item"><span class="hidden">패키지</span></a></li>
+          <li><a href="#" class="nav_item on"><span class="hidden">코칭</span></a></li>
+        </ul> 
+      </div>
+    </footer>
+    <!-- //footer-->
+    <!-- //20210901 마크업 수정 (풀 팝업 → 페이지 변경)-->
+  </div>
+</body>
+</html>

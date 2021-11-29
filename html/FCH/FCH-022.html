@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강신호 측정</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/jquery-ui.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/jquery-ui.js"></script>
+  <script src="../../resources/js/jquery-touch-punch.js"></script>
+</head>
+<body>
+<div class="health_wrap type_coaching">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>건강신호 측정</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <!-- 08/04 pt0 클래스 추가 -->
+  <div class="health_container pt0">
+    <div class="guide_wrap">
+      <div class="guide_top">
+        <!-- 20210802 얼굴 측정시 case FCH-018-1.html로 분리 -->
+        <!-- 손가락 측정 case -->
+        <div class="finger_guide_wrap"></div>
+        <!-- 손가락 측정 case -->
+      </div>
+      <div class="guide_cont">
+        <button type="button" class="btn_base_02 primary">측정 시작</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- 건강 신호 측정 안내 popup -->
+ <!-- 진입시 가이드 팝업 우선 none 처리 해놓음 -> class에 'actived' 추가하면 보임 -->
+ <div class="health_full footer_no" id="health_signal" style="display: none;">
+  <div class="inner">
+    <div class="pop_wrap">
+      <div class="pop_header">
+        <div class="header_wrap">
+          <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+        </div>
+      </div>
+      <div class="pop_container">
+        <div class="con_inner">
+          <div class="con_box">
+            <div class="pop_con">
+              <h1 class="tit_cont_01">건강 신호<br/>측정 안내</h1>
+              <!-- 손가락측정 가이드 -->
+              <p class="tit_sub_02">
+                후면 카메라에 손가락을 대고<br>
+                측정시작 버튼을 눌러주세요!
+              </p>
+              <div class="guide_info_wrap finger">
+                <ul>
+                  <li class="guide_info_item g1">
+                    가이드 선에 손가락을<br>정확하게 맞춰 주세요.
+                  </li>
+                  <li class="guide_info_item g2">
+                    가이드 선 밖으로<br>벗어나지 않게 해 주세요.
+                  </li>
+                  <li class="guide_info_item g3">
+                    측정이 완료될 때까지<br>손가락을 떼지 마세요.
+                  </li>
+                  <li class="guide_info_item g4">
+                    장갑은 벗고<br>측정해 주세요.
+                  </li>
+                </ul>
+                <div class="check_box">
+                  <input type="checkbox" id="chk1" class="chkItem" name="">
+                  <label for="chk1">다시 보지 않음</label>
+                </div>
+              </div>
+              <!-- //손가락측정 가이드 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //건강 신호 측정 안내 popup -->
+</body>
+</html>

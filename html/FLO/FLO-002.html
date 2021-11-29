@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>walkthrough</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+</head>
+
+<body class="type_walkthrough">
+  <div class="swiper-container walkthrough_slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="walk_tit">
+          <h2>Tune Your Health!<br>Tune H</h2>
+          <p>1:1 맞춤코칭 서비스<br>Tune H와 함께 오늘보다 더 나은 내일을<br>튜닝해 보세요!</p>
+        </div>
+        <div class="walk_img">
+          <img src="../../resources/img/img_walkthrough_st_01.png" alt="">
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="walk_tit">
+          <h2>나만의 코치와 함께<br>건강해지는 즐거운 경험</h2>
+          <p>나를 가장 잘 아는 나만의 코치가<br>건강진단, 목표설정, 목표달성까지 <br>곁에서 함께 도와드립니다.</p>
+        </div>
+        <div class="walk_img">
+          <img src="../../resources/img/img_walkthrough_st_02.png" alt="">
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="walk_tit">
+          <h2>나를 잘 아는 것이 진정한<br>건강관리의 시작</h2>
+          <p>빅데이터 기반의 건강 설문과<br>새로운 안면인식 기술로 <br>운동, 수면, 영양, 멘탈케어까지 <br>내 건강 상태에 맞는 해법 추천</p>
+        </div>
+        <div class="walk_img">
+          <img src="../../resources/img/img_walkthrough_st_03.png" alt="">
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="walk_tit">
+          <h2>열심히 참여할 수록<br>건강해지는 Tune H!</h2>
+          <p>매일의 코칭을 따라 다양한 활동에 <br>참여할 수록 쌓이는 포인트.<br>선물도 받고 건강 레벨업까지!</p>
+        </div>
+        <div class="walk_img">
+          <img src="../../resources/img/img_walkthrough_st_04.png" alt="">
+        </div>
+        <!-- <div class="check_box">
+          <input type="checkbox" id="chk1" class="chkItem" name="">
+          <label for="chk1">다시 보지 않음</label>
+        </div> -->
+      </div>
+    </div>
+    <button type="button" class="btn_skip">SKIP</button>
+    <div class="swiper-button-next">다음</div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <script>
+    var swiper = new Swiper(".walkthrough_slider", {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+      },
+      on: {
+        init: function () {
+          $('.walk_tit').eq(0).fadeIn(700);
+        },
+        slideChange: function () {
+          if (swiper.slides.length - 1 === swiper.realIndex) {
+            $('.swiper-button-next').html('완료');
+            setTimeout(function () {
+              $('.swiper-button-next').removeClass('swiper-button-disabled').attr({
+                'tabindex': 0,
+                'aria-disabled': 'false'
+              });
+              $('.swiper-button-next').off().on('click', function () {
+                // alert('다음 페이지로');
+              });
+            }, 300);
+          } else {
+            $('.swiper-button-next').html('다음');
+          }
+          $('.walk_tit').fadeOut().eq(swiper.realIndex).delay(300).fadeIn(700);
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>

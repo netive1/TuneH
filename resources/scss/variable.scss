@@ -1,0 +1,248 @@
+@charset "utf-8";
+
+//font 축약형 include
+@mixin fontStyle($color, $font-size, $font-weight, $line-height) {
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+//flex type
+@mixin flex {
+  display: -webkit-box;
+  display: flex;
+}
+@mixin flexCenter {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+@mixin flexStart {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content:flex-start;
+}
+@mixin flexBetween {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+//fixed type
+@mixin fixedTop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@mixin fixedBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+//itembox
+@mixin itemBox {
+  @include flexBetween;
+  min-height: 88px;
+  padding: 0 30px 0 24px;
+  margin-bottom: 11px;
+  color: $color-black2;
+  font-size: 18px;
+  font-weight: $fw-b;
+  letter-spacing: -0.2px;
+  background: $bg-white;
+  border-radius: 16px;
+  box-shadow: 8px 8px 18px 0 rgba(209, 217, 230, 0.4);
+  @content;
+}
+//base icon & arrows
+@mixin dotMenu {
+  position: absolute;
+  left: 50%;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  content: "";
+}
+@mixin arrowTop {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url($imgpath + "arr_top.png") center no-repeat;
+  background-size: contain;
+  content: "";
+  @content;
+}
+@mixin arrowRight {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url($imgpath + "arr_right.png") center no-repeat;
+  background-size: contain;
+  content: "";
+  @content;
+}
+@mixin arrowBottom {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url($imgpath + "arr_bottom.png") center no-repeat;
+  background-size: contain;
+  content: "";
+  @content;
+}
+@mixin arrowLeft {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url($imgpath + "arr_left.png") center no-repeat;
+  background-size: contain;
+  content: "";
+  @content;
+}
+
+@mixin txtGradient {
+  background-image: -webkit-linear-gradient(#19d3c5, #0db5e1, #0095ff, #9b78f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @content;
+}
+
+// 이미지 &폰트 경로
+$imgpath: "../img/";
+$level-imgpath: "../img/level/";
+$pakageimg-bg : "../img/pakage/bg/";
+$pakageimg-common : "../img/pakage/common/";
+$pakageimg-g-bodyfit: "../img/pakage/general/bodyfit/";
+$pakageimg-g-mental: "../img/pakage/general/mental/";
+$pakageimg-g-nutrition: "../img/pakage/general/nutrition/";
+$pakageimg-g-sleep: "../img/pakage/general/sleep/";
+$pakageimg-g-wellbeing: "../img/pakage/general/wellbeing/";
+
+$pakageimg-s-bodyfit: "../img/pakage/sevneteen/bodyfit/";
+$pakageimg-s-mental: "../img/pakage/sevneteen/mental/";
+$pakageimg-s-nutrition: "../img/pakage/sevneteen/nutrition/";
+$pakageimg-s-sleep: "../img/pakage/sevneteen/sleep/";
+$pakageimg-s-wellbeing: "../img/pakage/sevneteen/wellbeing/";
+
+$font-path-noto: "../font/notosans/";
+$font-path-roboto: "../font/roboto/";
+
+$font-noto: "Noto Sans";
+$font-roboto: "Roboto";
+
+// color
+$color-white: #fff;
+$color-white-f6: #f6f6f6;
+$color-white-d9: #d9d9d9;
+$color-pale-gray: #f6f7f8;
+$color-gray6: #666;
+$color-gray8: #888;
+$color-gray9: #999;
+$color-black0: #000;
+$color-black2: #222;
+$color-black3: #333;
+$color-light-purple: #f3e3fa;
+$point-color-primary: #00264a; //#6b0e90;
+$point-color-lightPurple: #a55cf8;
+//bi color
+$bi-purple : #9b78f0;
+$bi-mint: #19d3c5; 
+$bi-navy: #00264a;
+$bi-gradient-h: linear-gradient(0deg,  rgb(203,139,218), rgb(155,120,240),  rgb(0,149,255), rgb(25,211,197)); //bi 그라디언트 세로 타입
+$bi-gradient-w: linear-gradient(90deg, rgb(25,211,197), rgb(0,149,255), rgb(155,120,240), rgb(203,139,218)); //bi 그라디언트 가로 타입
+$bi-point-gradient: linear-gradient(-45deg, rgb(203,139,218) 1%, rgb(155,120,240), rgb(0,149,255), rgb(25,211,197)); 
+
+// bg color
+$bg-white: $color-white;
+$bg-white-f9: #f9f9f9;
+$bg-white-eb: #ebebeb;
+$bg-black0: $color-black0;
+$bg-black2: $color-black2;
+$bg-black3: $color-black3;
+$bg-white-d9: $color-white-d9;
+$bg-gray6: $color-gray6;
+$bg-gray9: $color-gray9;
+$bg-point-yellow: #ffb600;
+$bg-point-green: #7fc700;
+$bg-point-coral: #ff4b41;
+$bg-point-lightPurple: #a55cf8;
+$bg-point-purple: $point-color-primary;
+.bg_gray_wrap{background-color: #f6f7f8!important;}
+.bg_white_wrap{background-color: #ffffff!important;}
+
+// input color
+$inp-bg-color: $color-white-f6;
+$inp-border-color: #ebebeb;
+
+// Font size
+$fs-xs: 12px;
+$fs-s: 14px;
+$fs-sm: 16px;
+$fs-m: 18px;
+$fs-md: 20px;
+$fs-l: 26px;
+$fs-lg: 32px;
+$fs-xlg: 40px;
+
+// Font weight
+$fw-t: 100; // thin
+$fw-l: 300; // light
+$fw-n: 400; // regular
+$fw-m: 500; // medium
+$fw-b: 700; // bold
+$fw-bb: 900; // extrabold
+
+//여백(margin & padding)
+.mt0 {margin-top: 0 !important;}
+.mt10 {margin-top: 10px !important;}
+.mt15 {margin-top: 15px !important;}
+.mt20 {margin-top: 20px !important;}
+.mt25 {margin-top: 25px !important;}
+.mt30 {margin-top: 30px !important;}
+.mt40 {margin-top: 40px !important;}
+.mt50 {margin-top: 50px !important;}
+.mt60 {margin-top: 60px !important;}
+.mt70 {margin-top: 70px !important;}
+.mt80 {margin-top: 80px !important;}
+.mt90 {margin-top: 90px !important;}
+.mt100 {margin-top: 100px !important;}
+.mt110 {margin-top: 110px !important;}
+.mt120 {margin-top: 120px !important;}
+.mt140 {margin-top: 140px !important;}
+.mb0 {margin-bottom: 0 !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb50 {margin-bottom: 50px !important;}
+.mb60 {margin-bottom: 60px !important;}
+.mb70 {margin-bottom: 70px !important;}
+.mb80 {margin-bottom: 80px !important;}
+.mb90 {margin-bottom: 90px !important;}
+.mb100 {margin-bottom: 100px !important;}
+.pt0 {padding-top: 0 !important;}
+.pt10 {padding-top: 10px !important;}
+.pt20 {padding-top: 20px !important;}
+.pt30 {padding-top: 30px !important;}
+.pt40 {padding-top: 40px !important;}
+.pt50 {padding-top: 50px !important;}
+.pb0 {padding-bottom: 0 !important;}
+.pb10 {padding-bottom: 10px !important;}
+.pb20 {padding-bottom: 20px !important;}
+.pb30 {padding-bottom: 30px !important;}
+.pb40 {padding-bottom: 40px !important;}
+.pb50 {padding-bottom: 50px !important;}
+.pb100 {padding-bottom: 100px !important;}
+.pl0 {padding-left: 0 !important;}

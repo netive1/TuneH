@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>성명 입력</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+
+</head>
+<body>
+  <div class="health_wrap type_signup">
+    <header class="health_header"><!-- 20210526-<header>태그 추가 -->
+      <!-- 07/29 타이틀 추가 -->
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>성명 입력</h1>
+      </div>
+      <div class="step_wrap"> <!--20211022 step 수정-->
+        <span class="now">4</span>8 
+        <span class="hidden">총 8페이지 중 현재 4페이지</span>
+      </div>
+    </header>
+    <div class="health_container">
+      <h1 class="tit_cont_02">성명과 닉네임을<br>입력해주세요.</h1>
+  
+      <div class="inp_wrap type_large mt110"><!-- 20210526-mt110클래스명 수정 -->
+        <div class="inp_item">
+          <input class="inp_base" type="text" placeholder="성명">
+        </div>
+        <div class="inp_item">
+          <input class="inp_base" type="text" placeholder="닉네임">
+        <p class="notice err">이미 사용중인 닉네임입니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn_btm_fixed">
+    <div class="progress_wrap"><!-- 20210526-위치 수정 -->
+      <progress max="800" value="400"></progress> <!--20211022 max값 수정-->
+    </div>
+    <button type="button" class="btn" disabled="disabled">다음</button><!-- 20210526-ver02 클래스 삭제 -->
+  </div>
+ 
+</body>
+</html>

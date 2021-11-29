@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이 리포트</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_mypage footer_no">
+	<header class="health_header">
+		<div class="inbtn">
+			<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+			<h1>마이 리포트</h1>
+		</div>
+		<div class="user"><button type="button">홍길동</button></div>
+		<!-- user class 가이드
+	      패키지 구매회원의 경우 : .package 추가
+	      신규 알림 있을 시 : .on 추가
+	    -->
+	</header>
+	<div class="health_container">
+		<div class="tab_wrap">   
+			<div class="tabs">
+				<ul class="tab_menulist pt0 pb0">
+					<li class="active"><a class="tab_control" href="#tab-1">모든 리포트</a></li>
+					<li><a class="tab_control" href="#tab-2">완료한 리포트</a></li>
+				</ul>          
+				<div class="tab_panel active" id="tab-1">
+					<div class="tab_bg_wrap">
+						<div class="between_wrap">
+							<p class="achieve_num">선택한 리포트<span>199</span>개</p><!--20210728 마크업 수정 및 class 추가-->
+							<div class="select_wrap">
+								<select name="" id="">
+									<!-- 20210719 옵션값 변경 -->
+									<option value="">전체</option>
+									<option value="">진행중</option>
+									<option value="">대기중</option>
+									<!-- //20210719 옵션값 변경 -->
+								</select>
+							</div>
+						</div>
+						<ul class="achieve_wrap">
+							<li class="item">
+								<div class="item_head">
+									<!-- 20210719 마크업 변경 -->
+									<em>멀티스포츠2개</em>
+									<p>2가지 운동을 하고 기록해보세요!</p>
+									<!-- //20210719 마크업 변경 -->
+								</div>
+								<div class="item_cont">
+									<span class="num">125,000<em>/250,000</em></span>
+									<div class="progress_wrap ico_point">
+										<progress max="100" value="40"></progress>
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="item_head">
+									<!-- 20210719 마크업 변경 -->
+									<em>일일 멀티스포츠 2개</em>
+									<p>2가지 운동을 하고 기록해보세요!</p>
+									<!-- //20210719 마크업 변경 -->
+								</div>
+								<div class="item_cont">
+									<span class="num">125,000<em>/250,000</em></span>
+									<div class="progress_wrap ico_point">
+										<progress max="100" value="40"></progress>
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="item_head">
+									<!-- 20210719 마크업 변경 -->
+									<em>250,000보 걷기</em>
+									<p>250,000걸음을 기록해보세요!</p>
+									<!-- //20210719 마크업 변경 -->
+								</div>
+								<div class="item_cont">
+									<span class="num">125,000<em>/250,000</em></span>
+									<div class="progress_wrap ico_point">
+										<progress max="100" value="40"></progress>
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="item_head">
+									<!-- 20210719 마크업 변경 -->
+									<em>운동하는 날</em>
+									<p>하루 운동량 50MET h를 기록해 보세요!</p>
+									<!-- //20210719 마크업 변경 -->
+								</div>
+								<div class="item_cont">
+									<span class="num">125,000<em>/250,000</em></span>
+									<div class="progress_wrap ico_point">
+										<progress max="100" value="40"></progress>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 20210719 마크업 현행화 -->
+				<div class="tab_panel active" id="tab-2">
+					<div class="tab_bg_wrap">
+						<ul class="achieve_wrap complete">
+							<li class="item">
+								<div class="item_head">리포트 달성율 78% </div>
+								<div class="item_cont">
+									<span class="num">167<em>/203</em></span>
+									<div class="progress_wrap ico_point">
+										<progress max="100" value="78"></progress>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul class="point_wrap">
+						<li class="item">
+							<!-- 20210719 -->
+							<div class="tit">
+								<span>20210.03.11<em>17:00</em></span>
+								<em>멀티 스포츠 : 2개 완료</em>
+								<p>2가지 운동을 하고 기록해보세요!</p>
+							</div>
+							<!--20210713 icon 삭제 -->
+							<!-- //20210719 -->
+							<span class="complete">완료</span> <!--20210730 완료 라벨 추가-->
+						</li>
+						<li class="item">
+							<!-- 20210719 -->
+							<div class="tit">
+								<span>20210.03.11<em>17:00</em></span>
+								<em>10,000보 걷기 완료</em>
+								<p>10,000걸음을 기록해보세요!</p>
+							</div>
+							<!--20210713 icon 삭제 -->
+							<!-- //20210719 -->
+							<span class="complete">완료</span><!--20210730 완료 라벨 추가-->
+						</li>
+						<li class="item">
+							<!-- 20210719 -->
+							<div class="tit">
+								<span>20210.03.11<em>17:00</em></span>
+								<em>1시간 운동하기 완료</em>
+								<p>10,000걸음을 기록해보세요!</p>
+							</div>
+							<!--20210713 icon 삭제 -->
+							<!-- //20210719 -->
+							<span class="complete">완료</span><!--20210730 완료 라벨 추가-->
+						</li>
+						<li class="item">
+							<!-- 20210719 -->
+							<div class="tit">
+								<span>20210.03.11<em>17:00</em></span>
+								<em>2.5km 걷기 완료</em>
+								<p>10,000걸음을 기록해보세요!</p>
+							</div>
+							<!--20210713 icon 삭제 -->
+							<!-- //20210719 -->
+							<span class="complete">완료</span><!--20210730 완료 라벨 추가-->
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

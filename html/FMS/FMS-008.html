@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수면 직접 입력</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>수면 직접 입력</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container">
+    <div class="inp_wrap inp_datepicker">
+      <span class="inp_label">취침 시간과 날짜</span>
+      <!--20210714 마크업 변경 -->
+      <div class="inp_datetimepicker">
+        <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+        <input type="time" class="inp_bg" placeholder="22:30" required="required">
+      </div>
+      <!--//20210714 마크업 변경 -->
+    </div>
+    <div class="inp_wrap inp_datepicker">
+      <span class="inp_label">기상 시간과 날짜</span>
+      <!--20210714 마크업 변경 -->
+      <div class="inp_datetimepicker">
+        <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+        <input type="time" class="inp_bg" placeholder="22:30" required="required">
+      </div>
+      <!--//20210714 마크업 변경 -->
+    </div>
+    <div class="inp_wrap_bg">
+      <div class="inp_wrap inp_timepicker add_attr">
+        <span class="inp_label">침대에 머문 시간</span><input type="time" class="inp_bg" placeholder="12:00" required="required"><em class="attr">시간</em> <!--20210716 'add_attr class추가 및 em 태그 추가'-->
+      </div>
+      <div class="inp_wrap inp_timepicker add_attr">
+        <span class="inp_label">수면 시간</span><input type="time" class="inp_bg" placeholder="12:00" required="required"><em class="attr">시간</em> <!--20210716 'add_attr class추가 및 em 태그 추가'-->
+      </div>
+    </div>
+    <div class="inp_wrap add_attr">
+      <span class="inp_label">수면 중 깬 횟수</span><input type="text" class="inp_bg" value="1"><em class="attr">회</em><!--20210716 'add_attr class추가 및 em 태그 추가'-->
+    </div>
+  </div>
+  <div class="btn_btm_fixed">
+    <button type="button" onclick="location.href='FMS-011.html'" class="btn">저장하기</button><!--'20210719 'disabled' attr 추가시 버튼 비활성화처리됨-->
+  </div>
+</div>
+</body>
+</html>

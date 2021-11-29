@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강신호 측정 결과</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_coaching">
+  <header class="health_header">
+    <!-- 20210721 'inbtn' class 추가 -->
+    <div class="inbtn">
+      <h1 class="hidden">건강신호 측정 결과</h1>
+      <button type="button" class="btn_share right"><span class="hidden">공유</span></button>
+    </div>
+  </header>
+  <div class="health_container"></div>
+</div>
+
+<!-- Full popup -->
+<div class="health_full actived" id="full001" style="display: block;">
+  <div class="inner">
+    <div class="pop_wrap">
+      <div class="pop_header">
+        <div class="header_wrap">
+          <header class="health_header">
+            <div class="inbtn">
+              <h1 class="hidden">건강신호 측정 결과</h1>
+            </div>
+            <div class="user"><button type="button">홍길동</button></div>
+            <!-- user class 가이드
+                패키지 구매회원의 경우 : .package 추가
+                신규 알림 있을 시 : .on 추가
+              -->
+          </header>
+        </div>
+      </div>
+      <!-- //pop header -->
+
+      <div class="pop_container">
+        <div class="con_inner">
+          <div class="con_box">
+            <div class="pop_con">
+              <!-- 팝업 내용 -->
+              <h2 class="tit_cont_01">
+                <span class="date">2021.06.21<em>09:38</em></span>건강신호 측정 결과
+              </h2>
+              <div class="result_wrap">
+                <div class="result_item">
+                  <ul class="result_list grid3">
+                    <li class="item">심박수<br>bpm</li>
+                    <li class="item">산소포화도<br>Sp02%</li>
+                    <li class="item">분당호흡수<br>RPM</li>
+                  </ul>
+                  <ul class="result_value grid3">
+                    <li class="item">88<a class="tooltip" href="#">보통</a></li>
+                    <li class="item">86<a class="tooltip" href="#">보통</a></li>
+                    <li class="item">21<a class="tooltip" href="#">보통</a></li>
+                  </ul>
+                </div>
+                <div class="result_item">
+                  <ul class="result_list grid3">
+                    <li class="item">스트레스지수<br><span>500점 만점 기준</span></li> <!--20210804 워딩수정, span태그 추가-->
+                    <li class="item">심박변이도<br>MS</li>
+                  </ul>
+                  <ul class="result_value grid3">
+                    <li class="item">3<a class="tooltip" href="#">보통</a></li>
+                    <li class="item">77.6<a class="tooltip" href="#">보통</a></li>
+                  </ul>
+                </div>
+
+                <hr class="hr_line_03">
+                <p class="notice mt30 mb60">결과는 측정방식이나 제공업체에 따라 결과가 다를 수 있습니다.</p>
+                <div class="btn_wrap">
+                  <a href="#" class="btn_txt_line">다시 측정하기</a>
+                  <a href="#" class="btn_txt_line">홈으로 이동</a>
+                </div>
+              </div>
+              <!-- //팝업내용 -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //pop container -->
+    </div>
+   
+  </div>
+</div>
+<!-- // -->
+
+<script>
+  $(".result_list").each(function() {
+
+    var gridItem = $(this).find('li').length;
+
+    if(gridItem >= 3) {
+      $(this).find('li').css('width','33.333%');
+    } else if (gridItem >= 2) {
+      $(this).find('li').css('width','50%');
+    }
+  });
+</script>
+</body>
+</html>

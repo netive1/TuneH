@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+    <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../../resources/js/ui.common.js"></script>
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+
+<body class="type_content">
+    <div class="health_wrap">
+        <div class="health_container">
+            <div>
+                <button class="first" style="background-color: #000;color: #fff;;">플레이</button>
+            </div>
+            <div>
+                <audio>
+                    <source src="../../resources/audio/0831 TUNE H 에스쿱스 5초 멘트 1.wav">
+                </audio>
+            </div>
+        </div>
+        <!--// health_container -->
+    </div>
+    <!-- // -->
+
+<script>
+    $('.first').on('click touchstart', function () {
+        $("audio")[0].play();
+    });
+    function fnPlayAudio(index) {
+        new Audio("/sample/sample_" + index + ".wav").play();
+    }
+</script>
+</body>
+
+</html>

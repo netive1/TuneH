@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목표 메인</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+</head>
+<body>
+<div class="health_wrap type_goal type_main bg_white_wrap">
+  <!-- 20210702 전체 마크업 변경됨 -->
+  <header class="health_header">
+    <h1>목표</h1>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container bg_gray_wrap">
+      <!-- 20210818 배너 수정, banner_area_wrap 추가 -->
+			<div class="banner_area_wrap">
+				<div class="banner_area">
+					<button type="button" class="close_btn"><span class="hidden">닫기</span></button>
+					<div class="swiper-container banner_slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide new_card">
+								<a href="#">
+									<img src="../../resources/img/banner_img.jpg" alt=""> 
+								</a>
+							</div>
+							<div class="swiper-slide new_card">
+								<a href="#">
+									<img src="../../resources/img/banner_img.jpg" alt=""> 
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //20210818 배너 수정 -->
+
+    <div class="goal_section align_right">
+      <!-- 20211021 -->
+      <div class="tit_imgwrap mb60">
+        <img src="../../resources/img/img_title_seventeen.png" alt="">
+        <p>진행 중인 목표를<br>확인할 수 있어요.</p>
+      </div>
+      <!-- //20211021 -->
+      <div class="swiper-container recommend_slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <!-- 20210709 수정 -->
+                <span class="category">영양</span>
+                <span class="card_tit">하루에 1000보 걷기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>40</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <span class="category">영양</span>
+                <span class="card_tit">야채많이 먹기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>20</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <span class="category">영양</span>
+                <span class="card_tit">야채많이 먹기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>20</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <span class="category">영양</span>
+                <span class="card_tit">야채많이 먹기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>20</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- 20210714 더보기 슬라이드 추가 -->
+          <div class="swiper-slide more_view">
+            <p>진행 중 목표<br>더보기 <button type="button" class="btn_more"><span class="blind">더보기</span></button></p>
+          </div>
+          <!-- //20210714 더보기 슬라이드 추가 -->
+        </div>
+      </div>
+      <p class="tooltip"><a href="#" onclick="netiveUI.plugins.popAlert('#alertModal');">추적/코칭이란?</a></p> <!--20210924 alert popup으로 변경 및 문구 수정-->
+    </div>
+    <!-- //.goal_section -->
+    <div class="goal_section">
+        <!-- 20211021 -->
+        <div class="tit_imgwrap">
+          <img src="../../resources/img/img_title_seventeen.png" alt="">
+          <p>이런 목표는<br>어때요?</p>
+        </div>
+        <!-- //20211021 -->
+      <div class="new_goal_wrap">
+        <ul>
+          <li class="new_goal_item">
+            <!-- 20210709 수정 -->
+            <span class="new_tit"><em class="category">마음챙김</em>아침요가</span>
+            <a href="#" onclick="netiveUI.plugins.popFull('#full001');" class="add_btn"><div class="add_h">&nbsp;</div><div class="add_v">&nbsp;</div></a> <!--20210713 마크업 변경-->
+            
+          </li>
+          <li class="new_goal_item ">
+            <span class="new_tit c1"><em class="category">활동</em>달리기에 빠지다</span>
+            <a href="#" onclick="netiveUI.plugins.popFull('#alertModal');" class="add_btn"><div class="add_h">&nbsp;</div><div class="add_v">&nbsp;</div></a> <!--20210713 마크업 변경-->
+          </li>
+        </ul>
+        <div class="swiper-container new_slider module_slider"> <!--20210819 'module_slider' class 추가-->
+          <div class="swiper-wrapper">
+            <!-- 20210819
+              0_ 전체 a태그에 'thumbnail' class 추가 -- 이미지 비율에 맞게 crop 기능
+              1_ 추천 패키지 [패키지명/프로그램명]이 노출되는 case - 'module_banner' class 추가, p 태그(.program_txt) 필요
+              2_ 배너 이미지만 등록되는 case - 개발에서 p태그(.program_txt) none 처리              
+            -->
+            <!-- 1_ 20210819 추천 패키지[프로램명],[패키지명] case -->
+            <div class="swiper-slide new_card module_banner"> <!--'module_banner' class 추가-->
+              <a href="#" class="thumbnail"> <!--20210819 이미지 비율에 맞게 크롭 'thumbnail' class 추가-->
+                <img src="../../resources/img/banner_package_rec.png" alt=""> 
+                <p class="program_txt"><span class="program_name">바디핏</span><span class="package_name en">Premium</span></p> <!--패키지명이 영문일 경우 'en' class 추가-->
+              </a>
+            </div>
+            <div class="swiper-slide new_card module_banner">
+              <a href="#" class="thumbnail">
+                <img src="../../resources/img/img_main_bg.png" alt=""> 
+                <p class="program_txt"><span class="program_name">슬립케어</span><span class="package_name">제휴</span></p>
+              </a>
+            </div>
+            <!-- //1_ 20210819 추천 패키지[프로램명],[패키지명] case -->
+
+            <!-- 2_ 20210819 배너 이미지만 등록되는 case(딤 처리 없음)-->
+            <div class="swiper-slide new_card">
+              <a href="#" class="thumbnail">  <!--20210819 이미지 비율에 맞게 크롭 'thumbnail' class 추가-->
+                <img src="../../resources/img/@banner_goal.png" alt="">
+                <p class="program_txt" style="display: none;"><span class="program_name">{admin 등록}</span><span class="package_name">{admin 등록}</span></p>
+                <!-- ex. 추천 패키지[패키지명/프로그램명] 미노출인 case, 개발에서 display: none 처리 -->
+              </a>
+            </div>
+            <!-- //2_ 20210819 배너 이미지만 등록되는 case  -->
+          </div>
+           <!-- pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- //.goal_section -->
+    <div class="goal_section bg_purple">
+      <h1 class="tit_cont_02">나에게 필요한 목표를<br>확인해보세요</h1> <!--20210818 워딩 수정-->
+      <p class="amount">125개</p>
+      <div class="all_goal_wrap">
+        <ul>
+          <li>
+            <a href="#" class="all_goal_item c1">
+              <!-- 20211021 -->
+              <div class="all_tit">
+                <span>활동<em>9개의 목표</em></span>
+                <span class="coach_pick"><em>에스쿱스</em> 추천</span>
+              </div>
+              <!-- //20211021 -->
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c3">
+              <!-- 20211021 -->
+              <div class="all_tit">
+                <span>마음<em>7개의 목표</em></span>
+                <span class="coach_pick"><em>에스쿱스</em> 추천</span>
+              </div>
+              <!-- //20211021 -->
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c2">
+              <!-- 20211021 -->
+              <div class="all_tit">
+                <span>영양<em>4개의 목표</em></span>
+              </div>
+              <!-- //20211021 -->
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c4">
+              <!-- 20211021 -->
+              <div class="all_tit">
+                <span>수면<em>2개의 목표</em></span>
+              </div>
+              <!-- //20211021 -->
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c5">
+              <!-- 20211021 -->
+              <div class="all_tit">
+                <span>조절<em>2개의 목표</em></span>
+              </div>
+              <!-- //20211021 -->
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c">
+              <!-- 20210803 p태그 추가 -->
+              <div class="all_tit">
+                <p>재도전<br>하시겠어요?</p>
+                <em>완료한 목표 <strong>9</strong>개</em>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 20211022 -->
+      <!-- 2021-11-09 문구, 이미지 수정 -->
+      <div class="goal_bottom_area">
+        <a href="../FCH/FCH-016.html">
+          <strong>나의 스트레스 지수</strong>
+          <span class="goal_txt">안면인식 기능으로 <br>나의 건강 상태를 확인할 수 있어요.</span>
+          <span class="goal_small">*지문인식은 스트레스를 제외한 <br>건강상태만 측정됩니다.</span>
+        </a>
+      </div>
+      <!-- //2021-11-09 문구, 이미지 수정 -->
+      <!-- //20211022 -->
+    </div>
+    <!-- //.goal_section -->
+  </div>
+
+  <!-- 동영상 팝업 컨텐츠 -->
+  <div class="health_full actived" id="full001" style="display: none;">
+    <div class="inner">
+      <div class="pop_wrap">
+        <div class="pop_header">
+          <div class="header_wrap">
+            <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+          </div>
+        </div>
+        <!-- //pop header -->
+  
+        <div class="pop_container">
+          <div class="con_inner">
+            <div class="con_box">
+              <div class="pop_con">
+                <!-- 팝업 내용 -->
+                동영상 플레이
+                <!-- //팝업내용 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //pop container -->
+      </div>
+  
+    </div>
+  </div>
+  <!-- //동영상 팝업 컨텐츠 -->
+  <!-- //20210702 전체 마크업 변경됨 -->
+
+  <!-- 20210720 footer 추가 -->
+  <footer class="health_footer">
+    <div class="scroll_nav_item">
+      <a href="#" class="btn_top"><span class="hidden">상단 위로 이동</span></a>
+      <a href="#" class="nav_item"><span class="hidden">패키지</span></a>
+    </div>
+    <div class="health_footer_nav">
+      <ul>
+        <li><a href="#" class="nav_item"><span class="hidden">홈</span></a></li>
+        <li><a href="#" class="nav_item on"><span class="hidden">목표</span></a></li>
+        <li><a href="#" class="nav_item"><span class="hidden">코칭</span></a></li>
+        <li><a href="#" class="nav_item"><span class="hidden">콘텐츠</span></a></li>
+        <li><a href="#" class="nav_item"><span class="hidden">패키지</span></a></li>
+      </ul>
+      <div class="footer_bubbleBox">
+          <span>나와 맞는 코치를 선택해보세요!</span>
+      </div>  
+    </div>
+  </footer>
+  <!-- //20210720 footer 추가 -->
+</div>
+
+<!-- 포인트 안내 팝업 -->
+<!-- 20210924 Tune point 안내 팝업 삭제 -->
+<!-- 20210924 추적/코칭 안내 팝업 -->
+<div id="alertModal" class="health_alert goal_popup" style="display: none;">
+  <div class="inner">
+    <h2 class="pop_tit">
+      추적/코칭이란?
+      <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+    </h2>
+    <ul class="list_type_dot">
+      <li>목표는 추적과 코칭 2가지로 달성할 수 있습니다.</li>
+      <li><em>추적</em>GPS 등의 기기에서 제공되는 센서를 활용하여 자동으로 데이터를 수집합니다.</li>
+      <li><em>코칭</em>Tune H의 코칭 서비스를 통해 문답 형식으로 데이터를 수집합니다.</li>
+    </ul>
+  </div>
+</div>
+<!-- //20210924 추적/코칭 안내 팝업 -->
+
+<script>
+  var swiper = new Swiper(".recommend_slider", {
+    slidesPerView: "auto",
+    spaceBetween: 18, //20210714
+    slidesOffsetAfter  : 24 //20210715,
+  });
+  var swiper2 = new Swiper(".new_slider", {
+    slidePerView:1,
+    spaceBetween: 0,
+    pagination:{
+      el:'.swiper-pagination',
+    }
+  });
+  var swiper3 = new Swiper(".banner_slider", {
+    slidePerView:1,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    }
+  });
+</script>
+</body>
+</html>

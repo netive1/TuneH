@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body class="type_content">
+  <div class="health_wrap">
+    <div class="health_container">
+      <div class="section">
+        <h2 class="tit_cont_03 guide">popup - toast 02</h2>
+        <button type="button" onclick="netiveUI.plugins.popToast('#toast002');">Toast 1</button>
+      </div>
+    </div>
+    <!--// health_container -->
+  </div>
+ 
+  <!-- TOAST 02 popup :  -->
+  <div class="health_toast scroll" id="toast002" style="display: none;">
+    <div class="inner">
+      <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+
+      <div class="inner_header">
+       <span class="hidden">콘텐츠 필터</span>
+      </div>
+
+      <div class="inner_container">
+        <div class="con_inner">
+          <div class="con_box">
+            <div class="pop_con">
+              <!-- 팝업 내용  -->
+              <div class="check_box">
+                <div class="item_cont">
+                  <p class="tit_item">카테고리 선택</p>
+                  <div class="item">
+                    <input type="checkbox" id="CheckAll_01" class="chkItem" name="CheckAll_01">
+                    <label for="CheckAll_01">전체</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check01_1" class="chkItem" name="checkBox01">
+                    <label for="Check01_1">바디핏</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check01_2" class="chkItem" name="checkBox01">
+                    <label for="Check01_2">뷰티&웰빙</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check01_3" class="chkItem" name="checkBox01">
+                    <label for="Check01_3">영양</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check01_4" class="chkItem" name="checkBox01">
+                    <label for="Check01_4">정신</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check01_5" class="chkItem" name="checkBox01">
+                    <label for="Check01_5">수면</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="check_box">
+                <div class="item_cont">
+                  <p class="tit_item">건강정보 카테고리</p>
+                  <div class="item">
+                    <input type="checkbox" id="CheckAll_02" class="chkItem" name="CheckAll_02">
+                    <label for="CheckAll_02">전체</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check02_1" class="chkItem" name="checkBox02">
+                    <label for="Check02_1">수면</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check02_2" class="chkItem" name="checkBox02">
+                    <label for="Check02_2">영양</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check02_3" class="chkItem" name="checkBox02">
+                    <label for="Check02_3">자기조절</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check02_4" class="chkItem" name="checkBox02">
+                    <label for="Check02_4">마음챙김</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check02_5" class="chkItem" name="checkBox02">
+                    <label for="Check02_5">활동</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="check_box">
+                <div class="item_cont">
+                  <p class="tit_item">콘텐츠 포맷</p>
+                  <div class="item">
+                    <input type="checkbox" id="CheckAll_03" class="chkItem" name="CheckAll_03">
+                    <label for="CheckAll_03">전체</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check03_1" class="chkItem" name="checkBox03">
+                    <label for="Check03_1">오디오</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check03_2" class="chkItem" name="checkBox03">
+                    <label for="Check03_2">비디오</label>
+                  </div>
+                </div>
+              </div>
+              
+             
+              <div class="check_box">
+                <div class="item_cont">
+                  <p class="tit_item">운동 강도</p>
+                  <div class="item">
+                    <input type="checkbox" id="CheckAll_04" class="chkItem" name="CheckAll_04">
+                    <label for="CheckAll_04">전체</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check04_1" class="chkItem" name="checkBox04">
+                    <label for="Check04_1">강도 하</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check04_2" class="chkItem" name="checkBox04">
+                    <label for="Check04_2">강도 중</label>
+                  </div>
+                  <div class="item">
+                    <input type="checkbox" id="Check04_3" class="chkItem" name="checkBox04">
+                    <label for="Check04_3">강도 상</label>
+                  </div>
+                </div>
+              </div>
+            <!-- //팝업 내용  --> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // pop container -->
+      
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_black3">초기화</button>
+        <button type="button" class="btn_pop_black2">적용</button>
+      </div>
+      <!-- // btn -->
+    </div>
+  </div>
+  <!-- // -->
+
+
+</body>
+</html>

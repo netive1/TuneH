@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>결제 내역</title>
+	<link rel="stylesheet" href="../../resources/css/guide.css">
+	<link rel="stylesheet" href="../../resources/css/swiper.min.css">
+	<script src="../../resources/js/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>
+	<script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body>
+	<div class="health_wrap footer_no type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>결제 내역</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="health_container">
+			<div class="payment_top">
+				<div class="select_wrap type_box_fill">
+					<div class="select_box">
+						<select id="" name="">
+							<option value="">최근 1개월</option>
+							<option value="">최근 3개월</option>
+							<option value="">최근 6개월</option>
+							<option value="">전체</option>
+						</select>
+					</div>
+				</div>
+				<p class="txt_s">결제 취소 및 환불은 <a href="javascript:void(0);" onclick="netiveUI.plugins.popAlert('#alertCscenter');">고객센터</a> 또는 <a href="FMY-008.html">1:1문의</a>를 통해<br> 
+					가능합니다.
+				</p>
+				<!--20210719 href, onlick 추가-->
+				<p class="tooltip"><a href="javascript:void(0);" onclick="netiveUI.plugins.popAlert('#popPaymentTerms');">결제 이용약관</a></p> <!--20210719 결제이용약관 onlick 추가-->
+			</div>
+
+			<div class="payment_cont">
+				<span class="term">2021.06.02 - 2021.07.02</span>
+				<ul class="payment_list_wrap">
+					<li>
+						<span class="tag on">이용중 D-27</span>
+						<div class="list_tit">
+							<span class="date">2021.07.01</span>
+							<span class="tit">Premium<em>바디핏</em></span>
+						</div>
+						<div class="list_cont">
+							<span>신용카드 결제</span>
+							<span>120,000원 / 3개월</span>
+						</div>
+					</li>
+					<li>
+						<span class="tag">기간만료</span>
+						<div class="list_tit">
+							<span class="date">2021.07.01</span>
+							<span class="tit">바디핏 Premium</span>
+						</div>
+						<div class="list_cont">
+							<span>무통장입금</span>
+							<span>220,000</span>
+						</div>
+					</li>
+					<li>
+						<span class="tag">부분 결제취소</span>
+						<div class="list_tit">
+							<span class="date">2021.07.01</span>
+							<span class="tit">바디핏 Premium</span>
+						</div>
+						<div class="list_cont">
+							<span>무통장입금</span>
+							<span>220,000</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 20210719 고객센터 연결 alert -->
+	<div id="alertCscenter" class="health_alert" style="display: none;">
+		<div class="inner">
+			<p class="msg">고객센터로 전화연결을<br> 진행하시겠습니까?</p>
+	
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_line_dark ui-close">취소</button>
+				<button type="button" onclick="document.location.href='tel:02-6330-3410'" class="btn_pop_dark">고객센터 연결</button>
+			</div>
+		</div>
+	</div>
+	<!-- //20210719 고객센터 연결 alert -->
+
+	<!-- 20210719 결제이용약관 팝업 -->
+	<div id="popPaymentTerms" class="health_full scroll footer_no" style="display: none;">
+		<div class="inner">
+			<div class="pop_wrap">
+				<div class="pop_header">
+					<div class="header_wrap">
+						<h1>결제 이용약관</h1>
+						<button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+					</div>
+				</div>
+				<div class="pop_container">
+					<div class="con_inner">
+						<div class="con_box">
+							<div class="pop_con">
+								<p class="msg">Tune H 리워드(이하 ‘리워드’)는 App 회원가입 후 App 내 특정 활동 시 발생되며, 회사는 리워드에 따라 회원등급(레벨) 상승,
+									기프트 등을 제공할 수 있습니다.</p>
+								<p class="msg">
+									1) App 활동 중 목표 달성, 성취 달성, 챌린지 참여, 패키지 구매 시 리워드가 적립됩니다.<br>
+									(구매 패키지 환불 시 적립되었던 리워드는 취소됩니다).<br>
+									2) 리워드는 유효기간이 있습니다. 회원 탈퇴 시 적립된 리워드는 소멸됩니다.<br>
+									3) 리워드 적립대상, 적립율 등은 회사 정책에 따라 사전 고지 후 변동될 수 있습니다.
+								</p>
+								<p class="msg">Tune H 리워드(이하 ‘리워드’)는 App 회원가입 후 App 내 특정 활동 시 발생되며, 회사는 리워드에 따라 회원등급(레벨) 상승,
+									기프트 등을 제공할 수 있습니다.</p>
+								<p class="msg">
+									1) App 활동 중 목표 달성, 성취 달성, 챌린지 참여, 패키지 구매 시 리워드가 적립됩니다.<br>
+									(구매 패키지 환불 시 적립되었던 리워드는 취소됩니다).<br>
+									2) 리워드는 유효기간이 있습니다. 회원 탈퇴 시 적립된 리워드는 소멸됩니다.<br>
+									3) 리워드 적립대상, 적립율 등은 회사 정책에 따라 사전 고지 후 변동될 수 있습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //20210719 결제이용약관 팝업 -->
+</body>
+</html>

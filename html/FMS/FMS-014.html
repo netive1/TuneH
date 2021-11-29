@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목표 추적 - 최근활동</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/chart.min.js"></script> <!--20210820 chart.js (3.3.2 ver) cdn으로 테스트 진행-->
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal type_bg_purple footer_no">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev ver02"><span class="hidden">이전</span></button>
+      <h1>추적</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container pt0"> <!--20210601 'pt0' 클래스 추가-->
+    <div class="tabs tracking_wrap">
+      <ul class="tab_menulist">
+        <li><a class="tab_control" href="#tab-1">추적하기</a></li>
+        <li class="active"><a class="tab_control" href="#tab-2">최근활동</a></li>
+      </ul>          
+      <div class="tab_panel tracking_cont" id="tab-1">
+        <div class="item_cont acco_list_wrap">
+          <div class="item">
+            <label for="termCheck01" class="tit_cont_01 ver02">걷기</label>
+            <button type="button" onclick="location.href='FMS-006.html'" class="btn_activity_view"><span class="hidden">활동 선택 화면으로 이동</span></button><!--20210601 'btn_activity_view' 로 클래스 변경, 아코디언 기능 삭제 -->
+          </div>
+          <ul class="item_detail">
+            <div class="content_form">
+              <p><span>거리<strong>400<em>m</em></strong></span><span>심박수<strong>50<em>bpm</em></strong></span></p>
+              <p><span>오르막<strong>10<em>m</em></strong></span><span>평균속도<strong>2<em>km/H</em></strong></span></p>
+              <p><span>내리막<strong>482<em>m</em></strong></span><span>활동칼로리<strong>10<em>kcal</em></strong></span></p>
+            </div>
+          </ul>
+        </div>
+        <div class="column_wrap">
+          <ul class="column_list">
+            <li><a href="FMS-007.html"><strong>활동<br>직접입력</strong></a></li>
+            <li><a href="FMS-009.html"><strong>신체<br>정보추가</strong></a></li>
+            <li><a href="FMS-008.html"><strong>수면<br>직접입력</strong></a></li>
+            <li><a href="FST-024.html"><strong>디바이스<br>앱 연결</strong></a></li>
+          </ul>
+          <div class="timer_wrap">
+            <div class="timer_face">
+              <button type="button" class="timer_btn play">
+                <p id="timer">START</p>
+              </button>
+            </div>
+          </div>
+          <div class="timer_wrap">
+            <div class="timer_face">
+              <button type="button" class="timer_btn pause">
+                <p id="timer">00:01:10</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab_panel tracking_cont active" id="tab-2">
+        <div class="content_sub pd_type">
+          <div class="content_form content_form_box">
+            <p><span>거리<strong>400<em>m</em></strong></span><span>심박수<strong>50<em>bpm</em></strong></span></p>
+            <p><span>오르막<strong>10<em>m</em></strong></span><span>평균속도<strong>2<em>km/H</em></strong></span></p>
+            <p><span>내리막<strong>482<em>m</em></strong></span><span>활동칼로리<strong>10<em>kcal</em></strong></span></p>
+          </div>
+          <div class="content_form_box">
+            <div class="flex_wrap">
+              <div class="select_wrap">
+                <select name="#" id="" class="selectbox">
+                  <option value="">걸음 수</option>
+                  <option value="">거리</option>
+                  <option value="">활동시간</option>
+                  <option value="">활동 칼로리</option>
+                  <option value="">오르막</option>
+                </select>
+              </div>
+              <div class="select_wrap">
+                <select name="#" id="" class="selectbox">
+                  <option value="">오늘</option>
+                  <option value="" selected>최근7일</option><!---임시 selected 처리-->
+                  <option value="">최근30일</option>
+                </select>
+              </div>
+            </div>
+            <div class="chart_area"> <!--20210909 'chart_area' class 추가-->
+              <!-- <img src="../../resources/img/@graph_goal.png" alt=""> -->
+              <figure id="chartALegend"><!-- 20210909 -->
+                <canvas id="myChart" style="width:100%;height: 100%;min-height: 200px;"></canvas> <!--20210909-->
+              </figure>
+            </div>
+          </div>
+          <div class="card_wrap_default"><!-- 20210601 'card_wrap_default' 클래스 변경 -->
+            <h2 class="tit_cont_01">활동기록을<br>확인해보세요</h2>
+            <div class="card_default_list"><!-- 20210601 'card_default_list' div 추가 -->
+              <div class="card">
+                <!-- 20210601 card_info div 삭제 , card_default_date p태그 추가 -->
+                <p class="card_default_date"><span>2021.05.19. 05:30</span></p>
+                <div class="card_cont">
+                  <!-- 20210601 a태그로 변경 및 링크 연결 -->
+                  <a href="FMS-015.html" class="card_desc">
+                    <strong>걷기</strong> 활동을 하고 있습니다.<br>
+                    <strong>00:00</strong> 동안 활동 상태였습니다.
+                  </a>
+                  <!-- //20210601 a태그로 변경 및 링크 연결 -->
+                  <!-- 20210705 .card_data_wrap 추가 -->
+                  <div class="card_data_wrap">
+                   <p class="card_data activity">296kcal(81.2 MET h)</p>
+                  </div>
+                  <div class="card_util">
+                    <div>
+                      <a href="#" class="data_like"><span>266</span></a>
+                      <a href="#" class="data_comment"><span>1,466</span></a>
+                    </div>
+                  <!-- 20210705 공유하기 삭제 -->
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <p class="card_default_date"><span>2021.05.19. 05:30</span></p>
+                <div class="card_cont">
+                  <!-- 20210601 a태그로 변경 및 링크 연결 -->
+                  <a href="FMS-015.html" class="card_desc">
+                    <strong>걷기</strong> 활동을 하고 있습니다.<br> <!--20210713 strong 추가-->
+                    <strong>2시간</strong> 동안 활동 상태였습니다. <!--20210713 strong 추가-->
+                  </a>
+                  <!-- //20210601 a태그로 변경 및 링크 연결 -->
+                  <!-- 20210705 .card_data_wrap 추가 -->
+                  <div class="card_data_wrap">
+                    <!-- 20211007 state 상태값 class guide 
+                        awesome, happy, ok, low, sore
+                    -->
+                    <p class="card_data state awesome">기분 최고!</p>
+                    <!-- <p class="card_data state happy">기분 행복</p>
+                    <p class="card_data state ok">기분 보통</p>
+                    <p class="card_data state low">기분 기운없음</p>
+                    <p class="card_data state sore">기분 화남</p> -->
+                    <p class="card_data activity">296kcal(81.2 MET h)</p>
+                    <p class="card_data location">Seoul, Korea</p>
+                    <!-- 20211012 weather 상태값 class guide 
+                        clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night 
+                    -->
+                    <p class="card_data weather clear-day">맑은 낮, 6ºC</p>
+                    <!-- <p class="card_data weather clear-night">밤, 6ºC</p>
+                    <p class="card_data weather rain">비, 6ºC</p>
+                    <p class="card_data weather snow">눈, 6ºC</p>
+                    <p class="card_data weather sleet">진눈깨비, 6ºC</p>
+                    <p class="card_data weather wind">바람, 6ºC</p>
+                    <p class="card_data weather fog">안개, 6ºC</p>
+                    <p class="card_data weather cloudy">구름, 6ºC</p>
+                    <p class="card_data weather partly-cloudy-day">부분적으로 흐린 낮, 6ºC</p>
+                    <p class="card_data weather partly-cloudy-night">부분적으로 흐린 밤, 6ºC</p> -->
+                  </div>
+                  <!-- //20210705 .card_data_wrap 추가 -->
+                  <!-- 20210713 좋아요,댓글,공유하기 삭제 -->
+                  <figure class="card_attach">
+                    <img src="../../resources/img/img_cigna.png" alt="">
+                    <img src="../../resources/img/img_cigna.png" alt="">
+                    <img src="../../resources/img/img_cigna.png" alt="">
+                  </figure>
+                  <div class="card_util">
+                    <div>
+                      <a href="#" class="data_like"><span>266</span></a>
+                      <a href="#" class="data_comment"><span>1,466</span></a>
+                    </div>
+                    <!-- 20210705 공유하기 삭제 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<!-- 20210820 chart.js lib -->
+<script>  
+  var ctx = document.getElementById("myChart").getContext("2d");
+
+  //bg 그라디언트 효과 생성
+  var bgGradient = ctx.createLinearGradient(0, 0, 0, 170);
+      bgGradient.addColorStop(0, 'rgb(25,211,197)');
+      bgGradient.addColorStop(1, 'rgb(203,139,218)');
+
+  //20210909
+    const getOrCreateLegendList = (chart, id) => {
+      const legendContainer = document.getElementById(id);
+      let listContainer = legendContainer.querySelector('ul');
+
+      if (!listContainer) {
+        listContainer = document.createElement('ul');
+        listContainer.style.display = 'flex';
+        listContainer.style.flexDirection = 'row';
+        listContainer.style.margin = 0;
+        listContainer.style.padding = 0;
+
+        legendContainer.appendChild(listContainer);
+      }
+
+      return listContainer;
+    };
+    const htmlLegendPlugin = {
+      id: 'htmlLegend',
+      afterUpdate(chart, args, options) {
+        const ul = getOrCreateLegendList(chart, options.containerID);
+
+        // Remove old legend items
+        while (ul.firstChild) {
+          ul.firstChild.remove();
+        }
+
+        // Reuse the built-in legendItems generator
+        const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+        ul.style.position = 'absolute';
+        ul.style.top = '30px';
+        ul.style.right = '24px';
+
+        items.forEach(item => {
+          const li = document.createElement('li');
+          li.style.alignItems = 'center';
+          li.style.cursor = 'pointer';
+          li.style.display = 'flex';
+          li.style.flexDirection = 'row';
+          li.style.marginLeft = '15px';
+
+          li.onclick = () => {
+            const { type } = chart.config;
+            if (type === 'pie' || type === 'doughnut') {
+              // Pie and doughnut charts only have a single dataset and visibility is per item
+              chart.toggleDataVisibility(item.index);
+            } else {
+              chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+            }
+            chart.update();
+          };
+
+          // Color box
+          const boxSpan = document.createElement('span');
+          // boxSpan.style.background = item.fillStyle;
+          boxSpan.style.background = typeof item.fillStyle === 'object' ? 'linear-gradient(rgb(25,211,197), rgb(203,139,218))' : item.fillStyle;
+          boxSpan.style.borderColor = item.strokeStyle;
+          boxSpan.style.borderWidth = item.lineWidth + 'px';
+          boxSpan.style.display = 'inline-block';
+          boxSpan.style.height = '13px';
+          boxSpan.style.marginRight = '10px';
+          boxSpan.style.width = '20px';
+          boxSpan.style.borderRadius = '10px';
+
+          // Text
+          const textContainer = document.createElement('p');
+          textContainer.style.color = item.fontColor;
+          textContainer.style.margin = 0;
+          textContainer.style.padding = 0;
+          textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+          textContainer.style.fontFamily = 'Noto Sans';
+          textContainer.style.fontSize = '13px';
+          textContainer.style.fontWeight = '600';
+
+          const text = document.createTextNode(item.text);
+          textContainer.appendChild(text);
+
+          li.appendChild(boxSpan);
+          li.appendChild(textContainer);
+          ul.appendChild(li);
+        });
+      }
+    };
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['5.25', '5.26', '5.27', '5.28', '5.29', '5.30'],
+        datasets: [{
+          label: '걸음 수',
+          data: [30, 80, 60, 65, 50, 85],
+          barPercentage: 0.5,
+          barThickness: 14, //막대 최소가로값
+          borderRadius: 14, //막대 둥글기        
+          backgroundColor: ['#d9d9d9','#d9d9d9','#d9d9d9','#d9d9d9','#d9d9d9',bgGradient,],
+        }]
+      },
+      options: {
+        responsive: false,//20210909
+        //20210909
+        layout: {
+          padding: {
+            top: 80
+          }
+        },
+        plugins: {
+          //20210909
+          htmlLegend: {
+            containerID: 'chartALegend',
+          },
+          legend: {//20210909
+            display: false,
+          },
+          tooltip: { //막대 상태값
+            displayColors: false,
+            xAlign: 'center',
+            yAlign: 'bottom',
+            boxWidth: 0,
+            backgroundColor: '#222',
+            titleAlign: 'top',
+            titleColor: '#222',
+            titleFont: {
+              size: 0, //20210908
+            },
+            bodyColor: '#fff', //20210908
+            bodyFont: {
+              size: 11, //20210908
+            },
+          }
+        },
+        scales: {
+          x: { //x축
+            offset: true,
+            ticks: {
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: false,
+              offset: false
+            }
+          },
+          y: {  //y축
+            min: 0, //최소값
+            max: 100, //최대값
+            position: 'right',
+            beginAtZero: true,
+            ticks: {
+              stepSize: 20, //data 숫자 간격
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: true,
+              offset: false
+            }
+          }
+        },
+      },
+      plugins: [htmlLegendPlugin],//20210909
+  });
+</script>
+</html>

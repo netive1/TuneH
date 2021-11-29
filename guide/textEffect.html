@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <title>guide : button</title>
+  <link rel="stylesheet" href="../resources/css/guide.css">
+  <script type="text/javascript" src="../resources/js/jquery-3.6.0.min.js"></script>
+  
+</head>
+<body>
+    
+  <style>
+    .textEffect1 > *,
+    .textEffect2 > * { display: none; }
+    .textEffect1 { width: 100%; padding: 30px; border: 1px solid #000; }
+  </style>
+  
+  <!-- 타겟이 되는 selector의 자식이 1개만 있어야 함 -->
+  <div class="textEffect1">
+    <div>동해물과 백두산이 마르고<br>닳도록 하느님이<br>보우하사 우리나라만세 무궁화<br>삼천리 화려강산 대한사람 대한으로 길이 보전하세</div>
+  </div>
+    
+  <hr>
+  
+  <div class="textEffect2">
+    <div>11111111111</div>
+    <div>22222222222</div>
+    <div>33333333333</div>
+  </div>
+
+  <script>
+    $.fn.textEffect = function(opts) {
+      /*
+        옵션은 올셥일뿐 값을 설정하지 않아도 됨
+        type : 'default',
+                - typing 일 경우 한자씩 노출함.
+                - 줄바꿈이 되지 않기 때문에 css 로 가로값을 주고 자연스레 떨구는 방법과
+                  n번째 자식에게 :after 로 display: block; 을 넣어 줘도 될 것 같음(고정된 글씨라면.....)
+        delay : delay(second) 이후 노출됨
+                - 값이 숫자 1개인 경우 : 모두 같은 delay를 갖음
+                - 값이 배열인 경우 : 개별 delay를 갖음
+                - 자식의 수와 배열수가 다른 경우 : 정상 동작 안함
+      */
+      var defaults = $.extend({
+        type : 'default',
+        delay: 0.5,
+        callback: null,
+      }, opts);
+      return this.each(function() {
+        var $t = $(this),
+            $child = $t.children(),
+            childLength = $child.length,
+            checkType = childLength === 1 && defaults.type === 'typing';
+  
+        var startFn = function(n) {
+          var delay;
+          (Array.isArray(defaults.delay) && defaults.delay.length === childLength)  // delay 값이 배열인 경우, 즉 복수개의 item이 각각 다른 딜레이를 가져야 할 경우
+            ? delay = defaults.delay[n] * 1000
+            : delay = defaults.delay * 1000;
+  
+          checkType ? $child.eq(n).delay(delay).show() : $child.eq(n).delay(delay).fadeIn();
+  
+          if(n < childLength) {
+            n = n + 1;
+            setTimeout(function() {
+              startFn(n);
+            }, delay);
+          } else {
+            if(typeof defaults.callback === 'function') {
+              defaults.callback();
+            }
+          }
+        }
+  
+        // typing 효과를 사용하는 경우
+        if(checkType) {
+          var childText = $child.html();
+
+          if(childText.split('<br>').length > 1) {
+            childText = childText.replace(/<br>/gi,'^'); // <br> 를 ^ 로 치환
+          }
+
+          var childTextLength = childText.length,
+              childTextArray = [];
+
+          for(var i=0; i < childTextLength; i++) {
+            if(childText.substr(i,1) === '^') {
+              childTextArray.push('<span><br></span>');
+            } else {
+              childTextArray.push('<span>' + childText.substr(i,1) + '</span>');
+            }
+            $t.append(childTextArray[i]);
+          }
+          
+          $child = $t.children(),
+          childLength = $child.length;
+            
+          setTimeout(function() {
+            startFn(1); // 최초 시작
+          }, 1000);
+        }
+        // default 효과를 사용하는 경우
+        else {
+          startFn(0); // 최초 시작
+        }
+        
+      });
+    }
+  
+    $('.textEffect1').textEffect({
+      type: 'typing',
+      delay: 0.1, // delay(second) 이후 노출됨 , 개별글자 타이핑 간격??
+      callback: function() {
+        console.log('end');
+      }
+    });
+    $('.textEffect2').textEffect({
+      // delay: 1 // delay(second) 이후 노출됨 
+      delay: [2,1,2] // delay(second) 이후 노출됨
+    });
+  </script>
+</body>
+</html>

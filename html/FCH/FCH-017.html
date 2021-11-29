@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강신호 측정</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<!-- 20210712 수정 시작-->
+<div class="health_wrap footer_no type_coaching">
+  <header class="health_header bg_gray">
+    <!-- 20210721 'inbtn' class 추가 -->
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>건강신호 측정</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+  </header>
+  <div class="health_container bg_gray">
+    <h2 class="tit_cont_01">어떤 방법으로<br>건강신호를<br>측정할까요?</h2>
+    <ul class="box_wrap">
+      <li>
+        <a class="box_item face" href="#">
+          <span class="tit">얼굴 측정</span>
+        </a>
+      </li>
+      <li>
+        <a class="box_item finger" href="#">
+          <span class="tit">손가락 측정</span>
+        </a>
+      </li>
+    </ul>
+    <div class="st_infobox vh">
+      <ul>
+        <li class="notice">측정 중 정지하면 모든 측정은 종료됩니다.</li>
+        <li class="notice">측정이 완료될 때까지 얼굴이 가이드 선 밖으로 벗어나지 않도록 하고, 손가락을 중간에 떼지 마세요.</li>
+        <li class="notice">얼굴 인식 측정은 밝은 곳에서 진행해 주세요.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- 건강신호 측정 OS버전 지원 안내 팝업 -->
+<div class="health_alert actived" id="alert001" style="display: none;">
+  <div class="inner">
+    <h1 class="tit_cont_03">건강신호 측정 OS 버전 지원 안내</h1>
+    <div class="device">
+      <p>
+        iOS:
+        <span>Ver 13.0 이상</span>
+      </p>
+      <p>
+        Android:
+        <span>Ver 8.1 이상</span>
+      </p>
+    </div>
+    <p class="msg">
+      건강신호 측정은 위 버전에서만 <br>
+      지원합니다. 이전 버전을 사용하고 <br>
+      계시면 스마트폰 OS 업그레이드를 <br>
+      진행해 주시기 바랍니다. <br>
+      안정적이고 원활한 서비스 제공을 위해 <br>
+      양해 부탁드립니다.
+    </p>
+    <div class="btn_wrap">
+      <button type="button" class="btn_pop_dark ui-close">확인</button>
+    </div>
+  </div>
+</div>
+<!--// 20210712 수정 끝-->
+</body>
+</html>

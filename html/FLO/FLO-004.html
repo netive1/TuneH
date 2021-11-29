@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이메일 입력</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+
+</head>
+<body>
+  <div class="health_wrap type_signup">
+    <header class="health_header"><!-- 20210526-<header>태그 추가 -->
+      <!-- 07/29 타이틀 추가 -->
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>이메일 입력</h1>
+      </div>
+      <div class="step_wrap"> <!--20211022 step 수정-->
+        <span class="now">1</span>8
+        <span class="hidden">총 8페이지 중 현재 1페이지</span>
+      </div>
+    </header>
+    <div class="health_container">
+  
+      <h1 class="tit_cont_02">이메일 주소를<br>입력해주세요.</h1>
+  
+      <div class="inp_wrap type_large mt110"><!-- 20210526-mt110클래스명 수정 -->
+        <input class="inp_base" type="email" placeholder="이메일주소">
+        <button type="button" class="btn_form_line mt15" onclick="netiveUI.plugins.popAlert('#alert001');" disabled>이메일 인증</button>
+        <p class="notice err">이메일 형식으로 입력해주세요.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn_btm_fixed">
+    <div class="progress_wrap"><!-- 20210526-위치 수정 -->
+      <progress max="800" value="100"></progress> <!--20211022 max값 수정-->
+    </div>
+    <button type="button" class="btn" disabled="disabled">다음</button><!-- 20210526-ver02 클래스 삭제 -->
+  </div>
+ 
+  
+  <!-- alert : 이메일 인증 시 -->
+  <div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        입력하신 이메일로 인증 메일을 발송하였습니다.<br>메일을 확인하여 인증을 완료해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+  <!-- alert : 이메일 미인증 시 -->
+  <div class="health_alert" id="alert002" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        인증이 완료되지 않습니다.<br>이메일 인증을 진행해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+</body>
+</html>

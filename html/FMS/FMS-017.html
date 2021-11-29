@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>완료한 목표</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal footer_no">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>전체 목표</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container pt0">
+    <div class="tab_wrap">   
+			<div class="tabs">
+				<ul class="tab_menulist pb0"> <!--20210713 pt0 class 삭제-->
+					<li><a class="tab_control" href="#tab-1">진행 중 목표</a></li>
+					<li class="active"><a class="tab_control" href="#tab-2">완료한 목표</a></li>
+				</ul>          
+				<div class="tab_panel " id="tab-1">
+          <div class="goal_list_wrap proceed_tab"> <!--20210812 'proceed_tab' class 추가-->
+            <p class="inp_label">목표 <span>9</span>개</p><!--20210713 span 추가-->
+            <div class="item_wrap">
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="" class="btn_close ver03"><span class="hidden">삭제</span></a>
+              </div>
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="" class="btn_close ver03"><span class="hidden">삭제</span></a>
+              </div>
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="" class="btn_close ver03"><span class="hidden">삭제</span></a>
+              </div>
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="" class="btn_close ver03"><span class="hidden">삭제</span></a>
+              </div>
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="" class="btn_close ver03"><span class="hidden">삭제</span></a>
+              </div>
+              
+            </div>
+          </div>
+				</div>
+				<div class="tab_panel active" id="tab-2">
+          <div class="goal_list_wrap">
+            <p class="inp_label">목표 9개</p>
+            <div class="item_wrap type_add">
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="#" class="add_btn">다시 추가</a>
+              </div>
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="#" class="add_btn">다시 추가</a>
+              </div>
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="#" class="add_btn">다시 추가</a>
+              </div>
+              <div class="goal_list_box">
+                <div class="item_box">
+                  <p>
+                    <a class="item_txt">탄산음료 끊기</a>
+                    <span class="info">
+                      <em>영양</em>
+                      <em>코칭</em>
+                      <em class="coin">1400</em>
+                      <em class="get"><strong>2</strong>/10</em>
+                    </span>
+                  </p>
+                </div>
+                <a href="#" class="add_btn">다시 추가</a>
+              </div>
+            </div>
+          </div>
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
+</body>
+</html>

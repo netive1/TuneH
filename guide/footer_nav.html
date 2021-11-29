@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>footer</title>
+  <script src="../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../resources/js/swiper.min.js"></script>
+  <script src="../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../resources/css/guide.css">
+  <link rel="stylesheet" href="../resources/css/swiper.min.css">
+</head>
+<body>
+<div class="health_wrap type_goal type_main">
+  <header class="health_header">
+    <h1>Footer guide</h1>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container">
+    <!-- <div class="banner_area">
+      <a href="#">
+        <img src="../resources/img/banner_img.jpg" alt="">
+      </a>
+      <button type="button" class="close_btn"><span class="hidden">닫기</span></button>
+    </div> -->
+
+    <div class="goal_section align_right">
+      <div class="swiper-container recommend_slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <span class="category">영양</span>
+                <span class="card_tit">하루에 1000보 걷기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>40</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <span class="category">영양</span>
+                <span class="card_tit">야채많이 먹기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>20</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <span class="category">영양</span>
+                <span class="card_tit">야채많이 먹기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>20</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="recommend_card">
+              <div class="recommend_card_top">
+                <span class="category">영양</span>
+                <span class="card_tit">야채많이 먹기</span>
+                <span class="coin">1400</span>
+              </div>
+              <div class="recommend_card_bottom">
+                <div class="progress_wrap">
+                  <div class="now_wrap">
+                    <span class="now"><span>20</span>%</span>
+                    <span class="info">4/12</span>
+                  </div>
+                  <div class="progress"><i style="width:40%;"></i></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide more_view">
+            <p>진행 중 목표<br>더보기 <button type="button" class="btn_more"><span class="blind">더보기</span></button></p>
+          </div>
+        </div>
+      </div>
+      <p class="tooltip"><a href="#" onclick="netiveUI.plugins.popFull('#popPointInfo');">Tune Point란?</a></p>
+    </div>
+    <!-- //.goal_section -->
+    <div class="goal_section">
+      <h1 class="tit_cont_02">새로운 목표를<br>세워볼까요?</h1>
+      <div class="new_goal_wrap">
+        <ul>
+          <li class="new_goal_item">
+            <span class="new_tit"><em class="category">영양</em>탄산음료 줄이기<em class="coin">800</em></span>
+            <a href="#" class="add_btn">
+              <div class="add_h">&nbsp;</div>
+              <div class="add_v">&nbsp;</div>
+            </a>
+          </li>
+          <li class="new_goal_item ">
+            <span class="new_tit c1">야채많이 먹기<em class="coin">800</em></span>
+            <a href="#" class="add_btn">
+              <div class="add_h">&nbsp;</div>
+              <div class="add_v">&nbsp;</div>
+            </a>
+          </li>
+        </ul>
+        <div class="swiper-container new_slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide new_card">
+              <a href="#">
+                <img src="../resources/img/@banner_goal.png" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide new_card">
+              <a href="#">
+                <img src="../resources/img/@banner_goal.png" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide new_card">
+              <a href="#">
+                <img src="../resources/img/@banner_goal.png" alt="">
+              </a>
+            </div>
+          </div>
+          <!-- pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <!-- //.goal_section -->
+    <div class="goal_section bg_purple"> 
+      <!--scroll top 버튼 안보여 임시로 bg컬러 변경-->
+      <h1 class="tit_cont_02">전체목표를<br>확인해보세요</h1>
+      <p class="amount">125개</p>
+      <div class="all_goal_wrap">
+        <ul>
+          <li>
+            <a href="#" class="all_goal_item c1">
+              <div class="all_tit">활동<em>9개의 목표</em></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c3">
+              <div class="all_tit">마음<em>7개의 목표</em></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c2">
+              <div class="all_tit">영양<em>4개의 목표</em></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c4">
+              <div class="all_tit">수면<em>2개의 목표</em></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c5">
+              <div class="all_tit">조절<em>2개의 목표</em></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="all_goal_item c">
+              <!-- 20210803 p태그 추가 -->
+              <div class="all_tit">
+                <p>재도전<br>하시겠어요?</p>
+                <em>완료한 목표 <strong>9</strong>개</em>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- //.goal_section -->
+  </div>
+
+  <!-- 20210810 footer (코치) 이미지 추가 -->
+  <footer class="health_footer">
+    <!-- 플로팅 버튼 -->
+    <div class="scroll_nav_item">
+      <a href="#" class="btn_top"><span class="hidden">상단 위로 이동</span></a>
+      <a href="#" class="nav_item" style="background-image: url(../resources/img/foot_fch_img.png);"><span class="hidden">패키지</span></a>
+    </div>
+    <!-- //플로팅 버튼 -->
+    <div class="health_footer_nav">
+      <ul>
+        <li><a href="#" class="nav_item"><span class="hidden">홈</span></a></li>
+        <li><a href="#" class="nav_item on"><span class="hidden">목표</span></a></li> <!--'on' class 추가시 해당 메뉴 활성화-->
+        <li><a href="#" class="nav_item"><span class="hidden">코칭</span></a></li>
+        <li><a href="#" class="nav_item"><span class="hidden">콘텐츠</span></a></li>
+        <li><a href="#" class="nav_item on" style="background-image: url(../resources/img/foot_fch_img_on.png);"><span class="hidden">패키지</span></a></li> 
+      </ul>
+      <!-- 20210810 말풍선 case 추가 -->
+
+      <!-- case 01 : Bottom Bar 활성상태에서 말풍선 제공의 경우 -->
+      <!-- <div class="footer_bubbleBox">
+          <span>나와 맞는 코치를 선택해보세요!</span>
+      </div>   -->
+      <!-- //case 01 : Bottom Bar 활성상태에서 말풍선 제공의 경우 -->
+
+      <!-- //caee 02 : Bottom Bar 숨김 상태에서 코칭 메뉴 Floating 중 말풍선 제공의 경우 
+                      'case_hidden' class 추가 
+      -->
+      <!-- <div class="footer_bubbleBox case_hideen"> 
+          <span>나와 맞는 코치를 선택해보세요!</span>
+      </div>   -->
+      <!-- caee 03 : 패키지 추천 등 메시지+Link 버튼이 있는 말풍선의 경우  
+                    'case_package' class 추가 
+      -->
+      <div class="footer_bubbleBox case_package">
+        <span>어제 활동이 부족했어요.<br>오늘 바디핏의 기초 체력 다지기<br>홈트레이닝 어떠세요?</span>
+        <div class="btn_wrap"><button type="button" class="btn_base">바디핏 패키지 보러가기</button></div>
+      </div>
+      <!-- //caee 03 : 패키지 추천 등 메시지+Link 버튼이 있는 말풍선의 경우  -->
+    </div>
+  </footer>
+  <!-- //20210810 footer (코치) 이미지 추가 -->
+</div>
+<script>
+  var swiper = new Swiper(".recommend_slider", {
+    slidesPerView: "auto",
+    spaceBetween: 18, //20210714
+    slidesOffsetAfter: 24 //20210715,
+  });
+  var swiper = new Swiper(".new_slider", {
+    loop: false,
+    slidePerView: 1,
+    spaceBetween: 0,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+</script>
+</body>
+</html>

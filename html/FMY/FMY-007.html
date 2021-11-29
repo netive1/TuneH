@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객센터</title>
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+	<div class="health_wrap footer_no type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>고객센터</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="notice_top">
+			<span class="tag">공지</span>
+			<a href="#">서버 교체를 위한 서비스 점검 안내서버 교체를 위한 서비스 점검 안내서버</a>
+		</div>
+		<div class="health_container">
+			<div class="search_tag_wrap">
+				<!--input search-->
+				<div class="inp_search_wrap_02">
+					<input type="inp_search" class="search_box" placeholder="궁금하신 내용을 검색해주세요"/>
+					<button type="button" class="search_btn_02"><span class="hidden">검색</span></button> <!--20210811 버튼 태그로 변경-->
+				</div>
+				<!--//input search-->
+				<a href="javascript:void(0)" class="tag">#회원</a>
+				<a href="javascript:void(0)" class="tag">#주문/결제</a>
+				<a href="javascript:void(0)" class="tag">#취소/환불</a>
+				<a href="javascript:void(0)" class="tag">#포인트</a>
+				<a href="javascript:void(0)" class="tag">#앱이용</a>
+				<!-- 20210719 저장하기 버튼 삭제 -->
+			</div>
+			<hr class="hr_line_03">
+			<h1 class="tit_cont_01 mt60 mb60">자주 묻는 질문</h1> <!--20210719 워딩 수정-->
+			<div class="acco_list_wrap">
+				<div class="acco_list_item">
+					<div class="acco_item_head">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+								<span class="question">[회원] 닉네임을 변경하고 싶어요</span>
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<div class="acco_item_cont">
+						<p class="answer">서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다 서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다</p>
+					</div>
+				</div>
+				<div class="acco_list_item">
+					<div class="acco_item_head">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+								<span class="question">[회원] 닉네임을 변경하고 싶어요</span>
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<div class="acco_item_cont">
+						<p class="answer">서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다 서버 장비교체 및 서버의 최적화를 위한 점검 작업으로 인해 부득이 서비스 중지합니다</p>
+					</div>
+				</div>
+			</div>
+			<div class="btn_wrap"><button type="button" class="btn_delete"><span>더보기</span></button></div>
+			<div class="connect_wrap">
+				<h1 class="tit_cont_01">아직도 해결이<br>안 되셨나요?</h1>
+				<div class="center">
+					고객센터
+					<a href="#" class="num" onclick="netiveUI.plugins.popAlert('#alert001');" role="button">02-6330-3410</a> <!--20210817 고객센터 번호 변경-->
+				</div>
+				<p>평일 9시~18시<br>주말 및 공휴일 휴무</p>
+				<ul class="box_link_wrap mt80">
+					<li><a href="#">문의하기</a></li>
+					<li><a href="#">문의내역확인</a></li>
+				</ul>
+			<!-- 카카오 채널 연결 버튼 추가 -->
+				<div class="kakao_conec">					
+					<button type="button" class="btn_base_01 ico" onclick="window.open('http://pf.kakao.com/_wxctws')"><span>Tune H 카카오 채널 연결하기</span></button>
+				</div>
+			<!-- //카카오 채널 연결 버튼 추가 -->
+			</div>
+		</div>
+	</div>
+
+	<!-- alert -->
+	<div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        연결을 누르시면 고객센터로 통화가 연결됩니다.<br>
+				연결하시겠습니까?
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_line_dark ui-close">취소</button>
+        <button type="button" class="btn_pop_dark"><a href="tel:070-567-2345">연결</a></button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

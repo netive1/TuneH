@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오디오 플레이어</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var mySwiper = new Swiper('.swiper-container',{
+        loop:false,
+        slidePerView:1,
+        navigation : { // 네비게이션
+          nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+          prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+        },
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="health_wrap type_content"> <!-- 20210805 'type_content' class 위치 변경 -->
+    <div class="health_container">
+      <button type="button" onclick="netiveUI.plugins.popToast('#toast001');">오디오 플레이어</button>
+    </div>
+    <!--// health_container -->
+  </div>
+ 
+  <!-- popup : 콘텐츠 필터 -->
+  <div class="health_toast actived" id="toast001" style="display: block;">
+    <div class="inner">
+
+      <button type="button" class="btn_down"><span class="hidden">접기</span></button>
+      <button type="button" class="btn_close" onclick="netiveUI.plugins.popToast('#alert001');"><span class="hidden">닫기</span></button>
+
+      <div class="inner_container">
+        <div class="play_wrap">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#">
+                  
+                </a>
+              </div>
+              <div class="swiper-slide"><span class="timer">20 : 00</span></div>
+            </div>
+            <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          </div>
+          <!-- //swiper-container -->
+          
+
+          <div class="play_item">
+            <a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b"></a>
+            <span class="tag_info">홈트레이닝</span>
+            <h1 class="tit_item">20분만에 200칼로리! 인터벌</h1>
+            <div class="play_bar">
+              <div class="progress_wrap">
+                <progress max="700" value="100"></progress>
+              </div>
+              <div class="play_time_wrap"><span class="play_time">08:00</span><span class="play_time">20:00</span></div>
+            </div>
+            <div class="play_btn_wrap">
+              <a href="#" role="button" class="btn_back"><span class="hidden">5초 뒤로</span></a>
+              <a href="#" role="button" class="btn_play stop"><span class="hidden">재생/정지</span></a>
+              <a href="#" role="button" class="btn_forward"><span class="hidden">5초 앞으로</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+
+  <!-- alert  -->
+  <div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        플레이 중인 콘텐츠가 종료됩니다.<br>진행하시겠습니까?
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_line_dark ui-close">취소</button>
+        <button type="button" class="btn_pop_dark ">확인</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

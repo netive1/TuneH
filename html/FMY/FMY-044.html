@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>생체 측정 관리</title>
+	<link rel="stylesheet" href="../../resources/css/guide.css">
+	<link rel="stylesheet" href="../../resources/css/swiper.min.css">
+	<script src="../../resources/js/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>
+	<script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body>
+	<div class="health_wrap footer_no type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>생체 측정 관리</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="health_container">
+			<div class="acco_list_wrap acco_list_slide type_check">
+				<div class="acco_list_item">
+					<div class="acco_item_head">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+								지문 인식 측정
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<div class="acco_item_cont">
+                        내용
+					</div>
+				</div>
+				<div class="acco_list_item pt_type">
+					<div class="acco_item_head">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+                                얼굴 인식 측정
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<div class="acco_item_cont">
+                        <!-- swiper -->
+						<div class="align_right_wrap">
+							<div class="swiper-container type_check_slide">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+                                        <!-- <a href="javascript:void(0)" role="button"> -->
+                                            <div class="check_wrap">
+												<strong>88</strong>
+												<span>심박수</span>
+												<span>BPM</span>
+                                            </div>
+                                        <!-- </a> -->
+									</div>
+									<div class="swiper-slide">
+										<!-- <a href="javascript:void(0)" role="button"> -->
+                                            <div class="check_wrap">
+												<strong>88</strong>
+												<span>산소포화도</span>
+												<span>Sp02%</span>
+                                            </div>
+                                        <!-- </a> -->
+									</div>
+									<div class="swiper-slide">
+										<!-- <a href="javascript:void(0)" role="button"> -->
+                                            <div class="check_wrap">
+												<strong>21</strong>
+												<span>분당호흡</span>
+												<span>RPM</span>
+                                            </div>
+                                        <!-- </a> -->
+									</div>
+									<div class="swiper-slide">
+										<!-- <a href="javascript:void(0)" role="button"> -->
+										<div class="check_wrap">
+											<strong>3단계</strong>
+											<span>스트레스지수</span>
+											<span>500점 만점 기준</span><!--20210804 워딩수정-->
+										</div>
+										<!-- </a> -->
+									</div>
+									<div class="swiper-slide">
+										<!-- <a href="javascript:void(0)" role="button"> -->
+										<div class="check_wrap">
+											<strong>77.6</strong>
+											<span>심박변이도</span>
+											<span>MS</span>
+										</div>
+										<!-- </a> -->
+									</div>
+								</div>
+							</div>
+							<p class="check_date">측정일 : 2021.07.12 11:33</p>
+						</div>
+						<!-- // -->
+					</div>
+				</div>
+				<div class="acco_list_item pt_type">
+					<div class="acco_item_head line">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+                                얼굴 인식 측정
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<div class="acco_item_cont">
+                        <!-- swiper -->
+						<div class="align_right_wrap">
+							<div class="swiper-container type_check_slide">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+                                        <!-- <a href="javascript:void(0)" role="button"> -->
+                                            <div class="check_wrap">
+												<strong>88</strong>
+												<span>심박수</span>
+												<span>BPM</span>
+                                            </div>
+                                        <!-- </a> -->
+									</div>
+									<div class="swiper-slide">
+										<!-- <a href="javascript:void(0)" role="button"> -->
+                                            <div class="check_wrap">
+												<strong>88</strong>
+												<span>산소포화도</span>
+												<span>Sp02%</span>
+                                            </div>
+                                        <!-- </a> -->
+									</div>
+									<div class="swiper-slide">
+										<!-- <a href="javascript:void(0)" role="button"> -->
+                                            <div class="check_wrap">
+												<strong>21</strong>
+												<span>분당호흡</span>
+												<span>RPM</span>
+                                            </div>
+                                        <!-- </a> -->
+									</div>
+								</div>
+							</div>
+							<p class="check_date">측정일 : 2021.07.12 11:33</p>
+						</div>
+						<!-- // -->
+					</div>
+				</div>
+			</div>
+            <div class="btn_wrap"><button type="button" class="btn_more"><span>더보기</span></button></div>
+			<!-- 20210727 생체 측정 결과가 없을 경우 CASE -->
+			<div class="nodata">
+				<P>생체 측정 결과 내역이 없습니다.</P>
+				<button type="button" class="btn_more"><span>건강 신호 측정하기</span></button>
+			</div>
+			<!-- //20210727 생체 측정 결과가 없을 경우 CASE -->
+		</div>
+	</div>
+</body>
+</html>

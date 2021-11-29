@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비밀번호 변경</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+	<div class="health_wrap type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>비밀번호 변경</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="health_container">
+			<h2 class="tit_cont_01">변경할 비밀번호를<br>입력해주세요.</h2>
+			<div class="inp_wrap type_box">
+				<div class="inp_item">
+					<label class="inp_label">비밀번호</label>
+					<input class="inp_base" type="password" placeholder="변경할 비밀번호 입력">
+					<p class="notice">
+					비밀번호는 영문 대소문자 조합과 숫자 또는 특수<br>문자를 포함하여 8자리 이상을 조합해 주세요
+					</p>
+				</div>
+				<div class="inp_item">
+					<label class="inp_label">비밀번호 확인</label>
+					<input class="inp_base" type="password" placeholder="변경할 비밀번호 확인">
+				</div>
+			</div>
+
+		</div>
+		<div class="btn_btm_fixed">
+			<button type="button" class="btn" disabled>확인</button>
+		</div>
+	</div>
+
+	<!-- 팝업 -->
+	<!-- case 01 : 비밀번호 정상 변경 시 alert 메시지 -->
+	<div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        비밀번호가 정상적으로 변경되었습니다.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+
+	<!-- case 02 : 비밀번호 생성규칙 틀릴 시 alert 메시지 -->
+	<div class="health_alert" id="alert002" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+				개인정보보호를 위해 비밀번호는
+				비밀번호는 영문 대소문자 조합과 숫자 또는 특수문자를
+				포함하여 8자리 이상을 조합하여 생성해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+
+	<!-- case 03 : 비밀번호 불일치 시 alert 메시지 -->
+	<div class="health_alert" id="alert003" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+				입력하신 비밀번호가 일치하지 않습니다.
+				확인 후 다시 입력해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

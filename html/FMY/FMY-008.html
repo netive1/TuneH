@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문의하기</title>
+	<link rel="stylesheet" href="../../resources/css/guide.css">
+	<link rel="stylesheet" href="../../resources/css/swiper.min.css">
+	<script src="../../resources/js/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>
+	<script src="../../resources/js/swiper.min.js"></script>
+
+</head>
+<body>
+	<div class="health_wrap type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>문의하기</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+			패키지 구매회원의 경우 : .package 추가
+			신규 알림 있을 시 : .on 추가
+			-->
+		</header>
+		<div class="health_container">
+			<div class="select_wrap type_box_fill">
+				<div class="select_box">
+					<select id="" name="">
+						<option value="">시스템 문의</option>
+						<option value="" selected>일반 문의</option>
+					</select>
+				</div>
+			</div>
+			<div class="form_wrap">
+				<div class="inp_wrap type_box">
+					<div class="inp_item card_textarea">
+						<label for="title" class="inp_label required">제목
+							<span class="required_txt">* 필수항목</span>
+						</label>
+						<textarea id="title" class="" name="title" rows="3" placeholder="20자 이내 작성"></textarea>
+					</div>
+					<div class="inp_item card_textarea">
+						<label for="title" class="inp_label required">문의내용</label>
+						<textarea id="title" class="" name="title" rows="8" placeholder="내용입력&#13;&#10;&#13;&#10;디바이스 정보:&#13;&#10;탈옥(루팅)여부:&#13;&#10;앱 버전:&#13;&#10;문제발생일시:&#13;&#10;문의내용:"></textarea>
+					</div>
+				</div>
+			</div>
+			<!-- swiper -->
+			<div class="align_right_wrap">
+				<div class="swiper-container type_upload">
+          <!--20210903 id 'mySwiperFile' 추가-->
+					<div class="swiper-wrapper" id="mySwiperFile">
+            <!-- 20210903 하위 내용 script 에서 출력 -->
+          </div>
+				</div>
+			</div>
+      <!-- 20210903 문구 현행화 -->
+			<p class="list_dot"><span>파일 첨부는 최대 3개까지 등록이 가능합니다.</span></p>
+      <p class="list_dot"><span>이미지(jpg, jpeg, gif, png, bmp) 파일을 첨부할 수 있습니다.</span></p>
+			<!-- // -->
+
+			<div class="check_box">
+				<div class="item">
+					<input type="checkbox" id="termCheck01" class="chkItem" name="termAgree">
+					<label for="termCheck01">[필수] 개인정보 수집, 이용동의</label>
+					<button type="button" class="btn_txt">
+						<span>보기</span>
+					</button>
+				</div>
+			</div>
+
+			<div class="acco_list_wrap type_notice mb0"> <!--20210719 'mb0' class 추가-->
+				<div class="acco_list_item">
+					<div class="acco_item_head">
+						<div class="flex_between_wrap">
+							<div class="item_head_cont">
+								문의 전 안내를 꼭 확인해주세요
+							</div>
+							<button type="button" class="acco_btn"><span class="hidden">리스트 펼침</span></button>
+						</div>
+					</div>
+					<!-- 20210719 워딩수정 -->
+					<div class="acco_item_cont">
+						하기 문의 내용이 누락되었거나, 구체적<br>이지 않은 경우에는 답변이 지연되거나<br> 추가 요청이 발생할 수 있습니다.
+					</div>
+					<!-- //20210719 워딩수정 -->
+				</div>
+			</div>
+
+		</div>
+		<div class="btn_btm_fixed">
+			<button type="button" class="btn">문의접수</button>
+		</div>
+	</div>
+<script>
+  // 20210903 script 내용 변경
+
+  //이미지 파일 업로드
+  var myFileUpLoad = {
+    $targetAppend: null,
+    targetSlide: null,
+    swiperFile: null,
+    showFile: function (input, idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $slide.find('.img_upload_wrap').hide();
+          $slide.find('.file_upload_img').attr('src', e.target.result);
+          $slide.find('.file_upload_cont').show();
+          $slide.find('.img_title').html(input.files[0].name);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    },
+    deleteFile: function (idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      o.swiperFile.removeSlide($(o.swiperFile.slides).index($slide));
+    },
+    createFile: function (idx) {
+      var o = this;
+
+      // 새로운 파일 영역 prepend
+      o.swiperFile.prependSlide(o.picHtml(idx));
+    },
+    readURL: function (input, idx) { // 파일 선택시 실행
+      var o = this;
+
+      // swiper 최초 1회 실행(첫 이미지 등록)
+      if (input.files.length === 1) {
+        o.swiperFile = new Swiper(".type_upload", {
+          loop: false,
+          slidesPerView: "auto",
+          spaceBetween: 11,
+          observer: true,
+          observeParents: true,
+        });
+      } 
+
+      o.showFile(input, idx); // file 숨기고, 이미지 보여주기
+
+      o.createFile(idx + 1);
+
+    },
+    fileNumChk: function() { // 20210903, 첨부파일 갯수 제한
+      var o = this,
+          len = o.$targetAppend.find('.file_upload_img').length;
+
+      if(len > 3) {
+        alert('파일 첨부는 최대 3개까지 등록이 가능합니다.');
+        return false;
+      }
+    },
+    picHtml: function (idx) {
+      var o = this;
+      var picHtml = ''
+        + '<div class="swiper-slide" id="' + (o.targetSlide + idx) + '">'
+        + '  <div class="inp_wrap file_upload">'
+        + '    <div class="img_upload_wrap" onclick="return myFileUpLoad.fileNumChk()">' // 20210903, 첨부파일 갯수 제한
+        + '      <input type="file" name="myPic' + idx + '" onchange="myFileUpLoad.readURL(this, ' + idx + ');" accept="image/*" class="ipt_upload_file">'
+        + '    </div>'
+        + '    <div class="file_upload_cont">'
+        + '      <img class="file_upload_img" src="#" alt="your image">'
+        + '      <button type="button" onclick="myFileUpLoad.deleteFile(' + idx + ');" class="remove_img"><span class="img_title">Uploaded Image</span></button>'
+        + '    </div>'
+        + '  </div>'
+        + '</div>';
+      return picHtml;
+    },
+    init: function (idx) {
+      var o = this;
+      o.$targetAppend = $('#mySwiperFile');
+      o.targetSlide = 'myPic';
+
+      o.$targetAppend.append(o.picHtml(idx));
+    }
+  }
+  $(document).ready(function () {
+    myFileUpLoad.init(0);
+  });
+</script>
+<!-- 20210903 -->
+<script>
+  var swiper = new Swiper(".type_upload", {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 11,
+    observer: true,
+    observeParents: true,
+  });
+</script>
+<!-- //20210903 -->
+</body>
+</html>

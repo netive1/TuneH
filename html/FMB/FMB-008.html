@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>패키지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+    <!-- 20211028 class guide
+    as is 결제 완료 화면(navy bg) - 'seventeen_pay' class 삭제 및 'type_bg_purple' class 필요,
+    to be 세븐틴 ux 결제 완료 화면 - 'seventeen_pay' class 필요
+    -->
+    <div class="health_wrap type_package seventeen_pay"> 
+        <!-- <header class="health_header pr">
+            <div class="user"><button type="button">홍길동</button></div>
+        </header> -->
+        <!-- 20211005 마크업 전체 변경 -->
+        <div class="health_container package_pay"> <!-- 20211005 'package_pay' class 추가-->
+            <div class="pay_wrap">
+                <div class="pay_bg_wrap">
+                    <div class="pay_top_txt">
+                        <div class="pay_info">            
+                            <h1 class="tit_cont_01">결제 완료!<br>같이 관리<br>시작해볼까요?</h1>
+                            <ul class="sub_list">
+                                <li>프리미엄/바디핏패키지</li>
+                            </ul>                
+                        </div>  
+                        <div class="pay_head">
+                            <p class="type01"><em>정가 270,000</em></p>
+                            <p class="type02">120,000</p>
+                            <p class="vat">(VAT포함)</p>
+                        </div>
+                    </div>                 
+                    <div class="pay_cont_wrap">
+                        <div class="pay_cont">
+                            <dl>
+                                <dt>결제일시</dt>
+                                <dd>2021.09.30 15:12:04</dd>
+                            </dl>
+                            <dl>
+                                <dt>결제수단</dt>
+                                <dd>네이버페이</dd>
+                            </dl>
+                        </div>
+                        <p class="goods_date">패키지 이용기간 : <span class="point_color">2021.09.30~ 2021.09.30</span></p>
+                    </div>
+                    <div class="img_wrap">
+                        <img src="../../resources/img/sevent/bg_st_paymentcom_01.png" alt="">
+                    </div>
+                </div>                       
+                <div class="goods_cont">                  
+                    <!-- 2차 (상품 정보, 배송정보) -->
+                    <div class="product_info inp_form">
+                        <h2 class="tit_cont_02">주문상품</h2>
+                        <p class="tit_sub_02">프리미엄 바디핏 패키지 (90일)</p>
+                        <dl class="order_list">
+                            <dt>- 진단/상담</dt>
+                            <dd>혜택정보1, 혜택정보2, 혜택정보3, 혜택정보4</dd>
+                            <dt>- 굿즈</dt>
+                            <dd>혜택정보1, 혜택정보2, 혜택정보3, 혜택정보4</dd>
+                            <dt>- 온라인콘텐츠</dt>
+                            <dd>99개</dd>
+                        </dl>
+                        <div class="payment_detail">
+                            <p class="tit_sub_02">배송지 정보</p>
+                            <p><span>이름</span><em>홍*동</em></p>
+                            <p><span>연락처</span><em>010-****-9999</em></p>
+                            <p><span>주소</span><em>서울시 신도림로 16 ***동 ***호</em></p>
+                        </div>
+                    </div>
+                    <!-- //2차 (상품 정보, 배송정보) -->
+                </div>
+            </div>
+            <div class="bg_panel">
+                <div class="item_wrap">
+                    <a href="../FMY/FMY-016.html" class="item_box"><span class="item_txt">패키지 혜택보기</span></a>
+                    <a href="../FMB/FMB-001.html" class="item_box"><span class="item_txt">다른 패키지 구경하기</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- //20211005 마크업 전체 변경 -->
+        <div class="btn_wrap half">
+            <button type="button" class="btn bg-gray6" onclick="location.href='../FHO/FHO-001.html'">홈으로</button>
+            <button type="button" class="btn" onclick="location.href='../FMY/FMY-016.html'">마이패키지 바로가기</button> <!--20211005-->
+        </div>
+    </div>
+</body>
+</html>

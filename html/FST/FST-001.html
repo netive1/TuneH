@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>설정</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_setting type_bg_gray footer_no">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>설정</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container pb0">
+    <ul class="setting_menulist">
+      <li class="st_promotion"><a href="FST-002.html">제휴코드 등록</a></li><!--20210607 문구 수정-->
+      <li class="st_device"><a href="FST-005.html">디바이스 연결</a></li>
+      <li class="st_otherapp"><a href="FST-007.html">다른 앱 연동하기</a></li>
+    </ul>
+    <ul class="setting_menulist">
+      <li class="st_appsetting"><a href="FST-008.html">앱 설정</a></li>
+      <li class="st_serviceinfo"><a href="FST-009.html">서비스 정보</a></li>
+      <li class="st_version"><a href="#">버전<span class="version">V10.1<button type="button" class="update">업데이트</button></span></a></li>
+    </ul>
+    <div class="select_global">
+      <!-- 한국어 버전의 언어 설정 옵션 -->
+      <select name="" id="" class="select_ko">
+        <option value="">한국어</option>
+        <option value="">English</option>
+      </select>
+      <!-- //한국어 버전의 언어 설정 옵션 -->
+      <!-- 영어 버전의 언어 설정 옵션 (display: none 처리해둠)-->
+      <select name="" id="" class="select_en" style="display: none;">
+        <option value="">English</option>
+        <option value="">한국어</option>
+      </select>
+      <!-- //영어 버전의 언어 설정 옵션 (display: none 처리해둠) -->
+    </div>
+    <div class="btn_wrap"><button type="button" class="btn_base_02 btn_logout">로그아웃</button></div> 
+    <div class="set_footer"><!--21.06.30 추가-->
+      <strong>시그나코리아주식회사 대표이사 김양호</strong>
+      사업자등록번호: 396-86-00109<br>통신판매업신고: 제 2020-서울종로-2242 호
+    </div>
+  </div>
+</div>
+</body>
+</html>

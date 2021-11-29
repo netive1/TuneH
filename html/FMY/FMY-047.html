@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>알림함</title>
+	<link rel="stylesheet" href="../../resources/css/guide.css">
+	<link rel="stylesheet" href="../../resources/css/swiper.min.css">
+	<script src="../../resources/js/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>
+	<script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body>
+	<div class="health_wrap footer_no type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>알림함</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+			패키지 구매회원의 경우 : .package 추가
+			신규 알림 있을 시 : .on 추가
+			-->
+		</header>
+		<div class="health_container">
+			<div class="select_wrap type_box_fill">
+				<div class="select_box">
+					<select id="" name="">
+						<option value="">최근 1개월</option>
+						<option value="">최근 3개월</option>
+						<option value="">최근 6개월</option>
+						<option value="">전체</option>
+					</select>
+				</div>
+			</div>
+            <p class="notice">Tune H의 광고 알림이 표시되며, 알림 내역은 최대 3개월간 보관됩니다.</p>
+            <div class="coupon_wrap history_no">
+				<span class="term">2021.06.02 - 2021.07.02</span>
+				<ul class="coupon_list_wrap">
+					<li>
+						<div class="coupon_top">
+							<span class="date"></span>
+							<p class="tit"></p>
+							<p class="sub"></p>
+						</div>
+						<div class="coupon_cont">
+							<span class="coupon_num"></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 20210721 데이터가 없을 경우 'nodata' class 추가 -->
+			<div class="nodata">
+				<p>알림 내역이 없습니다.</p>
+			</div>
+			<!-- //20210721 데이터가 없을 경우 'nodata' class 추가 -->
+		</div>
+		<!-- <div class="btn_btm_fixed">
+			<div class="gradient_wrap">
+				<p>알림 내역이 없습니다.</p>
+			</div>
+		</div> -->
+	</div>
+</body>
+</html>

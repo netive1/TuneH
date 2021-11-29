@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <title>guide : form</title>
+  <link rel="stylesheet" href="../resources/css/guide.css">
+  <script type="text/javascript" src="../resources/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../resources/js/ui.common.js"></script>
+</head>
+<style>
+  .type_guide .guide_wrap {margin-bottom: 50px;}
+  .type_guide .guide_wrap {margin-bottom: 50px;}
+  .type_guide .guide_wrap .check_box:not(.acco_list_wrap) {margin-bottom: 5px;}
+  .type_guide .guide_wrap .tit_cont_03.guide {position: relative;padding-left: 10px;margin-bottom: 10px;}
+  .type_guide .guide_wrap .tit_cont_03.guide::before {content: "";position: absolute;left: 0;top: 10px;display: inline-block;width: 4px;height: 4px;background: #222;}
+  .type_guide .tit_cont_03 {margin-bottom: 10px;}
+  .type_guide .tabs .tab_menulist {padding: 10px 0 0;}
+  .type_guide .tabs .tab_panel {min-height:20vh;padding: 30px 20px;background: #f9f9f9;}
+  .type_guide .radio_box {display: flex;}
+  .type_guide .scroll_wrap {min-height: 90px;}
+</style> <!--가이드에서만 사용되는 style-->
+<body>
+<!--default layout 정의 가이드-->
+<div class="health_wrap type_guide"><!--health_wrap : 페이지 전체 wrapper, 'type_페이지명' 기재-->
+  <!--header-->
+  <header class="health_header"><!--health_header : 페이지 헤더 영역-->
+    <h1>form guide</h1>
+    <div class="user package on"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <!-- //header -->
+  <!--content area-->
+  <div class="health_container"> <!--health_container : 페이지 컨텐츠 영역-->
+    <!--Accordion-->
+    <div class="guide_wrap"> <!-- guide_wrap : guide문서에서만 사용됨(실제로 사용x)-->
+      <h2 class="tit_cont_03 guide">아코디언 약관</h2>
+        <div class="check_box term acco_list_wrap" role="group" aria-labelledby="약관" id="termCheckArea">
+          <div class="item_head">
+            <input type="checkbox" id="termCheckAll" class="chkItem" name="termAgreeAll">
+            <label for="termCheckAll">약관에 모두 동의</label>
+          </div>
+        
+          <div class="item_cont">
+            <div class="item">
+              <input type="checkbox" id="termCheck01" class="chkItem" name="termAgree">
+              <label for="termCheck01">(필수) Tune H 필수 항목 모두 동의</label>
+              <button type="button" class="btn_acco_more">
+                <span class="hidden">상세약관 리스트 펼침</span>
+              </button>
+            </div>
+            <ul class="item_detail flex_type">
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub01" class="chkItem" name="termAgree2">
+                  <label for="termCheck_sub01"><span class="hidden">서비스 이용 약관 동의</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms1');" class="poplink">서비스 이용 약관
+                    동의</button>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub02" class="chkItem" name="termAgree2">
+                  <label for="termCheck_sub02"><span class="hidden">개인정보 수집·이용 동의</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms2');" class="poplink">개인정보 수집·이용
+                    동의</button>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub03" class="chkItem" name="termAgree2">
+                  <label for="termCheck_sub03"><span class="hidden">개인정보 제 3자 제공동의(국외이전 포함)</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms3');" class="poplink">개인정보 제 3자
+                    제공동의(국외이전 포함)</button>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub04" class="chkItem" name="termAgree2">
+                  <label for="termCheck_sub04"><span class="hidden">민감정보 처리(수집·이용) 동의</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms4');" class="poplink">민감정보 처리(수집·이용)
+                    동의</button>
+                </div>
+              </li>
+            </ul>
+        
+            <div class="item">
+              <input type="checkbox" id="termCheck02" class="chkItem" name="termAgree3">
+              <label for="termCheck02">(선택) 위치정보 약관동의(GPS 사용)</label>
+              <button type="button" class="btn_acco_more">
+                <span class="hidden">상세약관 리스트 펼침</span>
+              </button>
+            </div>
+            <ul class="item_detail flex_type">
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub05" class="chkItem" name="termAgree4">
+                  <label for="termCheck_sub05"><span class="hidden">위치기반서비스 이용약관(GPS 사용)</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms5');" class="poplink">위치기반서비스
+                    이용약관(GPS 사용)</button>
+                </div>
+              </li>
+            </ul>
+            <div class="item">
+              <input type="checkbox" id="termCheck03" class="chkItem" name="termAgree5">
+              <label for="termCheck03"><span onclick="netiveUI.plugins.popFull('#popPaymentTerms12');" class="poplink">(선택)
+                  마케팅목적 개인정보 수집·이용 동의</span></label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="termCheck04" class="chkItem" name="termAgree6">
+              <label for="termCheck04">(선택) 프로모션 및 광고성 메시지 전체 동의</label>
+              <button type="button" class="btn_acco_more">
+                <span class="hidden">상세약관 리스트 펼침</span>
+              </button>
+            </div>
+        
+            <ul class="item_detail flex_type">
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub06" class="chkItem" name="termAgree7">
+                  <label for="termCheck_sub06"><span class="hidden">광고성 정보 수신 동의</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms6');" class="poplink">광고성 정보 수신
+                    동의</button>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub07" class="chkItem" name="termAgree7">
+                  <label for="termCheck_sub07"><span class="hidden">야간 광고성 정보 수신 동의</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms7');" class="poplink">야간 광고성 정보 수신
+                    동의</button>
+                </div>
+              </li>
+            </ul>
+        
+            <div class="item">
+              <input type="checkbox" id="termCheck05" class="chkItem" name="termAgree8">
+              <label for="termCheck05">(선택) 결제, Tune Point, 환불 규정 전체 동의</label>
+              <button type="button" class="btn_acco_more">
+                <span class="hidden">상세약관 리스트 펼침</span>
+              </button>
+            </div>
+            <ul class="item_detail flex_type">
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub08" class="chkItem" name="termAgree9">
+                  <label for="termCheck_sub08"><span class="hidden">유료서비스 이용약관</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms8');" class="poplink">유료서비스
+                    이용약관</button>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub09" class="chkItem" name="termAgree9">
+                  <label for="termCheck_sub09"><span class="hidden">Tune Point 정책</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms9');" class="poplink">Tune Point
+                    정책</button>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <input type="checkbox" id="termCheck_sub10" class="chkItem" name="termAgree9">
+                  <label for="termCheck_sub10"><span class="hidden">환불 규정(환불 정책)</span></label>
+                  <button type="button" onclick="netiveUI.plugins.popFull('#popPaymentTerms10');" class="poplink">환불 규정(환불
+                    정책)</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <!--//Accordion-->
+    <!--checkbox-->
+    <div class="guide_wrap">
+      <h2 class="tit_cont_03 guide">체크박스</h2>
+      <div class="check_box">
+        <input type="checkbox" id="chk1" class="chkItem" name="">
+        <label for="chk1">default</label>
+      </div>
+      <div class="check_box">
+        <input type="checkbox" id="chk2" class="chkItem" name="" checked>
+        <label for="chk2">checked</label>
+      </div>
+      <div class="check_box">
+        <input type="checkbox" id="chk3" class="chkItem" name="" disabled>
+        <label for="chk3">disabled</label>
+      </div>
+    </div>
+    <!--checkbox-->
+    <!--radio button-->
+    <div class="guide_wrap">
+      <h2 class="tit_cont_03 guide">라디오버튼 default</h2>
+      <div class="radio_box radio_default"> <!--'radio_default' 클래스 추가-->
+        <div class="item">
+          <input type="radio" id="radio1" class="radioItem" name="radioDefault">
+          <label for="radio1">default</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="radio2" class="radioItem" name="radioDefault" checked>
+          <label for="radio2">checked</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="radio3" class="radioItem" name="radioDefault" disabled>
+          <label for="radio3">disabled</label>
+        </div>
+      </div>   
+    </div> 
+    <div class="guide_wrap">
+      <h2 class="tit_cont_03 guide">라디오버튼 img</h2>
+      <div class="radio_box state_list"><!--'state_list' 클래스 추가-->
+        <div class="item">
+          <input type="radio" id="st01" name="state" class="radioItem">
+          <label for="st01">행복</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st02" name="state" class="radioItem">
+          <label for="st02">좋음</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st03" name="state" class="radioItem">
+          <label for="st03">보통</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st04" name="state" class="radioItem">
+          <label for="st04">슬픔</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st05" name="state" class="radioItem">
+          <label for="st05">화남</label>
+        </div>
+      </div>
+    </div>
+    <div class="guide_wrap">
+      <h2 class="tit_cont_03 guide">라디오버튼 - scroll</h2>
+      <div class="scroll_wrap">
+        <div class="radio_box">
+          <div class="item">
+            <input type="radio" id="ex01" class="radioItem" name="example">
+            <label for="ex01">항상</label>
+          </div>
+          <div class="item">
+            <input type="radio" id="ex02" class="radioItem" name="example">
+            <label for="ex02">종종</label>
+          </div>
+          <div class="item">
+            <input type="radio" id="ex03" class="radioItem" name="example">
+            <label for="ex03">때때로</label>
+          </div>
+          <div class="item">
+            <input type="radio" id="ex04" class="radioItem" name="example">
+            <label for="ex04">종종</label>
+          </div>
+          <div class="item">
+            <input type="radio" id="ex05" class="radioItem" name="example">
+            <label for="ex05">때때로</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--radio button-->
+    
+    
+    <!--toggle-->
+    <div class="guide_wrap">
+      <h2 class="tit_cont_03 guide">toggle</h2>
+      <label class="toggle" for="checkbox">
+        <input type="checkbox" id="checkbox">
+        <div class="toggle_slider round"></div>
+      </label>
+    </div>
+    <!--//toggle-->
+    <!--input search-->
+    <div class="guide_wrap search_tag_wrap">
+      <h2 class="tit_cont_03 guide">input search 01</h2>
+      <div class="search_wrap">
+        <button type="button" class="search_focus">검색</button>
+        <input type="search" class="search_box" placeholder="검색" />
+        <button type="button" class="search_btn"><span class="hidden">검색</span></button>
+      </div>
+    </div>
+    <!--//input search-->
+
+    <!--input search 02-->
+    <div class="guide_wrap">
+      <h2 class="tit_cont_03 guide">input search 02</h2>
+      <div class="inp_search_wrap_02">
+        <input type="inp_search" class="search_box" placeholder="궁금하신 내용을 검색해주세요" />
+        <button type="button" class="search_btn_02"><span class="hidden">검색</span></button>
+      </div>
+      <!--//input search-->
+    </div>
+    <!--//input search 02-->
+    
+  </div>
+  <!--//content area-->
+</div>
+<script>
+  //약관 모두 동의
+  $(document).ready(function () {
+    $('#termCheckArea').uiCheckSubAll();
+  });
+  //input serach
+  $('.search_focus').click(function () {
+    $(this).parent().toggleClass('open');
+    $(this).hide();
+  });
+</script>
+</body>
+</html>

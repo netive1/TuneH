@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>활동 기록</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/swiper.min.js"></script> <!--20210714 추가-->
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css"> <!--20210730 css위치 변경-->
+</head>
+<body>
+<div class="health_wrap type_goal">
+  <header class="health_header">
+    <h1>활동 기록</h1>
+    <button type="button" class="btn_close"><span class="hidden">닫기</span></button>
+  </header>
+  <div class="health_container pt20 pb0">
+    <div class="card_wrap card_view">
+      <div class="card">
+        <div class="card_info">
+          <div class="card_profile"><img src="../../resources/img/img_cigna.png" alt=""></div>
+          <p class="card_date"><span>2021.05.19. 05:30</span><strong class="name">Eric Jung</strong></p>
+        </div>
+        <div class="card_cont">
+          <p class="card_desc">
+            걷기 활동을 하고 있습니다.<br>
+            2시간 동안 활동 상태였습니다.
+          </p>
+          <!-- 2021.07.05 .card_date 삭제 -->
+          <div class="card_data_box">
+            <p><em>거리</em>1,000 m</p>
+            <p><em>오르막</em>10 m</p>
+            <p><em>내리막</em>10 m</p>
+            <p><em>평균속도</em>2 km/H</p>
+            <p><em>심박수</em>50 bpm</p> <!--20210715 문구 수정-->
+            <p><em>활동 칼로리</em>10 kal</p>
+          </div>
+          <!-- 20210803 -->
+          <div class="file_upload_wrap inp_wrap pl0">
+            <div class="align_right_wrap">
+              <span class="inp_label">활동 사진 등록</span>
+              <div class="swiper-container upload_slider">
+                <div class="swiper-wrapper" id="mySwiperFile">
+                  <!--20210803 id 'mySwiperFile' 추가, 하위 내용 script 에서 출력-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //20210803 -->
+          <div class="card_comment_area">
+            <div class="card_commentlist">
+              <div class="card_textarea mt0">
+                <textarea name="" id="" rows="1" placeholder="메모를 입력하세요"></textarea>
+                <button type="button" class="btn_register">등록</button>
+              </div>
+              <div class="inp_wrap_bg mt30">
+                <span class="inp_label">나의기분</span>
+                <div class="radio_box state_list">
+                  <div class="item">
+                    <input type="radio" id="st01" name="state" class="radioItem" checked>
+                    <label for="st01">행복</label>
+                  </div>
+                  <div class="item">
+                    <input type="radio" id="st02" name="state" class="radioItem">
+                    <label for="st02">좋음</label>
+                  </div>
+                  <div class="item">
+                    <input type="radio" id="st03" name="state" class="radioItem">
+                    <label for="st03">보통</label>
+                  </div>
+                  <div class="item">
+                    <input type="radio" id="st04" name="state" class="radioItem">
+                    <label for="st04">슬픔</label>
+                  </div>
+                  <div class="item">
+                    <input type="radio" id="st05" name="state" class="radioItem">
+                    <label for="st05">화남</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn_wrap"><button type="button" class="btn_delete">활동삭제</button></div>
+          </div>
+        </div>              
+      </div>
+    </div>
+  </div>
+  <div class="btn_btm_fixed">
+    <button type="button" class="btn">저장하기</button>
+  </div>
+</div>
+</body>
+
+<script>
+  // 20210908 script 내용 변경
+  var myFileUpLoad = {
+    $targetAppend: null,
+    targetSlide: null,
+    swiperFile: null,
+    showFile: function (input, idx) { // 파일 첨부
+      var o = this,
+          $slide = $('#' + (o.targetSlide + idx));
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $slide.find('.img_upload_wrap').hide();
+          $slide.find('.file_upload_img').attr('src', e.target.result);
+          $slide.find('.file_upload_cont').show();
+          $slide.find('.img_title').html(input.files[0].name);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    },
+    showImage: function (input, idx) { // 파일 로드
+      
+      if(idx < input.length) {
+        var o = this,
+            $slide = $('#' + (o.targetSlide + idx));
+        $slide.find('.img_upload_wrap').hide();
+        $slide.find('.file_upload_img').attr('src', input[idx]);
+        $slide.find('.file_upload_cont').show();
+        $slide.find('.img_title').html(input[idx]);
+        
+        o.createFile(idx + 1);
+        o.showImage(input, idx + 1);
+      }
+      
+    },
+    deleteFile: function (idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      o.swiperFile.removeSlide($(o.swiperFile.slides).index($slide));
+    },
+    createFile: function (idx) {
+      var o = this;
+
+      // 새로운 파일 영역 prepend
+      o.swiperFile.prependSlide(o.picHtml(idx));
+      o.swiperFile.slideTo(0)
+    },
+    readURL: function (input, idx) { // 파일 선택시 실행
+      var o = this, condition;
+
+      // 파일 첨부가 아닌 등록된 파일 불러오는 경우
+      Array.isArray(input)
+        ? condition = input.length >= 1
+        : condition = input.files.length === 1;
+      
+      if (condition) {
+        // swiper 최초 1회 실행(첫 이미지 등록)
+        o.swiperFile = new Swiper(".upload_slider", {
+          loop: false,
+          slidesPerView: "auto",
+          spaceBetween: 11,
+          observer: true,
+          observeParents: true,
+        });
+      }
+
+      if (Array.isArray(input)) {
+        o.showImage(input, idx); // file 숨기고, 이미지 보여주기
+      } else {
+        o.showFile(input, idx); // file 숨기고, 이미지 보여주기
+        o.createFile(idx + 1);
+      }
+    },
+    picHtml: function (idx) {
+      var o = this;
+      var picHtml = ''
+        + '<div class="swiper-slide" id="' + (o.targetSlide + idx) + '">'
+        + '  <div class="inp_wrap file_upload">'
+        + '    <div class="img_upload_wrap">'
+        + '      <input type="file" name="myPic' + idx + '" onchange="myFileUpLoad.readURL(this, ' + idx + ');" accept="image/*" class="ipt_upload_file">'
+        + '    </div>'
+        + '    <div class="file_upload_cont">'
+        + '      <img class="file_upload_img" src="#" alt="your image">'
+        + '      <button type="button" onclick="myFileUpLoad.deleteFile(' + idx + ');" class="remove_img"><span class="img_title">Uploaded Image</span></button>'
+        + '    </div>'
+        + '  </div>'
+        + '</div>';
+      return picHtml;
+    },
+    init: function (idx, fileData) {
+      var o = this;
+      o.$targetAppend = $('#mySwiperFile');
+      o.targetSlide = 'myPic';
+
+      o.$targetAppend.append(o.picHtml(idx));
+
+      if(fileData !== undefined) {
+        o.readURL(fileData.url, idx);
+      }
+    }
+  }
+  $(document).ready(function () {
+    // 첨부파일 없는 경우 실행
+    // myFileUpLoad.init(0);
+
+    // 첨부파일 있는 경우 실행
+    var fileData = {
+      url : ['../../resources/img/@pop_video_img.jpg','../../resources/img/img_reward_04.png','../../resources/img/@dummy_bg04.png']
+    }
+    myFileUpLoad.init(0, fileData);
+  });
+</script>
+</html>

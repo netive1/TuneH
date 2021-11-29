@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+</head>
+
+<body>
+  <div class="health_wrap type_mypage footer_no">
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>마이기프트</h1>
+      </div>
+      <div class="user"><button type="button">홍길동</button></div>
+      <!-- user class 가이드
+          패키지 구매회원의 경우 : .package 추가
+          신규 알림 있을 시 : .on 추가
+        -->
+    </header>
+    <div class="health_container">
+      <div class="between_wrap"><!-- 태크 추가 2021-11-12 -->
+        <h1 class="tit_cont_02">기프트를<br>확인해보세요</h1>
+        <p class="tooltip"><a href="#" onclick="netiveUI.plugins.popFull('#popPointInfo');">Tune Point란?</a></p>
+      </div>
+      <p class="new_gift_txt">획득하신 기프트는 개별 연락을 통해 <br>분기별 일괄 배송 예정입니다.</p><!-- 문구 추가 2021-11-12 -->
+      <!-- 20211021 레벨별 class guide 변경
+        [AS IS - my_basic, my_jupiter, my_mercury, my_mars, my_pluto]
+        [TO BE - mygift_white, mygift_green, mygift_red, mygift_purple, mygift_black]
+      -->
+      <div class="reward_info"><span class="level mygift_white">White</span><span class="point_ico">4,000</span></div> 
+      <!-- <div class="reward_info"><span class="level mygift_green">Green</span><span class="point_ico">9,000</span></div> 
+      <div class="reward_info"><span class="level mygift_red">Red</span><span class="point_ico">12,000</span></div>
+      <div class="reward_info"><span class="level mygift_purple">Purple</span><span class="point_ico">17,000</span></div>
+      <div class="reward_info"><span class="level mygift_black">Black</span><span class="point_ico">25,000</span></div> -->
+     
+      <div class="content_box">
+        <span class="inp_label">획득</span>
+        <div class="itemlist rewardlist">
+          <ul class="item_wrap">
+            <li class="reward_item">
+              <a href="#" onclick="netiveUI.plugins.popToast('#popPlayer');" class="item_box">
+                <div class="img_wrap voice"><img src="../../resources/img/img_reward_01.png" alt=""></div>
+                <!-- 20210729 기프트 정보 표시 - 음성 : 'voice' class 부여-->
+                <P class="item_txt"><strong>민규의 응원 음성</strong><span class="date">2021.04.04</span></P>
+              </a>
+            </li>
+            <li class="reward_item">
+              <a href="#" onclick="netiveUI.plugins.popToast('#popProductAcq');" class="item_box">
+                <div class="img_wrap coupon"><img src="../../resources/img/img_reward_02.png" alt=""></div> <!--20210716 'coupon' class 추가-->
+                <!-- 기프트 정보 표시 - 쿠폰 : 'coupon' class 부여-->
+                <P class="item_txt"><strong>KF94 마스크</strong><span class="date">2021.04.04</span></P>
+              </a>
+            </li>
+            <li class="reward_item">
+              <a href="#" onclick="netiveUI.plugins.popToast('#popBadgeAcq');" class="item_box">
+                <div class="img_wrap badge"><img src="../../resources/img/img_reward_01.png" alt=""></div> <!--20210716 'badge' class 추가-->
+                <!-- 기프트 정보 표시 - 뱃지 : 'badge' class 부여-->
+                <P class="item_txt"><strong>세븐틴 민규의 뱃지</strong><span class="date">2021.04.04</span></P>
+              </a>
+            </li>
+            <li class="reward_item">
+              <a href="#" onclick="netiveUI.plugins.popToast('#popVideoAcq');" class="item_box">
+                <div class="img_wrap video"><img src="../../resources/img/img_reward_04.png" alt=""></div>
+                <!-- 기프트 정보 표시 - 동영상 : 'video' class 부여-->
+                <P class="item_txt"><strong>민규의 응원 동영상</strong><span class="date">2021.04.04</span></P>
+              </a>
+            </li>
+            <li class="reward_item">
+              <a href="#" onclick="netiveUI.plugins.popToast('#popVideoAcq');" class="item_box">
+                <div class="img_wrap lock"><img src="../../resources/img/img_reward_01.png" alt=""></div>
+                <!-- 획득하지 못함 - 'lock' 클래스 부여-->
+                <P class="item_txt"><strong>민규의 응원 동영상</strong><span class="date">2021.04.04</span></P>
+              </a>
+            </li>
+            <li class="reward_item">
+              <a href="#" onclick="netiveUI.plugins.popToast('#popVideoAcq');" class="item_box">
+                <div class="img_wrap lock"><img src="../../resources/img/img_reward_01.png" alt=""></div>
+                <!-- 획득하지 못함 - 'lock' 클래스 부여-->
+                <P class="item_txt"><strong>BTS 정국의 뱃지</strong><span class="date">2021.04.04</span></P>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 포인트 안내 팝업 -->
+    <div class="health_full mypage_popup" id="popPointInfo" style="display: none;">
+      <div class="inner">
+        <div class="pop_wrap">
+          <div class="pop_header">
+            <div class="header_wrap">
+              <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+            </div>
+          </div>
+          <div class="pop_container">
+            <div class="con_inner">
+              <div class="con_box">
+                <div class="tab_wrap">
+                  <div class="tabs">
+                    <!-- 20210719 내용 수정 -->
+                    <ul class="tab_menulist">
+                      <li class="active"><a class="tab_control" href="#tab-3">Tune Point/기프트</a></li>
+                      <!--20210716 문구 수정-->
+                      <li><a class="tab_control" href="#tab-4">레벨업</a></li>
+                    </ul>
+                    <div class="tab_panel active" id="tab-3">
+                      <!-- 20210716 문구 수정 -->
+                      <div class="content_tit">
+                        <dl>
+                          <dt>1. Tune Point란?</dt>
+                          <dd>
+                            <p>Tune Point는 Tune H App 회원가입 후 App<br> 내 특정 활동 시 발생되며,
+                              회사는 Tune Point에 따라 회원등급(레벨) 상승, 기프트 등을 제공할 수 있습니다.</p>
+                            <p class="mt_type">
+                              1) App 활동 중 목표 달성, 성취 달성, 챌린지 참여, 챌린지 성과 달성, 그 밖에 특정 이벤트 참여 시 Tune Point가 적립됩니다.<br>
+                              2) Tune Point는 회원 탈퇴 시 소멸됩니다.<br>
+                              3) Tune point 적립대상, 적립률 등은 회사 정책에 따라 사전 고지 후 변동될 수 있습니다.
+                            </p>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>2. Tune Point 사용 안내</dt>
+                          <dd>
+                            <p>회사는 회원의 누적 Tune Point에 따라 회원등급(레벨)을 상향하거나, 기프트 등을 제공할 수 있습니다. Tune Point는 Tune H App 내 결제수단으로 사용될
+                              수 없습니다.</p>
+                            <p class="mt_type">
+                              1) Tune Point는 타인에게 양도할 수 없습니다.<br>
+                              2) 일부 활동(목표달성 등) 결과에 따른 Tune point 제공은 자동으로 지급 됩니다.(단, 시스템상 실시간 지급이 안될 수 있습니다.)<br>
+                              3) 기프트 제공은 회원 레벨 상승 또는 일정<br> Tune point 도달 시 가능합니다.<br>
+                              4) 일정 Tune point에 따른 기프트는 사전 공지됩니다.
+                            </p>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>3. Tune H 리워드 유효 기간 및 소멸 안내</dt>
+                          <dd>
+                            <p>유효기간과 소멸 기준을 확인하여 리워드를 관리하실 수 있습니다.</p>
+                            <p class="mt_type">
+                              <!-- 2021-11-11 텍스트 수정 -->
+                              1) 부정한 방법으로 획득한 리워드는 차감될 수 있습니다. 단, 일부 ‘이벤트’를 통해 적립된 리워드의 경우 각
+                              리워드 마다 별도 지정된 소멸 일자를
+                              따릅니다.<br>
+                              2) 회원 탈퇴 등의 사유로 리워드가 소멸되는 경우 재가입을 하더라도 소멸된 리워드는 복구가 불가능합니다.<br>
+                              3) 리워드 소멸은 소멸예정일 자정에 완료됩니다.<br>
+                              예) 2018.10.30 소멸 예정리워드 → 2018.10.30에서 2018.10.31 로 넘어가는 밤 12시에 소멸
+                            </p>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!-- //20210716 문구 수정 -->
+                    </div>
+                    <div class="tab_panel" id="tab-4">
+                      <div class="content_tit">
+                        <dl>
+                          <dt>1. Tune H 레벨업 기준</dt>
+                          <!-- 2021-11-11 텍스트 수정 -->
+                          <dd class="levelup_guide">
+                            <span>BLACK</span> 누적리워드 20,000 이상<br>
+                            <span>PURPLE</span> 누적리워드 15,000 이상 20,000 미만<br>
+                            <span>RED</span> 누적리워드 10,000 이상 15,000 미만<br>
+                            <span>GREEN</span> 누적리워드 5,000 이상 10,000 미만<br>
+                            <span>WHITE</span> 누적리워드 5,000 미만
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>2. 유의사항</dt>
+                          <dd>
+                            <!-- 2021-11-11 텍스트 수정 -->
+                            1) 회원 레벨 산정 기준 및 레벨 별 기프트는 회사 사정에 따라 변경될 수 있습니다.<br>
+                            2) Tune H 리워드 적립 및 레벨 업에 따른 회원 혜택을 받기 위해서는 반드시 Tune H App의 회원이어야 합니다.<br>
+                            3) 내부 심사 기준에 따라 아래의 경우 레벨 상향이 제한될 수 있습니다.<br>
+                            - 선정 시점의 탈퇴 고객<br>
+                            - 휴대폰 번호 비정상 (3회 이상 중복, 번호 미기재, 번호 오류 등)<br>
+                            - 특정 리워드 (활동 결과 직접 입력 가능한 부분) 적립 과다등 비정상적으로 판단된 경우<br>
+                            - 직원(시그나 코리아 또는 계열사 직원인 경우)<br>
+                            - 프로모션 기간 동안 유료 패키지를 무료로 사용하는 경우
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <!-- //20210719 내용 수정 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //포인트 안내 팝업 -->
+    <!-- 오디오/비디오플레이어 팝업(FMY-020) -->
+    <div class="health_toast" id="popPlayer" style="display: none;">
+      <div class="inner">
+        <button type="button" class="btn_down"><span class="hidden">접기</span></button>
+        <button type="button" class="btn_close" onclick="netiveUI.plugins.popToast('#alert001');"><span
+            class="hidden">닫기</span></button>
+        <div class="inner_container">
+          <div class="play_wrap">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                  </a>
+                </div>
+                <div class="swiper-slide"><span class="timer">02 : 00</span></div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <!-- //swiper-container -->
+            <div class="play_item">
+              <a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b"></a>
+              <span class="tag_info">응원음성</span>
+              <h1 class="tit_item">세븐틴 민규의 응원 음성 1</h1>
+              <div class="play_bar">
+                <div class="progress_wrap">
+                  <progress max="700" value="100"></progress>
+                </div>
+                <div class="play_time_wrap"><span class="play_time">00:10</span><span class="play_time">02:00</span>
+                </div>
+              </div>
+              <div class="play_btn_wrap">
+                <a href="#" role="button" class="btn_back"><span class="hidden">5초 뒤로</span></a>
+                <a href="#" role="button" class="btn_play stop"><span class="hidden">재생/정지</span></a>
+                <a href="#" role="button" class="btn_forward"><span class="hidden">5초 앞으로</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //오디오/비디오플레이어 팝업(FMY-020) -->
+    <!-- 뱃지 획득 팝업(FMY-021) -->
+    <div class="health_toast" id="popBadgeAcq" style="display: none;">
+      <div class="inner">
+        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+        <div class="health_toast_cont">
+          <p class="health_toast_tit">2000P를<br>달성하였어요!</p>
+          <p class="health_toast_dsec">누적 포인트를 달성하여<br>해당 리워드를 획득하였습니다.</p>
+          <div class="health_toast_img">
+            <img src="../../resources/img/@pop_badge_img.jpg" alt="" class="">
+            <span class="img_caption">Artist 뱃지</span>
+          </div>
+        </div>
+        <div class="btn_wrap">
+          <button type="button" onClick="location.href='FMY-019.html'" class="btn_pop_gray6">마이리워드</button>
+          <button type="button" onClick="location.href='FMY-004.html'" class="btn_pop_black2">뱃지 변경</button>
+        </div>
+      </div>
+    </div>
+    <!-- //뱃지 획득 팝업(FMY-021) -->
+    <!-- 응원 동영상 획득 팝업(FMY-022) -->
+    <div class="health_toast" id="popVideoAcq" style="display: none;">
+      <div class="inner">
+        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+        <div class="health_toast_cont">
+          <p class="health_toast_tit">4500P를<br>달성하였어요!</p>
+          <p class="health_toast_dsec">누적 포인트를 달성하여<br>해당 리워드를 획득하였습니다.</p>
+          <div class="health_toast_img">
+            <img src="../../resources/img/@pop_video_img.jpg" alt="" class="">
+            <span class="img_caption">Artist 응원 동영상</span>
+          </div>
+        </div>
+        <div class="btn_wrap">
+          <button type="button" onClick="location.href='FMY-019.html'" class="btn_pop_gray6">마이리워드</button>
+          <button type="button" onClick="location.href='FMY-020.html'" class="btn_pop_black2">동영상보기</button>
+        </div>
+      </div>
+    </div>
+    <!-- //응원 동영상 획득 팝업(FMY-022) -->
+    <!-- 상품 획득 팝업(FMY-023) -->
+    <div class="health_toast" id="popProductAcq" style="display: none;">
+      <div class="inner">
+        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+        <div class="health_toast_cont">
+          <p class="health_toast_tit">7500P를<br>달성하였어요!</p>
+          <p class="health_toast_dsec">누적 포인트를 달성하여<br>해당 리워드를 획득하였습니다.</p>
+          <div class="health_toast_img">
+            <img src="../../resources/img/@pop_product_img.jpg" alt="" class="">
+            <span class="img_caption">KF 94 마스크</span>
+          </div>
+        </div>
+        <div class="btn_wrap">
+          <button type="button" onClick="location.href='FMY-019.html'" class="btn_pop_gray6">마이리워드</button>
+          <button type="button" onClick="location.href='FMY-002.html'" class="btn_pop_black2">쿠폰보기</button>
+        </div>
+      </div>
+    </div>
+    <!-- //상품 획득 팝업(FMY-023) -->
+    <!-- 오디오/비디오 팝업 alert  -->
+    <div class="health_alert" id="alert001" style="display: none;">
+      <div class="inner">
+        <p class="msg">
+          플레이 중인 콘텐츠가 종료됩니다.<br>진행하시겠습니까?
+        </p>
+        <div class="btn_wrap">
+          <button type="button" class="btn_pop_line_dark ui-close">취소</button>
+          <button type="button" class="btn_pop_dark">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- //오디오/비디오 팝업 alert  -->
+    <script>
+      $(document).ready(function () {
+        var mySwiper = new Swiper('.swiper-container', {
+          loop: false,
+          slidePerView: 1,
+          navigation: { // 네비게이션
+            nextEl: '.swiper-button-next', // 다음 버튼 클래스명
+            prevEl: '.swiper-button-prev', // 이번 버튼 클래스명
+          },
+        })
+      })
+    </script>
+</body>
+
+</html>

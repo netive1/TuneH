@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생년월일 입력</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+  <div class="health_wrap type_signup">
+    <header class="health_header"><!-- 20210526-<header>태그 추가 -->
+      <!-- 07/29 타이틀 추가 -->
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>생년월일 입력</h1>
+      </div>
+      <div class="step_wrap"> <!--20211022 step 수정-->
+        <span class="now">6</span>8
+        <span class="hidden">총 8페이지 중 현재 6페이지</span>
+      </div>
+    </header>
+    <div class="health_container new_date">
+      <h1 class="tit_cont_02">생년월일을<br>입력해주세요.</h1>
+  
+      <div class="inp_wrap type_large mt110">
+        <div class="inp_datepicker">
+          <input type="date" class="inp_base" placeholder="생년월일" required="required">
+        </div>
+      </div>
+      <p class="info_txt">
+        만 14세 미만은 서비스 이용을 하실 수 없습니다.
+      </p>
+      <p class="notice err">가입불가 합니다.</p>
+    </div>
+  </div>
+
+  <div class="btn_btm_fixed">
+    <div class="progress_wrap"><!-- 20210526-위치 수정 -->
+      <progress max="800" value="600"></progress>  <!--20211022 max값 수정-->
+    </div>
+    <button type="button" class="btn" disabled="disabled">다음</button><!-- 20210526-ver02 클래스 삭제 -->
+  </div>
+ 
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap type_mypage footer_no">
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>마이레벨</h1>
+      </div>
+      <div class="user"><button type="button">홍길동</button></div>
+      <!-- user class 가이드
+          패키지 구매회원의 경우 : .package 추가
+          신규 알림 있을 시 : .on 추가
+        -->
+    </header>
+    <!-- 20210901 motion_type, motion_box 클래스 추가/motion_wrap02 위치 변경 -->
+    <div class="health_container motion_type">
+      <div class="motion_box">
+        <h1 class="tit_cont_02"><span>현지님의</span><br>레벨은<br><span class="point_color">PURPLE</span> 입니다</h1>
+        <!--보상받기가 있는 경우 reward_wrap 에 'on' 클래스 부여-->
+        <div class="reward_wrap">
+          <!-- 20211021 button 태그에 'btn_base_02' class 삭제, 'btn_mylevel' class 추가 -->
+          <button type="button" onclick="location.href='FMY-019.html'" class="btn_mylevel btn_mylevel_purple"><span class="hidden">PURPLE</span></button>          
+          <!--20211021 레벨별 클래스 변경
+            [AS IS - btn_lv_basic, btn_lv_jupiter, btn_lv_mercury, btn_lv_mars, btn_lv_pluto ]
+            [TO BE - btn_btn_mylevel_white, btn_mylevel_green, btn_mylevel_red, btn_mylevel_purple, btn_mylevel_black ]
+          -->
+          <button type="button" onclick="location.href='FMY-019.html'" class="btn_reward">레벨업 보상 받기!</button><!--보상받기가 있는 경우 버튼-->
+        </div>        
+        <!--bg effect-->
+        <div class="motion_wrap02">
+          <div class="motion_inner">
+              <div class="circle circle-1"></div>
+              <div class="circle circle-2"></div>
+              <div class="circle circle-3"></div>
+              <div class="circle circle-4"></div>
+              <div class="circle circle-5"></div>
+              <div class="circle circle-6"></div>
+              <div class="circle circle-7"></div>
+          </div>
+        </div>
+        <!--//bg effect-->
+      </div>
+
+
+      <div class="content_box">
+        <span class="inp_label">레벨업 내역</span>
+        <div class="select_box">
+          <select id="" name="">
+            <option value="" selected>최근 1개월</option>
+            <option value="">최근 3개월</option>
+            <option value="">최근 6개월</option>
+            <option value="">전체</option>
+          </select>
+        </div>
+        <div class="itemlist">
+          <ul class="item_wrap">
+            <!-- 20211021 레벨별 클래스 변경 
+              [AS IS - lv_basic, lv_jupiter, lv_mercury, lv_mars, lv_pluto]
+              [TO BE - mylevel_white, mylevel_green, mylevel_red, mylevel_purple, mylevel_black]
+            -->
+            <li class="item_box">
+              <em class="label_level mylevel_white"><span class="hidden">white</span></em>
+              <P class="item_txt"><strong>4,000R 달성</strong><span class="date">2021.04.21</span></P><!--20210716 문구 수정-->
+            </li>
+            <li class="item_box">
+              <em class="label_level mylevel_green"><span class="hidden">green</span></em>
+              <P class="item_txt"><strong>50,000R 달성</strong><span class="date">2021.04.01</span></P> <!--20210716 문구 수정-->
+            </li>
+            <li class="item_box">
+              <em class="label_level mylevel_red"><span class="hidden">red</span></em>
+              <P class="item_txt"><strong>100,000R 달성</strong><span class="date">2021.04.21</span></P><!--20210716 문구 수정-->
+            </li>
+            <li class="item_box">
+              <em class="label_level mylevel_purple"><span class="hidden">purple</span></em>
+              <P class="item_txt"><strong>150,000R 달성</strong><span class="date">2021.04.21</span></P><!--20210716 문구 수정-->
+            </li>
+            <li class="item_box">
+              <em class="label_level mylevel_black"><span class="hidden">black</span></em>
+              <P class="item_txt"><strong>200,000R 달성</strong><span class="date">2021.04.21</span></P><!--20210716 문구 수정-->
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

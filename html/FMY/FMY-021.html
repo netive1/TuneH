@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap type_mypage footer_no">
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>마이리워드</h1>
+      </div>
+    </header>
+    <div class="health_container"></div>
+  </div>
+  <!-- 뱃지 획득 팝업(FMY-021) -->
+  <div class="health_full actived type_reward" id="popBadgeAcq" style="display: block;">
+    <div class="inner">
+      <div class="pop_wrap">
+        <div class="pop_header">
+          <div class="header_wrap">
+            <h1 class="hidden">뱃지 리워드 획득</h1>
+            <button type="button" class="btn_close ui-close ver02"><span class="hidden">닫기</span></button>
+          </div>
+        </div>
+        <!-- //pop header -->
+
+        <div class="pop_container">
+          <div class="con_inner">
+            <div class="con_box">
+              <div class="pop_con">
+                <!-- 팝업 내용 -->
+                <p class="health_toast_tit">기프트 획득</p>
+                <div class="health_toast_img">
+                  <img src="../../resources/img/img_myreward_01.png" alt="" class="">
+                </div>
+                <p class="health_toast_cont">세븐틴 ARTIST 뱃지</p>
+                <span class="health_toast_dsec">
+                  누적 Tune Point <strong>2000</strong> 달성! <!--20210716 문구 수정-->
+                </span>
+                <!-- //팝업내용 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //pop container -->
+
+        <div class="btn_wrap">
+          <button type="button" onClick="location.href='FMY-019.html'" class="btn_pop_gray6">마이 기프트</button>
+          <button type="button" onClick="location.href='FMY-004.html'" class="btn_pop_black2">뱃지 변경</button>
+        </div>
+        <!-- // pop btn -->
+      </div>
+
+    </div>
+  </div>
+  <!-- //뱃지 획득 팝업(FMY-021) -->
+</body>
+</html>

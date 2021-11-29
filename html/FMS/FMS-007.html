@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>활동 직접 입력</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script> <!--20210714 추가-->
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css"> <!--20210730 css위치 변경-->
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>활동 직접 입력</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+    <!-- //20210719 -->
+  </header>
+  <div class="health_container">
+    <div class="item_box item_box_bg"><span class="item_txt">걷기</span><button type="button" onclick="location.href='FMS-006.html'" class="btn_next"><span class="hidden">더보기</span></button></div>
+    <!-- 20211013 선택 목표 활동에 따른 가변 case 추가 -->
+    <!-- Type A (심박수만 입력) -->
+    <div class="inp_wrap_bg">
+      <div class="inp_wrap add_attr"><span class="inp_label">평균 심박수</span><input type="text" class="inp_bg" placeholder="-"><em class="attr">bpm</em></div>    
+    </div>
+    <!-- Type B (거리/심박수 입력) -->
+    <div class="inp_wrap_bg">
+      <div class="inp_wrap add_attr"><span class="inp_label">거리</span><input type="text" class="inp_bg" placeholder="-"><em class="attr">m</em></div>
+      <div class="inp_wrap add_attr"><span class="inp_label">평균 심박수</span><input type="text" class="inp_bg" placeholder="-"><em  class="attr">bpm</em></div>
+    </div>
+    <!-- Type C (거리/오르막/내리막/심박수 입력) -->
+    <div class="inp_wrap_bg four"> <!--'four' class 필요-->
+      <div class="inp_wrap add_attr"><span class="inp_label">거리</span><input type="text" class="inp_bg" placeholder="-"><em class="attr">m</em></div> 
+      <div class="inp_wrap add_attr"><span class="inp_label">오르막</span><input type="text" class="inp_bg" placeholder="-"><em class="attr">m</em></div> 
+      <div class="inp_wrap add_attr"><span class="inp_label">내리막</span><input type="text" class="inp_bg" placeholder="-"><em class="attr">m</em></div> 
+      <div class="inp_wrap add_attr"><span class="inp_label">평균 심박수</span><input type="text" class="inp_bg" placeholder="-"><em class="attr">bpm</em></div>
+    </div>
+    <!-- //20211013 선택 목표 활동에 따른 가변 case 추가 -->
+
+    <div class="inp_wrap mt50">
+      <span class="inp_label">날짜 및 시간</span>
+      <!--20210714 마크업 변경 -->
+      <div class="inp_datetimepicker"> 
+        <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+        <input type="time" class="inp_bg" placeholder="22:30" required="required">
+      </div>
+      <!--//20210714 마크업 변경 -->
+    </div>
+    <div class="inp_wrap inp_timepicker">
+      <span class="inp_label">활동시간</span><input type="time" class="inp_bg" placeholder="00시 00분" required="required">
+    </div>
+    <!-- 20210803 -->
+    <div class="file_upload_wrap inp_wrap pl0">
+      <div class="align_right_wrap">
+        <span class="inp_label">활동 사진 등록</span>
+        <div class="swiper-container upload_slider">
+          <div class="swiper-wrapper" id="mySwiperFile">
+            <!--20210803 id 'mySwiperFile' 추가, 하위 내용 script 에서 출력-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //20210803 -->
+    <div class="textarea_wrap">
+      <textarea name="" id="" cols="30" rows="8" placeholder="내용입력" class="textarea"></textarea> <!--20210713 rows 변경-->
+    </div>
+    <div class="inp_wrap_bg">
+      <span class="inp_label">나의기분</span>
+      <div class="radio_box state_list">
+        <div class="item">
+          <input type="radio" id="st01" name="state" class="radioItem">
+          <label for="st01">행복</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st02" name="state"class="radioItem">
+          <label for="st02">좋음</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st03" name="state" class="radioItem">
+          <label for="st03">보통</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st04" name="state" class="radioItem">
+          <label for="st04">슬픔</label>
+        </div>
+        <div class="item">
+          <input type="radio" id="st05" name="state" class="radioItem">
+          <label for="st05">화남</label>
+        </div>
+      </div>
+    </div>
+    <div class="inp_wrap_bg mt30 mb30"> <!--20210713 'mb30'추가-->
+      <span class="inp_label">위치추가</span>
+      <label class="toggle" for="checkbox">
+        <input type="checkbox" id="checkbox">
+        <div class="toggle_slider round"></div>
+      </label>
+    </div>
+  </div>
+  <div class="btn_btm_fixed">
+    <button type="button" onclick="location.href='FMS-011.html'" class="btn" disabled>저장하기</button> <!--'20210719 'disabled' attr 추가시 버튼 비활성화처리됨-->
+  </div>
+</div>
+</body>
+<script>
+  // 20210803 script 내용 변경
+
+  //이미지 파일 업로드
+  var myFileUpLoad = {
+    $targetAppend: null,
+    targetSlide: null,
+    swiperFile: null,
+    showFile: function (input, idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $slide.find('.img_upload_wrap').hide();
+          $slide.find('.file_upload_img').attr('src', e.target.result);
+          $slide.find('.file_upload_cont').show();
+          $slide.find('.img_title').html(input.files[0].name);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    },
+    deleteFile: function (idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      o.swiperFile.removeSlide($(o.swiperFile.slides).index($slide));
+    },
+    createFile: function (idx) {
+      var o = this;
+
+      // 새로운 파일 영역 prepend
+      o.swiperFile.prependSlide(o.picHtml(idx));
+    },
+    readURL: function (input, idx) { // 파일 선택시 실행
+      var o = this;
+
+      // swiper 최초 1회 실행(첫 이미지 등록)
+      if (input.files.length === 1) {
+        o.swiperFile = new Swiper(".upload_slider", {
+          loop: false,
+          slidesPerView: "auto",
+          spaceBetween: 11,
+          observer: true,
+          observeParents: true,
+        });
+      }
+
+      o.showFile(input, idx); // file 숨기고, 이미지 보여주기
+
+      o.createFile(idx + 1);
+    },
+    picHtml: function (idx) {
+      var o = this;
+      var picHtml = ''
+        + '<div class="swiper-slide" id="' + (o.targetSlide + idx) + '">'
+        + '  <div class="inp_wrap file_upload">'
+        + '    <div class="img_upload_wrap">'
+        + '      <input type="file" name="myPic' + idx + '" onchange="myFileUpLoad.readURL(this, ' + idx + ');" accept="image/*" class="ipt_upload_file">'
+        + '    </div>'
+        + '    <div class="file_upload_cont">'
+        + '      <img class="file_upload_img" src="#" alt="your image">'
+        + '      <button type="button" onclick="myFileUpLoad.deleteFile(' + idx + ');" class="remove_img"><span class="img_title">Uploaded Image</span></button>'
+        + '    </div>'
+        + '  </div>'
+        + '</div>';
+      return picHtml;
+    },
+    init: function (idx) {
+      var o = this;
+      o.$targetAppend = $('#mySwiperFile');
+      o.targetSlide = 'myPic';
+
+      o.$targetAppend.append(o.picHtml(idx));
+    }
+  }
+  $(document).ready(function () {
+    myFileUpLoad.init(0);
+  });
+</script>
+<script>
+  // 20210803 .upload_slider 삭제
+  // 20210803 팝업에 나오는 기능은 샘플 참고 요청
+  var swiper = new Swiper(".upload_slider2", {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 11,
+    observer: true,
+    observeParents: true,
+  });
+</script>
+
+</html>

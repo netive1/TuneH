@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인 최초가입회원인 경우 팝업</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap">
+    <div class="health_header"></div>
+    <div class="health_container">
+
+    </div>
+  </div>
+ 
+  <!-- 프로모션 및 광고성 혜택 알림받기 팝업 -->
+  <div class="health_alert main_alert actived" id="alert001" style="display: block;">
+    <div class="inner">
+      <p class="msg">
+        <!-- 20210916 문구 수정 -->
+        <strong>프로모션 및 광고성 혜택<br>알림을 받아보시겠어요?</strong>
+        <p>지금 알림을 수신동의 하시면<br>다양한 혜택, 유용한 정보를<br>제공해드리겠습니다.</p>
+        <p class="light_g">※ 수신설정 변경은 앱 설정에서 수신/철회 가능</p>
+      </p>
+      <div class="chk_wrap">
+        <div class="check_box term" role="group" aria-labelledby="약관" id="termCheckArea"><!-- 20210720 id 추가 -->
+          <!-- 20210916 t_chk 클래스 추가 -->
+          <div class="t_chk">
+            <input type="checkbox" id="termCheck01" class="chkItem" name="termAgree">
+            <label for="termCheck01">SMS</label>
+          </div>
+
+          <div class="t_chk">
+            <input type="checkbox" id="termCheck02" class="chkItem" name="termAgree">
+            <label for="termCheck02">이메일</label>
+          </div>
+
+          <!-- 20210916 PUSH 체크박스 추가 -->
+          <div class="t_chk">
+            <input type="checkbox" id="termCheck03" class="chkItem" name="termAgree">
+            <label for="termCheck03">PUSH</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_dark">확인</button>
+      </div>
+      <div class="check_box term term_v2" role="group" aria-labelledby="약관" id="termCheckArea"><!-- 20210720 id 추가 -->
+        <input type="checkbox" id="termCheck03" class="chkItem" name="termAgree">
+        <label for="termCheck03">다시 보지 않기</label>
+      </div>
+    </div>    
+  </div>
+  <!-- //프로모션 및 광고성 혜택 알림받기 팝업 -->
+
+</body>
+</html>

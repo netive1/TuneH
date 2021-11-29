@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <title>guide : button</title>
+  <link rel="stylesheet" href="../resources/css/guide.css">
+  <script type="text/javascript" src="../resources/js/jquery-3.6.0.min.js"></script>
+  <style>
+  .type_guide {padding-top: 70px;background-color: #ebebeb;}
+  .type_guide .health_header {height: 70px;padding: 20px 32px;background-color: #ebebeb;}
+  .type_guide .health_container {padding-top: 20px;}
+  .type_guide .guide_wrap {margin-bottom: 50px;}
+  .type_guide .guide_wrap button + button {margin-left: 10px;}
+  .type_guide .guide_wrap.nowrap button + button {margin-left: 0;margin-top: 10px;}
+  .type_guide .guide_wrap .tit_cont_03.guide {position: relative;padding-left: 10px;margin-bottom: 10px;}
+  .type_guide .guide_wrap .tit_cont_03.guide::before {content: "";position: absolute;left: 0;top: 10px;display: inline-block;width: 4px;height: 4px;background: #222;}
+  .type_guide .tit_cont_03 {margin-bottom: 10px;}
+  .type_guide .guide_fixed {margin: 50px -32px;}
+  .type_guide .btn_top {top:6px;margin-right: 10px;}
+  .type_guide .btn_delete {margin-bottom: 10px;}
+  </style> <!--가이드에서만 사용되는 style-->
+</head>
+<body>
+<div class="health_wrap type_guide"> 
+  <header class="health_header"><h1>button guide</h1></header>
+  <div class="health_container">
+    <div class="guide_wrap">
+      <p style="margin-bottom:10px; font-size:11px;">※ 화이트색상 버튼일 경우 <b>ver02</b> 클래스 추가</p>
+      <h2 class="tit_cont_03 guide">홈 아이콘</h2>
+      <button type="button" class="btn_home">
+        <span class="hidden">홈</span>
+      </button>
+    </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">메뉴 보기 버튼</h2>
+      <button type="button" class="btn_more_menu">
+        <span>메뉴 보기</span>
+      </button>
+      <button type="button" class="btn_more_menu ver02">
+        <span>메뉴 보기</span>
+      </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">알림 버튼</h2>
+      <button type="button" class="btn_alarm">
+        <span class="hidden">알림확인</span>
+      </button>
+      <!-- 알림이 있는 경우 'new' class추가 -->
+      <button type="button" class="btn_alarm new">
+        <span class="hidden">알림확인</span>
+      </button>
+      <button type="button" class="btn_alarm ver02">
+        <span class="hidden">알림확인</span>
+      </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">이전/다음 버튼</h2>
+      <button type="button" class="btn_prev">
+        <span class="hidden">이전화면으로 이동</span>
+      </button>
+      <button type="button" class="btn_prev ver02">
+        <span class="hidden">이전화면으로 이동</span>
+      </button>
+      <button type="button" class="btn_next">
+        <span class="hidden">다음화면으로 이동</span>
+      </button>   
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">위/아래 버튼</h2>
+    <button type="button" class="btn_top">
+      <span class="hidden">이전화면으로 이동</span>
+    </button>
+    <button type="button" class="btn_down">
+      <span class="hidden">다음화면으로 이동</span>
+    </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">새로고침 버튼</h2>
+    <button type="button" class="btn_refresh">
+      <span class="hidden">새로고침</span>
+    </button>
+    <button type="button" class="btn_refresh ver02">
+      <span class="hidden">새로고침</span>
+    </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">필터 버튼</h2>
+    <button type="button" class="btn_filter">
+      <span class="hidden">필터</span>
+    </button>
+    <button type="button" class="btn_filter ver02">
+      <span class="hidden">필터</span>
+    </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">닫기 버튼</h2>
+    <button type="button" class="btn_close">
+      <span class="hidden">닫기</span>
+    </button>
+    <button type="button" class="btn_close ver02">
+      <span class="hidden">닫기</span>
+    </button>
+    <button type="button" class="btn_close ver03">
+      <span class="hidden">닫기</span>
+    </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">공유 버튼</h2>
+    <button type="button" class="btn_share">
+      <span class="hidden">공유</span>
+    </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">설정 버튼</h2>
+    <button type="button" class="btn_set">
+      <span class="hidden">닫기</span>
+    </button>
+    <button type="button" class="btn_set ver02">
+      <span class="hidden">닫기</span>
+    </button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">아이콘이 있는 버튼</h2>
+    <button type="button" class="btn_base_01 ico"><span>카카오로 3초만에 시작하기</span></button>
+  </div>
+  <div class="guide_wrap nowrap">
+    <h2 class="tit_cont_03 guide">기본 버튼</h2>
+    <button type="button" class="btn_base_02">이메일 인증</button>
+    <button type="button" class="btn_base_02 line">이메일 인증</button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">사각형 버튼 </h2>
+    <button type="button" class="btn_base_03">이메일 인증</button>
+    <button type="button" class="btn_base_03 primary">이메일 인증</button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">form 내부에 있는 버튼</h2>
+    <button type="button" class="btn_form_line">이메일 인증</button>
+    <button type="button" class="btn_form_base">목표삭제</button>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">텍스트 버튼</h2>
+    <div class="button_wrap"><button type="button" class="btn_delete">목표삭제</button></div>
+    <a href="#none;" role="button" class="btn_txt">다른방법으로 로그인하기</a>
+  </div>
+  <div class="guide_wrap">
+    <h2 class="tit_cont_03 guide">카메라 촬영 버튼</h2>
+    <button type="button" class="btn_circle">측정<br>시작</button>
+  </div>
+  <div class="guide_wrap ver01 guide_fixed">
+    <h2 class="tit_cont_03 guide">하단고정버튼 - 아이콘 있는 타입</h2>
+    <p style="margin-bottom:10px; font-size:11px;">※ 하단고정버튼은 <b>btn_btm_fixed</b> 클래스 태그로 감싼 후 사용</p>
+    <ul class="ico_menu_wrap">
+      <li><a href="#none;" role="button" class="m01">코칭</a></li>
+      <li><a href="#none;" role="button" class="m02">목표</a></li>
+      <li><a href="#none;" role="button" class="m03">콘텐츠</a></li>
+      <li><a href="#none;" role="button" class="m04">패키지</a></li>
+    </ul>
+  </div>
+  <div class="guide_wrap ver01  guide_fixed">
+    <h2 class="tit_cont_03 guide">하단고정버튼 - 기본</h2>
+    <button type="button" class="btn">보내기</button>
+  </div>
+  <div class="guide_wrap ver01  guide_fixed">
+    <h2 class="tit_cont_03 guide">하단고정버튼 - 비활성화</h2>
+    <button type="button" class="btn" disabled>다음</button>
+  </div>
+  <div class="guide_wrap ver01 guide_fixed">
+    <h2 class="tit_cont_03 guide">하단고정버튼 - 회원가입 버튼</h2>
+    <button type="button" class="btn ver01">다음</button>
+  </div>
+  <div class="guide_wrap ver01 guide_fixed">
+    <h2 class="tit_cont_03 guide" style="padding-left:24px">하단고정버튼 : 패키지 관련 버튼</h2>
+    <p style="margin-bottom:10px; font-size:11px;">※ 패키지별 색상은 <b>ver01,ver02</b> 등 클래스 추가</p>
+    <button type="button" class="btn btn_package ver01" style="position: relative;"> <!--guide page에서만 inline style 사용-->
+      <div class="btn_cont_wrap">
+        <dl class="btn_cont_l">
+          <dt>프리미엄 패키지</dt>
+          <dd>3개월 x 40,000원</dd>
+        </dl>
+        <div class="btn_cont_r">120,000원</div>
+      </div>
+      <span class="bubble_tip ico1">특별할인</span>
+    </button> 
+  </div>
+  <div class="guide_wrap ver01 guide_fixed">
+    <h2 class="tit_cont_03 guide">하단고정버튼 - 패키지 이용중 버튼</h2>
+    <p style="margin-bottom:10px; font-size:11px;">※ 패키지별 색상은 <b>ver01,ver02</b> 등 클래스 추가</p>
+    <button type="button" class="btn btn_package ver02">
+      <div class="btn_cont_wrap">
+        <dl class="btn_cont_l">
+          <dt>프리미엄 패키지</dt>
+          <dd><span>120,000</span>원</dd>
+        </dl>
+        <div class="btn_cont_r">결제하기</div>
+      </div>
+    </button> 
+  </div>
+  </div>
+</div>
+</body>
+</html>

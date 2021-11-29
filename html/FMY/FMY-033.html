@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>휴대폰 인증</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+	<div class="health_wrap type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>휴대폰 인증</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+			패키지 구매회원의 경우 : .package 추가
+			신규 알림 있을 시 : .on 추가
+			-->
+		</header>
+		<div class="health_container">
+			<h2 class="tit_cont_01">휴대폰 인증을<br>진행해주세요.</h2>
+			<div class="inp_wrap type_box">
+				<div class="inp_item">
+					<label class="inp_label">휴대폰 번호</label>
+					<input class="inp_base" type="number" placeholder="휴대폰 번호 입력">
+					<button type="button" class="btn_base_03">인증번호 발송</button>
+					<!-- <button type="button" class="btn_base_03 primary">재발송</button> -->
+				</div>
+				<div class="inp_item">
+					<label class="inp_label">인증번호</label>
+					<input class="inp_base" type="number" placeholder="인증번호 입력">
+					<span class="unit red">02:49</span>
+					<p class="notice err">
+						인증번호 입력 시간이 경과하였습니다.<br/>
+						재발송 후 다시 입력해주세요.
+					</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="btn_btm_fixed">
+			<button type="button" class="btn" disabled>확인</button>
+		</div>
+	</div>
+
+	<!-- 팝업 -->
+	<!-- case 01 : 인증번호 미입력 시 alert 메시지  -->
+	<div class="health_alert" id="alert001" style="display: none;">
+		<div class="inner">
+			<p class="msg">
+				인증번호를 입력해주세요.
+			</p>
+
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- case 02 : 인증번호 다를 시 alert 메시지  -->
+	<div class="health_alert" id="alert002" style="display: none;">
+		<div class="inner">
+			<p class="msg">
+				인증번호가 일치하지 않습니다.
+				확인 후 다시 입력해주세요.	
+			</p>
+
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- case 03 : 인증 완료 시 alert 메시지  -->
+	<div class="health_alert" id="alert003" style="display: none;">
+		<div class="inner">
+			<p class="msg">
+				휴대폰 기기 및 번호가
+				정상적으로 변경되었습니다.
+			</p>
+
+			<div class="btn_wrap">
+				<button type="button" class="btn_pop_dark ui-close">확인</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

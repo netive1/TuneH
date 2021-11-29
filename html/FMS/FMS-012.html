@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>혈액수치 입력</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>추가하기</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container">
+    <div class="inp_form">
+      <h2 class="tit_cont_02">총 콜레스테롤</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">콜레스테롤</span><input type="text" class="inp_bg" value="115"><em class="attr">mg/dl</em>
+      </div>
+    </div>
+    <div class="inp_form">
+      <h2 class="tit_cont_02">HDL 좋은 콜레스테롤</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">콜레스테롤</span><input type="text" class="inp_bg" value="253"><em class="attr">mg/dl</em>
+      </div>     
+    </div>
+    <div class="inp_form">
+      <h2 class="tit_cont_02">HDL 나쁜 콜레스테롤</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">콜레스테롤</span><input type="text" class="inp_bg" value="253"><em class="attr">mg/dl</em>
+      </div>     
+    </div>
+    <div class="inp_form">
+      <h2 class="tit_cont_02">혈중지방성분</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">지방성분</span><input type="text" class="inp_bg" value="153"><em class="attr">mg/dl</em>
+      </div>     
+    </div>
+    <div class="inp_form">
+      <h2 class="tit_cont_02">공복 혈당</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">혈당</span><input type="text" class="inp_bg" value="85"><em class="attr">mg/dl</em>
+      </div>     
+    </div>
+    <div class="inp_form">
+      <h2 class="tit_cont_02">지속 혈당</h2>
+      <div class="inp_wrap">
+        <span class="inp_label">날짜 및 시간</span>
+        <!--20210714 마크업 변경 -->
+        <div class="inp_datetimepicker">
+          <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+          <input type="time" class="inp_bg" placeholder="22:30" required="required">
+        </div>
+        <!--//20210714 마크업 변경 -->
+      </div>
+      <div class="inp_wrap add_attr">
+        <span class="inp_label">혈당</span><input type="text" class="inp_bg" value="85"><em class="attr">mg/dl</em>
+      </div>     
+    </div>
+  </div>
+  <div class="btn_btm_fixed">
+    <button type="button" onclick="location.href='FMS-011.html'" class="btn">저장하기</button>
+  </div>
+</div>
+</body>
+</html>

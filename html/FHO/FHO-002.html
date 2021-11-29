@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+    <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../../resources/js/swiper.min.js"></script>
+    <script src="../../resources/js/ui.common.js"></script>
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+</head>
+<body>
+    <div class="health_wrap type_main_i">
+        <header class="health_header">
+            <h1>640점</h1>
+            <div class="user"><button type="button">홍길동</button></div>
+            <!-- user class 가이드
+                패키지 구매회원의 경우 : .package 추가
+                신규 알림 있을 시 : .on 추가
+            -->
+        </header>
+        <div class="health_container align_right">
+            <!-- 20211026 콘텐츠 수정 -->
+            <div class="con">
+                <!-- 그래프 게이지 -->
+                <div class="gauge_wrap">
+                    <div class="coach_result_head">
+                        <div class="progress_wrap">
+                            <div class="step_wrap">
+                                <span class="total">0</span>
+                                <span class="total">1000</span>
+                            </div>
+                            <div class="progress">
+                                <i class="avg_progress" style="width: 87%;">
+                                    <span class="avg">이용자 평균 <em>870</em></span>
+                                    <!--평균값-->
+                                </i>
+                                <i class="result_progress" style="width: 64.4%;">
+                                    <span class="value now">644</span>
+                                    <!--사용자값-->
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //그래프 게이지 -->
+                <!-- 답변하기 카드 -->
+                <div class="service_find_main mt38">
+                    <div class="pop_service_cont">
+                        <div class="img_wrap">
+                            <img src="../../resources/img/sevent/seven_m_01.png" alt="">
+                            <p class="img_figure">에스쿱스</p>
+                        </div>
+                        <div class="pop_service_txt">
+                            <p>오늘은 어땠나요?<br>
+                                채소 섭취에 성공하셨나요?</p>
+                        </div>
+                        <div class="pop_service_small">
+                            <p>샐러드는 포함하지 않음</p>
+                        </div>
+                        <div class="pop_service_btn">
+                            <button type="button" class="btn_base_03 service_btn_w">답하기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //답변하기 카드 -->
+            </div>
+            <!-- //20211026 콘텐츠 수정 -->
+
+            <!-- 목표계획 -->
+            <!-- div class="goal_chk_box con pt40 pb50">
+                <div class="goal_inner">
+                    <p class="goal_tit">집중관리가 필요한<br>목표를 계획해 볼까요?</p>
+                    <div class="chk_list mt20">
+                        <div class="chk_inner">
+                            <div class="b_wrap">
+                                <input type="checkbox" class="gc" id="gc01"/><label for="gc01" class="goal_btn">견과류 먹기</label>
+                                <input type="checkbox" class="gc" id="gc02"/><label for="gc02" class="goal_btn">물은 생명의 근원</label>
+                            </div>
+                            <div class="b_wrap">
+                                <input type="checkbox" class="gc" id="gc03"/><label for="gc03" class="goal_btn">하루 8,000보</label>
+                                <input type="checkbox" class="gc" id="gc04"/><label for="gc04" class="goal_btn">더 오래 걷기</label>
+                            </div>
+                            <div class="b_wrap">
+                                <input type="checkbox" class="gc" id="gc05"/><label for="gc05" class="goal_btn">3가지 생활 습관으로 수면 늘리기</label>
+                            </div>
+                        </div>
+                        <div class="btn_wrap ref mt20">
+                            <button type="button" class="btn_refresh"></button>
+                            <span>1/4</span>
+                        </div>
+                        <div class="btn_wrap btn50 mt20">
+                            <button type="button" class="btn_base_03">SKIP</button>
+                            <button type="button" class="btn_base_03">완료</button>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div -->
+            <!-- // 목표계획 -->
+            <div class="con mt50">
+                <h1 class="tit_cont_02">전문가와 함께하는<br>관리 패키지 추천</h1>
+                <p class="tit_sub_03 mt40">스코어 분석 기준 추천</p>
+                <div class="banner_a a3 mt10"><a href="#">
+                    <p>바디핏<span class="sub">Premium</span></p>
+                </a></div>
+            </div>
+            <div class="con con_pr0 mt140">
+                <h1 class="tit_cont_02"><span class="point">홍길동</span>님에게<br>맞는 콘텐츠</h1>
+                <div class="item_wrap align_right_wrap">        
+                    <div class="swiper-container content_slider content01 swiper-container-initialized swiper-container-horizontal swiper-container-ios">
+                    <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                        <div class="swiper-slide swiper-slide-active" style="margin-right: 11px;">
+                        <div class="content_card">
+                            <a href="#" class="img_wrap">
+                            <img src="../../resources/img/@dummy.jpg" alt="">
+                            </a>  
+                            <a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b"></a>
+                        </div>
+                        <div class="txt_wrap">
+                            <span class="tit">전신 서킷 트레이닝</span>
+                            <span class="sub"><em>6분</em><em>약</em><em>오디오</em></span>
+                        </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-next" style="margin-right: 11px;">
+                        <div class="content_card">
+                            <a href="#" class="img_wrap">
+                            <img src="../../resources/img/@dummy.jpg" alt="">
+                            </a>  
+                            <a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b on"></a>
+                        </div>
+                        <div class="txt_wrap">
+                            <span class="tit">전신 서킷 트레이닝</span>
+                            <span class="sub"><em>6분</em><em>약</em><em>오디오</em></span>
+                        </div>
+                        </div>
+                        <div class="swiper-slide" style="margin-right: 11px;">
+                        <div class="content_card">
+                            <a href="#" class="img_wrap">
+                            <img src="../../resources/img/@dummy.jpg" alt="">
+                            </a>  
+                            <a href="javascript:void(0);" role="button" class="btn_ico_bookmark_b"></a>
+                        </div>
+                        <div class="txt_wrap">
+                            <span class="tit">전신 서킷 트레이닝</span>
+                            <span class="sub"><em>6분</em><em>약</em><em>오디오</em></span>
+                        </div>
+                        </div>
+                    </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="con mt100 pb50">
+                <!-- 20210810 슬라이드 분리 수정 -->
+                <div class="swiper-container big_slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide new_card">
+                        <a href="#">
+                            <img src="../../resources/img/@dummy_banner.png" alt="피지컬 피트니스 라이브 홈 퍼스널 트레이닝 1:10"/>
+                        </a>
+                      </div>
+                      <div class="swiper-slide new_card">
+                        <a href="#">
+                            <img src="../../resources/img/@dummy_banner.png" alt="안다르 기획전 여름 운동이 쾌적해지는 방법은?"/>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="swiper-container small_slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide new_card">
+                        <a href="#">
+                            <img src="../../resources/img/@dummy_banner02.png" alt="피지컬 피트니스 라이브 홈 퍼스널 트레이닝 1:10"/>
+                        </a>
+                      </div>
+                      <div class="swiper-slide new_card">
+                        <a href="#">
+                            <img src="../../resources/img/@dummy_banner02.png" alt="안다르 기획전 여름 운동이 쾌적해지는 방법은?"/>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <!-- <div class="banner_big">
+                    <a href="#">
+                        <img src="../../resources/img/@dummy_banner.png" alt="피지컬 피트니스 라이브 홈 퍼스널 트레이닝 1:10"/>
+                    </a>
+                    <a href="#" class="mt10">
+                        <img src="../../resources/img/@dummy_banner02.png" alt="안다르 기획전 여름 운동이 쾌적해지는 방법은?"/>
+                    </a>
+                </div> -->
+                <!--  <div class="banner_a mt10"><a href="#">
+                    <p><span class="sub">안다르 기획전</span>여름 운동이 쾌적해지는 방법은?</p>
+                </a></div> //210730 : 통이미지로 영역변경 삭제-->
+            </div>
+            <!-- 20211026 푸터 개선 -->
+            <div class="main_footer acco_list_wrap">
+                <div class="item_head">
+                    <span>이용약관</span>
+                    <span class="footer_tit">개인정보처리방침</span>
+                    <button type="button" class="btn_acco_more"><span class="hidden">열기</span></button>
+                </div>
+                <div class="item_cont" style="display: none;">
+                    <div>
+                        <p>
+                            <span>시그나 코리아</span>
+                            <span class="cigna_president">대표이사 : 김양호</span>
+                        </p>
+                        <p class="address">서울 종로구 삼봉로 48 시그나타워 16층</p>
+                        <p><span>사업자등록번호 : </span>396-86-00109</p>
+                        <p><span>통신판매업신고 </span>2020-서울종로-2242</p>
+                        <p><a class="arrow_link"
+                                href="https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2020300020230202246&pageUnit=10&searchCnd=wrkr_no&searchKrwd=3968600109&pageIndex=1"
+                                target="_blank">사업자정보확인</a></p>
+                    </div>
+                    <div class="footer_call_center">
+                        <p><span>고객센터 : 전화번호 </span><a href="tel:1833-4030">1833-4030</a></p>
+                        <p><span>이메일 : </span><a class="arrow_link" href="../FMY/FMY-008.html">문의하기</a></p>
+                        <p>Tune H에서 운영되는 APP 내 판매되는 모든 상품은 시그나 코리아에서 책임지고 있습니다.</p>
+                        <p class="copy">ⓒ Cigna Korea All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- //20211026 푸터 개선 -->
+        </div>
+        <footer class="health_footer">
+            <!-- 20210802 s: 토스트 팝업추가  -->
+            <!-- div class="bottom_pop">
+                <div class="pop_inner">
+                    <p>목표를 추가했습니다.</p>
+                </div>
+            </div -->
+            <!-- 20210802 e: 토스트 팝업추가  -->
+            <div class="scroll_nav_item">
+                <a href="javascript:void(0)" class="btn_top"><span class="hidden">상단 위로 이동</span></a>
+                <a href="javascript:void(0)" class="nav_item"><span class="hidden">패키지</span></a>
+            </div>
+            <div class="health_footer_nav">
+                <ul>
+                    <li><a href="javascript:void(0)" class="nav_item on"><span class="hidden">홈</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">목표</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">코칭</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">콘텐츠</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">패키지</span></a></li>
+                </ul>
+                <!-- 말풍선 -->
+                <div class="footer_bubbleBox">
+                    <span>나와 맞는 코치를 선택해보세요!</span>
+                </div>
+                <!-- //말풍선 -->
+            </div>
+        </footer>
+    </div>
+    <script>
+        var swiper = new Swiper(".content01, .content02, .flag_slider", {
+        slidesPerView: "auto",
+        spaceBetween: 11
+        });
+        //20210831 swiper 분리
+        var swiper2 = new Swiper(".big_slider", {
+            slidePerView:1,
+            spaceBetween: 0,
+            loop: true,
+            //20210903 autoplay 기능 삭제
+        });
+        //20210831 swiper 분리
+        var swiper3 = new Swiper(".small_slider", {
+            slidePerView:1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            }
+        });
+    </script>
+</body>
+</html>

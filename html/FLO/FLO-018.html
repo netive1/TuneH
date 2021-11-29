@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <title>휴대폰인증</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap">
+    <div class="health_header">
+      <!-- 20210721 'inbtn' class 추가 -->
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>휴대폰인증</h1>
+      </div>
+    </div>
+    <!--// health_header -->
+    <div class="health_container">
+      <h1 class="tit_cont_01">
+        휴대폰 인증을<br/>
+        진행해주세요.
+      </h1>
+      <div class="inp_wrap type_large mt90">
+        <div class="inp_item">
+          <input class="inp_base" type="number" placeholder="핸드폰번호">
+          <button type="button" class="btn_form_line mt15" onclick="netiveUI.plugins.popAlert('#alert001');" disabled>발송</button>
+          <button type="button" class="btn_form_line mt15">재발송</button>
+        </div>
+        <div class="inp_item type_certi">
+          <input class="inp_base" type="number" placeholder="인증번호">
+          <span class="time">02:49</span>
+        </div>
+      </div>
+    </div>
+    <!--// health_container -->
+  </div>
+
+  <div class="btn_btm_fixed">
+    <button type="button" class="btn ver01" onclick="netiveUI.plugins.popAlert('#alert002');" disabled="disabled">확인</button>
+  </div>
+
+   <!-- alert : SNS계정 정보 수정 시도 시 -->
+   <div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        인증번호가 발송되었습니다.<br>확인 후 입력해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+  <!-- case01 : 인증번호 불일치 시 -->
+  <div class="health_alert" id="alert002" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        입력하신 인증번호가 일치하지 않습니다.<br>확인 후 다시 입력해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+  <!-- case02 : 인증번호 시간 경과 시 -->
+  <div class="health_alert" id="alert003" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        인증번호 입력 시간이 경과되어 말소되었습니다.<br>재발송 후 다시 입력해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+</div>
+</body>
+</html>

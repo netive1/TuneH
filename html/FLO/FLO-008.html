@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>성별 선택</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+
+</head>
+<body>
+  <div class="health_wrap type_signup">
+    <header class="health_header"><!-- 20210526-<header>태그 추가 -->
+      <!-- 07/29 타이틀 추가 -->
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>성별 선택</h1>
+      </div>
+      <div class="step_wrap"> <!--20211022 step 수정-->
+        <span class="now">5</span>8
+        <span class="hidden">총 8페이지 중 현재 5페이지</span>
+      </div>
+    </header>
+    <div class="health_container">
+      <h1 class="tit_cont_02">성별을<br>선택해주세요.</h1>
+  
+      <div class="inp_wrap type_large mt110"><!-- 20210526-mt110클래스명 수정 -->
+        <div class="radio_box type_txt">
+          <div class="item">
+            <input type="radio" id="female" class="radioItem" name="gender">
+            <label for="female">여자</label>
+          </div>
+          <div class="item">
+            <input type="radio" id="male" class="radioItem" name="gender">
+            <label for="male">남자</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn_btm_fixed">
+    <div class="progress_wrap"><!-- 20210526-위치 수정 -->
+      <progress max="800" value="500"></progress>  <!--20211022 max값 수정-->
+    </div>
+    <button type="button" class="btn" disabled="disabled">다음</button><!-- 20210526-ver02 클래스 삭제 -->
+  </div>
+ 
+  <!-- alert : SNS계정 정보 수정 시도 시 -->
+  <div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        SNS 계정을 통해 받아온 정보는<br>수정할 수 없습니다.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+  <!-- alert : SNS계정 정보 수정 시도 시 -->
+  <div class="health_alert" id="alert002" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        성별을 선택해주세요.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_primary ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- // -->
+</body>
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>패키지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+    <div class="health_wrap type_package"> <!-- 20210805 'type_package' class 수정 -->
+        <!-- 20210721 -->
+        <header class="health_header">
+            <div class="inbtn">
+                <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+                <h1>슬립케어</h1>
+            </div>
+            <div class="user"><button type="button">홍길동</button></div>
+        </header>
+        <!-- //20210721 -->
+        <div class="health_container">
+            <!-- <div class="layerMask"></div> -->
+            <div class="package_bg">
+                <div class="package_wrap">
+                    <div class="content_wrap">
+                        <div class="pass_wrap">
+                            <h2 class="tit_cont_01 ver2">슬립케어<br>프리미엄 패키지</h2>
+                            <div class="pass_box">
+                                <h3 class="tit_cont_02">Premium Program</h3>
+                                <dl class="pass_cont">
+                                    <div class="pack1">
+                                        <img src="../../resources/img/ico_pk01.png" alt>
+                                        <dt>Sleep Yoga</dt>
+                                        <dd>숙면을 도와주는 요가와 명상</dd>
+                                    </div>
+                                    <div class="pack2">
+                                        <img src="../../resources/img/ico_pk02.png" alt>
+                                        <dt>꿀잠템</dt>
+                                        <dd>수면건강을 위한 건강기능식품을 시작으로 매월 꿀잠템 제공</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="package_info">
+                            <h3>APP 회원가입 시 베이직 패키지 제공!</h3>
+                            <ul class="ul_check">
+                                <li>
+                                    <img src="../../resources/img/ico_ul_check.png" alt>
+                                    <div class="txt_box">
+                                        <em>건강정보 아티클</em>일상 생활 건강 관리 부터 스트레스 해소 및 수면관리 까지
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="../../resources/img/ico_ul_check.png" alt>
+                                    <div class="txt_box">
+                                        <em>건강설문체크</em>14개의 간단한 문항 체크면 끝!
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="../../resources/img/ico_ul_check.png" alt>
+                                    <div class="txt_box">
+                                        <em>건강신호측정</em>생체 정보를 이용한 신기술로 스트레스 지수를 확인
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="../../resources/img/ico_ul_check.png" alt>
+                                    <div class="txt_box">
+                                        <em>Tune-H Contents 구독</em>건강 관리를 위한 다양한 오디오 비디오 콘텐츠 시청
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="../../resources/img/ico_ul_check.png" alt>
+                                    <div class="txt_box">
+                                        <em>Tune-H Coach</em>신체와 정신 건강 관리를 위한 목표설정 및 코치의 알람 받기
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="package_gray_wrap">
+                <p>
+                    오늘 패키지 시작 할 시<br>
+                    <span>2021.08.24</span>까지 이 모든 혜택을<br>
+                    누리실 수 있습니다!
+                </p>
+                <div class="pay_cont">
+                    <dl>
+                        <dt>정가</dt>
+                        <dd>
+                            <em>150,000원</em>
+                            <p class="bubble_box">20%</p>
+                        </dd>
+                        <dt>특별할인</dt>
+                        <dd>120,000<span>원</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <ul class="benefit_list">
+                <li>
+                    <span>혜택 01</span>
+                    <p>
+                        Sleep Yoga
+                        <a href="#" class="btn_benefit" onclick="netiveUI.plugins.popFull('#full008');"><span class="hidden">이동</span></a>
+                    </p>
+                    <div class="img_wrap">
+                        <img src="../../resources/img/pack_type04_img01.png" alt=""/>
+                    </div>
+                    <p class="sub_txt">잠 잘오는 요가와 명상을 Live Home PT 플랫폼에서 제공합니다.</p>
+                </li>
+                <li>
+                    <span>혜택 02</span>
+                    <p>
+                        꿀잠템
+                        <a href="#" onclick="netiveUI.plugins.popFull('#full009');"><span class="hidden">이동</span></a>
+                    </p>
+                    <div class="img_wrap">
+                        <img src="../../resources/img/pack_type04_img02.png" alt=""/>
+                    </div>
+                    <p class="sub_txt">숙면건강기능식품? 베개패드? 무드등? 꿀잠을 위한 아이템을 한달에 한번씩 받아보세요.</p>
+                </li>
+                <li>
+                    <span>혜택 03</span>
+                    <p>
+                        시그나 건강 콜센터
+                        <a href="#" onclick="netiveUI.plugins.popFull('#full006');"><span class="hidden">이동</span></a>
+                    </p>
+                    <div class="img_wrap">
+                        <img src="../../resources/img/pack_type01_img04.png" alt=""/>
+                    </div>
+                    <p class="sub_txt">간단한 건강상담부터 전국 명의 안내까지</p>
+                </li>
+                <li>
+                    <span>혜택 04</span>
+                    <p>
+                        프리미엄 건강검진<br>할인 예약 안내
+                        <a href="#" onclick="netiveUI.plugins.popFull('#full007');"><span class="hidden">이동</span></a>
+                    </p>
+                    <div class="img_wrap">
+                        <img src="../../resources/img/pack_type01_img05.png" alt=""/>
+                    </div>
+                    <p class="sub_txt">심플한 혈액검사 부터 초음파, CT, DNA 검사까지 다양하게 제공받는 프리미엄 건강검진 할인가 예약</p>
+                </li>
+            </ul>
+            <div class="info_item_wrap">
+                <div class="tit">
+                    <h2>상세정보 및 유의사항</h2>
+                </div>
+                <div class="item_wrap">
+                    <a href="#none" class="item_box" onclick="netiveUI.plugins.popFull('#full001');"><span class="item_txt">패키지 공통 안내</span></a>
+                    <a href="#none" class="item_box" onclick="netiveUI.plugins.popFull('#full002');"><span class="item_txt">환불 안내</span></a>
+                    <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full003');">
+                        <span>굿즈</span>
+                        <p>슬립요가</p>
+                    </a>
+                    <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full004');">
+                        <span>굿즈</span>
+                        <p>꿀잠템</p>
+                    </a>
+                    <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full005');">
+                        <span>온라인콘텐츠</span>
+                        <p>TuneH Contents</p>
+                    </a>
+                    <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full006');">
+                        <span>진단/상담</span>
+                        <p>시그나 건강 콜센터</p>
+                    </a>
+                    <a href="#none" class="item_box item_head_cont" onclick="netiveUI.plugins.popFull('#full007');">
+                        <span>굿즈</span>
+                        <p>프리미엄 건강검진 할인 예약 안내</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 패키지 공통 안내 팝업내용 -->
+    <div class="health_full actived" id="full001" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1>패키지 공통 안내</h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <h1 class="tit_cont_03">디지털 콘텐츠 고시사항</h1>
+                                    <ol>
+                                        <li>
+                                            <i>1.</i>
+                                            제작자 또는 공급자
+                                        </li>
+                                        <li>
+                                            <i>2.</i>
+                                            이용조건, 이용기간
+                                        </li>
+                                        <li>
+                                            <i>3.</i>
+                                            상품 제공 방식 (CD, 다운로드, 실시간 스트리밍 등)
+                                        </li>
+                                        <li>
+                                            <i>4.</i>
+                                            최소 시스템 사양, 필수 소프트웨어
+                                        </li>
+                                        <li>
+                                            <i>5.</i>
+                                            청약철회 또는 계약의 해제, 해지에 따른 효과 (클레임 부분 참조)
+                                        </li>
+                                        <li>
+                                            <i>6.</i>
+                                            소비자상담 관련 전화번호
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">굿즈 고시사항</h1>
+                                    <p>각 굿즈 별 상세내용은<br> 굿즈 별 고시사항으로 확인 가능</p>
+                                    <ol>
+                                        <li>
+                                            <i>1.</i>
+                                            발행자
+                                        </li>
+                                        <li>
+                                            <i>2.</i>
+                                            구매가격(할인된 경우 할인율 및 할인금액)
+                                        </li>
+                                        <li>
+                                            <i>3.</i>
+                                            유효기간(유효기간이 설정된 경우에 한함)
+                                        </li>
+                                        <li>
+                                            <i>4.</i>
+                                            사용조건 (사용가능금액, 제공 물품 등): 물품 및 용역 제공형 신유형 상품권의 경우 수량을 반드시 표기하여야 함
+                                        </li>
+                                        <li>
+                                            <i>5.</i>
+                                            사용가능가맹점
+                                        </li>
+                                        <li>
+                                            <i>6.</i>
+                                            환불조건 및 방법
+                                            <ul class="dash_list">
+                                                <li>7일 이내 구매액 전액 환불</li>
+                                                <li>미사용 시 유효기간 경과 전: 굿즈 상의 물품 등이 제공이 불가능하거나 제공에 필요한 통상적인 기간보다 현저히 지체되는 경우 고객 요구에 따라 해당 굿즈과 동일한 금전적 가치의 굿즈으로 즉시 교환 또는 구매액 반환(100% 환불)</li>
+                                                <li>유효기간 경과 후에는 최대 5년 까지 미사용 부분의 90% 환불 (유효기간 만료30일 전 소비자에게 통지 필요)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i>7.</i>
+                                            지급보증 또는 피해보상보험계약 체결에 관한사항: 지급보증 또는 피해보상보험계약(이하 '지급보증 등')이 되어 있지 않은 경우 지급보증 등이 되어 있지 않음을 반드시 명시
+                                        </li>
+                                        <li>
+                                            <i>8.</i>
+                                            소비자상담 관련 전화번호
+                                        </li>
+                                    </ol>
+                                    <h1 class="tit_cont_03">유의사항</h1>
+                                    <ul class="dote_list">
+                                        <li>콘텐츠, 굿즈 등 패키지 사용 관련 유의사항(사용 횟수 제한 등)</li>
+                                        <li>굿즈 사용방법, 제한사항 유무</li>
+                                        <li>굿즈 대상 상품</li>
+                                        <li>현금과의 교환 가능 여부</li>
+                                        <li>타 할인과 중복 사용, 적립 등 적용 여부 등</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 패키지 공통 안내 팝업내용 -->
+
+
+    <!-- 환불안내 팝업내용 -->
+    <div class="health_full actived" id="full002" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                        <h1>환불 안내</h1>
+                        <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <h1 class="tit_cont_03">취소, 청약철회 및 환불 정책</h1>
+                                    <ul class="dote_list ver02">
+                                        <li>취소 및 환불 요청 방법
+                                            <p>이용자는 구두 또는 서면(전자서면 포함)으로 취소, 해지, 청약철회 가능</p>
+                                        </li>
+                                        <li>기타사항
+                                            <ul class="dash_list">
+                                                <li>
+                                                    회사가 마케팅, 이벤트, 프로모션 등 목적으로 무상으로 부여하는 추가 이용기간은 환불에 영향을 미치지 아니함
+                                                </li>
+                                                <li>
+                                                    회사는 환불 시 금융거래 수수료, 제세공과금 등 소비자가 관련 법규에 따라 부담하여야 하는 비용을 공제할 수 있음
+                                                </li>
+                                                <li>
+                                                    회사는 회원이 관계 법규 또는 이용약관 등을 위반한 경우 환불을 거부할 수 있음
+                                                </li>
+                                                <li>
+                                                    패키지 상품의 각 구성 상품의 환불 조건은 개별 상품 안내 페이지를 통해 고지 가능
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h1 class="tit_cont_03">취소</h1>
+                                    <ul class="dote_list ver02">
+                                        <li>법정대리인 동의 없는 미성년자(만 19세 미만)의 구매
+                                            <p>
+                                                취소 및 전액 환불. 단, 미성년자가 법정대리인이 범위를 정하여 처분을 허락한 재산으로 콘텐츠를 구매한 경우 또는 미성년자가 속임수로써 자기를 성년자로 믿게 하거나 법정대리인의 동의가 있는 것으로 믿게한 경우 취소 불가능 
+                                            </p>
+                                        </li>
+                                        <li>소비자 동의 없는 결제
+                                            <p>취소 및 전액 환불</p>
+                                        </li>
+                                        <li>기본사항 미고지
+                                            <p>(사업자가 계약 전 기본사항을 고지하지 않았거나 유료정보표기를 하지 않은 경우)<br>취소 및 전액 환불</p>
+                                        </li>
+                                    </ul>
+
+                                    <h1 class="tit_cont_03">청약철회</h1>
+                                    <p>결제일로부터 7일 이내</p>
+                                    <table>
+                                        <caption>상품 환불 정책 테이블입니다.</caption>
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 40%;">
+                                            <col style="width: 40%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">전액 환불</th>
+                                                <th scope="col">일부 환불</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">콘텐츠</th>
+                                                <td>
+                                                    <ul>
+                                                        <li>- 콘텐츠를 사용하지 않은 경우</li>
+                                                        <li>- 콘텐츠를 3개 이하로 사용한 경우(무료 콘텐츠 제외)</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>- 콘텐츠 일부 (4개 이상) 이용시 : 계약해지와 동일
+                                                            (환불금액: 잔여이용기간에 해당하는 금액 – 위약금 결제대금의 10%)
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">물품</th>
+                                                <td>
+                                                    <ul>
+                                                        <li>- 물품을 고객에게 발송하지 않은 경우</li>
+                                                        <li>- 물품을 고객에게 배송한 경우 물품이 온전한 상태로 반환되어야 전액 환불</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>- 물품(영양제 등 유통기한 긴 식품 포함) 사용 또는 훼손 시: 물품대금 공제</li>
+                                                        <li>&lt;물품훼손&gt;
+                                                            <ul>
+                                                                <li>- 소비자 잘못으로 물품이 멸실되거나 훼손된 경우</li>
+                                                                <li>- 사용 또는 일부 소비로 가치가 현저히 감소한 경우</li>
+                                                                <li>- 시간이 지나 다시 판매하기 곤란할 정도로 재화 등의 가치가 감소한 경우</li>
+                                                                <li>- 복제할 수 있는 재화 등의 포장을 훼손한 경우</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">식품</th>
+                                                <td>
+                                                    <ul>
+                                                        <li>- 신선식품: 배송 전 후 7일 이내에는 전액 환불</li>
+                                                        <li>- 영양제 등 유통기한이 긴 식품: 물품과 동일</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>- 일부 환불 해당 없음</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h1 class="tit_cont_03">기타 환불 정책</h1>
+
+                                    <ul class="dote_list ver02">
+                                        <li>계약해지(1달 이상 패키지 상품)
+                                            <p>결제 후 7일 초과하여 환불, 해지 등 요구 시해지일까지의 이용기간에 해당하는 금액과 위약금(결제대금 10%) 공제 후 환급</p>
+                                            <ul class="dash_list">
+                                                <li>
+                                                    환불금액 = 결제금액 X 잔여이용기간/전체기간
+                                                </li>
+                                                <li>
+                                                    위약금(총 결제금액의 10%)
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <P class="label">
+                                        ※ 물품이 온전하게 반환된 경우에는 물품대금을 환급금에 더하거나 위약금에서 차감한 후 소비자에게 지급하여야 함: 의무 사항
+                                    </P>
+                                    <P class="label">
+                                        ※ 물품이 훼손되거나 반환되지 않은 경우에는 위약금과 별도로 회원에게 물품대금에 해당하는 금액을 청구할 수 있음
+                                    </P>
+                                    <P class="label">
+                                        ※ 위약금이 반환할 금액보다 더 큰 경우 소비자에게 청구 가능 (혹은 소비자가 해지 하려는 단계에서 환급금 및 10% 위약금을 안내함으로써 소비자 스스로 해지를 하지 않도록 유도)
+                                    </P>
+                                    <div class="label_box">
+                                        ※ 결제 시 물품 가액 관련 고지사항
+                                        <ul class="dash_list">
+                                            <li>
+                                                소비자 동의(서면/전자서면) 필요
+                                                <ol>
+                                                    <li>
+                                                        <i>1.</i>
+                                                        물품 등의 가액 및 그 산정기준
+                                                    </li>
+                                                    <li>
+                                                        <i>2.</i>
+                                                        부가상품등의 반환 시 부가상품등의 가치에 상당하는 금액 및 그 산정기준
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="dote_list ver02">
+                                        <li>과오납금 환불
+                                            <p>과오납금 발생 시 과오납금 환급. 단, 회사의 고의 또는 과실 없이 소비자의 과실로 인한 과오납 발생 시 환급에 소요되는 실제 비용은 합리적 범위 내에서 회원에게 부담 가능</p>
+                                        </li>
+                                        <li>표시, 광고와 재화가 다른 경우
+                                            <p>그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내 또는 그 재화 등을 공급받은 날부터 3개월 이내 청약철회 가능: 전액 환불</p>
+                                        </li>
+                                    </ul>
+                                    <P class="label">
+                                        ※ 물품반품비용: 회사 부담
+                                    </P>
+                                    <P class="label">
+                                        ※ 위 기간 중 하나라도 경과한 경우 청약철회 불가능
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 환불안내 팝업내용 -->
+
+    <!-- 굿즈 - 슬립요가 팝업내용 -->
+    <div class="health_full actived" id="full003" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1>슬립요가</h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <p>
+                                        숙면을 도와주는 라이브 PT 클래스가 있다고?<br>
+                                        요가, 명상 등 실시간으로 따라하며 오늘의 꿀잠을 준비하세요.
+                                    </p>
+                                    <p>
+                                        운동 전용 App으로 이동하면 내가 원하는 크리에이터의 숙면유도 라이브 강좌를 선택할 수 있습니다.
+                                    </p>
+                                    <p>
+                                        마이페이지에서 굿즈번호를 확인하고 등록해보세요. 이후 정해진 시간에 라이브 PT클래스 참여가 가능합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 굿즈 - 슬립요가 팝업내용 -->
+
+    <!-- 굿즈 - 꿀잠템 팝업내용 -->
+    <div class="health_full actived" id="full004" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1>꿀잠템</h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <p>
+                                        세상에 떠도는 꿀잠템은 많다. 그러나 진짜 내 숙면을 도와줄 찐꿀잠템은 Tune-H에 모여있다! 수면건강기능식품을 시작으로 월 1회(총 3회) 수면에 도움을 주는 아이템이 포함된 시크릿박스를 제공합니다.
+                                    </p>
+                                    <p>
+                                        첫달 - 수면건강기능식품<br>
+                                        둘째 달 - ? (시크릿박스)<br>
+                                        마지막 달 - ? (시크릿박스)
+                                    </p>
+                                    <p>
+                                        Tune-H에서는 검증된 수면관리 아이템을 제공합니다. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 굿즈 - 꿀잠템 팝업내용 -->
+
+    <!-- 온라인콘텐츠 - TuneH Contents 팝업내용 -->
+    <div class="health_full actived" id="full005" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1>Tune-H Contents</h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <h1 class="tit_cont_03">운동 컨텐츠</h1>
+                                    <p>
+                                        간단한 스트레칭부터 필라테스 등 전문적인<br>기구운동 까지 신체 단련 운동 컨텐츠!
+                                    </p>
+                                    <h1 class="tit_cont_03 mt0">마인드 케어 컨텐츠</h1>
+                                    <p>
+                                        스트레스 완화, 마음을 안정시킬 수 있는<br>명상 및 자기암시 관련 마인드 케어 컨텐츠!
+                                    </p>
+                                    <h1 class="tit_cont_03 mt0">영상 및 음성 컨텐츠</h1>
+                                    <p>
+                                        불면증 완화와 숙면을 도와주는<br>다양한 영상 및 음성 컨텐츠!
+                                    </p>
+                                    <p>
+                                        당신의 건강을 위해 월 30개의 다양한<br> Tune-H Contents가 준비되어 있습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 온라인콘텐츠 - TuneH Contents 팝업내용 -->
+
+    <!-- 진단/상담 - 시그나 건강 콜센터 팝업내용 -->
+    <div class="health_full actived" id="full006" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1>시그나 건강 콜센터</h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <ul class="dote_list">
+                                        <li>전 진료과목 건강상담</li>
+                                        <li>증상 및 진단별 맞춤 전문의료진 및 병원 안내</li>
+                                        <li>전국 장기요양시설 안내</li>
+                                        <li>상급종합병원 특수 창구 통한 빠른 진료 예약</li>
+                                        <li>Tune-H의 헬스 서비스 안내 및 예약</li>
+                                        <li>APP 관련 CS 문의 응대</li>
+                                    </ul>
+                                    <p class="number">지금 전화 주세요! 1600-3444</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 진단/상담 - 시그나 건강 콜센터 팝업내용 -->
+
+    <!-- 굿즈 팝업내용 -->
+    <div class="health_full actived" id="full007" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1>프리미엄 건강검진 할인 예약 안내</h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <div class="point_item">
+                                    <p>프리미엄 건강검진을 할인가에 이용해 보세요.</p>
+                                    <ul class="dote_list ver02">
+                                        <li>100여개 검진기관 이용 가능</li>
+                                        <li>검진센터, 준종합병원, 전문병원, 대학병원 등 다양한 검진기관 제공 </li>
+                                        <li>단일화된 검진프로그램이 아닌 다양한 검진프로그램 제공 (20만원, 30만원, 50만원, 100만원 등 다양)</li>
+                                        <li>
+                                            일반 수가 검진프로그램이 아닌 단체 할인율(50~60%)이 적용된 검진프로그램 제공
+                                            <ul class="dash_list">
+                                                <li>
+                                                    20만원 : CT & 초음파 선택, 기초, 장비, 혈액검사 등 
+                                                </li>
+                                                <li>
+                                                    30만원 : CT & 특수초음파 & 대장내시경 선택, 기본초음파, 기초, 장비, 혈액검사 등 
+                                                </li>
+                                                <li>
+                                                    50만원 : CT & 특수초음파 & 대장내시경 & MRI & DNA 유전자검사 선택, 기본초음파, 기초, 장비, 혈액검사 등 
+                                                </li>
+                                                <li>
+                                                    100만원 : CT & 특수초음파 & 대장내시경 & MRI & DNA 유전자검사 선택, 특수초음파, 기본초음파, 기초, 장비, 혈액검사 등 
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            편리한 회원가입을 통하여 이용하실 수 있는 별도 플랫폼 제공
+                                            <p>
+                                                (회원가입->로그인->검진예약하기(병원정보, 검진예약일자, 검진프로그램) -> 검진예약상황 알림톡 발송 -> 병원 예약현황 확인 후 예약확정 안내문자 발송 -> 확정된 검진예약일 고객방문 및 검진실시)
+                                            </p>
+                                        </li>
+                                        <li>WEB/APP을 통해 편리한 건강검진 예약서비스 제공</li>
+                                        <li>
+                                            플래너 예약 시스템 업계 최초 반영 (특허권 출허 by '케어링크')
+                                            <ul class="dash_list">
+                                                <li>
+                                                    본인에게 가장 필요한 검진항목 추천 및 추천한 검진항목을 제공하는 검진기관 매칭 
+                                                </li>
+                                                <li>
+                                                    검진기관별 전체항목 비교표 제공
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 굿즈 팝업내용 -->
+
+
+    <!-- 만 19세 미만 결제 불가 팝업 -->
+    <div class="health_alert" id="alert001" style="display: none;">
+        <div class="inner">
+        <h1 class="tit_cont_03">
+            Tune H<br>
+            <span class="color_type02">만 19세 미만 회원</span>입니다.
+        </h1>
+        <p class="msg">
+            Tune H 서비스 정책에 의하여 <br>
+            만 19세 미만 회원은 아래 서비스 <br>
+            사용이 제한됩니다. <br>
+            이용에 불편을 드려 죄송합니다.
+        </p>
+        <div class="device">
+            <p>만 19세 미만 제한 서비스</p>
+            <ul>
+                <li>패키지 결제</li>
+                <li>건강신호 측정</li>
+            </ul>
+        </div>
+        <div class="btn_wrap">
+            <button type="button" class="btn_pop_dark ui-close">확인</button>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- 혜택 01 -->
+    <div class="health_full actived" id="full008" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1></h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 혜택 01 팝업내용 -->
+
+    <!-- 혜택 02 -->
+    <div class="health_full actived" id="full009" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1></h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 혜택 02 팝업내용 -->
+
+    <!-- 혜택 03 -->
+    <div class="health_full actived" id="full010" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1></h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 혜택 03 팝업내용 -->
+
+    <!-- 혜택 04 -->
+    <div class="health_full actived" id="full011" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <h1></h1>
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 혜택 04 팝업내용 -->
+
+    <!-- case -> 판매중 -->
+    <div class="btn_btm_fixed">
+        <div class="btn_package ver01">
+            <div class="btn_cont_wrap">
+                <dl class="btn_cont_l">
+                    <dt>프리미엄 패키지</dt>
+                    <dd>120,000<span>원</span></dd>
+                </dl>
+                <button type="button" class="btn_base_02">결제하기</button>
+            </div>
+        </div> 
+    </div>
+    <!-- // case -> 판매중 -->
+
+    <!-- case -> 판매예정 -->
+    <!-- <div class="btn_btm_fixed">
+        <div class="btn_package ver01">
+            <div class="btn_cont_wrap">
+                <dl class="btn_cont_l">
+                    <dt>프리미엄 패키지</dt>
+                    <dd>120,000<span>원</span></dd>
+                </dl>
+                <button type="button" class="btn_base_02">판매예정</button>
+            </div>
+        </div> 
+    </div> -->
+    <!-- // case -> 판매예정 -->
+
+    <!-- case -> 일시품절 -->
+    <!-- <div class="btn_btm_fixed">
+        <div class="btn_package ver01">
+            <div class="btn_cont_wrap">
+                <dl class="btn_cont_l">
+                    <dt>프리미엄 패키지</dt>
+                    <dd>120,000<span>원</span></dd>
+                </dl>
+                <button type="button" class="btn_base_02 out">일시품절</button>
+            </div>
+        </div> 
+    </div> -->
+    <!-- // case -> 일시품절 -->
+
+    <!-- case -> 패키지 결제완료 및 패키지 정상적으로 이용중인 고객 -->
+    <!-- <div class="btn_btm_fixed">
+        <div class="btn_package ver02">
+            <p>패키지 이용 기간</p>
+            <span>2021.05.13 ~ 2021.07.13</span>
+            <div class="ft_btn_wrap">
+                <button type="button" class="btn_base_02">마이패키지 바로가기</button>
+            </div>
+        </div> 
+    </div> -->
+    <!-- // case -> 패키지 결제완료 및 패키지 정상적으로 이용중인 고객 -->
+
+    <!-- case -> 패키지 결제완료 되었으나 이용예정인 고객 -->
+    <!-- <div class="btn_btm_fixed">
+        <div class="btn_package ver02">
+            <p>패키지 이용 예정기간</p>
+            <span>2021.05.13 ~ 2021.07.13</span>
+            <div class="ft_btn_wrap">
+                <button type="button" class="btn_base_02">마이패키지 바로가기</button>
+            </div>
+        </div> 
+    </div> -->
+    <!-- // case -> 패키지 결제완료 되었으나 이용예정인 고객 -->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>위치정보</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap type_signup">
+    <header class="health_header">
+      <div class="inbtn">
+        <button type="button" class="btn_prev"><span class="hidden">이전</span></button>
+        <h1>위치정보</h1>
+      </div>
+      <div class="step_wrap"> <!--20211022 step 수정-->
+        <span class="now">8</span>8
+        <span class="hidden">총 8페이지 중 현재 8페이지</span>
+      </div>
+    </header>
+    <div class="health_container">
+      <h1 class="tit_cont_02">
+        <span class="name">위치정보를<br>입력해주세요. <!--20210924 문구 수정 및 span태그 추가-->
+      </h1>
+      <div class="inp_wrap type_large mt110">
+        <div class="inp_wrap"> <!--20210924 추가-->
+          <div class="inp_item country_select">
+            <select name="" class="selectbox inp_base">
+              <option value="">대한민국</option>
+              <option value="">대한민국</option>
+            </select>
+          </div>
+          <div class="inp_item font_type">
+            <input class="inp_base" type="text" placeholder="도시" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn_btm_fixed">
+    <div class="progress_wrap"><!-- 20210526-위치 수정 -->
+      <progress max="800" value="800"></progress> <!--20211022 max값 수정-->
+    </div>
+    <button type="button" disabled class="btn">다음</button><!-- 도시선택 시 disabled 속성 제거 -->
+  </div>
+ 
+</body>
+</html>

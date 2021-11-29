@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코치변경</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+    <div class="health_wrap type_mypage type_bg_purple footer_no"> 
+		<header class="health_header ver2">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev ver02"><span class="hidden">이전</span></button>
+				<h1>코치변경</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		    패키지 구매회원의 경우 : .package 추가
+		    신규 알림 있을 시 : .on 추가
+		  -->
+		</header>
+        <div class="health_container">
+			<!-- 2021-11-16 구조 수정 -->
+            <div class="trans_wrap">
+				<div class="info">
+					<span class="tag"><em>나의코치</em></span> <!--20210805 'hidden' class 삭제-->
+					<p class="name">에스쿱스</p>
+				</div>
+				<div class="img_wrap">
+					<img src="../../resources/img/img_starcoach_01.png" alt="코치 변경"/> <!--20210901 코치 기본 아이콘 변경 -->
+				</div>
+			</div>
+			<p class="sub">천진난만 승부사, 운동은 쿱스처럼운동은 쿱스처럼</p>
+			<!-- //2021-11-16 구조 수정 -->
+			<div class="content_wrap">
+				<p class="cont_tit"><span class="name">lina</span>만을 위한<br>세븐틴 코치를 선택해보세요.</p>
+				
+				<!-- 20210709 수정 시작 -->
+				<ul class="trans_list_wrap">
+					<li>
+						<div class="trans_item">
+							<div class="img_wrap">
+								<img src="../../resources/img/img_cigna.png" alt="코치사진">
+							</div>
+							<div class="name">
+								퍼스널 코칭<span>Tune H</span>
+							</div>
+							<span class="coaching">코칭중</span>
+							<a href="FMY-005.html"></a>
+						</div>
+					</li>
+					<li class="lock"><!--20210629 클래스명 on 삭제 lock 추가-->
+						<div class="trans_item">
+							<div class="img_wrap">
+								<img src="../../resources/img/@img_seventeen.png" alt="코치사진">
+							</div>
+							<div class="name">
+								세븐틴<span>SEVENTEEN</span>
+							</div>
+						</div>
+					</li>
+					<!-- 개인형 코칭중인 경우 -->
+					<li class="lock">
+						<div class="trans_item">
+							<div class="img_wrap">
+								<img src="../../resources/img/@img_seventeen.png" alt="코치사진">
+							</div>
+							<div class="name">
+								방탄소년단<span>BTS</span>								
+							</div>
+							<span class="coaching">코칭중</span>
+						</div>
+					</li>
+					<!-- 개인형 코칭중이 아닌경우 -->
+					<li>
+						<div class="trans_item">
+							<div class="img_wrap">
+								<img src="../../resources/img/@img_seventeen.png" alt="코치사진">
+							</div>
+							<div class="name">
+								세븐틴<span>SEVENTEEN</span>
+							</div>
+						</div>
+					</li>
+					<!-- 그룹형 코칭중이 아닌경우 -->
+					<li>
+						<div class="trans_item">
+							<div class="img_wrap">
+								<img src="../../resources/img/@img_seventeen.png" alt="코치사진">
+							</div>
+							<div class="name">
+								세븐틴<span>SEVENTEEN</span>
+							</div>
+							<a href="#"></a>
+						</div>
+					</li>
+				</ul>
+				<!--// 20210709 수정 끝 -->
+			</div>
+        </div>
+      
+      </div>
+</body>
+</html>

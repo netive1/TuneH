@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강관리 코칭 메시지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script>
+    // 메시지 창 제일 하단으로 
+    $(document).ready(function(){
+      $('#ms_wrap').scrollTop($('#ms_wrap')[0].scrollHeight);
+      $plugins.pageReload.destroy(); // 20210903 페이지 리로드 해제, 잘 안될 경우 setTimeout 사용 필요
+    })
+  </script>
+</head>
+<body>
+  <!-- 20210901 마크업 수정 (풀 팝업 → 페이지 변경) -->
+  <div class="health_wrap type_coaching chatt"> <!-- 'type_coaching ,  chatt' class 필요-->
+    <div class="health_container ms_container"> <!--'ms_container' class 필요-->
+      <div class="con_inner">
+        <!-- 2021.07.05 아이디 추가 -->
+        <div class="con_box ms_con_box_header" id="ms_wrap">
+          <div class="pop_con">
+            <div class="cont_header">
+              <div class="ms_hd_fixed">
+                <img src="../../resources/img/img_cigna.png" class="ms_img">
+                <div class="ms_hd">
+                  <span>Tune H</span>
+                  <span>07.01</span>
+                </div>
+                <div class="option_box">
+                  <button type="button" class="btn_set ver02"><span class="hidden">설정</span></button>
+                </div>   
+              </div>    
+            </div>
+            <!-- 20210707 헤더 전체 수정 오른쪽 위치 버튼들 중 '닫기 버튼' 제외하고는 .option_box 로 감싸기 -->
+            
+            <!-- 팝업 내용 -->
+            <div class="ms_wrap">
+              <!-- <div class="date">05.12</div> -->
+              <div class="ms_item">
+                <div class="time">오후 10:08</div>
+                <div class="bubble_l">
+                  안녕하세요. 건강 신호 측정에
+                  오신 걸 환영합니다.
+                  Tune H 는 1분 정도의 간단한 테스트로 심박수, 스트레스 지수 등
+                  건강 상태를 편리하게 파악할 수 있는 기능을 제공합니다.
+                </div>
+                <div class="bubble_l">
+                  측정된 데이터는 <strong class="name">현지</strong>님의
+                  건강 스코어 및 코칭 메시지에 도움을 드릴 수 있습니다. 
+                  준비 되셨으면 아래 버튼을 이용해서 진행해주세요.
+                </div>
+                <div class="bubble_l">
+                  건강 신호 측정 서비스는
+                  만 19세 이상 가능하며, 이를 위해
+                  간단한 인증 과정이 필요합니다.
+                </div>
+              </div>
+              <div class="btn_wrap">
+                <button type="button" class="btn_base_02">건강 신호 측정 시작</button>
+              </div>
+            </div>
+            <!-- //팝업내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--// health_container -->
+    <!--  footer -->
+    <footer class="health_footer">
+      <div class="health_footer_nav">
+        <ul>
+          <li><a href="#" class="nav_item"><span class="hidden">홈</span></a></li>
+          <li><a href="#" class="nav_item"><span class="hidden">목표</span></a></li>
+          <li><a href="#" class="nav_item"><span class="hidden">콘텐츠</span></a></li>
+          <li><a href="#" class="nav_item"><span class="hidden">패키지</span></a></li>
+          <li><a href="#" class="nav_item on"><span class="hidden">코칭</span></a></li>
+        </ul> 
+      </div>
+    </footer>
+    <!-- //footer-->
+  </div>
+  <!-- //20210901 마크업 수정 (풀 팝업 → 페이지 변경) -->
+</body>
+</html>

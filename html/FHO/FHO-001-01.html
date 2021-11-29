@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+    <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../../resources/js/ui.common.js"></script>
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+    <div class="health_wrap type_main_i">
+        <header class="health_header">
+            <h1>hello</h1>
+            <div class="user"><button type="button">홍길동</button></div>
+            <!-- user class 가이드
+                패키지 구매회원의 경우 : .package 추가
+                신규 알림 있을 시 : .on 추가
+            -->
+        </header>
+        <div class="health_container align_right">
+            <div class="main_inner pb50">
+                <div class="text_box">
+                    <div class="tb tb01">
+                        <h1 class="tit_cont_02">Welcome to Join</h1>
+                        <p class="sub_cont_03 mt15">건강한 라이프의 시작을<br>함께 하시게 된 것을 환영합니다.</p>
+                    </div>
+                    <div class="tb tb02">
+                        <h1 class="tit_cont_02">Tune H와<br>건강한 라이프를<br>시작해 볼까요?</h1>
+                    </div>
+                </div>
+                <div class="con">
+                    <div class="banner_a a2"><a href="#">
+                        <p>이어하기</p>
+                        <span class="coin motion">1400</span><!-- 210728 : motion 추가 -->
+                    </a></div>
+                </div>
+            </div>
+            <a href="#" class="more_serv"><span>서비스 살펴보기</span></a>
+            <div class="main_bottom">
+                <div class="con pb50">
+                    <div class="banner_a a2"><a href="#">
+                        <p>건강한 라이프 시작하기</p>
+                    </a></div>
+                    <!-- 20210902 tuneH 텍스트 수정 -->
+                    <p class="tit_head_01 mt70">Tune H</p>
+                    <div class="step_box mt30">
+                        <p class="tit_cont_03">STEP1</p>
+                        <p class="tit_sub_02 mt0">다양한 서비스와 코칭을 위한 12가지<br>건강체크</p>
+                        <img src="../../resources/img/@step_img.png" class="mt20" alt="스텝 이미지"/>
+                        <div class="btn_wrap mt10">
+                            <button type="button" class="btn_base_02 line">건강 상태 체크</button>
+                        </div>
+                    </div>
+                    <div class="step_box mt110">
+                        <p class="tit_cont_03">STEP2</p>
+                        <p class="tit_sub_02 mt0">나에게 맞는 1:1 코칭을 받아보세요.</p>
+                        <img src="../../resources/img/@step_img02.png" class="mt20" alt="스텝 이미지"/>
+                        <div class="btn_wrap mt10">
+                            <button type="button" class="btn_base_02 line">1:1 코칭 받기</button>
+                        </div>
+                    </div>
+                    <div class="step_box mt110">
+                        <p class="tit_cont_03">무제한 비디오/오디오 콘텐츠 이용하고,<br>
+                            1:1 화상 PT와 영양관리를 받아 보세요.</p>
+                        <img src="../../resources/img/@step_img03.png" class="mt20" alt="스텝 이미지"/>
+                        <div class="btn_wrap mt10">
+                            <button type="button" class="btn_base_02 line">패키지 둘러보기</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <footer class="health_footer">
+            <!-- 210730 s: 토스트 팝업추가  -->
+            <div class="bottom_pop">
+                <div class="pop_inner">
+                    <!-- 20210916 문구 수정 -->
+                    <p>고객님의 프로모션 및 광고성 혜택 알림 서비스(SMS, 이메일, PUSH)가 2021.07.16 수신 처리되었습니다.</p>
+                </div>
+            </div>
+            <!-- 210730 e: 토스트 팝업추가  -->
+
+            <!-- 210802 s: 야간 프로모션 혜택 알림 서비스 토스트 팝업추가 (none 처리) -->
+            <div class="bottom_pop" style="display: none;">
+                <div class="pop_inner">
+                    <!-- 20210916 문구 수정 -->
+                    <p>고객님의 야간 프로모션 및 광고성 혜택 알림 서비스가 2021.07.16 수신 처리되었습니다.</p>
+                </div>
+            </div>
+            <!-- 210802 e: 야간 프로모션 혜택 알림 서비스 토스트 팝업추가  -->
+
+            <!-- 210802 s: 야간 프로모션 혜택 알림 서비스 철회 토스트 팝업추가 (none 처리) -->
+            <div class="bottom_pop" style="display: none;">
+                <div class="pop_inner">
+                    <!-- 20210916 문구 수정 -->
+                    <p>고객님의 야간 프로모션 및 광고성 혜택 알림 서비스가 2021.07.16 철회 처리되었습니다.</p>
+                </div>
+            </div>
+            <!-- 210802 e: 야간 프로모션 혜택 알림 서비스 철회 토스트 팝업추가  -->
+            <div class="scroll_nav_item">
+                <a href="javascript:void(0)" class="btn_top"><span class="hidden">상단 위로 이동</span></a>
+                <a href="javascript:void(0)" class="nav_item"><span class="hidden">패키지</span></a>
+            </div>
+            <div class="health_footer_nav">
+                <ul>
+                    <li><a href="javascript:void(0)" class="nav_item on"><span class="hidden">홈</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">목표</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">코칭</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">콘텐츠</span></a></li>
+                    <li><a href="javascript:void(0)" class="nav_item"><span class="hidden">패키지</span></a></li>
+                </ul>
+                <!-- 말풍선 -->
+                <!-- <div class="footer_bubbleBox">
+                        <span>나와 맞는 코치를 선택해보세요!</span>
+                    </div>   -->
+                <!-- //말풍선 -->
+            </div>
+        </footer>
+    </div>
+    <script>
+        window.onload=function(){
+            var th = (window.innerHeight - 173) + 'px';
+            var th2 = (window.innerHeight - 395) + 'px';
+            $('.text_box').css({'height' : th});
+
+            $('.more_serv').on('click', function(){
+                $('.main_bottom').show();
+                var offset = $('.main_bottom').offset(); 
+                $('html').animate({scrollTop : (offset.top - 100) + 'px'}, 800);
+                
+            });
+
+            //텍스트효과
+            setTimeout(function(){
+                $(".tb01").fadeOut(1000,0);
+                $(".tb02").fadeIn(1500);
+                $('.text_box').css({
+                    'height': th2,
+                    'transition' : 'height 1.5s'
+                });
+                $('.coin').fadeIn(500);
+                $('.bottom_pop').fadeOut(500,0);  //210730 : 토스트팝업
+            },3000);
+        }
+    
+    </script>
+</body>
+</html>

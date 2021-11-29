@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이 리포트</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_mypage footer_no">
+	<header class="health_header">
+		<div class="inbtn">
+			<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+			<h1>공유 설정</h1>
+		</div>
+		<div class="user"><button type="button">홍길동</button></div>
+		<!-- user class 가이드
+	      패키지 구매회원의 경우 : .package 추가
+	      신규 알림 있을 시 : .on 추가
+	    -->
+	</header>
+	<div class="health_container">
+	
+	</div>
+</div>
+
+<!-- 포인트 획득 팝업(FMY-027) -->
+<div class="health_toast" id="popPoint" style="display: none;">
+	<div class="inner">
+		<button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+		<div class="health_toast_cont">
+			<p class="health_toast_tit">100P를<br>달성하였어요!</p>
+			<p class="health_toast_dsec">50,000보 걷기를 리포트를 달성하여<br>포인트를 획득하였습니다.</p>
+			<div class="health_toast_img">
+				<!-- <img src="" alt="" class=""> -->
+				<span class="img_caption">포인트 이미지</span>
+			</div>
+			<!-- <div class="progress_wrap lv_progress">
+				<div class="now_wrap">
+					<span class="now"><span>1,400</span>P</span>
+				</div>
+				<div class="progress"><i></i></div>
+			</div>
+			<div class="step_wrap">
+				<span>MARS</span>
+				<span class="point total">2000P</span>
+			</div> -->
+		</div>
+		<div class="btn_wrap">
+			<button type="button" class="btn_pop_black2">공유하기</button>
+		</div>
+	</div>
+</div>
+<!-- //포인트 획득 팝업(FMY-027) -->
+<!-- 뱃지 획득 팝업(FMY-021) -->
+<div class="health_full footer_no type_reward actived" id="popBadgeAcq" style="display: block;">
+<div class="inner">
+	<div class="pop_wrap">
+	<div class="pop_header">
+		<div class="header_wrap">
+		<h1 class="hidden">리워드 획득</h1>
+		<button type="button" class="btn_close ui-close ver02"><span class="hidden">닫기</span></button>
+		</div>
+	</div>
+	<!-- //pop header -->
+
+	<div class="pop_container">
+		<div class="con_inner">
+		<div class="con_box">
+			<div class="pop_con">
+			<!-- 팝업 내용 -->
+			<p class="health_toast_tit">리워드 획득</p>
+			<!-- 20210719 마크업 변경 -->
+			<div class="health_toast_img graph">
+				<div class="reward_wrap">
+					<p><span class="coin">1400</span>건강설문참여하기<br>완료!</p>
+				</div>
+			</div>
+			<!-- //20210719 마크업 변경 -->
+			<div class="step_wrap">
+				<span class="now">Basic 1,400</span>
+				<span class="point total">Jupiter 5,000</span>
+			</div>
+			<div class="progress_wrap">
+				<div class="progress"><i></i></div>
+			</div>						
+
+			<!-- //팝업내용 -->
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- //pop container -->
+
+	
+	</div>
+
+</div>
+</div>
+<!-- //뱃지 획득 팝업(FMY-021) -->
+
+
+<script>
+	$(function(){
+			progressAnimation();
+	});
+
+	//숫자만
+	var onlyNumber = function(num){
+			return num.toString().replace(/[^0-9]/g,'');
+	};
+	//콤마넣기
+	var addComma = function(num){
+			return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+	};
+	//프로그레스 animation
+	var progressAnimation = function(){
+			var $now = parseInt(onlyNumber($('.now').text()),10);
+			var $total = parseInt(onlyNumber($('.total').text()),10);
+			var $per = ($now/$total) * 100;
+			$( 'progress' ).val($per);
+			$( '.progress i' ).animate({
+					width: $per+'%'
+			},{
+				duration : Math.max(500,$now), //속도
+				step: function( now, fx ) {
+						var $nowval = Math.round(($now / fx.end) * now);
+						if(isNaN($nowval)) $nowval = 0;
+						$('.now span').text(addComma($nowval));
+						var $nowWidth = $('.now').width();
+						var $nowMargin = $nowWidth / 2;
+						var $nowLeft = $('.progress i').width() - $nowMargin;
+						var $nowRight = $('.progress i').width() + $nowMargin
+						var $wrapWidth = $('.progress').width();
+						if($nowLeft > 0 && $nowRight < $wrapWidth){
+						// $('.now').css({
+						// 		'left':now+'%',
+						// 		'margin-left':-($nowMargin)
+						// });
+						}
+				}
+			});
+	}
+</script>
+
+</body>
+</html>

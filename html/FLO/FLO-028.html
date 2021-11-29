@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <title>휴면 계정 전환 안내 이메일 안내 팝업</title>
+
+</head>
+<body style="margin:0;padding:0;max-width:750px;font-size:16px;font-weight:400;line-height:1.5;color:#666;letter-spacing:-0.5px">
+    <div>
+        <div style="padding:40px 32px ; background:#00264a;">
+            <strong style="color:#fff;font-size:26px;line-height:35px;font-weight:800;">Tune H 휴면 계정<span style="display:block;">전환 안내입니다.</span></strong>
+        </div>
+        <div style="padding: 28px 32px 50px;">
+            <p style="font-size: 16px; line-height: 26px; color: #000;">안녕하세요. <span style="display: block;">Tune H를 이용해 주셔서 감사드립니다.</span></p>
+            <p style="margin-top: 10px; font-size: 16px; line-height: 26px; color: #000;">
+                안녕하세요, <span>홍*동</span> 회원님!
+                <span style="display: block;">회원님은 <span>YYYY</span>년 <span>MM</span>월 <span>DD</span>일에</span> 휴면계정으로 전환되었습니다.
+            </p>
+            <p style="margin-top: 10px; font-size: 16px; line-height: 26px; color: #000;">
+                서비스를 이용하시려면 <span style="display: block;">아래 고객센터로 문의 바랍니다.</span>
+            </p>
+            <p style="margin-top: 10px; font-size: 16px; line-height: 26px; color: #000;">
+                감사합니다.
+            </p>
+            <div style="margin:28px 0;padding:24px 24px;background:#F6F7F8;font-size:16px;font-weight:bold;line-height:26px;color:#000;">
+                <a href="javascript:void(0);" onclick="netiveUI.plugins.popAlert('#alertCscenter');">고객센터 <span>0000-0000</span></a>
+            </div>
+        </div>
+        <div style="font-size:14px;line-height:22px;color:#999;padding:40px 32px;background:#F6F7F8;">
+            본 메일은 고객님의 이메일 수신동의 여부와 관계없이 발송됩니다. 본 메일은 발신 전용 메일입니다.<br>
+            문의 사항은 [문의하기] 또는 ARS 고객센터[02-6330-3410]를 이용하시기 바랍니다.
+        </div>
+        <div style="padding:40px 32px 60px;">
+            <img style="width:89px;height:36px;margin-bottom:16px;" src="../../resources/img/img_email_logo.png">
+            <p style="font-size:13px;color:#999;line-height:22px;margin:0;">시그나 코리아(주) | 03156 서울특별시 종로구 삼봉로48(청진동 188) 시그나타워</p>
+            <p style="font-size:13px;color:#999;line-height:22px;margin:0;"> 대표이사 : 김양호 | 사업자등록번호 : 396-86-00109</p>
+            <p style="font-size:13px;color:#999;line-height:22px;margin:0;">Copyright©Cigna Korea Company. All rights reserved.</p>
+        </div>
+    </div>
+
+
+    <!-- 팝업 -->
+    <!-- case 01 : 고객센터 전화번호 또는 아이콘 선택 시 alert 메시지 -->
+    <!-- 20210730 고객센터 연결 alert -->
+    <div id="alertCscenter" class="health_alert" style="display: none;">
+        <div class="inner">
+        <p class="msg">고객센터로 전화연결을<br> 진행하시겠습니까?</p>
+
+        <div class="btn_wrap">
+            <button type="button" class="btn_pop_line_dark ui-close">취소</button>
+            <button type="button" onclick="document.location.href='tel:1544-0000'" class="btn_pop_dark">고객센터 연결</button>
+        </div>
+        </div>
+    </div>
+    <!-- //20210730 고객센터 연결 alert -->
+</body>
+</html>

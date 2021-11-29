@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap footer_no"> 
+	<header class="health_header">
+		<h1>hello</h1>
+	</header>
+	<div class="health_container">
+	
+	</div>
+</div>
+	<!-- 뱃지 획득 팝업(FMY-021) -->
+  <div class="health_full footer_no type_reward actived " id="popBadgeAcq" style="display: block;">
+    <div class="inner">
+      <div class="pop_wrap">
+        <div class="pop_header">
+			<!-- <div class="user">
+					<span>홍길동</span>
+			</div> -->
+          <div class="header_wrap">
+            <h1 class="hidden">리워드 획득</h1>
+            <!-- <button type="button" class="btn_close ui-close ver02"><span class="hidden">닫기</span></button> -->
+          </div>
+        </div>
+        <!-- //pop header -->
+
+        <div class="pop_container main_reward">
+          <div class="con_inner">
+            <div class="con_box">
+              <div class="pop_con">
+                <!-- 팝업 내용 -->
+                <p class="health_toast_tit">리워드 획득</p>
+				<div class="health_toast_img">
+					<div class="reward_wrap">
+						<p class="reward_t">
+							<span class="coin">1400</span>
+							<span class="sub">건강설문참여하기<br>완료!</span>
+						</p>
+					</div>
+                </div>
+				<div class="step_wrap">
+					<span class="now">Basic 1,400</span>
+					<span class="point total">Jupiter 5,000</span>
+				</div>
+				<div class="progress_wrap">
+					<div class="progress"><i></i></div>
+				</div>
+							
+                <!-- //팝업내용 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //pop container -->
+      </div>
+
+    </div>
+  </div>
+  <!-- //뱃지 획득 팝업(FMY-021) -->
+
+
+	<script>
+		$(function(){
+			progressAnimation();
+		});
+
+		//숫자만
+		var onlyNumber = function(num){
+			return num.toString().replace(/[^0-9]/g,'');
+		};
+		//콤마넣기
+		var addComma = function(num){
+			return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+		};
+		//프로그레스 animation
+		var progressAnimation = function(){
+			var $now = parseInt(onlyNumber($('.now').text()),10);
+			var $total = parseInt(onlyNumber($('.total').text()),10);
+			var $per = ($now/$total) * 100;
+			$( 'progress' ).val($per);
+			$( '.progress i' ).animate({
+					width: $per+'%'
+			},{
+				duration : Math.max(500,$now), //속도
+				step: function( now, fx ) {
+					var $nowval = Math.round(($now / fx.end) * now);
+					if(isNaN($nowval)) $nowval = 0;
+					$('.now span').text(addComma($nowval));
+					var $nowWidth = $('.now').width();
+					var $nowMargin = $nowWidth / 2;
+					var $nowLeft = $('.progress i').width() - $nowMargin;
+					var $nowRight = $('.progress i').width() + $nowMargin
+					var $wrapWidth = $('.progress').width();
+					if($nowLeft > 0 && $nowRight < $wrapWidth){
+						// $('.now').css({
+						// 		'left':now+'%',
+						// 		'margin-left':-($nowMargin)
+						// });
+					}
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>

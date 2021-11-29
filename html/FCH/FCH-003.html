@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강설문</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/jquery-ui.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/jquery-ui.js"></script>
+  <script src="../../resources/js/jquery-touch-punch.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body class="type_content">
+  <div class="health_wrap">
+    <div class="health_container">
+    
+    </div>
+    <!--// health_container -->
+  </div>
+ 
+  <!-- popup -->
+  <div class="health_full survey_pop actived" id="full001" style="display: block;">
+    <div class="inner">
+      <div class="pop_wrap">
+        <div class="pop_header">
+          <div class="header_wrap">
+            <!-- <h1>건강설문</h1> -->
+            <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+          </div>
+        </div>
+        <!-- //pop header -->
+
+        <div class="pop_container">
+          <div class="con_inner">
+            <div class="con_box">
+              <div class="pop_con">
+                <!-- 팝업 내용 -->
+                <!-- Swiper -->
+                  <div class="swiper-container survey_Swiper">
+                    <div class="swiper-wrapper">
+                      <!-- slider00 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con textEffect1"> <!--20210827 'textEffect1' class 추가-->
+                            <p class="tit mt20 tb01"> <!--20210827 'tb01' class 추가-->
+                              안녕하세요.<br><span>현지</span> 님. <!--20210827 span 태그 추가-->
+                            </p>
+                            <p class="tit mt20 tb02"> <!--20210827 'tb02' class 추가-->
+                              개인 평가에<br>오신 것을 환영합니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider00 -->
+                      <!-- slider01 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con s1 textEffect2"> <!--20210827 'textEffect2' class 추가-->
+                            <p class="tit mt20 tb01"> <!--20210827 'tb01' class 추가-->
+                              회원님의 라이프<br>스타일과 웰빙을<br>파악하기 위한 몇 가지<br>질문이 있습니다.
+                            </p>
+                            <p class="tit mt20 tb02"> <!--20210827 'tb02' class 추가-->
+                              이 답변을 바탕으로 <br>첫 건강스코어 을(를)<br>알려 드리겠습니다.
+                            </p>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b1">
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="no" name="yn01" class="yn"><label for="no" class="btn_yn"><span>다음에</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="yes" name="yn01" class="yn"><label for="yes" class="btn_yn"><span>좋아요, 시작해요!</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider01 -->
+                      <!-- slider02 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              첫 건강 스코어를<br>계산하여 제공하기<br>위해 지금부터<br>14가지 질문을<br>드리겠습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider02 -->
+                      <!-- slider03 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              3~4분이면<br>충분합니다.<br>그럼, 시작할까요?
+                            </p>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b3">
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="yes02" name="yn02" class="yn"><label for="yes02" class="btn_yn"><span>네, 준비됐어요</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider03 -->
+                      <!-- slider04 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">1</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              불안하거나<br>스트레스를 받고<br>계신가요?
+                            </p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg01.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b4">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg01.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <!-- ui bar -->
+                                <div class="survey_ui">
+                                  <div id="slider-range-max" class="bar01"></div>
+                                  <div class="s_dot">
+                                    <ul>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                    </ul>
+                                    <div class="s_dot_txt">
+                                      <span>전혀</span>
+                                      <span>매우</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- //ui bar -->
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider04 -->
+                      <!-- slider05 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">2</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              현재<br>수면의 질에 대해<br>만족하시나요?
+                            </p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg02.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b5">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg02.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <!-- ui bar -->
+                                <div class="survey_ui">
+                                  <div id="slider-range-max" class="bar02"></div>
+                                  <div class="s_dot">
+                                    <ul>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                    </ul>
+                                    <div class="s_dot_txt">
+                                      <span>전혀</span>
+                                      <span>매우</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- //ui bar -->
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider05 -->
+                      <!-- slider06 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">3</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              일주일에 몇 시간<br>운동하세요?
+                            </p>
+                            <p class="sub mt15">* 숨이 차기 시작한 횟수를<br>입력해주세요</p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg03.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b6">
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_survey_wrap">
+                                  <input type="number" class="input_srvey" placeholder="숫자를 입력하세요.">
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom-->
+                        </div>
+                      </div>
+                      <!-- //slider06 -->
+                      <!-- slider07 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              답변해 주셔서<br>감사합니다.
+                            </p>
+                            <p class="tit mt20">
+                              회원님의 건강과<br>라이프스타일을<br>그려보고 있습니다!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider07 -->
+                      <!-- slider08 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              WHO에서는 일주일에<br>최소 2.5~5시간 정도<br>중간 강도의 운동을<br>권장합니다.
+                            </p>
+                            <p class="tit mt20">
+                              이 범위에서<br>상위에 해당하시네요.
+                            </p>
+                            <p class="tit mt20">
+                              훌륭해요!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider08 -->
+                      <!-- slider09 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              운동이 부족해요.
+                            </p>
+                            <p class="tit mt20">
+                              WHO에서는 일주일에<br>최소 2.5~5시간 정도<br>중간 강도의 운동을<br>권장합니다.
+                            </p>
+                            <p class="tit mt20">
+                              지금 바로 시작할 필요는<br>없지만, 일주일에<br>몇분 2~3회만 운동해도<br>변화를 느낄 수 있을 거예요. </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider09 -->
+                      <!-- slider10 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">4</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              이제 식단에 대한<br>7가지 질문이 있습니다.<br>시작하기 전에,<br>선호하는 식이요법이<br>있으신가요?</p>
+                              <div class="bg_box">
+                                <img src="../../resources/img/@survey_bg04.png"/>
+                              </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b10">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg04.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food01" name="yn03" class="yn"><label for="food01" class="btn_yn"><span>채식주의자
+                                    <em>식물 기반 식품 뿐만 아니라 살아
+                                    있는 동물에서 파생된 식품도 먹음</em></span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food02" name="yn03" class="yn"><label for="food02" class="btn_yn"><span>극단적 채식주의자</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food03" name="yn03" class="yn"><label for="food03" class="btn_yn"><span>생선허용 채식주의자</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food04" name="yn03" class="yn"><label for="food04" class="btn_yn"><span>해당 사항 없음</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- // bottom-->
+                        </div>
+                      </div>
+                      <!-- //slider10 -->
+                      <!-- slider11 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              훌륭해요.
+                            </p>
+                            <p class="tit mt20">
+                              알려줘서<br>고맙습니다!</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider11 -->
+                      <!-- slider12 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              이 질문에 답하실 때,<br>지난 몇 주간의<br>식습관에 대해<br>생각해 보세요.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider12 -->
+                      <!-- slider13 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">5</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              하루에 과일을<br>2인분 이상 드시나요?</p>
+                            <p class="sub mt15">* 1인분 = 2,600 kcal</p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg05.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b13">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg05.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food05" name="yn04" class="yn"><label for="food05" class="btn_yn"><span>항상</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food06" name="yn04" class="yn"><label for="food06" class="btn_yn"><span>종종</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food07" name="yn04" class="yn"><label for="food07" class="btn_yn"><span>때때로</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food08" name="yn04" class="yn"><label for="food08" class="btn_yn"><span>거의 안 함</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food09" name="yn04" class="yn"><label for="food09" class="btn_yn"><span>전혀 안 함</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom-->
+                        </div>
+                      </div>
+                      <!-- //slider13 -->
+                      <!-- slider14 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">6</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              하루에 야채를<br>2인분 이상 드시나요?</p>
+                            <p class="sub mt15">* 1인분 = 2,600 kcal</p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg06.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b14">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg06.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food10" name="yn05" class="yn"><label for="food10" class="btn_yn"><span>항상</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food11" name="yn05" class="yn"><label for="food11" class="btn_yn"><span>종종</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food12" name="yn05" class="yn"><label for="food12" class="btn_yn"><span>때때로</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food13" name="yn05" class="yn"><label for="food13" class="btn_yn"><span>거의 안 함</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food14" name="yn05" class="yn"><label for="food14" class="btn_yn"><span>전혀 안 함</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom-->
+                        </div>
+                      </div>
+                      <!-- //slider14 -->
+                      <!-- slider15 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">7</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              하루에 무염 견과류,<br>견과 버터, 씨앗류를<br>1인분 이상 드시나요?</p>
+                            <p class="sub mt15">* 1인분 = 2,600 kcal</p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg07.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b15">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg07.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food15" name="yn05" class="yn"><label for="food15" class="btn_yn"><span>항상</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food16" name="yn05" class="yn"><label for="food16" class="btn_yn"><span>종종</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food17" name="yn05" class="yn"><label for="food17" class="btn_yn"><span>때때로</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food18" name="yn05" class="yn"><label for="food18" class="btn_yn"><span>거의 안 함</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food19" name="yn05" class="yn"><label for="food19" class="btn_yn"><span>전혀 안 함</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom-->
+                        </div>
+                      </div>
+                      <!-- //slider15 -->
+                      <!-- slider16 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">8</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              하루에 가당 음료를<br>1잔 넘게 드시나요?</p>
+                            <p class="sub mt15">* 1잔 = 200 ml</p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg08.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b16">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg08.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food20" name="yn07" class="yn"><label for="food20" class="btn_yn"><span>항상</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food21" name="yn07" class="yn"><label for="food21" class="btn_yn"><span>종종</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food22" name="yn07" class="yn"><label for="food22" class="btn_yn"><span>때때로</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food23" name="yn07" class="yn"><label for="food23" class="btn_yn"><span>거의 안 함</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food24" name="yn07" class="yn"><label for="food24" class="btn_yn"><span>전혀 안 함</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider16 -->
+                      <!-- slider17 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              아쉽게도 쓸모없는<br>칼로리 섭취를 끊을 수<br>있는 좋은 기회를<br>놓치고 계시네요.
+                            </p>
+                            <p class="tit mt20">
+                              가당 음료는 열량은<br>많지만 건강한 영양소가<br>없습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider17 -->
+                      <!-- slider18 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              좋아요.<br>계속하겠습니다!
+                            </p>
+                            <p class="tit mt20">
+                              식습관에 대한<br>단 3가지 질문이<br>더 있습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider18 -->
+                      <!-- slider19 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">9</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              정제곡물 대신<br>통곡물 제품을<br>얼마나 자주 선택하세요?</p>
+                            <p class="sub mt15">* (예) 흰쌀 대신 현미</p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg09.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b19">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg09.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food25" name="yn08" class="yn"><label for="food25" class="btn_yn"><span>항상</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food26" name="yn08" class="yn"><label for="food26" class="btn_yn"><span>종종</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food27" name="yn08" class="yn"><label for="food27" class="btn_yn"><span>때때로</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food28" name="yn08" class="yn"><label for="food28" class="btn_yn"><span>거의 안 함</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food29" name="yn08" class="yn"><label for="food29" class="btn_yn"><span>전혀 안 함</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider19 -->
+                      <!-- slider20 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">10</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              얼마나 자주<br>무의식적으로<br>간식을 드시나요?</p>
+                              <div class="bg_box">
+                                <img src="../../resources/img/@survey_bg10.png"/>
+                              </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b20">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg10.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food30" name="yn09" class="yn"><label for="food30" class="btn_yn"><span>항상</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food31" name="yn09" class="yn"><label for="food31" class="btn_yn"><span>종종</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food32" name="yn09" class="yn"><label for="food32" class="btn_yn"><span>때때로</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food33" name="yn09" class="yn"><label for="food33" class="btn_yn"><span>거의 안 함</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food34" name="yn09" class="yn"><label for="food34" class="btn_yn"><span>전혀 안 함</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider20 -->
+                      <!-- slider21 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">11</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              얼마나 자주<br>주식을 매일 2끼 또는<br>매일 3끼로 드시나요?</p>
+                              <p class="sub mt15">* 한끼 = 2,600 kcal</p>
+                              <div class="bg_box">
+                                <img src="../../resources/img/@survey_bg11.png"/>
+                              </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b21">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg11.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food35" name="yn10" class="yn"><label for="food35" class="btn_yn"><span>항상</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food36" name="yn10" class="yn"><label for="food36" class="btn_yn"><span>종종</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food37" name="yn10" class="yn"><label for="food37" class="btn_yn"><span>때때로</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food38" name="yn10" class="yn"><label for="food38" class="btn_yn"><span>거의 안 함</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food39" name="yn10" class="yn"><label for="food39" class="btn_yn"><span>전혀 안 함</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider21 -->
+                      <!-- slider22 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              대단히 잘하셨습니다!<br>식단과 영양에 대해<br>전반적으로<br>알아보았습니다. <br>거의 끝나갑니다.<br>마지막 주제에 대한<br>몇 가지 질문만<br>남았습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider22 -->
+                      <!-- slider23 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">12</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              현재 흡연을<br>하시나요?</p>
+                              <div class="bg_box">
+                                <img src="../../resources/img/@survey_bg12.png"/>
+                              </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b23">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg12.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food40" name="yn11" class="yn"><label for="food40" class="btn_yn"><span>예</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food41" name="yn11" class="yn"><label for="food41" class="btn_yn"><span>아니오</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider23 -->
+                      <!-- slider24 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              훌륭해요.<br>흡연을 하신적이<br>전혀 없으시군요.<br>더 이상 질문이<br>없습니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //slider24 -->
+                      <!-- slider25 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">13</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              몇 년 동안<br>흡연을<br>하셨나요?
+                            </p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg12.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b25">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg12.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_survey_wrap">
+                                  <input type="number" class="input_srvey" placeholder="숫자를 입력하세요.">
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider25 -->
+                      <!-- slider26 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">14</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              어떤 담배를<br>주로 피우시나요?</p>
+                              <div class="bg_box">
+                                <img src="../../resources/img/@survey_bg12.png"/>
+                              </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b26">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg12.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food42" name="yn12" class="yn"><label for="food42" class="btn_yn"><span>담배</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food43" name="yn12" class="yn"><label for="food43" class="btn_yn"><span>시가</span></label>
+                                </div>
+                                <div class="i_wrap">
+                                  <input type="radio" id="food44" name="yn12" class="yn"><label for="food44" class="btn_yn"><span>파이프</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider26 -->
+                      <!-- slider27 -->
+                      <div class="swiper-slide qlist">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <div class="paging_num">
+                              <div class="img_wrap">
+                                <img src="../../resources/img/sevent/senven_hra_01.png" alt="">
+                              </div>
+                              <span class="name">에스쿱스</span>
+                              <div class="new_paging">
+                                <span class="now">15</span> / <span class="total"></span>
+                              </div>
+                            </div>
+                            <p class="tit">
+                              하루에 얼마나<br>많은 담배를<br>피우거나 피웠나요?
+                            </p>
+                            <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg12.png"/>
+                            </div>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b27">
+                            <!-- <div class="bg_box">
+                              <img src="../../resources/img/@survey_bg12.png"/>
+                            </div> -->
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_survey_wrap">
+                                  <input type="number" class="input_srvey" placeholder="숫자를 입력하세요.">
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider27 -->
+                      <!-- slider28 -->
+                      <div class="swiper-slide">
+                        <div class="survey_con">
+                          <div class="s_con">
+                            <p class="tit mt20">
+                              이제 첫 건강 스코어<br>제공에 필요한<br>모든 정보를 받았습니다.<br>준비되셨나요?</p>
+                          </div>
+                          <!-- bottom -->
+                          <div class="bottom_box b28">
+                            <div class="btn_wrap">
+                              <div class="survey_chk">
+                                <div class="i_wrap">
+                                  <input type="radio" id="food45" name="yn13" class="yn"><label for="food45" class="btn_yn"><span>예, 제 건강 스코어을(를)<br>
+                                    보여주세요!</span></label>
+                                </div>
+                              </div>
+                              <button type="button" class="btn_pop_black2 nextBtn">다음</button>
+                            </div>
+                          </div>
+                          <!-- //bottom -->
+                        </div>
+                      </div>
+                      <!-- //slider28 -->
+                    </div>
+                  </div>
+                <!-- //Swiper -->
+                <!-- //팝업내용 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //pop container -->
+        <!-- <div class="btn_wrap">
+          <button type="button" class="btn_pop_black2">다음</button>
+        </div>  -->
+        <!-- // pop btn -->
+      </div>
+    </div>
+  </div>
+  <!-- X 버튼 터치시 활성화 -->
+  <div class="hra_dim_wrap" style="display: none;">
+    <div class="hra_dim_container">
+      <div class="hra_dim_mother">
+        <div class="hra_dim_cover">
+          <div class="hra_dim_tit">
+            <div class="img_wrap">
+              <img src="../../resources/img/sevent/seven_m_01.png" alt="">
+            </div>
+            <p class="img_wrap_txt">에스쿱스</p>
+          </div>
+          <div class="hra_dim_txt">
+            <p>건강설문을 완료하시면 건강 점수 확인과 함께 나에게 필요한 목표를 추천 받을 수 있어요. <br>완료하고 포인트도 챙기세요!</p>
+          </div>
+        </div>
+        <div class="hra_dim_btn">
+          <button type="button" class="btn_base_02 line left">그만하기</button>
+          <button type="button" class="btn_base_02 right">계속하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- X 버튼 터치시 활성화 -->
+  <!-- // -->
+  <script>
+    $(document).ready(function(){
+        //화면 높이값 관련
+        var ph = (window.innerHeight - 99) + 'px'; //20210913
+        var bch = $('.s_con + .btn_wrap').outerHeight();
+        $('.survey_pop .pop_container').css({'height' : ph});
+        $('.survey_con').css({'height' : ph});
+        $('.s_con').css({'height' : ph});
+
+        //20210827 text fadeIn
+        $('.textEffect1').textEffect({
+          type: 'delay',
+          delay: 1 //20210903 텍스트 효과 재생 속도
+        });
+
+
+        //슬라이더 타입
+        var pageType1 = function(n) {
+          setTimeout(function(){
+            surveySlider.slideTo(n) 
+          },3500); //20210903 슬라이더 재생 속도
+        };
+        
+        //전체 슬라이더 
+        var surveySlider = new Swiper(".survey_Swiper", {
+          allowTouchMove: false,
+          navigation: {
+            nextEl : '.nextBtn',
+            hideOnClick : true
+          },
+          on :{
+            init: function () {              
+              pageType1(1);
+            },
+            slideChange: function () {
+              //텍스트만 있는 경우
+              var num = 0;
+              var idxArray = [2, 7, 8, 9, 11, 12, 17, 18, 22, 24];
+              for(key in idxArray){
+                // console.log(idxArray[key])     
+
+                if(surveySlider.realIndex === idxArray[key]) {
+                  num = surveySlider.realIndex + 1;
+                  pageType1(num);
+                }       
+              }
+              //20210827 text fadeIn
+              $('.textEffect2').textEffect({
+                  type: 'delay',
+                  delay: 1 //20210903
+              });               
+            },
+            activeIndexChange: function(){
+              
+              // 하단 인풋 올라오는 경우
+              $('.swiper-slide').removeAttr('id', 'thisOn');
+              $('.swiper-slide').eq(this.realIndex).attr('id', 'thisOn');
+              var bh = $('#thisOn > .survey_con > .bottom_box > .btn_wrap').innerHeight();
+              $(".bottom_box").css({'bottom' : - bh});
+              
+              if(surveySlider.realIndex === 1, 3, 4, 5, 6, 10, 13, 14, 15, 16, 19, 20, 21, 22, 23, 25, 26, 27, 28) {
+                var sIndex = surveySlider.realIndex;
+                var bName = $('.b'+ sIndex);
+                
+                $('.s_con').not(("[class*='textEffect']")).find('p').fadeOut(0); //20210827
+                $('.s_con').not(("[class*='textEffect']")).find('p').fadeIn(2000); //20210827
+
+                setTimeout(function(){
+                  bName.css({
+                    "bottom":"0",
+                    "transition":"all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0s" //20210831
+                  });
+                  // bName.children().children('img').css({
+                  //   "opacity":"0.2",
+                  //   "transition-duration":"1s"
+                  // });
+                },3500); //20210903 속도 변경
+              }
+            }          
+          }
+        });
+
+        //페이징
+        var total = $('.qlist').length;
+        // console.log(page);
+        $('.total').html(total);
+
+
+        //ui bar
+        $(function() {
+          $( ".bar01" ).slider({
+            range: "max",
+            min: 1,
+            max: 5,
+            value: 3
+          });
+        });
+        $(function() {
+          $( ".bar02" ).slider({
+            range: "max",
+            min: 1,
+            max: 5,
+            value: 3
+          });
+        });
+    });
+  </script>
+</body>
+</html>

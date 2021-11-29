@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>활동 세부사항</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/swiper.min.js"></script> <!--20210714 추가-->
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css"> <!--20210730 css위치 변경-->
+</head>
+<body>
+<div class="health_wrap type_goal">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>활동 세부사항</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container pt20">
+    <div class="card_wrap card_view">
+      <div class="card">
+        <div class="card_info">
+          <div class="card_profile"><img src="../../resources/img/img_cigna.png" alt=""></div>
+          <p class="card_date"><span>2021.05.19. 05:30</span><strong class="name">Eric Jung</strong></p>
+        </div>
+        <div class="card_cont">
+          <p class="card_desc">
+            걷기 활동을 하고 있습니다.<br>
+            2시간 동안 활동 상태였습니다.
+          </p>
+          <!-- 20211012 state 상태값 class guide 
+              awesome, happy, ok, low, sore
+          -->
+          <p class="card_data state awesome">기분 최고!</p>
+          <p class="card_data state happy">기분 행복</p>
+          <p class="card_data state ok">기분 보통</p>
+          <p class="card_data state low">기분 기운없음</p>
+          <p class="card_data state sore">기분 화남</p>
+          <p class="card_data activity">296kcal(81.2 MET h)</p>
+          <p class="card_data location">Seoul, Korea</p>
+          <!-- 20211012 weather 상태값 class guide 
+              clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night 
+          -->
+          <p class="card_data weather clear-day">맑은 낮, 6ºC</p>
+          <p class="card_data weather clear-night">밤, 6ºC</p>
+          <p class="card_data weather rain">비, 6ºC</p>
+          <p class="card_data weather snow">눈, 6ºC</p>
+          <p class="card_data weather sleet">진눈깨비, 6ºC</p>
+          <p class="card_data weather wind">바람, 6ºC</p>
+          <p class="card_data weather fog">안개, 6ºC</p>
+          <p class="card_data weather cloudy">구름, 6ºC</p>
+          <p class="card_data weather partly-cloudy-day">부분적으로 흐린 낮, 6ºC</p>
+          <p class="card_data weather partly-cloudy-night">부분적으로 흐린 밤, 6ºC</p>
+          <div class="card_data_box">
+            <p><em>평균 에너지</em>465W</p>
+            <p><em>평균 심박수</em>100bpm</p>
+            <p><em>추적 소스</em>dacadoo 직접입력</p>
+          </div>
+          <!-- 20210803 -->
+          <div class="file_upload_wrap inp_wrap pl0">
+            <div class="align_right_wrap">
+              <!-- 20210906 활동 사진 등록 텍스트 삭제 -->
+              <div class="swiper-container upload_slider">
+                <div class="swiper-wrapper" id="mySwiperFile">
+                  <!--20210803 id 'mySwiperFile' 추가, 하위 내용 script 에서 출력-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //20210803 -->
+          <div class="card_comment_area">
+            <div class="card_util">
+              <div>
+                <a href="#" class="data_like on"><span>266</span></a><!--활성화시 'on' 클래스 부여 -->
+                <a href="#" class="data_comment"><span>1,466</span></a>
+              </div>
+              <!-- 20210719 공유하기 버튼 삭제 -->
+            </div>
+            <div class="card_commentlist">
+              <div class="comment"> <!--20210607 'card_info'클래스 삭제-->
+                <div class="card_profile"><img src="../../resources/img/img_cigna.png" alt=""></div>
+                <!-- 20210607 마크업 변경 -->
+                <div class="card_commnet_cont">
+                  <p class="card_date"><strong class="name">Eric Jung</strong><span>2021.05.19. 05:30</span></p>
+                  <p class="card_txt">정말 멋지네요 저도 아침운동은<br> 꼭 해보고 싶었어요</p>
+                  <button type="button" class="btn_cmclose"><span class="blind">닫기</span></button> <!--20210719 닫기 버튼 추가-->
+                </div>
+                <!-- //20210607 마크업 변경 -->
+              </div>
+              <div class="comment"><!--20210607 'card_info'클래스 삭제-->
+                <div class="card_profile"><img src="../../resources/img/img_cigna.png" alt=""></div>
+                <!-- 20210607 마크업 변경 -->
+                <div class="card_commnet_cont">
+                  <p class="card_date"><strong class="name">Eric Jung</strong><span>2021.05.19. 05:30</span></p>
+                  <p class="card_txt">정말 멋지네요 저도 아침운동은<br> 꼭 해보고 싶었어요</p>
+                  <button type="button" class="btn_cmclose"><span class="blind">닫기</span></button> <!--20210719 닫기 버튼 추가-->
+                </div>
+                <!-- //20210607 마크업 변경 -->
+              </div>
+              <div class="card_textarea">
+                <textarea name="" id="" rows="1" placeholder="메모를 입력하세요"></textarea> <!--20210719 워딩 수정-->
+                <button type="button" class="btn_register">등록</button>
+              </div>
+            </div>
+          </div>
+          <div class="btn_wrap"><button type="button" class="btn_delete">활동삭제</button></div>
+        </div>              
+      </div>
+    </div>
+  </div>
+  <div class="btn_btm_fixed">
+    <button type="button" class="btn">저장하기</button>
+  </div>
+</div>
+</body>
+<script>
+  // 20210803 script 내용 변경
+  var myFileUpLoad = {
+    $targetAppend: null,
+    targetSlide: null,
+    swiperFile: null,
+    showFile: function (input, idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $slide.find('.img_upload_wrap').hide();
+          $slide.find('.file_upload_img').attr('src', e.target.result);
+          $slide.find('.file_upload_cont').show();
+          $slide.find('.img_title').html(input.files[0].name);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    },
+    deleteFile: function (idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      o.swiperFile.removeSlide($(o.swiperFile.slides).index($slide));
+    },
+    createFile: function (idx) {
+      var o = this;
+
+      // 새로운 파일 영역 prepend
+      o.swiperFile.prependSlide(o.picHtml(idx));
+    },
+    readURL: function (input, idx) { // 파일 선택시 실행
+      var o = this;
+
+      // swiper 최초 1회 실행(첫 이미지 등록)
+      if (input.files.length === 1) {
+        o.swiperFile = new Swiper(".upload_slider", {
+          loop: false,
+          slidesPerView: "auto",
+          spaceBetween: 11,
+          observer: true,
+          observeParents: true,
+        });
+      }
+
+      o.showFile(input, idx); // file 숨기고, 이미지 보여주기
+
+      o.createFile(idx + 1);
+    },
+    picHtml: function (idx) {
+      var o = this;
+      var picHtml = ''
+        + '<div class="swiper-slide" id="' + (o.targetSlide + idx) + '">'
+        + '  <div class="inp_wrap file_upload">'
+        + '    <div class="img_upload_wrap">'
+        + '      <input type="file" name="myPic' + idx + '" onchange="myFileUpLoad.readURL(this, ' + idx + ');" accept="image/*" class="ipt_upload_file">'
+        + '    </div>'
+        + '    <div class="file_upload_cont">'
+        + '      <img class="file_upload_img" src="#" alt="your image">'
+        + '      <button type="button" onclick="myFileUpLoad.deleteFile(' + idx + ');" class="remove_img"><span class="img_title">Uploaded Image</span></button>'
+        + '    </div>'
+        + '  </div>'
+        + '</div>';
+      return picHtml;
+    },
+    init: function (idx) {
+      var o = this;
+      o.$targetAppend = $('#mySwiperFile');
+      o.targetSlide = 'myPic';
+
+      o.$targetAppend.append(o.picHtml(idx));
+    }
+  }
+  $(document).ready(function () {
+    myFileUpLoad.init(0);
+  });
+</script>
+<script>
+  // 20210803 .upload_slider 삭제
+  // 20210803 팝업에 나오는 기능은 샘플 참고 요청
+  var swiper = new Swiper(".upload_slider2", {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 11,
+    observer: true,
+    observeParents: true,
+  });
+</script>
+
+</html>
+</html>

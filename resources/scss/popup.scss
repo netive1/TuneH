@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+$pop-color-default: #fff;
+
+@mixin alertButton(
+  $color: $pop-color-default,
+  $bgColor: $pop-color-default,
+  $borderColor: $pop-color-default
+) {
+  width: 100%;
+  padding: 13px 0 11px;
+  color: $color;
+  background-color: $bgColor;
+  border: 1px solid $borderColor;
+  border-radius: 26px;
+}
+
+.health_alert {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  &:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1001;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  &.actived {
+    & > .inner {
+      opacity: 1;
+      top: 20%;
+    }
+  }
+  & > .inner {
+    position: absolute;
+    z-index: 1001;
+    left: 50%;
+    top: 22%;
+    opacity: 0;
+    width: calc(100% - 64px);
+    transform: translateX(-50%);
+    padding: 30px 30px 25px;
+    background-color: $pop-color-default;
+    border-radius: 18px;
+    transition: all 0.3s ease-in;
+    & > .msg {
+      color: $color-black2;
+      line-height: 26px;
+    }
+    & > .btn_wrap {
+      display: flex;
+      margin: 30px -30px 0;
+      padding: 0 18px;
+      & > [class^="btn_pop"] {
+        margin-left: 8px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      & > .btn_pop_primary {
+        @include alertButton(
+          // $bgColor: $bg-point-purple,
+          // $borderColor: $bg-point-purple
+          $bgColor: $color-black2,
+          $borderColor: $color-black2
+        );
+      }
+      & > .btn_pop_line_dark {
+        @include alertButton(
+          $bgColor: #fff,
+          $borderColor: $color-black2,
+          $color: $color-black2
+        );
+      }
+      & > .btn_pop_dark {
+        @include alertButton(
+          $bgColor: $color-black2,
+          $borderColor: $color-black2
+        );
+      }
+      & > .btn_pop_light {
+        @include alertButton(
+          // $color: $bg-point-purple,
+          // $borderColor: $bg-point-purple
+          $color: $color-black2,
+          $borderColor: $color-black2
+        );
+      }
+      & > .btn_pop_light {
+        @include alertButton(
+          // $color: $bg-point-purple,
+          // $borderColor: $bg-point-purple
+          $color: $color-black2,
+          $borderColor: $color-black2
+        );
+      }
+    }
+  }
+  .pop_tit {
+    @include flexBetween;
+    margin-bottom: 16px;
+    color: $color-black2;
+    font-size: $fs-m;
+    font-weight: $fw-b;
+    letter-spacing: -0.2px;
+  }
+}
+
+@mixin toastButton(
+  $color: $pop-color-default,
+  $bgColor: $pop-color-default,
+  $borderColor: $pop-color-default
+) {
+  width: 100%;
+  padding: 26px 24px 33px;
+  color: $color;
+  font-weight: $fw-b;
+  background-color: $bgColor;
+  border: 1px solid $borderColor;
+}
+
+.health_toast {
+  &:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  &.actived {
+    & > .inner {
+      bottom: 0;
+    }
+  }
+  & > .inner {
+    position: fixed;
+    z-index: 1001;
+    bottom: -100%;
+    width: 100%;
+    padding: 48px 32px 0;
+    background-color: $pop-color-default;
+    border-radius: 38px 38px 0 0;
+    transition: all 0.3s ease-in;
+    & > .btn_close {
+      position: absolute;
+      top: 48px;
+      right: 32px;
+    }
+    & > .btn_wrap {
+      display: flex;
+      margin: 40px -32px 0;
+      & > .btn_pop_black0 {
+        @include toastButton($bgColor: $bg-black0, $borderColor: $bg-black0);
+      }
+      & > .btn_pop_black2 {
+        @include toastButton($bgColor: $bg-black2, $borderColor: $bg-black2);
+      }
+      & > .btn_pop_black3 {
+        @include toastButton($bgColor: $bg-black3, $borderColor: $bg-black3);
+      }
+      & > .btn_pop_gray6 {
+        @include toastButton($bgColor: $color-gray6, $borderColor: $color-gray6);
+      }
+    }
+  }
+  &.scroll {
+    & > .inner {
+      height: 90%;
+      & > .inner_container {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 76px;
+        .con_inner {
+          height: 100%;
+          .con_box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            overflow-y: auto;
+          }
+        }
+        .pop_con {
+          padding: 0px 32px 80px;
+        }
+      }
+      & > .btn_wrap {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        & > .btn_pop_black2 {
+          @include toastButton($bgColor: $bg-black2, $borderColor: $bg-black2);
+        }
+        & > .btn_pop_black3 {
+          @include toastButton($bgColor: $bg-black3, $borderColor: $bg-black3);
+        }
+        & > .btn_pop_gray6 {
+          @include toastButton($bgColor: $color-gray6, $borderColor: $color-gray6);
+        }
+      }
+    }
+    &.footer_no{
+      .inner_container{bottom:0;}
+      .pop_con {
+        padding-bottom:0!important;
+      }
+    }
+  }
+}
+
+.health_full {
+  // &:before {
+  //   content: "";
+  //   display: block;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   z-index: 1000;
+  //   width: 100%;
+  //   height: 100vh;
+  //   background-color: rgba(0, 0, 0, 0.8);
+  // }
+  &.actived {
+    & > .inner {
+      top: 0;
+    }
+  }
+  & > .inner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $pop-color-default;
+    transition: all 0.3s ease-in;
+    z-index: 1001;
+    & > .pop_wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      & > .pop_header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 99px;
+        box-sizing: border-box;
+        z-index: 999;
+        background: #fff;
+        & > .header_wrap {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          height: 99px;
+          padding: 45px 24px 16px;
+          & > h1 {
+            // position: absolute;
+            // left: 64px;
+            font-size: 18px;
+            color: $bg-black2;
+          }
+          button+h1{margin-left:8px;}
+          .option_box {
+            position: absolute;
+            right:24px;
+            @include flexCenter;
+            margin-right: -2px;
+            button + button {
+              margin-left: 16px;
+            }
+          }
+          .btn_close {
+            position: absolute;
+            right: 24px;
+          }
+        }
+        &.ms_header{background:$point-color-primary;height:110px;margin-bottom:15px;
+          & > .header_wrap {
+            align-items:left;
+            padding: 53px 24px 16px;
+            & > h1 {
+              font-size:16px;
+              color:#fff;
+            }
+            img+h1{margin-left:8px;}
+          }
+        }
+      }
+      & > .pop_container {
+        position: absolute;
+        top: 99px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        .con_inner {
+          height: 100%;
+          .con_box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            overflow-y: scroll;
+          }
+        }
+        .pop_con {
+          padding: 0 24px 106px;
+          // overflow-y: scroll;
+        }
+        .msg {
+            color: $color-gray6;
+            line-height: 26px;
+          + .msg {
+            margin-top: 30px;
+          }
+        }
+      }
+      & > .btn_wrap {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        background-color: $bg-black2;
+        justify-content: space-between;
+        transition: all 0.3s ease-in;
+        & > .btn_pop_black0 {
+          @include toastButton($bgColor: $bg-black0, $borderColor: $bg-black0);
+        }
+        & > .btn_pop_black2 {
+          @include toastButton($bgColor: $bg-black2, $borderColor: $bg-black2);
+          &:disabled {
+            color: #fff;
+            background: #d9d9d9;
+            border: 0;
+          }
+        }
+        & > .btn_pop_black3 {
+          @include toastButton($bgColor: $bg-black3, $borderColor: $bg-black3);
+        }
+        & > .btn_pop_gray6 {
+          @include toastButton($bgColor: $color-gray6, $borderColor: $color-gray6);
+        }
+      }
+    }
+  }
+  &.footer_no{
+    .pop_container{bottom:0!important;}
+    .pop_con{padding-bottom: 0 !important;}
+    .full_img_wrap{min-height:100%;height:100%;margin-bottom:0;}
+  }
+  &.inside_pop {
+    .inner {
+      left: 0;
+    }
+  }
+}
+
+//리워드 획득
+.health_toast_cont {
+  .health_toast_tit {
+    color: $color-black2;
+    font-size: 32px;
+    font-weight: $fw-bb;
+    line-height: 44px;
+  }
+  .health_toast_dsec {
+    margin-top: 8px;
+    color: $color-black2;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .health_toast_img {
+    margin-top: 40px;
+    img {
+      width: 100%;
+      height: 250px;
+    }
+    .img_caption {
+      margin-top: 6px;
+      color: $color-black2;
+      font-size: 16px;
+      font-weight: $fw-bb;
+      line-height: 26px;
+      letter-spacing: -0.2px;
+    }
+  }
+  //공유하기
+  .share_list {
+    @include flexBetween;
+    flex-wrap: wrap;
+    margin: 60px 0 30px;
+    li {
+      width: 25%;
+      margin-bottom: 30px;
+      text-align: center;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      em {
+        display: block;
+        margin-top: 6px;
+        font-size: 14px;
+        font-weight: $fw-b;
+        color: $color-black2;
+      }
+    }
+  }
+}

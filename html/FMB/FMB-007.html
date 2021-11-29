@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>패키지</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+    <div class="health_wrap">
+        <div class="health_header"></div>
+        <div class="health_container">
+            <div class="section">
+                <button type="button" onclick="netiveUI.plugins.popToast('#full001');">시작일 설정</button>
+            </div>
+        </div>
+    </div>
+    <div class="health_full" id="full001" style="display: none;">
+        <div class="inner">
+            <div class="pop_wrap">
+                <div class="pop_header">
+                    <div class="header_wrap">
+                    <!-- <h1>건강 정보 상세</h1> -->
+                    <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+                    </div>
+                </div>
+                <div class="pop_container">
+                    <div class="con_inner">
+                        <div class="con_box">
+                            <div class="pop_con">
+                                <h1 class="tit_cont_01">시작일 설정</h1>
+                                <p class="tit_sub_02">결제일 이후 7일 중에서 원하는<br><span class="color_type01">패키지 시작일을 지정</span>하실 수 있습니다.</p>
+                                <div class="type_goal">
+                                    <div class="inp_wrap mt40">
+                                        <span class="inp_label">시작일</span>
+                                        <div class="inp_datepicker">
+                                            <input type="date" class="inp_bg" placeholder="2021.05.13" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="inp_wrap">
+                                        <span class="inp_label">종료일</span>
+                                        <div class="inp_datepicker">
+                                            <input type="date" class="inp_bg" placeholder="2021.05.13" required="required" disabled>
+                                        </div>
+                                    </div>                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <button type="button" class="btn_pop_black2">설정완료</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강신호 측정</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/jquery-ui.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/jquery-ui.js"></script>
+  <script src="../../resources/js/jquery-touch-punch.js"></script>
+</head>
+<body>
+<div class="health_wrap type_coaching">
+  <header class="health_header">
+    <!-- 20210721 'inbtn' class 추가 -->
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>건강신호 측정</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <!-- 08/04 pt0 클래스 추가 -->
+  <div class="health_container pt0">
+    <div class="guide_wrap">
+      <div class="guide_top progress">
+        <!-- 얼굴 측정시 case -->
+        <div class="face_guide_wrap">
+          <div class="error_alert">
+            <span>얼굴이 인식되지 않았습니다.</span>
+          </div>
+        </div>
+        <!-- //얼굴 측정시 case -->
+        <!-- 20210802 손가락 측정시 case FCH-022-1.html로 분리 -->
+        <div class="progress_wrap">
+          <div class="progress"><i style="width:60%;"></i></div>
+        </div>
+      </div>
+      <div class="guide_cont">
+        <div class="signal_wrap">
+          <div class="signal_item"><span class="value">88</span>심박수<br>BPM</div>
+          <div class="signal_item"><span class="value"><span class="dot"><em></em></span></span>산소포화도<br>Sp02%</div>
+          <div class="signal_item"><span class="value"><span class=""><em>500/위험</em></span></span>분당호흡수<br>RPM</div>
+          <div class="signal_item"><span class="value"><span class="dot"><em></em></span></span>스트레스지수<br>500점 만점 기준</div><!--20210804 워딩수정-->
+          <div class="signal_item"><span class="value"><span class="dot"><em></em></span></span>심박변이도<br>MS</div>
+          <div class="signal_item"><span class="value"><span class="dot"><em></em></span></span>혈압<br>mmHg</div>
+        </div>
+        <button type="button" class="btn_base_02 line">중단</button>
+        <!-- 얼굴측정 case -->
+        <p class="txt">60% 측정중</p>
+        <!-- //얼굴측정 case -->
+        <!-- 20210802 손가락 측정시 case FCH-022-1.html로 분리 -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

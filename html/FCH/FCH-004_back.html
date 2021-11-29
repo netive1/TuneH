@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건강설문 결과</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/chart.min.js"></script> <!--20210825 chart.js (3.3.2 ver) cdn으로 테스트 진행-->
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+</head>
+<body>
+  <div class="health_wrap">
+    <div class="health_container">
+    
+    </div>
+    <!--// health_container -->
+  </div>
+ 
+  <!-- popup -->
+  <div class="health_full actived" id="full001" style="display: block;">
+    <div class="inner">
+      <div class="pop_wrap">
+        <div class="pop_header">
+          <div class="header_wrap">
+            <h1 class="hidden">건강설문 결과</h1>
+            <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+          </div>
+        </div>
+        <!-- //pop header -->
+
+        <div class="pop_container">
+          <div class="con_inner">
+            <div class="con_box">
+              <div class="pop_con pb0">
+                <!-- 팝업 내용 -->
+                <div class="coach_result_wrap">
+                  <h1 class="tit_cont_02">김나리님의<br>건강설문 결과</h1>
+                  <p class="text_mark">644<em>점</em></p>
+                  <!-- 20210803 -->
+                  <div class="coach_result_head">
+                    <div class="progress_wrap">
+                      <div class="step_wrap">
+                        <span class="total">0</span>
+                        <span class="total">1000</span>
+                      </div>
+                      <div class="progress">
+                        <i class="avg_progress">
+                          <span class="avg">이용자 평균 <em>870</em></span> <!--평균값-->
+                        </i>
+                        <i class="result_progress">
+                          <span class="value now">644</span> <!--사용자값-->
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //20210803 -->
+                  <div class="coach_result_cont">
+                    <div class="item">
+                      <span class="state_tit">건강상태가<br><em>매우 좋은 편</em>입니다.</span>
+                      <div class="state_cont">
+                        <!-- 분야별 건강 스코어 평균대비 5단게
+                          .low (1-479)
+                          .fair (480-549)
+                          .good (550-609)
+                          .very good (610-679)
+                          .excellent (680-1000)
+                         -->
+                        <div class="grid grid3">
+                          <div class="state"><span class="state_tit low">활동</span></div>
+                          <div class="state"><span class="state_tit high">마음</span></div>
+                          <div class="state"><span class="state_tit low">수면</span></div>
+                        </div>
+                        <div class="grid grid2">
+                          <div class="state"><span class="state_tit low">정신</span></div>
+                          <div class="state"><span class="state_tit high">신체</span></div>
+                        </div>
+                        <div class="grid grid2 last">
+                          <div class="state"><span class="state_tit low">영양</span></div>
+                          <div class="state"><span class="state_tit high">조절</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coach_graph">
+                  <span class="date">2021. 10. 11</span>
+                  <!-- Swiper -->
+                  <div class="swiper-container coach_graph_Swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <figure>
+                          <canvas id="myChartA" style="width:100%;height: 100%;"></canvas> <!--20210825-->
+                        </figure>
+                      </div>
+                      <div class="swiper-slide">
+                        <figure>
+                          <canvas id="myChartB" style="width:100%;height: 100%;"></canvas> <!--20210825-->
+                        </figure>
+                      </div>
+                      <div class="swiper-slide">
+                        <figure>
+                          <canvas id="myChartC" style="width:100%;height: 100%;"></canvas> <!--20210825-->
+                        </figure>
+                      </div>
+                      <div class="swiper-slide">
+                        <figure>
+                          <canvas id="myChartD" style="width:100%;height: 100%;"></canvas> <!--20210825-->
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <p class="goal_tooltip"><a href="#" onclick="netiveUI.plugins.popFull('#popPointInfo');">건강스코어란?</a></p>
+                </div>
+                <!-- //팝업내용 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //pop container -->
+
+        <!-- <div class="btn_wrap">
+          <button type="button" class="btn_pop_black2">맞춤형 코칭메세지 확인하기</button>
+        </div> -->
+        <!-- // pop btn -->
+      </div>
+     
+    </div>
+  </div>
+  <!-- // -->
+
+
+  <!-- 건강스코어란 팝업 -->
+  <div class="health_full" id="popPointInfo" style="display: none;">
+    <div class="inner">
+      <div class="pop_wrap">
+        <div class="pop_header">
+          <div class="header_wrap">
+            <h1>건강 스코어란?</h1>
+            <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+          </div>
+        </div>
+        <div class="pop_container">
+          <div class="con_inner">
+            <div class="con_box">
+              <div class="pop_con">
+                <div class="point_item">
+                  <p>
+                    건강 스코어는 현재 회원님의 건강 상태를 나타냅니다.
+                  </p>
+                  <p>
+                    회원님의 건강관련 정보가 모이면 모일수록 더욱 더 정교한 건강 스코어 및 다양한 정보 제공이 가능합니다. 
+                  </p>
+                  <p>
+                    신체 건강 및 정신 건강은 5가지 라이프 스타일 영역에서 선택된 항목에 영향을 받습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //건강스코어란 팝업 -->
+
+  <!-- 20210803 프로그래스바 인터랙션 -->
+  <script>
+    $(function () {
+      progressAnimation();
+    });
+
+    //숫자만
+    var onlyNumber = function (num) {
+      return num.toString().replace(/[^0-9]/g, '');
+    };
+    //콤마넣기
+    var addComma = function (num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    };
+    //프로그레스 animation
+    var progressAnimation = function () {
+      var $now = parseInt(onlyNumber($('.now').text()), 10);
+      var $avg = parseInt(onlyNumber($('.avg').text()), 10);
+      var $total = parseInt(onlyNumber($('.total').text()), 10);
+      var $per = ($now / $total) * 100;
+      var $avgPer = ($avg / $total) * 100;
+      $('progress').val($per);
+      $('.progress i').animate({
+        width: $per + '%',
+      }, {
+        duration: Math.max(500, 1000), //속도
+        step: function (now, fx) {
+          var $nowval = Math.round(($now / fx.end) * now);
+          if (isNaN($nowval)) $nowval = 0;
+          $('.now span').text(addComma($nowval));
+          var $nowWidth = $('.now').width();
+          var $avgWidth = $('.avg').width();
+          var $nowMargin = $nowWidth / 2;
+          var $nowLeft = $('.progress i').width() - $nowMargin;
+          var $nowRight = $('.progress i').width() + $nowMargin
+          var $wrapWidth = $('.progress').width();
+          if ($nowLeft > 0 && $nowRight < $wrapWidth) {
+            // 20210830 삭제
+            // $('.now').css({
+            //   'left': now + '%',
+            //   'margin-left': -($nowMargin)
+            // });
+          }
+          //이용자 평균 data가 0일 경우
+          if($avgPer <= 20) {
+            $(this).find('.avg').addClass('minimum');
+          } else {
+            $(this).find('.avg').removeClass('minimum');
+          }
+          //이용자 평균      
+          $('.avg_progress').css({ 'width' : $avgPer + '%'});     
+        }
+      });
+    }
+  </script>
+
+  <!-- 20210825 chart.js lib -->
+  <script>
+  $(document).ready(function(){
+    //swiper 실행
+    var swiper = new Swiper(".coach_graph_Swiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    //chart 생성
+    var ctxA = document.getElementById("myChartA").getContext("2d"); //chart a 호출
+    var ctxB = document.getElementById("myChartB").getContext("2d"); //chart b 호출
+    var ctxC = document.getElementById("myChartC").getContext("2d"); //chart c 호출
+    var ctxD = document.getElementById("myChartD").getContext("2d"); //chart d 호출
+
+    //bar 그라디언트 효과 생성
+    var bgGradient = ctxA.createLinearGradient(0, 0, 0, 170);
+                     ctxB.createLinearGradient(0, 0, 0, 170);
+                     ctxC.createLinearGradient(0, 0, 0, 170);
+                     ctxD.createLinearGradient(0, 0, 0, 170);
+        bgGradient.addColorStop(0, 'rgb(25,211,197)');
+        bgGradient.addColorStop(1, 'rgb(203,139,218)');
+
+      //chart A
+      var myChartA = new Chart(ctxA, {
+          type: 'bar',
+          data: {
+            labels: ['10.10', '오늘', '10.12'],
+            datasets: [{
+              label: '체중 (Kg)',
+              data: [43, 64, 70],
+              barPercentage: 0.5,
+              barThickness: 14, //막대 최소가로값
+              borderRadius: 14, //막대 둥글기        
+              backgroundColor: [
+                '#d9d9d9',
+                bgGradient, //bg 그라데이션
+                '#d9d9d9',
+              ],
+            }]
+          },
+          options: {
+            responsive: false,
+            plugins: {
+              //20210825 label 정의
+              legend: {
+                  display: true, //label 노출 여부
+                  align: 'start', //label 정렬
+                  labels: {  //label style
+                    padding: 0, //여백
+                    boxWidth: 0, //기본 박스 안보이게 0 처리
+                    boxHeight: 40, //세로값
+                    color: '#333', 
+                    font: { //font style
+                        family : 'Noto Sans',
+                        size: 15,
+                        weight: '600',
+                      },
+                  }
+              },
+              tooltip: { //막대 상태값
+                displayColors: false,     
+                xAlign: 'center',
+                yAlign : 'bottom',
+                boxWidth: 0,
+                backgroundColor : 'transparent',
+                titleAlign : 'top',
+                titleColor : '#222',
+                titleFont: {
+                  size : 15,
+                  weight: 'bold',
+                },
+                bodyFont: {
+                  size : 0,
+                },
+              },
+            },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 80, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+      });
+
+      //chart B
+      var myChartB = new Chart(ctxB, {
+        type: 'bar',
+        data: {
+          labels: ['10.10', '오늘', '10.12'],
+          datasets: [{
+            label: '허리둘레 (cm)',
+            data: [25, 32, 34],
+            barPercentage: 0.5,
+            barThickness: 14, //막대 최소가로값
+            borderRadius: 14, //막대 둥글기        
+            backgroundColor: [
+              '#d9d9d9',
+              bgGradient, //bg 그라데이션
+              '#d9d9d9',
+            ],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            //20210825 label 정의
+            legend: {
+                display: true, //label 노출 여부
+                align: 'start', //label 정렬
+                labels: {  //label style
+                  padding: 0, //여백
+                  boxWidth: 0, //기본 박스 안보이게 0 처리
+                  boxHeight: 40, //세로값
+                  color: '#333', 
+                  font: { //font style
+                      family : 'Noto Sans',
+                      size: 15,
+                      weight: '600',
+                    },
+                }
+            },
+            tooltip: { //막대 상태값
+              displayColors: false,     
+              xAlign: 'center',
+              yAlign : 'bottom',
+              backgroundColor : 'transparent',
+              titleAlign : 'top',
+              titleColor : '#222',
+              titleFont: {
+                size : 15,
+                weight: 'bold',
+              },
+              bodyFont: {
+                size : 0,
+              },
+            },
+          },
+        scales: {
+          x: { //xc축
+            offset: true,
+            ticks: {
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: false,
+              offset: false
+            }
+          },
+          y: {  //y축
+            min: 0, //최소값
+            max: 80, //최대값
+            position: 'right',
+            beginAtZero: true,
+            ticks: {
+              stepSize: 20, //data 숫자 간격
+              font: {
+                size: 13
+              },
+              color: '#b5b5b5',
+            },
+            grid: {
+              display: true,
+              offset: false
+            }
+          }
+        },
+      },
+    });
+
+      //chart C
+      var myChartC = new Chart(ctxC, {
+          type: 'bar',
+          data: {
+            labels: ['10.10', '오늘', '10.12'],
+            datasets: [{
+              label: '체지방비율 (%)',
+              data: [43, 64, 70],
+              barPercentage: 0.5,
+              barThickness: 14, //막대 최소가로값
+              borderRadius: 14, //막대 둥글기        
+              backgroundColor: [
+                '#d9d9d9',
+                bgGradient, //bg 그라데이션
+                '#d9d9d9',
+              ],
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              //20210825 label 정의
+              legend: {
+                  display: true, //label 노출 여부
+                  align: 'start', //label 정렬
+                  labels: {  //label style
+                    padding: 0, //여백
+                    boxWidth: 0, //기본 박스 안보이게 0 처리
+                    boxHeight: 40, //세로값
+                    color: '#333', 
+                    font: { //font style
+                        family : 'Noto Sans',
+                        size: 15,
+                        weight: '600',
+                      },
+                  }
+              },
+              tooltip: { //막대 상태값
+                displayColors: false,     
+                xAlign: 'center',
+                yAlign : 'bottom',
+                boxWidth: 0,
+                backgroundColor : 'transparent',
+                titleAlign : 'top',
+                titleColor : '#222',
+                titleFont: {
+                  size : 15,
+                  weight: 'bold',
+                },
+                bodyFont: {
+                  size : 0,
+                },
+              },
+            },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 80, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+      });
+
+      //chart D
+      var myChartD = new Chart(ctxD, {
+          type: 'bar',
+          data: {
+            labels: ['10.10', '오늘', '10.12'],
+            datasets: [{
+              label: 'BMI',
+              data: [43, 64, 70],
+              barPercentage: 0.5,
+              barThickness: 14, //막대 최소가로값
+              borderRadius: 14, //막대 둥글기        
+              backgroundColor: [
+                '#d9d9d9',
+                bgGradient, //bg 그라데이션
+                '#d9d9d9',
+              ],
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              //20210825 label 정의
+              legend: {
+                  display: true, //label 노출 여부
+                  align: 'start', //label 정렬
+                  labels: {  //label style
+                    padding: 0, //여백
+                    boxWidth: 0, //기본 박스 안보이게 0 처리
+                    boxHeight: 40, //세로값
+                    color: '#333', 
+                    font: { //font style
+                        family : 'Noto Sans',
+                        size: 15,
+                        weight: '600',
+                      },
+                  }
+              },
+              tooltip: { //막대 상태값
+                displayColors: false,     
+                xAlign: 'center',
+                yAlign : 'bottom',
+                boxWidth: 0,
+                backgroundColor : 'transparent',
+                titleAlign : 'top',
+                titleColor : '#222',
+                titleFont: {
+                  size : 15,
+                  weight: 'bold',
+                },
+                bodyFont: {
+                  size : 0,
+                },
+              },
+            },
+          scales: {
+            x: { //xc축
+              offset: true,
+              ticks: {
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: false,
+                offset: false
+              }
+            },
+            y: {  //y축
+              min: 0, //최소값
+              max: 80, //최대값
+              position: 'right',
+              beginAtZero: true,
+              ticks: {
+                stepSize: 20, //data 숫자 간격
+                font: {
+                  size: 13
+                },
+                color: '#b5b5b5',
+              },
+              grid: {
+                display: true,
+                offset: false
+              }
+            }
+          },
+        },
+      });
+  
+  });
+</script>
+</body>
+</html>

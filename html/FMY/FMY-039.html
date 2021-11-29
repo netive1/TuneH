@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비밀번호 확인</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+	<div class="health_wrap type_mypage"> 
+		<header class="health_header">
+			<div class="inbtn">
+				<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+				<h1>비밀번호 확인</h1>
+			</div>
+			<div class="user"><button type="button">홍길동</button></div>
+			<!-- user class 가이드
+		      패키지 구매회원의 경우 : .package 추가
+		      신규 알림 있을 시 : .on 추가
+		    -->
+		</header>
+		<div class="health_container">
+			<h2 class="tit_cont_01">현재 비밀번호를<br>입력해주세요.</h2>
+			<div class="inp_wrap type_box">
+				<div class="inp_item">
+					<label class="inp_label">아이디</label>
+					<input class="inp_base" type="email" value="S1234123@google.com" readonly disabled>
+				</div>
+				<div class="inp_item">
+					<label class="inp_label">비밀번호 확인</label>
+					<input class="inp_base" type="password" placeholder="현재 비밀번호 입력">
+				</div>
+			</div>
+
+		</div>
+		<div class="btn_btm_fixed">
+			<button type="button" class="btn" disabled>확인</button>
+		</div>
+	</div>
+
+	<!-- 팝업 -->
+	<!-- case 01 : 기존 비밀번호 불일치 시 alert 메시지 -->
+	<div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+				입력하신 비밀번호가 일치하지 않습니다.
+				확인 후 다시 입력해주세요.				
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

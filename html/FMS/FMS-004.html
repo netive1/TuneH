@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목표 추적진행</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script> <!--20210730 추가-->
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css"> <!--20210730 추가-->
+</head>
+<body>
+<div class="health_wrap type_goal type_bg_purple footer_no"> <!--20210602 'footer_no' 클래스 삭제-->
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev ver02"><span class="hidden">이전</span></button>
+      <h1>추적진행</h1>
+    </div>
+    <div class="user package on"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+    <!-- //20210719 -->
+  </header>
+  <div class="health_container">
+    <div class="tracking_wrap">       
+      <div class="tracking_cont">
+        <div class="item">
+          <label for="termCheck01" class="tit_cont_01 ver02">걷기</label>
+          <button type="button" class="btn_acco_more"><span class="hidden">걷기 리스트 펼침</span></button>
+        </div>
+        <ul class="item_detail">
+          <div class="content_form">
+              <p><span>거리<strong>400<em>m</em></strong></span><span>심박수<strong>50<em>bpm</em></strong></span></p>
+              <p><span>오르막<strong>10<em>m</em></strong></span><span>평균속도<strong>2<em>km/H</em></strong></span></p>
+              <p><span>내리막<strong>482<em>m</em></strong></span><span>활동칼로리<strong>10<em>kcal</em></strong></span></p>
+          </div>
+        </ul>  
+      </div>
+  </div>
+  <div class="content_sub bg_fff"> <!--20210730 class 'bg_fff' 추가-->
+    <!-- 20210803 -->
+    <div class="file_upload_wrap inp_wrap">
+      <span class="inp_label">활동 사진 등록</span>
+      <div class="swiper-container upload_slider">
+        <div class="swiper-wrapper" id="mySwiperFile">
+          <!--20210803 id 'mySwiperFile' 추가, 하위 내용 script 에서 출력-->
+        </div>
+      </div>
+    </div>
+    <!-- //20210803 -->
+    <div class="timer_wrap">
+      <div class="timer_face">
+        <button type="button" onclick="netiveUI.plugins.popToast('#popStopTracking');" class="timer_btn pause">
+          <p id="timer">00:01:10</p>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 20210705 추적중지 버튼 삭제 -->
+
+<!-- 20210602 추적중지 팝업 추가(FMS-005.html) -->
+<div class="health_full goal_popup" id="popStopTracking" style="display: none;">
+  <div class="inner">
+    <div class="pop_wrap">
+      <div class="pop_header">
+        <div class="header_wrap">
+          <h1>활동 기록</h1>
+          <button type="button" class="btn_close ui-close"><span class="hidden">닫기</span></button>
+        </div>
+      </div>
+      <div class="pop_container type_goal">
+        <div class="health_container">
+            <!-- 20210716 마크업 변경 -->
+            <div class="card_wrap card_view">
+              <div class="card">
+                <div class="card_info">
+                  <div class="card_profile"><img src="../../resources/img/@img_profile.png" alt=""></div>
+                  <p class="card_date"><span>2021.05.19. 05:30</span><strong class="name">Eric Jung</strong></p>
+                </div>
+                <div class="card_cont">
+                  <p class="card_desc">
+                    걷기 활동을 하고 있습니다.<br>
+                    2시간 동안 활동 상태였습니다.
+                  </p>
+                  <!-- 2021.07.05 .card_date 삭제 -->
+                  <div class="card_data_box">
+                    <p><em>거리</em>1,000 m</p>
+                    <p><em>오르막</em>10 m</p>
+                    <p><em>내리막</em>10 m</p>
+                    <p><em>평균속도</em>2 km/H</p>
+                    <p><em>심박수</em>50 bpm</p>
+                    <!--20210715 문구 수정-->
+                    <p><em>활동 칼로리</em>10 kal</p>
+                  </div>
+                  <!-- 07/30 추가 -->
+                  <div class="file_upload_wrap inp_wrap pl0">
+                    <div class="align_right_wrap">
+                      <div class="swiper-container upload_slider2">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="inp_wrap file_upload">
+                              <button class="file_upload_btn" type="button" onclick="$('.ipt_upload_file').trigger('click')">Add Image</button>  
+                              <div class="img_upload_wrap">
+                                <input type='file' onchange="readURL(this);" accept="image/*" class="ipt_upload_file">
+                              </div>
+                              <div class="file_upload_cont">
+                                <img class="file_upload_img" src="#" alt="your image">
+                                <button type="button" onclick="removeUpload()" class="remove_img"><span class="img_title">Uploaded Image</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card_comment_area">
+                    <div class="card_commentlist">
+                      <div class="card_textarea mt0">
+                        <textarea name="" id="" rows="1" placeholder="메모를 입력하세요"></textarea>
+                        <button type="button" class="btn_register">등록</button>
+                      </div>
+                      <div class="inp_wrap_bg mt30">
+                        <span class="inp_label">나의기분</span>
+                        <div class="radio_box state_list">
+                          <div class="item">
+                            <input type="radio" id="st01" name="state" class="radioItem" checked>
+                            <label for="st01">행복</label>
+                          </div>
+                          <div class="item">
+                            <input type="radio" id="st02" name="state" class="radioItem">
+                            <label for="st02">좋음</label>
+                          </div>
+                          <div class="item">
+                            <input type="radio" id="st03" name="state" class="radioItem">
+                            <label for="st03">보통</label>
+                          </div>
+                          <div class="item">
+                            <input type="radio" id="st04" name="state" class="radioItem">
+                            <label for="st04">슬픔</label>
+                          </div>
+                          <div class="item">
+                            <input type="radio" id="st05" name="state" class="radioItem">
+                            <label for="st05">화남</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn_wrap"><button type="button" class="btn_delete">활동삭제</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //20210716 마크업 변경 -->
+        </div>
+        <div class="btn_btm_fixed">
+          <button type="button" class="btn">저장하기</button>
+        </div>
+      </div>
+      <!-- 20210716 코칭하기버튼 삭제 -->
+    </div>
+  </div>
+</div>
+<!-- //20210602 추적중지 팝업 추가(FMS-005.html) -->
+
+<script>
+  // 20210803 script 내용 변경
+
+  //이미지 파일 업로드
+  var myFileUpLoad = {
+    $targetAppend: null,
+    targetSlide: null,
+    swiperFile: null,
+    showFile: function (input, idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $slide.find('.img_upload_wrap').hide();
+          $slide.find('.file_upload_img').attr('src', e.target.result);
+          $slide.find('.file_upload_cont').show();
+          $slide.find('.img_title').html(input.files[0].name);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    },
+    deleteFile: function (idx) {
+      var o = this,
+        $slide = $('#' + (o.targetSlide + idx));
+
+      o.swiperFile.removeSlide($(o.swiperFile.slides).index($slide));
+    },
+    createFile: function (idx) {
+      var o = this;
+
+      // 새로운 파일 영역 prepend
+      o.swiperFile.prependSlide(o.picHtml(idx));
+    },
+    readURL: function (input, idx) { // 파일 선택시 실행
+      var o = this;
+
+      // swiper 최초 1회 실행(첫 이미지 등록)
+      if (input.files.length === 1) {
+        o.swiperFile = new Swiper(".upload_slider", {
+          loop: false,
+          slidesPerView: "auto",
+          spaceBetween: 11,
+          observer: true,
+          observeParents: true,
+        });
+      }
+
+      o.showFile(input, idx); // file 숨기고, 이미지 보여주기
+
+      o.createFile(idx + 1);
+    },
+    picHtml: function (idx) {
+      var o = this;
+      var picHtml = ''
+        + '<div class="swiper-slide" id="' + (o.targetSlide + idx) + '">'
+        + '  <div class="inp_wrap file_upload">'
+        + '    <div class="img_upload_wrap">'
+        + '      <input type="file" name="myPic' + idx + '" onchange="myFileUpLoad.readURL(this, ' + idx + ');" accept="image/*" class="ipt_upload_file">'
+        + '    </div>'
+        + '    <div class="file_upload_cont">'
+        + '      <img class="file_upload_img" src="#" alt="your image">'
+        + '      <button type="button" onclick="myFileUpLoad.deleteFile(' + idx + ');" class="remove_img"><span class="img_title">Uploaded Image</span></button>'
+        + '    </div>'
+        + '  </div>'
+        + '</div>';
+      return picHtml;
+    },
+    init: function (idx) {
+      var o = this;
+      o.$targetAppend = $('#mySwiperFile');
+      o.targetSlide = 'myPic';
+
+      o.$targetAppend.append(o.picHtml(idx));
+    }
+  }
+  $(document).ready(function () {
+    myFileUpLoad.init(0);
+  });
+</script>
+<script>
+  // 20210803 .upload_slider 삭제
+  // 20210803 팝업에 나오는 기능은 샘플 참고 요청
+  var swiper = new Swiper(".upload_slider2", {
+    loop:false,
+    slidesPerView: "auto",
+    spaceBetween: 11,
+    observer: true,
+    observeParents: true,
+  });
+</script>
+
+</body>
+</html>

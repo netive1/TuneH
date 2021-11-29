@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인 최초가입회원인 경우 팝업</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/swiper.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/swiper.min.css">
+</head>
+<body>
+  <div class="health_wrap">
+    <div class="health_header"></div>
+    <div class="health_container">
+
+    </div>
+  </div>
+ 
+  <div class="health_alert main_alert actived" id="alert001" style="display: block;">
+    <div class="inner">
+      <!-- 20210819 수정 -->
+      <div class="pop_img_wrap">
+        <img src="../../resources/img/@dummy_banner.png" alt="">
+      </div>
+      <!-- <div class="swiper-container pop_img_slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide new_card">
+            <a href="#">
+                <img src="../../resources/img/@dummy_banner.png" alt="피지컬 피트니스 라이브 홈 퍼스널 트레이닝 1:10"/>
+            </a>
+          </div>
+          <div class="swiper-slide new_card">
+            <a href="#">
+                <img src="../../resources/img/@dummy_banner.png" alt="안다르 기획전 여름 운동이 쾌적해지는 방법은?"/>
+            </a>
+          </div>
+        </div>
+      </div> -->
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_line_dark ui-close">오늘 하루 닫기</button>
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+      <div class="check_box term term_v2" role="group" aria-labelledby="약관" id="termCheckArea"><!-- 20210720 id 추가 -->
+        <input type="checkbox" id="termCheck03" class="chkItem" name="termAgree">
+        <label for="termCheck03">7일간 열지 않음</label>
+      </div>
+    </div>    
+  </div>
+  <script>
+    var swiper = new Swiper(".pop_img_slider", {
+        slidePerView:1,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이패키지 목록</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_mypage footer_no">
+	<header class="health_header">
+		<div class="inbtn">
+			<button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+			<h1>마이 패키지</h1>
+		</div>
+		<div class="user"><button type="button">홍길동</button></div>
+		<!-- user class 가이드
+	      패키지 구매회원의 경우 : .package 추가
+	      신규 알림 있을 시 : .on 추가
+	    -->
+	</header>
+    <div class="health_container">
+		<div class="tab_wrap">   
+			<div class="tabs">
+				<ul class="tab_menulist pt0 pb0">
+					<li class="active"><a class="tab_control" href="#tab-1">전체</a></li>
+					<li><a class="tab_control" href="#tab-2">이용중</a></li>
+					<li><a class="tab_control" href="#tab-3">기간만료</a></li>
+				</ul>          
+				<div class="tab_panel active" id="tab-1">
+					<div class="tab_bg_wrap">
+						<ul class="mypackage_list_wrap">
+							<!-- 20210727 상태값 가변 case 추가 -->
+
+							<!-- 시작예정 CASE (패키지 정상 결제완료 후, 이용기간이 도래하지 않은 상태)-->
+							<li class="mypackage_item">
+								<div class="item_head">
+									<div class="use_wrap">
+										<!-- tag 클래스에 추가 (시작예정/이용중/이용취소/기간종료)
+											b: 시작예정 (검정)
+											p: 이용중 (보라)
+											g: 이용취소 (회색) //현재 지정된 컬러값 없음
+											g: 기간종료 (회색)
+										-->
+										<span class="date"><em class="tag b">시작예정</em></span> <!--이용상태값 (시작예정/이용중/이용취소/기간종료)-->
+										<h2 class="tit_cont_02">Premium<em>바디핏</em></h2> <!--패키지 카테고리명-->
+										<span class="period">이용기간 <em>2021.04.01 - 2021.06.30</em></span> <!--이용기간-->
+									</div>
+								</div>
+								<div class="item_cont">
+									<ul>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>굿즈</strong>신체단련 응원선물</span>
+												<!-- 20210923 결제시점부터 상품 발송으로 변경 -->
+												<!-- <span class="tag state p">미발급</span> -->
+												<!-- state 클래스에 추가 (미발급/발급완료/기간만료)
+													p: 미발급 (보라)
+													b: 발급완료 (회색)
+													g: 기간만료 (회색)
+												-->
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>진단/상담</strong>전문가 컨설팅</span>
+												<span class="tag">5회</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>온라인콘텐츠</strong></span>
+												<span class="tag">30개</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<!-- 시작예정 CASE (패키지 정상 결제완료 후, 이용기간이 도래하지 않은 상태)-->
+
+							<!-- 이용중 CASE (패키지 정상 결제완료 후, 이용기간 중 상태)-->
+							<li class="mypackage_item">
+								<div class="item_head">
+									<div class="use_wrap">
+										<!-- tag 클래스에 추가 (시작예정/이용중/이용취소/기간종료)
+											b: 시작예정 (검정)
+											p: 이용중 (보라)
+											g: 이용취소 (회색) //현재 지정된 컬러값 없음
+											g: 기간종료 (회색)
+										-->
+										<span class="date"><em class="tag p">이용중</em>D-27</span> <!--이용상태값 (시작예정/이용중/이용취소/기간종료)-->
+										<h2 class="tit_cont_02">Premium<em>바디핏</em></h2> <!--패키지 카테고리명-->
+										<span class="period">이용기간 <em>2021.04.01 - 2021.06.30</em></span> <!--이용기간-->										
+									</div>
+								</div>
+								<div class="item_cont">
+									<ul>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>굿즈</strong>신체단련 응원선물</span>
+												<span class="tag state b">발급완료</span>
+												<!-- state 클래스에 추가 (미발급/발급완료/기간만료)
+													p: 미발급 (보라)
+													b: 발급완료 (회색)
+													g: 기간만료 (회색)
+												-->
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>진단/상담</strong>전문가 컨설팅</span>
+												<span class="tag">5회</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>온라인콘텐츠</strong></span>
+												<span class="tag">30개</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<!-- //이용중 CASE (패키지 정상 결제완료 후, 이용기간 중 상태)-->
+
+							<!-- 이용취소 CASE (패키지 결제 취소 및 환불 완료된 상태) -->
+							<li class="mypackage_item">
+								<div class="item_head">
+									<div class="use_wrap">
+										<!-- tag 클래스에 추가 (시작예정/이용중/이용취소/기간종료)
+											b: 시작예정 (검정)
+											p: 이용중 (보라)
+											g: 이용취소 (회색) //현재 지정된 컬러값 없음
+											g: 기간종료 (회색)
+										-->
+										<span class="date"><em class="tag g">이용취소</em></span> <!--이용상태값 (시작예정/이용중/이용취소/기간종료)-->
+										<h2 class="tit_cont_02">Premium<em>바디핏</em></h2> <!--패키지 카테고리명-->
+										<span class="period">이용기간 <em>2021.04.01 - 2021.06.30</em></span> <!--이용기간-->
+									</div>
+								</div>
+								<div class="item_cont">
+									<ul>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>굿즈</strong>신체단련 응원선물</span>
+												<!-- state 클래스에 추가 (미발급/발급완료/기간만료)
+													p: 미발급 (보라)
+													b: 발급완료 (회색)
+													g: 기간만료 (회색)
+												-->
+												<span class="tag state g">발급완료</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>진단/상담</strong>전문가 컨설팅</span>
+												<span class="tag">5회</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>온라인콘텐츠</strong></span>
+												<span class="tag">30개</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<!-- //이용취소 CASE (패키지 결제 취소 및 환불 완료된 상태) -->
+
+							<!-- 기간만료 CASE -->
+							<li class="mypackage_item"> <!--20210727 'off' class 삭제-->
+								<div class="item_head">
+									<div class="use_wrap">
+										<!-- tag 클래스에 추가 (시작예정/이용중/이용취소/기간종료)
+											b: 시작예정 (검정)
+											p: 이용중 (보라)
+											g: 이용취소 (회색) //현재 지정된 컬러값 없음
+											g: 기간종료 (회색)
+										-->
+										<span class="date"><em class="tag g">기간종료</em></span>
+										<h2 class="tit_cont_02">Premium<em>심리</em></h2>
+										<span class="period">이용기간 <em>2021.04.01 - 2021.06.30</em></span>
+									</div>
+								</div>
+								<div class="item_cont">
+									<ul>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>굿즈</strong>신체단련 응원선물</span>
+												<!-- state 클래스에 추가 (미발급/발급완료/기간만료)
+													p: 미발급 (보라)
+													b: 발급완료 (회색)
+													g: 기간만료 (회색)
+												-->
+												<span class="tag state g">기간만료</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>진단/상담</strong>전문가 컨설팅</span>
+												<span class="tag">5회</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>온라인콘텐츠</strong></span>
+												<span class="tag">30개</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<!-- //마이패키지 [기간종료] case -->
+
+							<!-- //20210727 상태값 가변 case 추가 -->
+						</ul>
+					</div>
+				</div>
+
+				<div class="tab_panel" id="tab-2">
+					<div class="tab_bg_wrap">
+						<ul class="mypackage_list_wrap">
+							<li class="mypackage_item">
+								<div class="item_head">
+									<div class="use_wrap">
+										<!-- tag 클래스에 추가 (시작예정/이용중/이용취소/기간종료)
+											b: 시작예정 (검정)
+											p: 이용중 (보라)
+											g: 이용취소 (회색) //현재 지정된 컬러값 없음
+											g: 기간종료 (회색)
+										-->
+										<span class="date"><em class="tag p">이용중</em>D-27</span> <!--이용상태값 (시작예정/이용중/이용취소/기간종료)-->
+										<h2 class="tit_cont_02">Premium<em>바디핏</em></h2> <!--패키지 카테고리명-->
+										<span class="period">이용기간 <em>2021.04.01 - 2021.06.30</em></span> <!--이용기간-->
+									</div>
+								</div>
+								<div class="item_cont">
+									<ul>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>굿즈</strong>신체단련 응원선물</span>
+												<!-- state 클래스에 추가 (미발급/발급완료/기간만료)
+													p: 미발급 (보라)
+													b: 발급완료 (회색)
+													g: 기간만료 (회색)
+												-->
+												<span class="tag state b">발급완료</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>진단/상담</strong>전문가 컨설팅</span>
+												<span class="tag">5회</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>온라인콘텐츠</strong></span>
+												<span class="tag">30개</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="tab_panel" id="tab-3">
+					<div class="tab_bg_wrap">
+						<ul class="mypackage_list_wrap">
+							<li class="mypackage_item"> <!--20210727 'off' class 삭제-->
+								<div class="item_head">
+									<div class="use_wrap">
+										<!-- tag 클래스에 추가 (시작예정/이용중/이용취소/기간종료)
+											b: 시작예정 (검정)
+											p: 이용중 (보라)
+											g: 이용취소 (회색) //현재 지정된 컬러값 없음
+											g: 기간종료 (회색)
+										-->
+										<span class="date"><em class="tag g">기간종료</em></span>
+										<h2 class="tit_cont_02">Premium<em>심리</em></h2>
+										<span class="period">이용기간 <em>2021.04.01 - 2021.06.30</em></span>
+									</div>
+								</div>
+								<div class="item_cont">
+									<ul>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>굿즈</strong>신체단련 응원선물</span>
+												<!-- state 클래스에 추가 (미발급/발급완료/기간만료)
+													p: 미발급 (보라)
+													b: 발급완료 (회색)
+													g: 기간만료 (회색)
+												-->
+												<span class="tag state g">기간만료</span> <!--쿠폰 사용기간(90일) 만료시-->
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>진단/상담</strong>전문가 컨설팅</span>
+												<span class="tag">5회</span>
+											</div>
+										</li>
+										<li>
+											<div class="item">
+												<span class="tit"><strong>온라인콘텐츠</strong></span>
+												<span class="tag">30개</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+</head>
+<body>
+  <div class="health_wrap">
+    <div class="health_header"></div>
+    <div class="health_container">
+
+      <div class="section">
+        <h2 class="tit_cont_03 guide">popup - alert</h2>
+        
+        <button type="button" onclick="netiveUI.plugins.popAlert('#alert001');">Alert 1</button>
+        <p>&nbsp;</p>
+        <button type="button" onclick="netiveUI.plugins.popAlert('#alert002');">Alert 2</button>
+        <p>&nbsp;</p>
+        <button type="button" onclick="netiveUI.plugins.popAlert('#alert003');">Alert 3</button>
+        <p>&nbsp;</p>
+        <p class="tooltip"><a href="#alertNotice" onclick="netiveUI.plugins.popAlert('#alertNotice'); return false;">진단/상담 유의사항 보기</a></p>
+      </div>
+
+
+    </div>
+  </div>
+ 
+
+  <div class="health_alert" id="alert001" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        최종 접속 후 1년이 경과하여<br>휴면상태입니다.<br>휴면상태를 해제하기 위해서는<br>이메일 인증이 필요합니다.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="health_alert" id="alert002" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        최종 접속 후 1년이 경과하여<br>휴면상태입니다.<br>휴면상태를 해제하기 위해서는<br>이메일 인증이 필요합니다.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_line_dark">고객센터 연결</button>
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="health_alert" id="alert003" style="display: none;">
+    <div class="inner">
+      <p class="msg">
+        최종 접속 후 1년이 경과하여<br>휴면상태입니다.<br>휴면상태를 해제하기 위해서는<br>이메일 인증이 필요합니다.
+      </p>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_line_dark ui-close">취소</button>
+        <button type="button" class="btn_pop_dark">인증하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 진단/상담 유의사항 -->
+  <div id="alertNotice" class="health_alert mypage_popup" style="display: none;">
+    <div class="inner alert_notice">
+      <h1 class="tit_cont_03">진단/상담 유의사항</h1>
+      <ul class="rev_noticelist">
+        <li><p><span>1</span> 1대 1 상담이며, 상담자는 1인을 초과할 수 없습니다.</p></li>
+        <li><p><span>2</span> 예약확정 후에는 확정된 예약시간으로 부터 2일 전 이후부터는 취소할 수 없습니다.
+          (예. 2021년 12월 31일 오후 2시 예약확정 시, 2021년 12월 29일 오후 2시 이후 취소 불가, 서비스 이용 완료로 간주 됩니다.)</p></li>
+        <li><p><span>3</span> 예약 상담시간을 꼭 지켜주시기 바랍니다. 예약 후 상담을 받지 않아서 상담 회수에서 차감 됩니다.</p></li>
+        <li><p><span>4</span> 상담 10분전까지 입장을 해주시기 바랍니다.</p></li>
+        <li><p><span>5</span> 그외 궁금한 사항은 콜센터<br> <em>1600-3444</em> 문의 가능합니다.</p></li>
+      </ul>
+      <div class="btn_wrap">
+        <button type="button" class="btn_pop_dark ui-close">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- //진단/상담 유의사항 -->
+
+</body>
+</html>

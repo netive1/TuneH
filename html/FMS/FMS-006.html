@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>활동 선택</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_goal footer_no">
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>활동 선택</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <div class="health_container">
+    <div class="content_tit mb30"> <!--20210601 mb30 클래스 변경-->
+      <h2 class="tit_cont_02">선택한 활동<span class=point_color> 5</span>개</h2>
+    </div>
+    <div class="tabs activity_tabs">
+      <ul class="tab_menulist pb0">
+          <li class="active"><a class="tab_control" href="#tab-1">최근</a></li>
+          <li><a class="tab_control" href="#tab-2">전체</a></li>
+          <li><a class="tab_control" href="#tab-3">GPS연동</a></li>
+          <li><a class="tab_control" href="#tab-4">일반</a></li>
+      </ul>          
+      <div class="tab_panel active" id="tab-1">
+        <div class="item_wrap">
+          <div class="item_box"><span class="item_txt">걷기</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">달리기</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">자전거</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">피트니스 운동</span></div>
+          <div class="item_box"><span class="item_txt">산악자전거</span><em class="label_gps">GPS</em></div>      
+        </div>
+      </div>
+      <div class="tab_panel" id="tab-2">
+        <div class="item_wrap">
+          <div class="item_box"><span class="item_txt">걷기</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">달리기</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">자전거</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">피트니스 운동</span></div>
+          <div class="item_box"><span class="item_txt">산악자전거</span><em class="label_gps">GPS</em></div>      
+        </div>
+      </div>
+      <div class="tab_panel" id="tab-3">
+        <div class="item_wrap">
+          <div class="item_box"><span class="item_txt">걷기</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">자전거</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">산악자전거</span><em class="label_gps">GPS</em></div>      
+        </div>
+      </div>
+      <div class="tab_panel" id="tab-4">
+        <div class="item_wrap">
+          <div class="item_box"><span class="item_txt">걷기</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">자전거</span><em class="label_gps">GPS</em></div>
+          <div class="item_box"><span class="item_txt">피트니스 운동</span></div>
+          <div class="item_box"><span class="item_txt">산악자전거</span><em class="label_gps">GPS</em></div>      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

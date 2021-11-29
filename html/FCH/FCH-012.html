@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코칭 설정</title>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+  <link rel="stylesheet" href="../../resources/css/jquery-ui.css">
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <script src="../../resources/js/jquery-ui.js"></script>
+  <script src="../../resources/js/jquery-touch-punch.js"></script>
+
+</head>
+<body>
+<div class="health_wrap type_coaching">
+  <header class="health_header">
+    <!-- 20210721 -->
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>코칭 설정</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+  </header>
+  <div class="health_container">
+    <p class="coaching_tit">건강 관리 메세지를<br>확인해보아요</p>
+    <ul class="answer_wrap mb0">
+      <li>
+        <a href="#">
+          코칭 (전체)메시지 보기
+        </a>
+      </li>
+    </ul>
+    <div class="radio_box btn_rdo">
+      <!-- 20210818 알림있을경우 new 클래스 추가 -->
+      <div class="item c1 new">
+        <!-- 20210818 disabled 수정 -->
+        <input type="radio" id="ex01" class="radioItem" name="example">
+        <label for="ex01">활동</label>
+      </div>
+      <div class="item c2">
+        <input type="radio" id="ex02" class="radioItem" name="example">
+        <label for="ex02">마음</label>
+      </div>
+      <div class="item c3">
+        <input type="radio" id="ex03" class="radioItem" name="example">
+        <label for="ex03">영양</label>
+      </div>
+      <div class="item c4">
+        <input type="radio" id="ex04" class="radioItem" name="example" disabled> <!--disabled시-->
+        <label for="ex04">수면</label>
+      </div>
+      <div class="item c5">
+        <input type="radio" id="ex05" class="radioItem" name="example">
+        <label for="ex05">조절</label>
+      </div>
+      <div class="item last">
+        <input type="radio" id="ex06" class="radioItem" name="example">
+        <label for="ex06">전체</label>
+      </div>
+    </div>
+
+    
+    <p class="coaching_tit">건강 문진에<br>답변해주세요</p>
+    <ul class="answer_wrap">
+      <li>
+        <a href="#">
+          신체 건강 답변 업데이트
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          정신 건강 답변 업데이트
+        </a>
+      </li>
+    </ul>
+    
+    <div class="bg_wrap">
+      <p class="coaching_tit">항목별 관심도를<br>설정해보세요</p>
+      <ul class="interest_wrap">
+        <li class="item">
+          <div class="tit">운동 코칭을 받는 것이 얼마나<br>만족스럽나요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+            <div class="value on" data-value="8">8</div> <!--20210804 슬라이드 활성화시 'on' class 부여, default 'on' 삭제-->
+            <div class="slider" data-min="0" data-max="19" data-step="1" data-value="7" aria-hidden="true"></div>
+            <div class="list">
+              <strong class="blind">선택해주세요</strong>
+              <ul>
+                <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+                <li><a href="#none" role="button"><span>2</span></a></li>
+                <li><a href="#none" role="button"><span>3</span></a></li>
+                <li><a href="#none" role="button"><span>4</span></a></li>
+                <li><a href="#none" role="button"><span>5</span></a></li>
+                <li><a href="#none" role="button"><span>6</span></a></li>
+                <li><a href="#none" role="button"><span>7</span></a></li>
+                <li><a href="#none" role="button"><span>8</span></a></li>
+                <li><a href="#none" role="button"><span>9</span></a></li>
+                <li><a href="#none" role="button"><span>10</span></a></li>
+                <li><a href="#none" role="button"><span>11</span></a></li>
+                <li><a href="#none" role="button"><span>12</span></a></li>
+                <li><a href="#none" role="button"><span>13</span></a></li>
+                <li><a href="#none" role="button"><span>14</span></a></li>
+                <li><a href="#none" role="button"><span>15</span></a></li>
+                <li><a href="#none" role="button"><span>16</span></a></li>
+                <li><a href="#none" role="button"><span>17</span></a></li>
+                <li><a href="#none" role="button"><span>18</span></a></li>
+                <li><a href="#none" role="button"><span>19</span></a></li>
+                <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="tit">영양에 대한 코칭을 얼마나 자주<br>받고 싶나요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+            <div class="value" data-value="1">1</div>
+            <div class="slider" data-min="0" data-max="19" data-step="1" data-value="0" aria-hidden="true"></div>
+            <div class="list">
+              <strong class="blind">선택해주세요</strong>
+              <ul>
+                <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+                <li><a href="#none" role="button"><span>2</span></a></li>
+                <li><a href="#none" role="button"><span>3</span></a></li>
+                <li><a href="#none" role="button"><span>4</span></a></li>
+                <li><a href="#none" role="button"><span>5</span></a></li>
+                <li><a href="#none" role="button"><span>6</span></a></li>
+                <li><a href="#none" role="button"><span>7</span></a></li>
+                <li><a href="#none" role="button"><span>8</span></a></li>
+                <li><a href="#none" role="button"><span>9</span></a></li>
+                <li><a href="#none" role="button"><span>10</span></a></li>
+                <li><a href="#none" role="button"><span>11</span></a></li>
+                <li><a href="#none" role="button"><span>12</span></a></li>
+                <li><a href="#none" role="button"><span>13</span></a></li>
+                <li><a href="#none" role="button"><span>14</span></a></li>
+                <li><a href="#none" role="button"><span>15</span></a></li>
+                <li><a href="#none" role="button"><span>16</span></a></li>
+                <li><a href="#none" role="button"><span>17</span></a></li>
+                <li><a href="#none" role="button"><span>18</span></a></li>
+                <li><a href="#none" role="button"><span>19</span></a></li>
+                <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="tit">건강 코치의 도움을<br>받아 보시겠어요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+          <div class="value" data-value="8">8</div>
+          <div class="slider" data-min="0" data-max="19" data-step="1" data-value="7" aria-hidden="true"></div>
+          <div class="list">
+            <strong class="blind">선택해주세요</strong>
+            <ul>
+              <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+              <li><a href="#none" role="button"><span>2</span></a></li>
+              <li><a href="#none" role="button"><span>3</span></a></li>
+              <li><a href="#none" role="button"><span>4</span></a></li>
+              <li><a href="#none" role="button"><span>5</span></a></li>
+              <li><a href="#none" role="button"><span>6</span></a></li>
+              <li><a href="#none" role="button"><span>7</span></a></li>
+              <li><a href="#none" role="button"><span>8</span></a></li>
+              <li><a href="#none" role="button"><span>9</span></a></li>
+              <li><a href="#none" role="button"><span>10</span></a></li>
+              <li><a href="#none" role="button"><span>11</span></a></li>
+              <li><a href="#none" role="button"><span>12</span></a></li>
+              <li><a href="#none" role="button"><span>13</span></a></li>
+              <li><a href="#none" role="button"><span>14</span></a></li>
+              <li><a href="#none" role="button"><span>15</span></a></li>
+              <li><a href="#none" role="button"><span>16</span></a></li>
+              <li><a href="#none" role="button"><span>17</span></a></li>
+              <li><a href="#none" role="button"><span>18</span></a></li>
+              <li><a href="#none" role="button"><span>19</span></a></li>
+              <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+            </ul>
+          </div>
+        </div>
+        </li>
+        <li class="item">
+          <div class="tit">스트레스 관리에 대한 코칭을<br>얼마나 자주 받고 싶나요?<br>만족스럽나요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+          <div class="value" data-value="8">8</div>
+          <div class="slider" data-min="0" data-max="19" data-step="1" data-value="7" aria-hidden="true"></div>
+          <div class="list">
+            <strong class="blind">선택해주세요</strong>
+            <ul>
+              <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+              <li><a href="#none" role="button"><span>2</span></a></li>
+              <li><a href="#none" role="button"><span>3</span></a></li>
+              <li><a href="#none" role="button"><span>4</span></a></li>
+              <li><a href="#none" role="button"><span>5</span></a></li>
+              <li><a href="#none" role="button"><span>6</span></a></li>
+              <li><a href="#none" role="button"><span>7</span></a></li>
+              <li><a href="#none" role="button"><span>8</span></a></li>
+              <li><a href="#none" role="button"><span>9</span></a></li>
+              <li><a href="#none" role="button"><span>10</span></a></li>
+              <li><a href="#none" role="button"><span>11</span></a></li>
+              <li><a href="#none" role="button"><span>12</span></a></li>
+              <li><a href="#none" role="button"><span>13</span></a></li>
+              <li><a href="#none" role="button"><span>14</span></a></li>
+              <li><a href="#none" role="button"><span>15</span></a></li>
+              <li><a href="#none" role="button"><span>16</span></a></li>
+              <li><a href="#none" role="button"><span>17</span></a></li>
+              <li><a href="#none" role="button"><span>18</span></a></li>
+              <li><a href="#none" role="button"><span>19</span></a></li>
+              <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+            </ul>
+          </div>
+        </div>
+        </li>
+        <li class="item">
+          <div class="tit">코치가 나의 수면 습관에 대해<br>자세히 알아가는 것을 얼마나<br>중요하게 생각하시나요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+          <div class="value" data-value="8">8</div>
+          <div class="slider" data-min="0" data-max="19" data-step="1" data-value="7" aria-hidden="true"></div>
+          <div class="list">
+            <strong class="blind">선택해주세요</strong>
+            <ul>
+              <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+              <li><a href="#none" role="button"><span>2</span></a></li>
+              <li><a href="#none" role="button"><span>3</span></a></li>
+              <li><a href="#none" role="button"><span>4</span></a></li>
+              <li><a href="#none" role="button"><span>5</span></a></li>
+              <li><a href="#none" role="button"><span>6</span></a></li>
+              <li><a href="#none" role="button"><span>7</span></a></li>
+              <li><a href="#none" role="button"><span>8</span></a></li>
+              <li><a href="#none" role="button"><span>9</span></a></li>
+              <li><a href="#none" role="button"><span>10</span></a></li>
+              <li><a href="#none" role="button"><span>11</span></a></li>
+              <li><a href="#none" role="button"><span>12</span></a></li>
+              <li><a href="#none" role="button"><span>13</span></a></li>
+              <li><a href="#none" role="button"><span>14</span></a></li>
+              <li><a href="#none" role="button"><span>15</span></a></li>
+              <li><a href="#none" role="button"><span>16</span></a></li>
+              <li><a href="#none" role="button"><span>17</span></a></li>
+              <li><a href="#none" role="button"><span>18</span></a></li>
+              <li><a href="#none" role="button"><span>19</span></a></li>
+              <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+            </ul>
+          </div>
+        </div>
+        </li>
+        <li class="item">
+          <div class="tit">소셜 알림을 얼마나 자주<br>받고 싶나요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+          <div class="value" data-value="8">8</div>
+          <div class="slider" data-min="0" data-max="19" data-step="1" data-value="7" aria-hidden="true"></div>
+          <div class="list">
+            <strong class="blind">선택해주세요</strong>
+            <ul>
+              <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+              <li><a href="#none" role="button"><span>2</span></a></li>
+              <li><a href="#none" role="button"><span>3</span></a></li>
+              <li><a href="#none" role="button"><span>4</span></a></li>
+              <li><a href="#none" role="button"><span>5</span></a></li>
+              <li><a href="#none" role="button"><span>6</span></a></li>
+              <li><a href="#none" role="button"><span>7</span></a></li>
+              <li><a href="#none" role="button"><span>8</span></a></li>
+              <li><a href="#none" role="button"><span>9</span></a></li>
+              <li><a href="#none" role="button"><span>10</span></a></li>
+              <li><a href="#none" role="button"><span>11</span></a></li>
+              <li><a href="#none" role="button"><span>12</span></a></li>
+              <li><a href="#none" role="button"><span>13</span></a></li>
+              <li><a href="#none" role="button"><span>14</span></a></li>
+              <li><a href="#none" role="button"><span>15</span></a></li>
+              <li><a href="#none" role="button"><span>16</span></a></li>
+              <li><a href="#none" role="button"><span>17</span></a></li>
+              <li><a href="#none" role="button"><span>18</span></a></li>
+              <li><a href="#none" role="button"><span>19</span></a></li>
+              <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+            </ul>
+          </div>
+        </div>
+        </li>
+        <li class="item">
+          <div class="tit">의료기록 관련 설문을 받는 것이<br>얼마나 만족스럽나요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+          <div class="value" data-value="8">8</div>
+          <div class="slider" data-min="0" data-max="19" data-step="1" data-value="7" aria-hidden="true"></div>
+          <div class="list">
+            <strong class="blind">선택해주세요</strong>
+            <ul>
+              <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+              <li><a href="#none" role="button"><span>2</span></a></li>
+              <li><a href="#none" role="button"><span>3</span></a></li>
+              <li><a href="#none" role="button"><span>4</span></a></li>
+              <li><a href="#none" role="button"><span>5</span></a></li>
+              <li><a href="#none" role="button"><span>6</span></a></li>
+              <li><a href="#none" role="button"><span>7</span></a></li>
+              <li><a href="#none" role="button"><span>8</span></a></li>
+              <li><a href="#none" role="button"><span>9</span></a></li>
+              <li><a href="#none" role="button"><span>10</span></a></li>
+              <li><a href="#none" role="button"><span>11</span></a></li>
+              <li><a href="#none" role="button"><span>12</span></a></li>
+              <li><a href="#none" role="button"><span>13</span></a></li>
+              <li><a href="#none" role="button"><span>14</span></a></li>
+              <li><a href="#none" role="button"><span>15</span></a></li>
+              <li><a href="#none" role="button"><span>16</span></a></li>
+              <li><a href="#none" role="button"><span>17</span></a></li>
+              <li><a href="#none" role="button"><span>18</span></a></li>
+              <li><a href="#none" role="button"><span>19</span></a></li>
+              <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+            </ul>
+          </div>
+        </div>
+        </li>
+        <li class="item">
+          <div class="tit">정신 건강에 대한 코치의 도움을<br>얼마나 자주 받고 싶나요?</div>
+          <!-- range_slider -->
+          <div class="range_slider">
+          <div class="value" data-value="8">8</div>
+          <div class="slider" data-min="0" data-max="19" data-step="1" data-value="7" aria-hidden="true"></div>
+          <div class="list">
+            <strong class="blind">선택해주세요</strong>
+            <ul>
+              <li><a href="#none" role="button" data-number="0"><span class="txt l">전혀</span></a></li>
+              <li><a href="#none" role="button"><span>2</span></a></li>
+              <li><a href="#none" role="button"><span>3</span></a></li>
+              <li><a href="#none" role="button"><span>4</span></a></li>
+              <li><a href="#none" role="button"><span>5</span></a></li>
+              <li><a href="#none" role="button"><span>6</span></a></li>
+              <li><a href="#none" role="button"><span>7</span></a></li>
+              <li><a href="#none" role="button"><span>8</span></a></li>
+              <li><a href="#none" role="button"><span>9</span></a></li>
+              <li><a href="#none" role="button"><span>10</span></a></li>
+              <li><a href="#none" role="button"><span>11</span></a></li>
+              <li><a href="#none" role="button"><span>12</span></a></li>
+              <li><a href="#none" role="button"><span>13</span></a></li>
+              <li><a href="#none" role="button"><span>14</span></a></li>
+              <li><a href="#none" role="button"><span>15</span></a></li>
+              <li><a href="#none" role="button"><span>16</span></a></li>
+              <li><a href="#none" role="button"><span>17</span></a></li>
+              <li><a href="#none" role="button"><span>18</span></a></li>
+              <li><a href="#none" role="button"><span>19</span></a></li>
+              <li><a href="#none" role="button" data-number="19"><span class="txt r">매우</span></a></li>
+            </ul>
+          </div>
+        </div>
+        </li>
+      </ul>
+      <div class="btn_wrap">
+        <p class="sub_txt">읽지 않은 메시지 모두 로드하기</p>
+        <button type="button" class="btn_base_02 line">모두 로드 실행</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="btn_btm_fixed">
+  <button type="button" class="btn" >답변 저장</button>
+</div>
+</body>
+</html>

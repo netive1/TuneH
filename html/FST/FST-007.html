@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다른 앱 연결하기</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_setting footer_no">
+  <!-- 20210721 -->
+  <header class="health_header">
+    <div class="inbtn">
+      <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+      <h1>앱 연결</h1>
+    </div>
+    <div class="user"><button type="button">홍길동</button></div>
+    <!-- user class 가이드
+      패키지 구매회원의 경우 : .package 추가
+      신규 알림 있을 시 : .on 추가
+    -->
+  </header>
+  <!-- //20210721 -->
+  <div class="health_container pt10">
+    <ul class="connectlist apps">
+      <!-- 20210729 os별 분기 처리 -->
+      <!-- class로 구분 (ios , aos) -->
+      <!-- ios -->
+      <li class="app_applehealth ios"><a href="#"><em>Apple Health</em><span class="btn_form_line connect">연결중</span></a></li>
+      <!-- aos -->
+      <li class="app_fitbit ios"><a href="#"><em>Fitbit</em></a></li>
+      <li class="app_samsunghealth aos"><a href="#"><em>Samsung Health</em></a></li>
+      <li class="app_google aos"><a href="#"><em>Google Fit</em></a></li>
+      <!-- 20210729 os별 분기 처리 -->
+    </ul>
+  </div>
+  <!-- 20210715 마크업 및 문구 수정 -->
+  <div class="st_infobox">
+    <p>동일한 유형의 데이터를 사용하는 디바이스를<br> 둘 이상 연결하는 것은 권장되지 않습니다.<br>
+      데이터가 이중으로 수집될 수 있으며, 데이터<br> 이중 수집은 Tune H에서 차단할 수 없습니다.</p>
+  </div>
+  <!-- //20210715 마크업 및 문구 수정 -->
+</div>
+</body>
+</html>

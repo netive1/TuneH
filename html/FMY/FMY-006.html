@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공유 설정</title>
+  <script src="../../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../../resources/js/ui.common.js"></script>
+  <link rel="stylesheet" href="../../resources/css/guide.css">
+</head>
+<body>
+<div class="health_wrap type_setting appsetting footer_no">
+    <header class="health_header">
+        <div class="inbtn">
+            <button type="button" onClick="history.back();" class="btn_prev"><span class="hidden">이전</span></button>
+            <h1>공유 설정</h1>
+        </div>
+        <div class="user"><button type="button">홍길동</button></div>
+        <!-- user class 가이드
+          패키지 구매회원의 경우 : .package 추가
+          신규 알림 있을 시 : .on 추가
+        -->
+    </header>
+    <div class="health_container pt10">
+        <ul class="appsetting_list">
+            <li>
+                <em>건강 스코어</em>
+                <label class="toggle" for="appSet01"><input type="checkbox" id="appSet01" checked><div class="toggle_slider round"></div></label>
+            </li>
+            <li>
+                <em>위치</em>
+                <label class="toggle" for="appSet02"><input type="checkbox" id="appSet02"><div class="toggle_slider round"></div></label>
+            </li>
+            <li>
+              <em>성취</em>
+              <label class="toggle" for="appSet03"><input type="checkbox" id="appSet03"><div class="toggle_slider round"></div></label>
+            </li>
+            <li>
+              <em>목표/운동</em>
+              <label class="toggle" for="appSet04"><input type="checkbox" id="appSet04"><div class="toggle_slider round"></div></label>
+            </li>   
+        </ul>
+    </div>
+</div>
+</body>
+</html>
