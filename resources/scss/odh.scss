@@ -669,13 +669,22 @@
                         >img {
                             width: 100%;
                             height: auto;
+                            z-index: 2;
                         }
                         .items {
                             position: absolute;
-                            padding-top: 43px;
-                            top: 0px;
-                            left: 28px;
+                            top: 50%;
+                            transform: translate(0, -50%);
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex-direction: column;
+                            align-items: start;
+                            justify-content: center;
                             color: $color-white;
+                            z-index: 3;
+                            height: 154px;
+                            padding: 0 28px;
+                            word-break: break-word;
                             .item_tit {
                                 font-size: $fs-m;
                                 font-weight: $fw-b;
@@ -731,6 +740,7 @@
                             opacity: .5;
                             background: #222;
                             border-radius: 16px;
+                            z-index: 2;
                         }
                     }
                     & + .goal_list_box {margin-top: 11px;}
