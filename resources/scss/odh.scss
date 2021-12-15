@@ -684,7 +684,7 @@
                             z-index: 3;
                             height: 154px;
                             padding: 0 28px;
-                            word-break: break-word;
+                            word-break: keep-all;
                             .item_tit {
                                 font-size: $fs-m;
                                 font-weight: $fw-b;

@@ -300,7 +300,7 @@ body {
             }         
           }
         }
-        &:nth-child(4) {
+        &:nth-child(3) {
           .nav_item {
             background-image: url($imgpath + "ico_ft03.png"); 
             &.on {
@@ -308,7 +308,7 @@ body {
             }   
           }
         }
-        &:nth-child(5) {
+        &:nth-child(4) {
           .nav_item {
             background-image: url($imgpath + "ico_ft04.png"); 
             &.on {
@@ -316,7 +316,7 @@ body {
             }            
           }
         }
-        &:nth-child(3) {
+        &:nth-child(5) {
           .nav_item {
             width: 41px;
             height: 41px;
